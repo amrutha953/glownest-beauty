@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background: black;
+  color: white;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.icons span {
+  margin-left: 15px;
+  cursor: pointer;
+}
