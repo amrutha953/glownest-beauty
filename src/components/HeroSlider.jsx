@@ -1,36 +1,59 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/HeroSlider.css";
 
-const images = [
-  "/images/banner1.jpg",
+const banners = [
+  "/images/hero.jpg",
   "/images/banner2.jpg",
   "/images/banner3.jpg",
   "/images/banner4.jpg",
 ];
 
-export default function HeroSlider() {
-  const [index, setIndex] = useState(0);
+const HeroSlider = () => {
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+      setCurrent((prev) => (prev + 1) % banners.length);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % banners.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + banners.length) % banners.length);
+  };
+
   return (
-    <div className="hero-wrapper">
-      <div
-        className="slider-track"
-        style={{ transform: `translateX(-${index * 100}%)` }}
-      >
-        {images.map((img, i) => (
-          <div className="slide" key={i}>
-            <img src={img} alt="banner" />
-          </div>
+    <div className="hero-slider">
+      <img
+        src={banners[current]}
+        alt="GlowNest Beauty"
+        className="hero-image"
+      />
+
+      <button className="prev" onClick={prevSlide}>
+        ❮
+      </button>
+
+      <button className="next" onClick={nextSlide}>
+        ❯
+      </button>
+
+      <div className="dots">
+        {banners.map((_, index) => (
+          <span
+            key={index}
+            className={current === index ? "dot active" : "dot"}
+            onClick={() => setCurrent(index)}
+          ></span>
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default HeroSlider;

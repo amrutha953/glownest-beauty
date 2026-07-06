@@ -1,28 +1,112 @@
+/* 🔥 TOP ANIMATED BAR */
+.top-slider {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  gap: 60px;
+  animation: scrollLoop 12s linear infinite;
+}
+
+.slider-track span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* CONTINUOUS LOOP */
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 🔥 NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
-  background: black;
-  color: white;
+
+  padding: 14px 45px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
-.logo img {
-  height: 60px;
-  width: auto;
+/* LOGO */
+.logo {
+  height: 48px;
+  object-fit: contain;
 }
 
-.menu {
+/* MENU */
+.nav-menu {
   display: flex;
-  gap: 25px;
+  gap: 35px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+
+  font-size: 16px;   /* 🔥 BIGGER TEXT */
+  font-weight: 600;
 }
 
-.menu li {
+.menu-item {
+  position: relative;
   cursor: pointer;
 }
 
-.icons span {
-  margin-left: 15px;
+/* HOVER EFFECT */
+.menu-item:hover {
+  color: #e91e63;
+}
+
+/* 🔥 DROPDOWN CARD */
+.dropdown-card {
+  position: absolute;
+  top: 38px;
+  left: 0;
+
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  padding: 14px 18px;
+  min-width: 200px;
+  border-radius: 8px;
+  z-index: 999;
+}
+
+.dropdown-card p {
+  font-size: 15px;   /* 🔥 BIGGER TEXT */
+  font-weight: 500;
+  margin: 10px 0;
   cursor: pointer;
+}
+
+.dropdown-card p:hover {
+  color: #e91e63;
+}
+
+/* 🔥 ICONS */
+.nav-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.nav-icons svg {
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
 }
