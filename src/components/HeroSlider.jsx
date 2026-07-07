@@ -2,10 +2,26 @@ import React, { useState, useEffect } from "react";
 import "../styles/HeroSlider.css";
 
 const banners = [
-  "/images/hero.jpg",
-  "/images/banner2.jpg",
-  "/images/banner3.jpg",
-  "/images/banner4.jpg",
+  {
+    image: "/images/hero.jpg",
+    title: "Glow Beyond Beauty",
+    subtitle: "Discover skincare and beauty essentials designed to make you shine every day.",
+  },
+  {
+    image: "/images/banner2.jpg",
+    title: "Healthy Skin Starts Here",
+    subtitle: "Nourish your skin with premium ingredients for a natural glow.",
+  },
+  {
+    image: "/images/banner3.jpg",
+    title: "Beauty That Speaks for You",
+    subtitle: "Luxury makeup collections for every mood and every occasion.",
+  },
+  {
+    image: "/images/banner4.jpg",
+    title: "Feel Beautiful. Feel Confident.",
+    subtitle: "Explore perfumes, body care, and beauty products you'll love.",
+  },
 ];
 
 const HeroSlider = () => {
@@ -30,10 +46,23 @@ const HeroSlider = () => {
   return (
     <div className="hero-slider">
       <img
-        src={banners[current]}
-        alt="GlowNest Beauty"
+        src={banners[current].image}
+        alt={banners[current].title}
         className="hero-image"
       />
+
+      {/* Dark Overlay */}
+      <div className="hero-overlay"></div>
+
+      {/* Banner Content */}
+      <div className="hero-content">
+        <h1>{banners[current].title}</h1>
+        <p>{banners[current].subtitle}</p>
+
+        <button className="shop-btn">
+          Shop Now
+        </button>
+      </div>
 
       <button className="prev" onClick={prevSlide}>
         ❮
