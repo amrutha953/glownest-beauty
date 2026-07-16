@@ -1,0 +1,392 @@
+.track-page {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+
+/* ================= HERO SECTION ================= */
+
+.track-hero {
+  height: 350px;
+  background-image: url("/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.track-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+
+.track-overlay h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+
+.track-overlay p {
+  font-size: 18px;
+}
+
+
+/* ================= TRACK FORM ================= */
+
+
+.track-container {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+
+.track-container h2 {
+  font-size: 30px;
+  color: #e91e63;
+  margin-bottom: 35px;
+}
+
+
+.track-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.track-form input {
+  padding: 15px 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+
+.track-form input:focus {
+  border-color: #e91e63;
+}
+
+
+.track-form button {
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  background: #e91e63;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.track-form button:hover {
+  background: #c2185b;
+}
+/* ================= ORDER STATUS TIMELINE ================= */
+
+
+.order-status {
+  padding: 50px 10%;
+  text-align: center;
+  background: #fff7fa;
+}
+
+
+.order-status h2 {
+  font-size: 30px;
+  color: #e91e63;
+  margin-bottom: 40px;
+}
+
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 8%;
+  width: 84%;
+  height: 3px;
+  background: #ddd;
+  z-index: 0;
+}
+
+
+.step {
+  position: relative;
+  z-index: 1;
+  background: white;
+  width: 120px;
+  padding: 15px 10px;
+  border-radius: 12px;
+}
+
+
+.step span {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 50%;
+  background: #f5f5f5;
+  font-size: 25px;
+}
+
+
+.step p {
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+
+.step.active span {
+  background: #e91e63;
+  color: white;
+}
+
+
+
+/* ================= FAQ SECTION ================= */
+
+
+.track-faq {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+
+.track-faq h2 {
+  font-size: 30px;
+  color: #e91e63;
+  margin-bottom: 35px;
+}
+
+
+.faq-card {
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+
+.faq-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+
+.faq-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media (max-width: 768px) {
+
+  .track-overlay h1 {
+    font-size: 32px;
+  }
+
+
+  .timeline {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+
+  .timeline::before {
+    display: none;
+  }
+
+
+  .step {
+    width: 180px;
+  }
+
+}
+/* ================= TRACKING RESULT ================= */
+
+.tracking-result {
+  padding: 40px 10%;
+  text-align: center;
+}
+
+
+.tracking-result h2 {
+  color: #e91e63;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+
+.result-card {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  text-align: left;
+  border-left: 5px solid #e91e63;
+}
+
+
+.result-card p {
+  font-size: 16px;
+  margin: 15px 0;
+  color: #555;
+}
+
+
+.result-card strong {
+  color: #333;
+}
+/* ================= STATUS TIMELINE ================= */
+
+
+.status-section {
+  margin-top: 50px;
+  background:#fff7fa;
+  padding:50px 20px;
+}
+
+
+.status-section h2{
+  text-align:center;
+  color:#e91e63;
+  font-size:30px;
+  margin-bottom:40px;
+}
+
+
+
+.status-container{
+
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  position:relative;
+
+}
+
+
+
+.status-container::before{
+
+  content:"";
+  position:absolute;
+  top:35px;
+  left:10%;
+  width:80%;
+  height:4px;
+  background:#ddd;
+
+}
+
+
+
+.status-step{
+
+  text-align:center;
+  position:relative;
+  z-index:1;
+
+}
+
+
+
+.status-icon{
+
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:#eee;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:30px;
+
+  margin:auto;
+
+}
+
+
+
+.status-step.active .status-icon{
+
+  background:#e91e63;
+  color:white;
+
+}
+
+
+
+.status-step p{
+
+  margin-top:15px;
+  font-size:16px;
+  color:#333;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:700px){
+
+.status-container{
+
+ flex-direction:column;
+ gap:30px;
+
+}
+
+
+.status-container::before{
+
+ display:none;
+
+}
+
+
+}

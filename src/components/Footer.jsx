@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaInstagram,
   FaFacebookF,
@@ -59,7 +60,7 @@ const Footer = () => {
 
           <h3>About GlowNest</h3>
 
-          <a href="#">Our Story</a>
+          <Link to="/about">Our Story</Link>
 
           <a href="#">Careers</a>
 
@@ -79,9 +80,9 @@ const Footer = () => {
 
           <h3>Help</h3>
 
-          <a href="#">Contact Us</a>
+          <Link to="/contact">Contact Us</Link>
 
-          <a href="#">Track Order</a>
+          <Link to="/track-order">Track Order</Link>
 
           <a href="#">Shipping Policy</a>
 
@@ -99,17 +100,17 @@ const Footer = () => {
 
           <h3>Top Categories</h3>
 
-          <a href="#">Skincare</a>
+          
+          <Link to="/shop/skincare">Skincare</Link>
+          <Link to="/shop/makeup">Makeup</Link>
 
-          <a href="#">Makeup</a>
+          <Link to="/shop/haircare">Haircare</Link>
 
-          <a href="#">Haircare</a>
+          <Link to="/shop/bodycare">Bodycare</Link>
 
-          <a href="#">Bodycare</a>
+          <Link to="/shop/serum">Serums</Link>
 
-          <a href="#">Serums</a>
-
-          <a href="#">Perfumes</a>
+          <Link to="/shop/perfume">Perfumes</Link>
 
         </div>
 
