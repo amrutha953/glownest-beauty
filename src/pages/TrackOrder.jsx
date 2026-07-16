@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./TrackOrder.css";
 
 const TrackOrder = () => {
-      const [orderId, setOrderId] = useState("");
+  const [orderId, setOrderId] = useState("");
   const [email, setEmail] = useState("");
   const [tracked, setTracked] = useState(false);
   return (
@@ -38,18 +38,14 @@ const TrackOrder = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-
           <button
             onClick={() => setTracked(true)}
           >
             Track Order
           </button>
-
         </div>
 
       </section>
-
-
       {/* Tracking Result */}
 
       {tracked && (
@@ -76,62 +72,6 @@ const TrackOrder = () => {
             </p>
 
           </div>
-          {/* Order Status Timeline */}
-
-<div className="order-timeline">
-
-  <h2>Order Status</h2>
-
-  <div className="timeline">
-
-    <div className="timeline-item active">
-      <div className="circle">✓</div>
-      <div>
-        <h3>Order Placed</h3>
-        <p>Your order has been received</p>
-      </div>
-    </div>
-
-
-    <div className="timeline-item active">
-      <div className="circle">✓</div>
-      <div>
-        <h3>Payment Confirmed</h3>
-        <p>Payment successfully completed</p>
-      </div>
-    </div>
-
-
-    <div className="timeline-item active">
-      <div className="circle">🚚</div>
-      <div>
-        <h3>Shipped</h3>
-        <p>Your order is on the way</p>
-      </div>
-    </div>
-
-
-    <div className="timeline-item">
-      <div className="circle">○</div>
-      <div>
-        <h3>Out for Delivery</h3>
-        <p>Delivery partner will reach you soon</p>
-      </div>
-    </div>
-
-
-    <div className="timeline-item">
-      <div className="circle">○</div>
-      <div>
-        <h3>Delivered 🎉</h3>
-        <p>Your order has been delivered</p>
-      </div>
-    </div>
-
-
-  </div>
-
-</div>
 
         </section>
       )}
