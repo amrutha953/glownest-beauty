@@ -1,0 +1,164 @@
+.rewards-page {
+
+  font-family:Arial, sans-serif;
+
+}
+
+
+/* Hero */
+
+.rewards-hero {
+
+  height:450px;
+
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)
+  ),
+  url("/images/hero.jpg");
+
+
+  background-size:cover;
+
+  background-position:center;
+
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+
+  text-align:center;
+
+  color:white;
+
+}
+
+
+
+.rewards-content h1 {
+
+  font-size:55px;
+
+}
+
+
+
+.rewards-content p {
+
+  font-size:20px;
+
+  max-width:650px;
+
+}
+
+
+
+.rewards-content button {
+
+  margin-top:25px;
+
+  padding:14px 35px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:#e91e63;
+
+  color:white;
+
+  cursor:pointer;
+
+}
+
+
+
+
+
+/* Sections */
+
+.rewards-intro,
+.points-section,
+.reward-benefits {
+
+  padding:60px 8%;
+
+  text-align:center;
+
+}
+
+
+
+.rewards-intro h2,
+.points-section h2,
+.reward-benefits h2 {
+
+  color:#e91e63;
+
+  font-size:32px;
+
+}
+
+
+
+
+
+/* Cards */
+
+.points-cards,
+.benefit-cards {
+
+ display:flex;
+
+ justify-content:center;
+
+ gap:30px;
+
+ flex-wrap:wrap;
+
+}
+
+
+
+.points-card,
+.benefit-card {
+
+ width:280px;
+
+ padding:30px;
+
+
+ background:white;
+
+ border-radius:15px;
+
+
+ box-shadow:
+ 0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.points-card h3,
+.benefit-card h3 {
+
+ color:#e91e63;
+
+}
+
+
+
+.points-card:hover,
+.benefit-card:hover {
+
+ transform:translateY(-8px);
+
+ transition:0.3s;
+
+}

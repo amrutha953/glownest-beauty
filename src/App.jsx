@@ -27,6 +27,13 @@ import StoreLocator from "./pages/StoreLocator";
 import Authenticity from "./pages/Authenticity";
 import Sustainability from "./pages/Sustainability";
 import Press from "./pages/Press";
+import CustomerCare from "./pages/CustomerCare";
+import Support from "./pages/Support";
+import GiftCards from "./pages/GiftCards";
+import Coupons from "./pages/Coupons";
+import BeautyTips from "./pages/BeautyTips";
+import Membership from "./pages/Membership";
+import Rewards from "./pages/Rewards";
 function App() {
   return (
     <>
@@ -68,6 +75,13 @@ function App() {
         <Route path="/authenticity" element={<Authenticity />} />
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/press" element={<Press />} />
+        <Route path="/customer-care" element={<CustomerCare />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/gift-cards" element={<GiftCards />} />
+        <Route path="/coupons" element={<Coupons />} />
+        <Route path="/beauty-tips" element={<BeautyTips />} />
+        <Route path="/membership" element={<Membership />} />
+        <Route path="/rewards" element={<Rewards />} />
       </Routes>
     </>
   );

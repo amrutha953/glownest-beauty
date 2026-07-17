@@ -1,0 +1,162 @@
+.coupons-page {
+
+  font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Hero */
+
+.coupons-hero {
+
+  height:450px;
+
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)
+  ),
+  url("/images/hero.jpg");
+
+
+  background-size:cover;
+
+  background-position:center;
+
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+
+  text-align:center;
+
+  color:white;
+
+}
+
+
+
+.coupons-content h1 {
+
+  font-size:55px;
+
+}
+
+
+
+.coupons-content p {
+
+  font-size:20px;
+
+  max-width:600px;
+
+}
+
+
+
+.coupons-content button {
+
+  margin-top:25px;
+
+  padding:14px 35px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:#e91e63;
+
+  color:white;
+
+  cursor:pointer;
+
+}
+
+
+
+
+
+/* Sections */
+
+.coupons-intro,
+.coupon-section,
+.coupon-benefits {
+
+  padding:60px 8%;
+
+  text-align:center;
+
+}
+
+
+
+.coupons-intro h2,
+.coupon-section h2,
+.coupon-benefits h2 {
+
+  color:#e91e63;
+
+  font-size:32px;
+
+}
+
+
+
+
+/* Cards */
+
+.coupon-cards,
+.benefit-cards {
+
+ display:flex;
+
+ justify-content:center;
+
+ gap:30px;
+
+ flex-wrap:wrap;
+
+}
+
+
+
+.coupon-card,
+.benefit-card {
+
+ width:280px;
+
+ padding:30px;
+
+ background:white;
+
+ border-radius:15px;
+
+ box-shadow:
+ 0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.coupon-card h3,
+.benefit-card h3 {
+
+ color:#e91e63;
+
+}
+
+
+
+.coupon-card:hover,
+.benefit-card:hover {
+
+ transform:translateY(-8px);
+
+ transition:0.3s;
+
+}

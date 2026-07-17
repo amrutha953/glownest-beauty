@@ -1,0 +1,146 @@
+.support-page {
+
+  font-family: Arial, sans-serif;
+
+}
+
+
+/* Hero */
+
+.support-hero {
+
+  height:450px;
+
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)
+  ),
+  url("/images/hero.jpg");
+
+
+  background-size:cover;
+
+  background-position:center;
+
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+
+  text-align:center;
+
+  color:white;
+
+}
+
+
+
+.support-content h1 {
+
+  font-size:55px;
+
+}
+
+
+
+.support-content p {
+
+  font-size:20px;
+
+  max-width:600px;
+
+}
+
+
+
+.support-content button {
+
+  margin-top:25px;
+
+  padding:14px 35px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:#e91e63;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+}
+
+
+
+
+/* Support Cards */
+
+
+.support-options {
+
+  padding:60px 8%;
+
+  text-align:center;
+
+}
+
+
+
+.support-options h2 {
+
+  color:#e91e63;
+
+  font-size:32px;
+
+  margin-bottom:40px;
+
+}
+
+
+
+.support-cards {
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:30px;
+
+  flex-wrap:wrap;
+
+}
+
+
+
+.support-card {
+
+  width:280px;
+
+  padding:30px;
+
+
+  background:white;
+
+  border-radius:15px;
+
+
+  box-shadow:
+  0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.support-card h3 {
+
+  color:#e91e63;
+
+}

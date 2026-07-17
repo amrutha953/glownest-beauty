@@ -1,0 +1,98 @@
+.customer-care-page {
+  font-family: Arial, sans-serif;
+}
+
+
+.care-hero {
+
+  height:350px;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)
+  ),
+  url("/images/customer-care.jpg");
+
+
+  background-size:cover;
+
+  background-position:center;
+
+  color:white;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+
+.care-hero h1 {
+
+  font-size:50px;
+
+}
+
+
+.care-options {
+
+  padding:60px 8%;
+
+  text-align:center;
+
+}
+
+
+.care-options h2 {
+
+  color:#e91e63;
+
+  font-size:32px;
+
+}
+
+
+
+.care-cards {
+
+ display:flex;
+
+ justify-content:center;
+
+ gap:25px;
+
+ flex-wrap:wrap;
+
+}
+
+
+
+.care-card {
+
+ width:280px;
+
+ padding:30px;
+
+ background:white;
+
+ border-radius:15px;
+
+ box-shadow:
+ 0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.care-card h3 {
+
+ color:#e91e63;
+
+}

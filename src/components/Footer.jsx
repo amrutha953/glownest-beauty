@@ -120,17 +120,17 @@ const Footer = () => {
 
           <h3>Customer Care</h3>
 
-          <a href="#">Support</a>
+          <Link to="/support">Support</Link>
 
-          <a href="#">Gift Cards</a>
+          <Link to="/gift-cards">Gift Cards</Link>
 
-          <a href="#">Coupons</a>
+          <Link to="/coupons">Coupons</Link>
 
-          <a href="#">Beauty Tips</a>
+          <Link to="/beauty-tips">Beauty Tips</Link>
 
-          <a href="#">Membership</a>
+          <Link to="/membership">Membership</Link>
 
-          <a href="#">Rewards</a>
+          <Link to="/rewards">Rewards</Link>
 
         </div>
 

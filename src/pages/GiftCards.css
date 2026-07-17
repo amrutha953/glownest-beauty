@@ -1,0 +1,161 @@
+.gift-page {
+
+  font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Hero */
+
+.gift-hero {
+
+  height:450px;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)
+  ),
+  url("/images/hero.jpg");
+
+
+  background-size:cover;
+
+  background-position:center;
+
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+
+  text-align:center;
+
+  color:white;
+
+}
+
+
+
+.gift-content h1 {
+
+  font-size:55px;
+
+}
+
+
+
+.gift-content p {
+
+  font-size:20px;
+
+  max-width:650px;
+
+}
+
+
+
+.gift-content button {
+
+  margin-top:25px;
+
+  padding:14px 35px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:#e91e63;
+
+  color:white;
+
+  cursor:pointer;
+
+}
+
+
+
+
+
+/* Sections */
+
+.gift-intro,
+.gift-options,
+.gift-benefits {
+
+  padding:60px 8%;
+
+  text-align:center;
+
+}
+
+
+
+.gift-intro h2,
+.gift-options h2,
+.gift-benefits h2 {
+
+  color:#e91e63;
+
+  font-size:32px;
+
+}
+
+
+
+
+/* Cards */
+
+.gift-cards,
+.benefit-cards {
+
+ display:flex;
+
+ justify-content:center;
+
+ gap:30px;
+
+ flex-wrap:wrap;
+
+}
+
+
+
+.gift-card,
+.benefit-card {
+
+ width:280px;
+
+ padding:30px;
+
+ background:white;
+
+ border-radius:15px;
+
+ box-shadow:
+ 0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.gift-card h3,
+.benefit-card h3 {
+
+ color:#e91e63;
+
+}
+
+
+
+.gift-card:hover,
+.benefit-card:hover {
+
+ transform:translateY(-8px);
+
+ transition:0.3s;
+
+}
