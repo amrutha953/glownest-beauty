@@ -108,9 +108,9 @@ const Footer = () => {
 
           <Link to="/shop/bodycare">Bodycare</Link>
 
-          <Link to="/shop/serum">Serums</Link>
+          <Link to="/serum">Serum</Link>
 
-          <Link to="/shop/perfume">Perfumes</Link>
+          <Link to="/shop/perfume">Perfume</Link>
 
         </div>
 

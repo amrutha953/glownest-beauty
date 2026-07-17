@@ -1,0 +1,306 @@
+.perfume-page {
+
+  font-family: Arial, sans-serif;
+
+}
+
+
+/* Hero */
+
+
+.perfume-hero {
+
+  height:500px;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.35)
+  ),
+  url("/images/perfume.jpg");
+
+
+  background-size:cover;
+
+  background-position:center;
+
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+
+  text-align:center;
+
+  color:white;
+
+}
+
+
+
+.perfume-content h1 {
+
+  font-size:55px;
+
+  margin-bottom:20px;
+
+}
+
+
+
+.perfume-content p {
+
+  font-size:20px;
+
+  max-width:600px;
+
+}
+
+
+
+.perfume-content button {
+
+  margin-top:25px;
+
+  padding:14px 35px;
+
+
+  border:none;
+
+  border-radius:30px;
+
+
+  background:#e91e63;
+
+  color:white;
+
+
+  cursor:pointer;
+
+  font-size:16px;
+
+}
+
+
+
+
+
+/* Intro */
+
+
+.perfume-intro {
+
+ padding:60px 10%;
+
+ text-align:center;
+
+}
+
+
+
+.perfume-intro h2 {
+
+ color:#e91e63;
+
+ font-size:35px;
+
+}
+
+
+
+
+
+/* Benefits */
+
+
+.perfume-benefits {
+
+ padding:60px 8%;
+
+ text-align:center;
+
+}
+
+
+
+.perfume-benefits h2 {
+
+ color:#e91e63;
+
+ margin-bottom:40px;
+
+}
+
+
+
+.perfume-cards {
+
+ display:flex;
+
+ justify-content:center;
+
+ gap:30px;
+
+ flex-wrap:wrap;
+
+}
+
+
+
+.perfume-box {
+
+ width:280px;
+
+ padding:30px;
+
+ background:white;
+
+ border-radius:15px;
+
+
+ box-shadow:
+ 0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.perfume-box h3 {
+
+ color:#e91e63;
+
+}
+/* PERFUME PART 2 */
+
+
+.perfume-types,
+.fragrance-notes,
+.choose-perfume,
+.perfume-reviews {
+
+  padding:60px 8%;
+  text-align:center;
+
+}
+
+
+.perfume-types h2,
+.fragrance-notes h2,
+.choose-perfume h2,
+.perfume-reviews h2 {
+
+  color:#e91e63;
+  font-size:32px;
+  margin-bottom:35px;
+
+}
+
+
+
+.perfume-type-cards,
+.notes-container,
+.choose-steps,
+.review-cards {
+
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+
+}
+
+
+
+.type-card,
+.note-box,
+.choose-steps div,
+.review-card {
+
+  width:280px;
+
+  padding:25px;
+
+  background:white;
+
+  border-radius:15px;
+
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.type-card h3,
+.note-box h3 {
+
+  color:#e91e63;
+
+}
+
+
+
+.choose-steps span {
+
+  display:inline-flex;
+
+  width:50px;
+  height:50px;
+
+  align-items:center;
+  justify-content:center;
+
+  background:#e91e63;
+
+  color:white;
+
+  border-radius:50%;
+
+  font-size:22px;
+
+}
+
+
+
+.perfume-cta {
+
+  text-align:center;
+
+  padding:70px 20px;
+
+  background:#ffe4ef;
+
+}
+
+
+
+.perfume-cta h2 {
+
+  color:#e91e63;
+
+  font-size:36px;
+
+}
+
+
+
+.perfume-cta button {
+
+  margin-top:20px;
+
+  padding:14px 35px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:#e91e63;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+}

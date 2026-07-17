@@ -1,0 +1,263 @@
+.serum-page {
+  font-family: Arial, sans-serif;
+}
+
+
+/* Hero */
+
+.serum-hero {
+
+  height: 500px;
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.35)
+  ),
+  url("/images/serum.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+  color:white;
+
+}
+
+
+.serum-content h1 {
+
+  font-size:55px;
+  margin-bottom:20px;
+
+}
+
+
+.serum-content p {
+
+  font-size:20px;
+  max-width:600px;
+
+}
+
+
+.serum-content button {
+
+  margin-top:25px;
+  padding:14px 35px;
+
+  border:none;
+  border-radius:30px;
+
+  background:#e91e63;
+  color:white;
+
+  font-size:16px;
+  cursor:pointer;
+
+}
+
+
+
+/* Intro */
+
+
+.serum-intro {
+
+ padding:60px 10%;
+ text-align:center;
+
+}
+
+
+.serum-intro h2 {
+
+ color:#e91e63;
+ font-size:35px;
+
+}
+
+
+
+/* Benefits */
+
+
+.serum-benefits {
+
+ padding:60px 8%;
+ text-align:center;
+
+}
+
+
+.serum-benefits h2 {
+
+ color:#e91e63;
+ margin-bottom:40px;
+
+}
+
+
+.serum-cards {
+
+ display:flex;
+ justify-content:center;
+ gap:30px;
+ flex-wrap:wrap;
+
+}
+
+
+.serum-box {
+
+ width:280px;
+ padding:30px;
+
+ background:white;
+
+ border-radius:15px;
+
+ box-shadow:
+ 0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+.serum-box h3 {
+
+ color:#e91e63;
+
+}
+/* SERUM PART 2 */
+
+
+.why-serum,
+.serum-types,
+.serum-routine,
+.serum-reviews {
+
+  padding:60px 8%;
+  text-align:center;
+
+}
+
+
+.why-serum h2,
+.serum-types h2,
+.serum-routine h2,
+.serum-reviews h2 {
+
+  color:#e91e63;
+  font-size:32px;
+  margin-bottom:35px;
+
+}
+
+
+.why-serum-cards,
+.types-cards,
+.routine-cards,
+.review-cards {
+
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+
+}
+
+
+
+.why-card,
+.type-card,
+.routine-card,
+.review-card {
+
+  width:280px;
+  padding:25px;
+
+  border-radius:15px;
+
+  background:white;
+
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.why-card h3,
+.type-card h3 {
+
+ color:#e91e63;
+
+}
+
+
+
+.routine-card span {
+
+ display:inline-flex;
+
+ width:50px;
+ height:50px;
+
+ align-items:center;
+ justify-content:center;
+
+ background:#e91e63;
+
+ color:white;
+
+ border-radius:50%;
+
+ font-size:22px;
+
+}
+
+
+
+.serum-cta {
+
+ text-align:center;
+
+ padding:70px 20px;
+
+ background:#ffe4ef;
+
+}
+
+
+
+.serum-cta h2 {
+
+ color:#e91e63;
+
+ font-size:36px;
+
+}
+
+
+
+.serum-cta button {
+
+ margin-top:20px;
+
+ padding:14px 35px;
+
+ border:none;
+
+ border-radius:30px;
+
+ background:#e91e63;
+
+ color:white;
+
+ cursor:pointer;
+
+ font-size:16px;
+
+}

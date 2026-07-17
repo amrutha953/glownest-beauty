@@ -55,7 +55,7 @@ function App() {
         <Route path="/shop/makeup" element={<Makeup />} />
         <Route path="/shop/haircare" element={<Haircare />} />
         <Route path="/shop/bodycare" element={<Bodycare />} />
-        <Route path="/shop/serum" element={<Serum />} />
+        <Route path="/serum" element={<Serum />} />
         <Route path="/shop/perfume" element={<Perfume />} />
         <Route path="/track-order" element={<TrackOrder />} />
         <Route path="/shipping-policy" element={<ShippingPolicy />} />
