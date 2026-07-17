@@ -1,0 +1,120 @@
+.press-page{
+    font-family:Poppins,sans-serif;
+    background:#fff;
+}
+
+.press-hero{
+    height:320px;
+    background:url("/images/hero.jpg") center/cover;
+    position:relative;
+}
+
+.press-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-align:center;
+}
+
+.press-overlay h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.press-overlay p{
+    font-size:18px;
+}
+
+.press-container{
+    padding:70px 10%;
+}
+
+.press-intro{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.press-intro h2{
+    color:#e91e63;
+    margin-bottom:20px;
+}
+
+.press-intro p{
+    color:#555;
+    line-height:1.8;
+}
+
+.press-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.press-card{
+    background:#fff7fb;
+    padding:30px;
+    border-radius:15px;
+    border-left:5px solid #e91e63;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.press-card span{
+    color:#999;
+    font-size:14px;
+}
+
+.press-card h3{
+    color:#e91e63;
+    margin:15px 0;
+}
+
+.press-card p{
+    color:#555;
+    line-height:1.8;
+}
+
+.media-contact{
+    margin-top:60px;
+    text-align:center;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.media-contact h2{
+    color:#e91e63;
+    margin-bottom:20px;
+}
+
+.media-contact p{
+    color:#555;
+    margin-bottom:20px;
+}
+
+.media-contact a{
+    color:#e91e63;
+    text-decoration:none;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.press-overlay h1{
+    font-size:34px;
+}
+
+.press-container{
+    padding:50px 20px;
+}
+
+.media-contact{
+    padding:25px;
+}
+
+}

@@ -1,0 +1,111 @@
+.store-page{
+    font-family:Poppins,sans-serif;
+    background:#fff;
+}
+
+.store-hero{
+    height:320px;
+    background:url("/images/hero.jpg") center/cover;
+    position:relative;
+}
+
+.store-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-align:center;
+}
+
+.store-overlay h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.store-overlay p{
+    font-size:18px;
+}
+
+.store-container{
+    padding:70px 10%;
+}
+
+.intro-card{
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.intro-card h2{
+    color:#e91e63;
+    margin-bottom:20px;
+}
+
+.intro-card p{
+    color:#555;
+    line-height:1.8;
+}
+
+.store-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.store-card{
+    background:#fff7fb;
+    padding:25px;
+    border-radius:15px;
+    border-left:5px solid #e91e63;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.store-card h3{
+    color:#e91e63;
+    margin-bottom:20px;
+}
+
+.store-card p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.store-card button{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    background:#e91e63;
+    color:#fff;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.store-card button:hover{
+    background:#c2185b;
+}
+
+@media(max-width:768px){
+
+.store-overlay h1{
+    font-size:34px;
+}
+
+.store-container{
+    padding:50px 20px;
+}
+
+.intro-card{
+    padding:25px;
+}
+
+}

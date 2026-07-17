@@ -60,17 +60,17 @@ const Footer = () => {
 
           <h3>About GlowNest</h3>
 
-          <Link to="/about">Our Story</Link>
+          <Link to="/our-story">Our Story</Link>
 
-          <a href="#">Careers</a>
+          <Link to="/careers">Careers</Link>
 
-          <a href="#">Store Locator</a>
+          <Link to="/store-locator">Store Locator</Link>
 
-          <a href="#">Authenticity</a>
+          <Link to="/authenticity">Authenticity</Link>
 
-          <a href="#">Sustainability</a>
+          <Link to="/sustainability">Sustainability</Link>
 
-          <a href="#">Press</a>
+          <Link to="/press">Press</Link>
 
         </div>
 
@@ -84,13 +84,13 @@ const Footer = () => {
 
           <Link to="/track-order">Track Order</Link>
 
-          <a href="#">Shipping Policy</a>
+          <Link to="/shipping-policy">Shipping Policy</Link>
 
-          <a href="#">Return Policy</a>
+          <Link to="/return-policy">Return Policy</Link>
 
-          <a href="#">Cancellation</a>
+          <Link to="/cancellation">Cancellation Policy</Link>
 
-          <a href="#">FAQ</a>
+          <Link to="/faq">FAQ</Link>
 
         </div>
 
