@@ -34,6 +34,8 @@ import Coupons from "./pages/Coupons";
 import BeautyTips from "./pages/BeautyTips";
 import Membership from "./pages/Membership";
 import Rewards from "./pages/Rewards";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 function App() {
   return (
     <>
@@ -82,6 +84,8 @@ function App() {
         <Route path="/beauty-tips" element={<BeautyTips />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/rewards" element={<Rewards />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaInstagram,
@@ -12,6 +12,17 @@ import {
 import "./Footer.css";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+const handleSubscribe = () => {
+  if (email.trim() === "") {
+    alert("Please enter your email address.");
+    return;
+  }
+
+  alert("🎉 Thank you for subscribing to GlowNest Beauty!");
+  setEmail("");
+};
   return (
     <>
       {/* ==========================
@@ -237,9 +248,11 @@ const Footer = () => {
           <input
             type="email"
             placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
-          <button>
+          <button onClick={handleSubscribe}>
             Subscribe
           </button>
 
@@ -255,9 +268,9 @@ const Footer = () => {
 
         <div className="footer-links">
 
-          <a href="#">Terms & Conditions</a>
+          <Link to="/terms">Terms & Conditions</Link>
 
-          <a href="#">Privacy Policy</a>
+          <Link to="/privacy">Privacy Policy</Link>
 
           <a href="#">Shipping Policy</a>
 
