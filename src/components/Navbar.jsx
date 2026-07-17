@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FiSearch,
   FiHeart,
@@ -112,6 +112,7 @@ const contactMenu = [
 ];
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const [shopOpen, setShopOpen] = useState(false);
   const [activeCategory, setActiveCategory] =
     useState("Skincare");
@@ -280,18 +281,29 @@ export default function Navbar() {
         {/* Icons */}
         <div className="nav-icons">
 
-          <FiSearch className="icon" />
+          <FiSearch
+            className="icon"
+            onClick={() => navigate("/search")}
+            style={{ cursor: "pointer" }}
+          />
 
-          <FiHeart className="icon" />
+          <FiHeart
+            className="icon"
+            onClick={() => navigate("/wishlist")}
+            style={{ cursor: "pointer" }}
+          />
 
-          <div className="cart-wrapper">
+          <div
+            className="cart-wrapper"
+            onClick={() => navigate("/cart")}
+            style={{ cursor: "pointer" }}
+          >
             <FiShoppingCart className="cart-icon" />
             <span className="cart-badge">2</span>
           </div>
 
-        </div>
-
-      </nav>
-    </>
+      </div>
+    </nav>
+   </> 
   );
 }

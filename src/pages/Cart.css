@@ -1,0 +1,162 @@
+.cart-page {
+  padding: 40px;
+  background: #fff5f8;
+  min-height: 80vh;
+}
+
+.cart-page h1 {
+  text-align: center;
+  color: #e91e63;
+  margin-bottom: 35px;
+}
+
+
+/* Main Container */
+
+.cart-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+/* Cart Items */
+
+.cart-items {
+  width: 60%;
+}
+
+
+.cart-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
+.item-details {
+  flex: 1;
+}
+
+
+.item-details h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+
+.item-details p {
+  color: #e91e63;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* Quantity */
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+
+.quantity button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #e91e63;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+/* Remove Button */
+
+.remove-btn {
+  background: #ffdddd;
+  color: red;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+/* Summary */
+
+.cart-summary {
+  width: 30%;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+.cart-summary h2 {
+  color: #e91e63;
+}
+
+
+.cart-summary p,
+.cart-summary h3 {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+
+.cart-summary h3 {
+  font-size: 22px;
+}
+
+
+/* Checkout */
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.checkout-btn:hover {
+  background: #c2185b;
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  .cart-container{
+    flex-direction: column;
+  }
+
+  .cart-items,
+  .cart-summary{
+    width:100%;
+  }
+
+}

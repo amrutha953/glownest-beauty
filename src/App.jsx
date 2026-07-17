@@ -36,6 +36,9 @@ import Membership from "./pages/Membership";
 import Rewards from "./pages/Rewards";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import Search from "./pages/Search";
+import Wishlist from "./pages/Wishlist";
+import Cart from "./pages/Cart";
 function App() {
   return (
     <>
@@ -86,6 +89,9 @@ function App() {
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );

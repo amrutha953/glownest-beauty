@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Serum.css";
+import { CartContext } from "../context/CartContext";
 
 const Serum = () => {
+
+  const { addToCart } = useContext(CartContext);
+
+  const serumProduct = {
+    id: 101,
+    name: "GlowNest Premium Serum",
+    price: 799,
+    image: "/images/serum.jpg",
+    quantity: 1
+  };
+
+  const handleAddToCart = () => {
+    addToCart(serumProduct);
+    alert("Serum added to cart 🛒");
+  };
   return (
     <div className="serum-page">
 
@@ -15,8 +31,8 @@ const Serum = () => {
             premium face serums made for every skin type.
           </p>
 
-          <button>
-            Shop Serum
+          <button onClick={handleAddToCart}>
+            Add Serum To Cart
           </button>
         </div>
       </section>
@@ -309,8 +325,8 @@ const Serum = () => {
         </p>
 
 
-        <button>
-          Explore Serums
+        <button onClick={handleAddToCart}>
+          Add Serum To Cart
         </button>
 
 
