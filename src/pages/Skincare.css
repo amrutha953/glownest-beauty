@@ -1,0 +1,360 @@
+/* ===========================
+   SKINCARE PAGE
+=========================== */
+
+.skincare-page{
+    font-family:"Poppins",sans-serif;
+    background:#fff;
+    color:#333;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.skin-hero{
+    height:420px;
+    background:url("/images/skincare.jpg") center center/cover no-repeat;
+    position:relative;
+}
+
+.skin-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.skin-overlay h1{
+    font-size:52px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.skin-overlay p{
+    max-width:700px;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.skin-overlay button{
+    background:#e91e63;
+    color:#fff;
+    border:none;
+    padding:15px 40px;
+    border-radius:30px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.skin-overlay button:hover{
+    background:#c2185b;
+    transform:translateY(-3px);
+}
+
+/* ===========================
+   INTRO
+=========================== */
+
+.skin-intro{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.skin-intro h2{
+    color:#e91e63;
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+.skin-intro p{
+    max-width:850px;
+    margin:auto;
+    line-height:1.9;
+    color:#555;
+    font-size:17px;
+}
+
+/* ===========================
+   PRODUCTS
+=========================== */
+
+.featured-products{
+    padding:20px 10% 80px;
+}
+
+.featured-products h2{
+    text-align:center;
+    color:#e91e63;
+    font-size:38px;
+    margin-bottom:45px;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.product-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.product-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+
+}
+
+.product-card img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+}
+
+.product-card h3{
+
+    margin:20px;
+
+    font-size:20px;
+
+}
+
+.product-card span{
+
+    display:block;
+
+    margin:0 20px 20px;
+
+    color:#e91e63;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.product-card button{
+
+    margin:0 20px 25px;
+
+    width:calc(100% - 40px);
+
+    padding:13px;
+
+    border:none;
+
+    background:#e91e63;
+
+    color:#fff;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.product-card button:hover{
+
+    background:#c2185b;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.skin-hero{
+    height:350px;
+}
+
+.skin-overlay h1{
+    font-size:34px;
+}
+
+.skin-overlay p{
+    font-size:16px;
+}
+
+.skin-intro,
+.featured-products{
+    padding:50px 20px;
+}
+
+}
+/* ===========================
+   BENEFITS
+=========================== */
+
+.skin-benefits{
+    padding:80px 10%;
+    background:#fff7fb;
+}
+
+.skin-benefits h2{
+    text-align:center;
+    color:#e91e63;
+    margin-bottom:45px;
+    font-size:38px;
+}
+
+.benefits-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.benefit-card{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.benefit-card:hover{
+    transform:translateY(-8px);
+}
+
+.benefit-icon{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.benefit-card h3{
+    color:#e91e63;
+    margin-bottom:15px;
+}
+
+.benefit-card p{
+    color:#555;
+    line-height:1.8;
+}
+
+/* ===========================
+   BRANDS
+=========================== */
+
+.skin-brands{
+    padding:80px 10%;
+}
+
+.skin-brands h2{
+    text-align:center;
+    color:#e91e63;
+    margin-bottom:40px;
+}
+
+.brands{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.brand{
+    padding:15px 35px;
+    border-radius:30px;
+    background:#e91e63;
+    color:#fff;
+    font-weight:600;
+}
+
+/* ===========================
+   REVIEWS
+=========================== */
+
+.skin-reviews{
+    padding:80px 10%;
+    background:#fff7fb;
+}
+
+.skin-reviews h2{
+    text-align:center;
+    color:#e91e63;
+    margin-bottom:45px;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.review-card{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.review-card p{
+    margin:20px 0;
+    line-height:1.8;
+}
+
+.review-card h4{
+    color:#e91e63;
+}
+
+/* ===========================
+   FAQ
+=========================== */
+
+.skin-faq{
+    padding:80px 10%;
+}
+
+.skin-faq h2{
+    text-align:center;
+    color:#e91e63;
+    margin-bottom:45px;
+}
+
+.faq-card{
+    background:#fff;
+    margin-bottom:25px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.faq-card h3{
+    color:#e91e63;
+    margin-bottom:15px;
+}
+
+.faq-card p{
+    color:#555;
+    line-height:1.8;
+}
