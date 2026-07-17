@@ -38,19 +38,33 @@ const Footer = () => {
 
           <div className="social-icons">
 
-            <a href="#">
-              <FaInstagram className="social-icon" />
-            </a>
+           <a
+             href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME"
+             target="_blank"
+             rel="noopener noreferrer"
+           >
+             <FaInstagram className="social-icon" />
+           </a>
 
-            <a href="#">
-              <FaFacebookF className="social-icon" />
-            </a>
 
-            <a href="#">
-              <FaWhatsapp className="social-icon" />
-            </a>
+           <a
+             href="https://www.facebook.com/YOUR_FACEBOOK_PAGE"
+             target="_blank"
+             rel="noopener noreferrer"
+          >
+             <FaFacebookF className="social-icon" />
+           </a>
 
-          </div>
+
+           <a
+             href="https://wa.me/9645264589"
+             target="_blank"
+             rel="noopener noreferrer"
+           >
+             <FaWhatsapp className="social-icon" />
+           </a>
+
+        </div>
 
         </div>
 
