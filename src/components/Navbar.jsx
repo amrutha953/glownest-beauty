@@ -10,6 +10,7 @@ import "./Navbar.css";
 const shopData = {
   Skincare: {
     image: "/images/skincare.jpg",
+    path: "/shop/skincare",
     sub: [
       "Cleanser",
       "Moisturizer",
@@ -22,6 +23,7 @@ const shopData = {
 
   Makeup: {
     image: "/images/makeup.jpg",
+    path: "/shop/makeup",
     sub: [
       "Foundation",
       "Lipstick",
@@ -34,6 +36,7 @@ const shopData = {
 
   Haircare: {
     image: "/images/haircare.jpg",
+    path: "/shop/haircare",
     sub: [
       "Shampoo",
       "Conditioner",
@@ -46,6 +49,7 @@ const shopData = {
 
   Bodycare: {
     image: "/images/bodycare.jpg",
+    path: "/shop/bodycare",
     sub: [
       "Body Wash",
       "Body Lotion",
@@ -58,6 +62,7 @@ const shopData = {
 
   Serum: {
     image: "/images/serum.jpg",
+    path: "/serum",
     sub: [
       "Vitamin C",
       "Niacinamide",
@@ -70,6 +75,7 @@ const shopData = {
 
   Perfume: {
     image: "/images/perfume.jpg",
+    path: "/shop/perfume",
     sub: [
       "Women",
       "Men",
@@ -81,16 +87,40 @@ const shopData = {
   },
 };
 
-const Navbar = () => {
-  const [shopOpen, setShopOpen] = useState(false);
+const offersMenu = [
+  { name: "Today's Deals", path: "/offers" },
+  { name: "Coupons", path: "/coupons" },
+  { name: "Membership", path: "/membership" },
+  { name: "Rewards", path: "/rewards" },
+];
 
+const aboutMenu = [
+  { name: "Our Story", path: "/our-story" },
+  { name: "Authenticity", path: "/authenticity" },
+  { name: "Sustainability", path: "/sustainability" },
+  { name: "Careers", path: "/careers" },
+  { name: "Press", path: "/press" },
+];
+
+const contactMenu = [
+  { name: "Contact Us", path: "/contact" },
+  { name: "Track Order", path: "/track-order" },
+  { name: "FAQ", path: "/faq" },
+  { name: "Shipping Policy", path: "/shipping-policy" },
+  { name: "Return Policy", path: "/return-policy" },
+  { name: "Privacy Policy", path: "/privacy" },
+];
+
+export default function Navbar() {
+  const [shopOpen, setShopOpen] = useState(false);
   const [activeCategory, setActiveCategory] =
     useState("Skincare");
 
-  return (
+  const [activeDropdown, setActiveDropdown] =
+    useState(null);
+      return (
     <>
       {/* TOP BAR */}
-
       <div className="top-slider">
         <div className="slider-track">
           <span>🚚 Free Delivery Above ₹999</span>
@@ -105,39 +135,33 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* NAVBAR */}
-
       <nav className="navbar">
 
-        {/* LOGO */}
-
+        {/* Logo */}
         <div className="nav-left">
           <Link to="/">
             <img
               src="/images/logo.png"
-              alt="GlowNest"
+              alt="GlowNest Beauty"
               className="logo"
             />
           </Link>
         </div>
 
-        {/* MENU */}
-
+        {/* Menu */}
         <ul className="nav-menu">
 
+          {/* SHOP */}
           <li
             className="menu-item"
             onMouseEnter={() => setShopOpen(true)}
             onMouseLeave={() => setShopOpen(false)}
           >
-            Shop
-                        {shopOpen && (
-              <div
-                className="mega-menu"
-                onMouseEnter={() => setShopOpen(true)}
-                onMouseLeave={() => setShopOpen(false)}
-              >
-                {/* LEFT SIDE */}
+            <Link to="/shop">Shop</Link>
+
+            {shopOpen && (
+              <div className="mega-menu">
+
                 <div className="mega-left">
                   {Object.keys(shopData).map((category) => (
                     <div
@@ -145,14 +169,15 @@ const Navbar = () => {
                       className={`mega-category ${
                         activeCategory === category ? "active" : ""
                       }`}
-                      onMouseEnter={() => setActiveCategory(category)}
+                      onMouseEnter={() =>
+                        setActiveCategory(category)
+                      }
                     >
                       {category}
                     </div>
                   ))}
                 </div>
 
-                {/* RIGHT SIDE */}
                 <div className="mega-right">
 
                   <div className="mega-image">
@@ -170,7 +195,7 @@ const Navbar = () => {
                       {shopData[activeCategory].sub.map((item) => (
                         <Link
                           key={item}
-                          to={`/shop/${activeCategory.toLowerCase()}`}
+                          to={shopData[activeCategory].path}
                           className="submenu-link"
                         >
                           {item}
@@ -179,8 +204,8 @@ const Navbar = () => {
                     </div>
 
                     <Link
-                      to={`/shop/${activeCategory.toLowerCase()}`}
                       className="shop-all-btn"
+                      to={shopData[activeCategory].path}
                     >
                       Shop All {activeCategory}
                     </Link>
@@ -188,26 +213,71 @@ const Navbar = () => {
                   </div>
 
                 </div>
+
               </div>
             )}
           </li>
 
-          <li className="menu-item">
+          {/* OFFERS */}
+          <li
+            className="menu-item"
+            onMouseEnter={() => setActiveDropdown("offers")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
             <Link to="/offers">Offers</Link>
+
+            {activeDropdown === "offers" && (
+              <div className="dropdown-menu">
+                {offersMenu.map((item) => (
+                  <Link key={item.name} to={item.path}>
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
           </li>
 
-          <li className="menu-item">
+          {/* ABOUT */}
+          <li
+            className="menu-item"
+            onMouseEnter={() => setActiveDropdown("about")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
             <Link to="/about">About</Link>
+
+            {activeDropdown === "about" && (
+              <div className="dropdown-menu">
+                {aboutMenu.map((item) => (
+                  <Link key={item.name} to={item.path}>
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
           </li>
 
-          <li className="menu-item">
+          {/* CONTACT */}
+          <li
+            className="menu-item"
+            onMouseEnter={() => setActiveDropdown("contact")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
             <Link to="/contact">Contact</Link>
+
+            {activeDropdown === "contact" && (
+              <div className="dropdown-menu">
+                {contactMenu.map((item) => (
+                  <Link key={item.name} to={item.path}>
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
           </li>
 
         </ul>
 
-        {/* RIGHT ICONS */}
-
+        {/* Icons */}
         <div className="nav-icons">
 
           <FiSearch className="icon" />
@@ -224,6 +294,4 @@ const Navbar = () => {
       </nav>
     </>
   );
-};
-
-export default Navbar;
+}
