@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FiSearch,
@@ -6,6 +6,8 @@ import {
   FiShoppingCart,
 } from "react-icons/fi";
 import "./Navbar.css";
+import { WishlistContext } from "../context/WishlistContext";
+import { CartContext } from "../context/CartContext";
 
 const shopData = {
   Skincare: {
@@ -113,6 +115,8 @@ const contactMenu = [
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const { cartItems } = useContext(CartContext);
+  const { wishlistItems } = useContext(WishlistContext);
   const [shopOpen, setShopOpen] = useState(false);
   const [activeCategory, setActiveCategory] =
     useState("Skincare");
@@ -287,11 +291,17 @@ export default function Navbar() {
             style={{ cursor: "pointer" }}
           />
 
-          <FiHeart
-            className="icon"
+          <div
+            className="wishlist-wrapper"
             onClick={() => navigate("/wishlist")}
             style={{ cursor: "pointer" }}
-          />
+         > 
+            <FiHeart className="icon" />
+
+            <span className="wishlist-badge">
+              {wishlistItems.length}
+            </span>
+          </div>
 
           <div
             className="cart-wrapper"
@@ -299,7 +309,9 @@ export default function Navbar() {
             style={{ cursor: "pointer" }}
           >
             <FiShoppingCart className="cart-icon" />
-            <span className="cart-badge">2</span>
+            <span className="cart-badge">
+              {cartItems.length}
+            </span>
           </div>
 
       </div>
