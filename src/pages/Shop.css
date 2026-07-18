@@ -117,3 +117,11 @@
 .wishlist-btn:hover {
   background: #ffe6ef;
 }
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-link:hover {
+  color: #e91e63;
+}

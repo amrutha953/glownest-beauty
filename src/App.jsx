@@ -39,6 +39,7 @@ import Privacy from "./pages/Privacy";
 import Search from "./pages/Search";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
+import ProductDetails from "./pages/ProductDetails";
 function App() {
   return (
     <>
@@ -92,6 +93,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
     </>
   );

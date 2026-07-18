@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import "./Shop.css";
 import { CartContext } from "../context/CartContext";
 import { WishlistContext } from "../context/WishlistContext";
@@ -53,7 +54,9 @@ export default function Shop() {
         {products.map((product) => (
           <div className="shop-card" key={product.id}>
             <div className="shop-image">
-              <img src={product.image} alt={product.name} />
+              <Link to={`/product/${product.id}`}>
+                <img src={product.image} alt={product.name} />
+              </Link>
               <button
                 className="wishlist-btn"
                 onClick={() => addToWishlist(product)}
@@ -63,7 +66,11 @@ export default function Shop() {
           </div>
 
           <div className="shop-info">
-            <h3>{product.name}</h3>
+            <h3>
+              <Link to={`/product/${product.id}`} className="product-link">
+                {product.name}
+              </Link>
+            </h3>
             <p className="price">₹{product.price}</p>
 
             <button
