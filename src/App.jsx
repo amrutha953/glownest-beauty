@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import HeroSlider from "./components/HeroSlider";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
@@ -40,63 +39,128 @@ import Search from "./pages/Search";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
+
+
 function App() {
+
   return (
     <>
+
       <Navbar />
 
+
       <Routes>
-        {/* Home */}
-        <Route
-          path="/"
-          element={
-            <>
-              <HeroSlider />
-              <Footer />
-            </>
-          }
+
+        {/* HOME */}
+        <Route 
+          path="/" 
+          element={<Home />} 
         />
 
-        {/* Main Pages */}
+
+        {/* MAIN PAGES */}
         <Route path="/about" element={<About />} />
+
         <Route path="/contact" element={<Contact />} />
+
         <Route path="/offers" element={<Offers />} />
+
         <Route path="/shop" element={<Shop />} />
 
-        {/* Shop Categories */}
+
+        {/* SHOP CATEGORIES */}
+
         <Route path="/shop/skincare" element={<Skincare />} />
+
         <Route path="/shop/makeup" element={<Makeup />} />
+
         <Route path="/shop/haircare" element={<Haircare />} />
+
         <Route path="/shop/bodycare" element={<Bodycare />} />
+
         <Route path="/serum" element={<Serum />} />
+
         <Route path="/shop/perfume" element={<Perfume />} />
+
+
+        {/* HELP PAGES */}
+
         <Route path="/track-order" element={<TrackOrder />} />
+
         <Route path="/shipping-policy" element={<ShippingPolicy />} />
+
         <Route path="/return-policy" element={<ReturnPolicy />} />
+
         <Route path="/cancellation" element={<Cancellation />} />
+
         <Route path="/faq" element={<FAQ />} />
+
+
+        {/* ABOUT LINKS */}
+
         <Route path="/our-story" element={<OurStory />} />
+
         <Route path="/careers" element={<Careers />} />
+
         <Route path="/store-locator" element={<StoreLocator />} />
+
         <Route path="/authenticity" element={<Authenticity />} />
+
         <Route path="/sustainability" element={<Sustainability />} />
+
         <Route path="/press" element={<Press />} />
+
+
+        {/* CUSTOMER */}
+
         <Route path="/customer-care" element={<CustomerCare />} />
+
         <Route path="/support" element={<Support />} />
+
         <Route path="/gift-cards" element={<GiftCards />} />
+
         <Route path="/coupons" element={<Coupons />} />
+
         <Route path="/beauty-tips" element={<BeautyTips />} />
+
         <Route path="/membership" element={<Membership />} />
+
         <Route path="/rewards" element={<Rewards />} />
+
+
+        {/* POLICY */}
+
         <Route path="/terms" element={<Terms />} />
+
         <Route path="/privacy" element={<Privacy />} />
+
+
+        {/* USER PAGES */}
+
         <Route path="/search" element={<Search />} />
+
         <Route path="/wishlist" element={<Wishlist />} />
+
         <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+
+
+        {/* PRODUCT */}
+
+        <Route 
+          path="/product/:id" 
+          element={<ProductDetails />} 
+        />
+
+
       </Routes>
+
+
+      <Footer />
+
+
     </>
   );
 }
+
 
 export default App;

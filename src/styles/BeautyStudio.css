@@ -1,0 +1,226 @@
+.beauty-studio-section {
+
+  padding:80px 8%;
+  background:#fff7fa;
+
+}
+
+
+
+/* Heading */
+
+.studio-heading {
+
+  text-align:center;
+  max-width:700px;
+  margin:auto;
+
+}
+
+
+.studio-heading span {
+
+  display:block;
+
+  font-size:42px;
+
+  font-weight:800;
+
+  color:#e91e63;
+
+  letter-spacing:2px;
+
+  margin-bottom:10px;
+
+}
+
+
+.studio-heading h2 {
+
+  font-size:34px;
+
+  font-weight:700;
+
+  color:#222;
+
+  margin:10px 0 20px;
+
+}
+
+
+.studio-heading p {
+
+  font-size:18px;
+  color:#666;
+
+}
+
+
+
+
+/* Banner */
+
+
+.studio-banner {
+
+  margin-top:50px;
+
+  background:white;
+
+  border-radius:30px;
+
+  padding:40px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+
+
+.banner-text {
+
+  max-width:500px;
+
+}
+
+
+.banner-text h3 {
+
+  font-size:30px;
+  color:#e91e63;
+
+}
+
+
+.banner-text p {
+
+  margin:20px 0;
+  color:#555;
+
+}
+
+
+
+.banner-text button {
+
+  background:#e91e63;
+
+  color:white;
+
+  border:none;
+
+  padding:14px 35px;
+
+  border-radius:30px;
+
+  cursor:pointer;
+
+}
+
+
+
+
+.glow-circle {
+
+  width:180px;
+
+  height:180px;
+
+  border-radius:50%;
+
+  background:#ffe1ec;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:70px;
+
+}
+
+
+
+
+/* Cards */
+
+
+.choose-title {
+
+ text-align:center;
+
+ margin:60px 0 30px;
+
+ font-size:30px;
+
+}
+
+
+
+.beauty-cards {
+
+ display:grid;
+
+ grid-template-columns:repeat(4,1fr);
+
+ gap:25px;
+
+}
+
+
+
+.beauty-card {
+
+ background:white;
+
+ padding:30px;
+
+ border-radius:25px;
+
+ text-align:center;
+
+ transition:.4s;
+
+ box-shadow:0 8px 20px rgba(0,0,0,0.06);
+
+}
+
+
+
+.beauty-card:hover {
+
+ transform:translateY(-12px);
+
+}
+
+
+
+.beauty-card span {
+
+ font-size:40px;
+
+}
+
+
+.beauty-card h4 {
+
+ font-size:22px;
+
+ color:#e91e63;
+
+}
+
+
+
+.beauty-card p {
+
+ color:#666;
+
+}
