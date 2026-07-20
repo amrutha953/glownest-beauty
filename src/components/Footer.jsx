@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  FaInstagram,
-  FaFacebookF,
-  FaWhatsapp,
   FaCcVisa,
   FaCcMastercard,
-  FaGooglePlay,
-  FaApple,
 } from "react-icons/fa";
 import "./Footer.css";
 
@@ -49,33 +44,43 @@ const handleSubscribe = () => {
 
           <div className="social-icons">
 
-           <a
-             href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             <FaInstagram className="social-icon" />
-           </a>
+  <a
+    href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/images/icons/instagram.png"
+      alt="Instagram"
+      className="social-img"
+    />
+  </a>
 
+  <a
+    href="https://www.facebook.com/YOUR_FACEBOOK_PAGE"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/images/icons/facebook.png"
+      alt="Facebook"
+      className="social-img"
+    />
+  </a>
 
-           <a
-             href="https://www.facebook.com/YOUR_FACEBOOK_PAGE"
-             target="_blank"
-             rel="noopener noreferrer"
-          >
-             <FaFacebookF className="social-icon" />
-           </a>
+  <a
+    href="https://wa.me/9645264589"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/images/icons/whatsapp.png"
+      alt="WhatsApp"
+      className="social-img"
+    />
+  </a>
 
-
-           <a
-             href="https://wa.me/9645264589"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             <FaWhatsapp className="social-icon" />
-           </a>
-
-        </div>
+</div>
 
         </div>
 
@@ -161,74 +166,109 @@ const handleSubscribe = () => {
 
         {/* DOWNLOAD APP */}
 
-        <div className="footer-column">
+<div className="footer-column download-app">
 
-          <h3>Download App</h3>
+  <h3>Download App</h3>
 
-          <button className="store-btn">
-            <FaGooglePlay />
-            <span>Google Play</span>
-          </button>
+  <p className="app-text">
+    Get the GlowNest Beauty app for a better shopping experience.
+  </p>
 
-          <button className="store-btn">
-            <FaApple />
-            <span>App Store</span>
-          </button>
 
-          <div className="payment-icons">
+  <div className="app-icons">
 
-            <FaCcVisa />
+    <a
+      href="https://play.google.com/store"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="/images/icons/google-play.png"
+        alt="Google Play"
+        className="app-icon"
+      />
+    </a>
 
-            <FaCcMastercard />
 
-          </div>
+    <a
+      href="https://apps.apple.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="/images/icons/app-store.png"
+        alt="App Store"
+        className="app-icon"
+      />
+    </a>
 
-        </div>
+  </div>
+
+
+  <p className="payment-title">
+    Secure Payments
+  </p>
+
+
+  <div className="payment-icons">
+
+  <a
+    href="https://www.visa.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/images/icons/visa.png"
+      alt="Visa"
+      className="payment-logo"
+    />
+  </a>
+
+
+  <a
+    href="https://www.mastercard.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/images/icons/mastercard.png"
+      alt="Mastercard"
+      className="payment-logo"
+    />
+  </a>
+
+</div>
+
+</div>
 
       </footer>
             {/* ==========================
-          FEATURES SECTION
-      ========================== */}
+    FEATURES SECTION
+========================== */}
 
-      <section className="footer-features">
+<section className="footer-features">
 
-        <div className="feature-card">
-          <div className="feature-icon">🚚</div>
+  <div className="feature-card">
+    <h4>FREE SHIPPING</h4>
+    <p>On all orders above ₹999</p>
+  </div>
 
-          <div>
-            <h4>FREE SHIPPING</h4>
-            <p>On Orders Above ₹999</p>
-          </div>
-        </div>
+  <div className="feature-card">
+    <h4>EASY RETURNS</h4>
+    <p>15-Day Return Policy</p>
+  </div>
 
-        <div className="feature-card">
-          <div className="feature-icon">↩️</div>
+  <div className="feature-card">
+    <h4>AUTHENTIC PRODUCTS</h4>
+    <p>100% Genuine Beauty Products</p>
+  </div>
 
-          <div>
-            <h4>EASY RETURNS</h4>
-            <p>15 Day Return Policy</p>
-          </div>
-        </div>
+  <div className="feature-card">
+    <h4>SECURE PAYMENT</h4>
+    <p>Safe & Secure Checkout</p>
+  </div>
 
-        <div className="feature-card">
-          <div className="feature-icon">✔️</div>
-
-          <div>
-            <h4>100% GENUINE</h4>
-            <p>Authentic Products</p>
-          </div>
-        </div>
-
-        <div className="feature-card">
-          <div className="feature-icon">💖</div>
-
-          <div>
-            <h4>PREMIUM BRANDS</h4>
-            <p>Top Beauty Collections</p>
-          </div>
-        </div>
-
-      </section>
+</section>
 
       {/* ==========================
           NEWSLETTER
