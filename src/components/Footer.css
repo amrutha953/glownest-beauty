@@ -431,3 +431,66 @@
 .payment-logo:hover {
   transform:scale(1.1);
 }
+/* SOCIAL ICON ANIMATION */
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: 0.4s ease;
+}
+
+
+/* Hover effect */
+
+.footer-social a:hover {
+  transform: translateY(-8px) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(233,30,99,0.4);
+}
+/* ==========================
+   SOCIAL ICON WAVE MOTION
+========================== */
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+.social-icons a {
+  animation: waveMove 2.5s ease-in-out infinite;
+}
+
+
+.social-icons a:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.social-icons a:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.social-icons a:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+
+@keyframes waveMove {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
