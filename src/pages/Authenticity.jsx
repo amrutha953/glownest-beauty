@@ -34,28 +34,28 @@ const Authenticity = () => {
         <div className="auth-grid">
 
           <div className="auth-box">
-            <h3>✅ 100% Genuine Products</h3>
+            <h3>100% Genuine Products</h3>
             <p>
               Every item is carefully verified before reaching our customers.
             </p>
           </div>
 
           <div className="auth-box">
-            <h3>🏆 Trusted Brand Partners</h3>
+            <h3>Trusted Brand Partners</h3>
             <p>
               We collaborate only with authorized manufacturers and suppliers.
             </p>
           </div>
 
           <div className="auth-box">
-            <h3>🔒 Safe Shopping</h3>
+            <h3>Safe Shopping</h3>
             <p>
               Secure payments and quality checks ensure a worry-free experience.
             </p>
           </div>
 
           <div className="auth-box">
-            <h3>📦 Quality Inspection</h3>
+            <h3>Quality Inspection</h3>
             <p>
               Every order is inspected before shipping to maintain product
               quality and freshness.

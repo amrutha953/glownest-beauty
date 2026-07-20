@@ -61,7 +61,7 @@ const Coupons = () => {
 
           <div className="coupon-card">
 
-            <h3>💖 GLOW20</h3>
+            <h3>GLOW20</h3>
 
             <h4>20% OFF</h4>
 
@@ -75,7 +75,7 @@ const Coupons = () => {
 
           <div className="coupon-card">
 
-            <h3>✨ FIRST50</h3>
+            <h3>FIRST50</h3>
 
             <h4>₹50 OFF</h4>
 
@@ -89,7 +89,7 @@ const Coupons = () => {
 
           <div className="coupon-card">
 
-            <h3>🌸 BEAUTY30</h3>
+            <h3>BEAUTY30</h3>
 
             <h4>30% OFF</h4>
 
@@ -120,7 +120,6 @@ const Coupons = () => {
 
           <div className="benefit-card">
 
-            🎁
 
             <h3>Save Money</h3>
 
@@ -134,7 +133,6 @@ const Coupons = () => {
 
           <div className="benefit-card">
 
-            🛍️
 
             <h3>More Shopping</h3>
 
@@ -148,7 +146,6 @@ const Coupons = () => {
 
           <div className="benefit-card">
 
-            ⭐
 
             <h3>Special Deals</h3>
 

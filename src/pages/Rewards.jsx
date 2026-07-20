@@ -62,7 +62,7 @@ const Rewards = () => {
 
           <div className="points-card">
 
-            <h3>🛍️ Shop Products</h3>
+            <h3>Shop Products</h3>
 
             <p>
               Earn points on every GlowNest purchase.
@@ -74,7 +74,7 @@ const Rewards = () => {
 
           <div className="points-card">
 
-            <h3>⭐ Write Reviews</h3>
+            <h3>Write Reviews</h3>
 
             <p>
               Share your experience and collect rewards.
@@ -86,7 +86,7 @@ const Rewards = () => {
 
           <div className="points-card">
 
-            <h3>🎁 Special Events</h3>
+            <h3>Special Events</h3>
 
             <p>
               Get bonus points during special offers.
@@ -115,7 +115,6 @@ const Rewards = () => {
 
           <div className="benefit-card">
 
-            💖
 
             <h3>Exclusive Discounts</h3>
 
@@ -129,7 +128,6 @@ const Rewards = () => {
 
           <div className="benefit-card">
 
-            ✨
 
             <h3>Premium Offers</h3>
 
@@ -143,7 +141,6 @@ const Rewards = () => {
 
           <div className="benefit-card">
 
-            👑
 
             <h3>Special Rewards</h3>
 

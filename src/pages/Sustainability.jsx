@@ -35,7 +35,7 @@ const Sustainability = () => {
         <div className="sustain-grid">
 
           <div className="sustain-box">
-            <h3>🌱 Eco-Friendly Packaging</h3>
+            <h3>Eco-Friendly Packaging</h3>
             <p>
               We encourage recyclable and reusable packaging materials whenever
               possible.
@@ -43,7 +43,7 @@ const Sustainability = () => {
           </div>
 
           <div className="sustain-box">
-            <h3>🐰 Cruelty-Free Beauty</h3>
+            <h3>Cruelty-Free Beauty</h3>
             <p>
               We support brands that avoid animal testing and follow ethical
               manufacturing practices.
@@ -51,7 +51,7 @@ const Sustainability = () => {
           </div>
 
           <div className="sustain-box">
-            <h3>♻ Responsible Sourcing</h3>
+            <h3>Responsible Sourcing</h3>
             <p>
               Products are sourced from trusted suppliers who value
               environmental responsibility.
@@ -59,7 +59,7 @@ const Sustainability = () => {
           </div>
 
           <div className="sustain-box">
-            <h3>🌍 Reducing Carbon Footprint</h3>
+            <h3>Reducing Carbon Footprint</h3>
             <p>
               We continuously improve logistics and operations to reduce
               emissions and waste.

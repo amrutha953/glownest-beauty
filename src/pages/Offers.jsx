@@ -33,7 +33,7 @@ export default function Offers() {
     <div className="offers-page">
 
       <section className="offers-hero">
-        <h1>🎉 Today's Beauty Deals</h1>
+        <h1> Today's Beauty Deals</h1>
         <p>
           Discover amazing discounts on your favorite beauty products.
         </p>

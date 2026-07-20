@@ -62,7 +62,7 @@ const Membership = () => {
 
           <div className="membership-card">
 
-            <h3>💎 Exclusive Discounts</h3>
+            <h3>Exclusive Discounts</h3>
 
             <p>
               Enjoy special member-only offers
@@ -75,7 +75,7 @@ const Membership = () => {
 
           <div className="membership-card">
 
-            <h3>🚀 Early Access</h3>
+            <h3>Early Access</h3>
 
             <p>
               Get first access to new launches
@@ -88,7 +88,7 @@ const Membership = () => {
 
           <div className="membership-card">
 
-            <h3>⭐ Reward Points</h3>
+            <h3>Reward Points</h3>
 
             <p>
               Earn points every time you shop
@@ -119,7 +119,7 @@ const Membership = () => {
 
           <div className="plan-card">
 
-            <h3>✨ Basic</h3>
+            <h3>Basic</h3>
 
             <h4>₹499 / Year</h4>
 
@@ -133,7 +133,7 @@ const Membership = () => {
 
           <div className="plan-card featured">
 
-            <h3>👑 Premium</h3>
+            <h3>Premium</h3>
 
             <h4>₹999 / Year</h4>
 
@@ -147,7 +147,7 @@ const Membership = () => {
 
           <div className="plan-card">
 
-            <h3>💖 Luxury</h3>
+            <h3>Luxury</h3>
 
             <h4>₹1999 / Year</h4>
 

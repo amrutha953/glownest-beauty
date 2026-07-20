@@ -34,22 +34,22 @@ const Careers = () => {
         <div className="jobs-grid">
 
           <div className="job-card">
-            <h3>💻 Frontend Developer</h3>
+            <h3>Frontend Developer</h3>
             <p>Build beautiful, responsive user interfaces using modern web technologies.</p>
           </div>
 
           <div className="job-card">
-            <h3>🎨 UI/UX Designer</h3>
+            <h3>UI/UX Designer</h3>
             <p>Create engaging designs and improve the customer shopping experience.</p>
           </div>
 
           <div className="job-card">
-            <h3>📦 Operations Executive</h3>
+            <h3>Operations Executive</h3>
             <p>Manage order processing, logistics, and inventory operations.</p>
           </div>
 
           <div className="job-card">
-            <h3>📞 Customer Support</h3>
+            <h3>Customer Support</h3>
             <p>Assist customers with orders, returns, and product-related queries.</p>
           </div>
 

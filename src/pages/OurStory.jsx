@@ -38,7 +38,7 @@ const OurStory = () => {
         <div className="story-grid">
 
           <div className="story-box">
-            <h3>🌸 Our Mission</h3>
+            <h3>Our Mission</h3>
             <p>
               To inspire confidence by providing authentic beauty products,
               exceptional service, and an enjoyable shopping experience.
@@ -46,7 +46,7 @@ const OurStory = () => {
           </div>
 
           <div className="story-box">
-            <h3>👁 Our Vision</h3>
+            <h3>Our Vision</h3>
             <p>
               To become one of India's most trusted online beauty destinations,
               known for innovation, quality, and customer satisfaction.
@@ -54,7 +54,7 @@ const OurStory = () => {
           </div>
 
           <div className="story-box">
-            <h3>💖 Our Values</h3>
+            <h3>Our Values</h3>
             <ul>
               <li>Customer First</li>
               <li>Authentic Products</li>
@@ -65,7 +65,7 @@ const OurStory = () => {
           </div>
 
           <div className="story-box">
-            <h3>✨ Why Choose GlowNest?</h3>
+            <h3>Why Choose GlowNest?</h3>
             <ul>
               <li>100% Genuine Products</li>
               <li>Secure Payments</li>
