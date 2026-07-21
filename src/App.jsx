@@ -39,6 +39,7 @@ import Search from "./pages/Search";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
+import DrySkin from "./pages/DrySkin";
 
 
 function App() {
@@ -150,6 +151,10 @@ function App() {
           path="/product/:id" 
           element={<ProductDetails />} 
         />
+        <Route
+          path="/dry-skin"
+          element={<DrySkin />}
+       />
 
 
       </Routes>

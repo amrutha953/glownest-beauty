@@ -1,12 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/BeautyStudio.css";
 
 function BeautyStudio() {
+  const navigate = useNavigate();
   return (
     <section className="beauty-studio-section">
 
       {/* Heading */}
-
       <div className="studio-heading">
 
         <span>GlowNest Beauty Studio</span>
@@ -22,12 +23,10 @@ function BeautyStudio() {
 
       </div>
 
-
-
       {/* Skin Analysis Banner */}
-
       <div className="studio-banner">
 
+        {/* Left Side */}
         <div className="banner-text">
 
           <h3>
@@ -35,30 +34,30 @@ function BeautyStudio() {
           </h3>
 
           <p>
-            Take our beauty consultation and discover
+            Take our AI-powered beauty consultation and discover
             products that match your skin type.
           </p>
 
-
-          <button>
-            Start Skin Analysis
+          <button
+            onClick={() => alert("Beauty Analysis feature coming soon!")}
+         >
+            Start Your Beauty Analysis
           </button>
 
         </div>
 
-
+        {/* Right Side */}
         <div className="banner-image">
 
-          <div className="glow-circle">
-            
-          </div>
+          <img
+            src="/images/beauty-studio.jpg"
+            alt="Beauty Studio"
+            className="beauty-image"
+          />
 
         </div>
 
       </div>
-
-
-
 
       {/* Skin Cards */}
 
@@ -66,80 +65,56 @@ function BeautyStudio() {
         Choose Your Skin Type
       </h3>
 
-
       <div className="beauty-cards">
+<div
+  className="beauty-card"
+  onClick={() => navigate("/dry-skin")}
+>
+  <h4>Dry Skin</h4>
 
+  <p>
+    Hydration focused care for soft,
+    healthy and glowing skin.
+  </p>
+</div>
 
-        <div className="beauty-card">
+<div
+  className="beauty-card"
+  onClick={() => alert("Oily Skin products coming soon!")}
+>
+  <h4>Oily Skin</h4>
 
-          <span></span>
+  <p>
+    Balance excess oil and maintain
+    fresh looking skin.
+  </p>
+</div>
 
-          <h4>
-            Dry Skin
-          </h4>
+<div
+  className="beauty-card"
+  onClick={() => alert("Sensitive Skin products coming soon!")}
+>
+  <h4>Sensitive Skin</h4>
 
-          <p>
-            Hydration focused care for soft,
-            healthy and glowing skin.
-          </p>
+  <p>
+    Gentle skincare solutions for
+    delicate skin.
+  </p>
+</div>
 
-        </div>
+<div
+  className="beauty-card"
+  onClick={() => alert("Combination Skin products coming soon!")}
+>
+  <h4>Combination Skin</h4>
 
-
-
-        <div className="beauty-card">
-
-          <span></span>
-
-          <h4>
-            Oily Skin
-          </h4>
-
-          <p>
-            Balance excess oil and maintain
-            fresh looking skin.
-          </p>
-
-        </div>
-
-
-
-
-        <div className="beauty-card">
-
-          <span></span>
-
-          <h4>
-            Sensitive Skin
-          </h4>
-
-          <p>
-            Gentle skincare solutions for
-            delicate skin.
-          </p>
-
-        </div>
-
-
-
-        <div className="beauty-card">
-
-          <span></span>
-
-          <h4>
-            Combination Skin
-          </h4>
-
-          <p>
-            Customized care for balanced
-            skin needs.
-          </p>
-
-        </div>
-
+  <p>
+    Customized care for balanced
+    skin needs.
+  </p>
+</div>
 
       </div>
-
 
     </section>
   );
