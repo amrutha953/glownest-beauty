@@ -80,7 +80,7 @@ function BeautyStudio() {
 
 <div
   className="beauty-card"
-  onClick={() => alert("Oily Skin products coming soon!")}
+  onClick={() => navigate("/oily-skin")}
 >
   <h4>Oily Skin</h4>
 
@@ -92,7 +92,7 @@ function BeautyStudio() {
 
 <div
   className="beauty-card"
-  onClick={() => alert("Sensitive Skin products coming soon!")}
+  onClick={() =>navigate("/sensitive-skin")}
 >
   <h4>Sensitive Skin</h4>
 
@@ -104,7 +104,7 @@ function BeautyStudio() {
 
 <div
   className="beauty-card"
-  onClick={() => alert("Combination Skin products coming soon!")}
+  onClick={() => navigate("/combination-skin")}
 >
   <h4>Combination Skin</h4>
 

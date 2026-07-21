@@ -40,6 +40,7 @@ import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
 import DrySkin from "./pages/DrySkin";
+import OilySkin from "./pages/OilySkin";
 
 
 function App() {
@@ -154,7 +155,12 @@ function App() {
         <Route
           path="/dry-skin"
           element={<DrySkin />}
-       />
+        />
+
+        <Route
+          path="/oily-skin"
+          element={<OilySkin />}
+        />
 
 
       </Routes>

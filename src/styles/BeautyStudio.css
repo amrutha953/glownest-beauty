@@ -321,3 +321,6 @@
   z-index: 1;
 
 }
+.beauty-card{
+    cursor:pointer;
+}
