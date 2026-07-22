@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 import "./CombinationSkin.css";
 
 function CombinationSkin(){
 
 const {addToCart}=useContext(CartContext);
+const { addToWishlist } = useContext(WishlistContext);
 
 
 return(
@@ -323,7 +325,7 @@ Controls oil and balances skin.
 <button
 onClick={()=>addToCart({
 
-id:401,
+id:601,
 name:"Niacinamide Serum",
 price:699,
 image:"/images/products/niacinamide-serum.jpg"
@@ -331,6 +333,19 @@ image:"/images/products/niacinamide-serum.jpg"
 })}
 >
 Add To Cart
+</button>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:601,
+name:"Combination Skin Serum",
+price:699,
+image:"/images/products/combination-serum.jpg"
+})
+}
+>
+♡
 </button>
 
 
@@ -367,7 +382,7 @@ Keeps skin hydrated without heaviness.
 <button
 onClick={()=>addToCart({
 
-id:402,
+id:602,
 name:"Hydrating Moisturizer",
 price:599,
 image:"/images/products/hydrating-moisturizer.jpg"
@@ -375,6 +390,19 @@ image:"/images/products/hydrating-moisturizer.jpg"
 })}
 >
 Add To Cart
+</button>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:602,
+name:"Balance Moisturizer",
+price:599,
+image:"/images/products/combination-moisturizer.jpg"
+})
+}
+>
+♡
 </button>
 
 
@@ -411,7 +439,7 @@ Cleans skin while maintaining moisture.
 <button
 onClick={()=>addToCart({
 
-id:403,
+id:603,
 name:"Gentle Cleanser",
 price:499,
 image:"/images/products/gentle-cleanser.jpg"
@@ -419,6 +447,19 @@ image:"/images/products/gentle-cleanser.jpg"
 })}
 >
 Add To Cart
+</button>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:603,
+name:"Gentle Face Cleanser",
+price:499,
+image:"/images/products/combination-cleanser.jpg"
+})
+}
+>
+♡
 </button>
 
 

@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 import "./DrySkin.css";
 
 function DrySkin() {
   const { addToCart } = useContext(CartContext);
+  const { addToWishlist } = useContext(WishlistContext);
 
   return (
 
@@ -353,6 +355,19 @@ for soft and glowing skin.
 <div className="product-price">
 ₹699
 </div>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:301,
+name:"Hydrating Serum",
+price:699,
+image:"/images/products/hydrating-serum.jpg"
+})
+}
+>
+♡
+</button>
 
 
 <button
@@ -397,6 +412,19 @@ long-lasting moisture.
 <div className="product-price">
 ₹599
 </div>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:302,
+name:"Ceramide Moisturizer",
+price:599,
+image:"/images/products/ceramide-moisturizer.jpg"
+})
+}
+>
+♡
+</button>
 
 
 <button
@@ -442,6 +470,19 @@ natural moisture.
 <div className="product-price">
 ₹499
 </div>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:303,
+name:"Gentle Cleanser",
+price:499,
+image:"/images/products/gentle-cleanser.jpg"
+})
+}
+>
+♡
+</button>
 
 
 <button

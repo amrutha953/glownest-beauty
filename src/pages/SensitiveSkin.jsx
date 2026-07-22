@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 import "./SensitiveSkin.css";
 
 function SensitiveSkin() {
 
   const { addToCart } = useContext(CartContext);
+  const {addToWishlist}=useContext(WishlistContext);
 
   return (
 
@@ -281,7 +283,7 @@ the skin barrier.
 <button
 onClick={()=>
 addToCart({
-id:301,
+id:501,
 name:"Centella Serum",
 price:699,
 image:"/images/products/centella-serum.jpg"
@@ -289,6 +291,19 @@ image:"/images/products/centella-serum.jpg"
 }
 >
 Add To Cart
+</button>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:501,
+name:"Centella Serum",
+price:699,
+image:"/images/products/centella-serum.jpg"
+})
+}
+>
+♡
 </button>
 
 </div>
@@ -316,7 +331,7 @@ sensitive skin.
 <button
 onClick={()=>
 addToCart({
-id:302,
+id:502,
 name:"Barrier Cream",
 price:599,
 image:"/images/products/barrier-cream.jpg"
@@ -324,6 +339,19 @@ image:"/images/products/barrier-cream.jpg"
 }
 >
 Add To Cart
+</button>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:502,
+name:"Barrier Cream",
+price:599,
+image:"/images/products/barrier-cream.jpg"
+})
+}
+>
+♡
 </button>
 
 </div>
@@ -351,7 +379,7 @@ natural moisture.
 <button
 onClick={()=>
 addToCart({
-id:303,
+id:503,
 name:"Gentle Cleanser",
 price:499,
 image:"/images/products/gentle-cleanser.jpg"
@@ -359,6 +387,19 @@ image:"/images/products/gentle-cleanser.jpg"
 }
 >
 Add To Cart
+</button>
+<button
+className="wishlist-btn"
+onClick={() =>
+addToWishlist({
+id:503,
+name:"Gentle Cleanser",
+price:499,
+image:"/images/products/gentle-cleanser.jpg"
+})
+}
+>
+♡
 </button>
 
 </div>
@@ -416,7 +457,7 @@ comfortable skin.
 <div className="essential-card">
 
 <img
-src="/images/essentials/gentle-cleanser .jpg"
+src="/images/essentials/sensitive-gentle-cleanser.jpg"
 alt="Gentle Cleanser"
 />
 
@@ -435,7 +476,7 @@ addToCart({
 id:501,
 name:"Gentle Cleanser",
 price:499,
-image:"/images/essentials/gentle-cleanser.jpg"
+image:"/images/essentials/sensitive-gentle-cleanser.jpg"
 })
 }
 >

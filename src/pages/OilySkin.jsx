@@ -1,11 +1,13 @@
 import React, {useContext} from "react";
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 import "./OilySkin.css";
 
 
 function OilySkin(){
 
 const {addToCart}=useContext(CartContext);
+const {addToWishlist}=useContext(WishlistContext);
 
 
 const products=[
@@ -309,6 +311,17 @@ Add To Cart
 </button>
 
 
+<button
+className="wishlist-btn"
+onClick={() => {
+console.log("Wishlist clicked", product);
+addToWishlist(product);
+}}
+>
+♡
+</button>
+
+
 </div>
 
 
@@ -396,7 +409,7 @@ Removes excess oil and keeps skin fresh.
 onClick={() =>
 addToCart({
 
-id:801,
+id:401,
 name:"Oil Control Cleanser",
 price:499,
 image:"/images/essentials/oily-control-cleanser.jpg",
@@ -432,7 +445,7 @@ Controls oil and improves skin balance.
 onClick={() =>
 addToCart({
 
-id:802,
+id:402,
 name:"Niacinamide Serum",
 price:699,
 image:"/images/essentials/oily-niacinamide-serum.jpg",
@@ -469,7 +482,7 @@ Lightweight hydration without greasiness.
 onClick={() =>
 addToCart({
 
-id:803,
+id:403,
 name:"Gel Moisturizer",
 price:599,
 image:"/images/essentials/oily-gel-moisturizer.jpg",
@@ -506,7 +519,7 @@ Protects oily skin from UV damage.
 onClick={() =>
 addToCart({
 
-id:804,
+id:404,
 name:"SPF 50 Sunscreen",
 price:799,
 image:"/images/essentials/oily-spf50-sunscreen.jpg",
