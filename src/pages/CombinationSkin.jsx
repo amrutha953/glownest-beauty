@@ -498,7 +498,18 @@ alt="Cleanser"
 Cleans skin without removing natural moisture.
 </p>
 
-<button>Add To Routine</button>
+<button
+onClick={() =>
+addToCart({
+id:601,
+name:"Gentle Cleanser",
+price:499,
+image:"/images/essentials/gentle-cleanser .jpg"
+})
+}
+>
+Add To Routine
+</button>
 
 </div>
 
@@ -521,7 +532,18 @@ alt="Serum"
 Controls oil and improves skin balance.
 </p>
 
-<button>Add To Routine</button>
+<button
+onClick={() =>
+addToCart({
+id:602,
+name:"Niacinamide Serum",
+price:699,
+image:"/images/essentials/niacinamide-serum.jpg"
+})
+}
+>
+Add To Routine
+</button>
 
 </div>
 
@@ -532,7 +554,7 @@ Controls oil and improves skin balance.
 <div className="essential-card">
 
 <img
-src="/images/essentials/moisturizer.jpg"
+src="/images/essentials/gel-moisturizer.jpg"
 alt="Moisturizer"
 />
 
@@ -544,7 +566,18 @@ alt="Moisturizer"
 Hydrates dry areas without heaviness.
 </p>
 
-<button>Add To Routine</button>
+<button
+onClick={() =>
+addToCart({
+id:603,
+name:"Light Moisturizer",
+price:599,
+image:"/images/essentials/gel-moisturizer.jpg"
+})
+}
+>
+Add To Routine
+</button>
 
 </div>
 
@@ -567,7 +600,18 @@ alt="Sunscreen"
 Protects combination skin from UV damage.
 </p>
 
-<button>Add To Routine</button>
+<button
+onClick={() =>
+addToCart({
+id:604,
+name:"Mineral Sunscreen",
+price:799,
+image:"/images/essentials/mineral-sunscreen.jpg"
+})
+}
+>
+Add To Routine
+</button>
 
 </div>
 

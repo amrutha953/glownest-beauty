@@ -368,6 +368,164 @@ Balanced, fresh and healthy looking skin.
 
 
 </section>
+{/* DAILY ESSENTIALS */}
+
+<section className="daily-section">
+
+<h2>Daily Essentials</h2>
+
+
+<div className="essential-grid">
+
+
+<div className="essential-card">
+
+<img
+src="/images/essentials/oily-control-cleanser.jpg"
+alt="Oil Control Cleanser"
+/>
+
+<h3>Oil Control Cleanser</h3>
+
+<p>
+Removes excess oil and keeps skin fresh.
+</p>
+
+
+<button
+onClick={() =>
+addToCart({
+
+id:801,
+name:"Oil Control Cleanser",
+price:499,
+image:"/images/essentials/oily-control-cleanser.jpg",
+quantity:1
+
+})
+}
+>
+Add To Routine
+</button>
+
+
+</div>
+
+
+
+
+<div className="essential-card">
+
+<img
+src="/images/essentials/oily-niacinamide-serum.jpg"
+alt="Niacinamide Serum"
+/>
+
+<h3>Niacinamide Serum</h3>
+
+<p>
+Controls oil and improves skin balance.
+</p>
+
+
+<button
+onClick={() =>
+addToCart({
+
+id:802,
+name:"Niacinamide Serum",
+price:699,
+image:"/images/essentials/oily-niacinamide-serum.jpg",
+quantity:1
+
+})
+}
+>
+Add To Routine
+</button>
+
+
+</div>
+
+
+
+
+
+<div className="essential-card">
+
+<img
+src="/images/essentials/oily-gel-moisturizer.jpg"
+alt="Gel Moisturizer"
+/>
+
+<h3>Gel Moisturizer</h3>
+
+<p>
+Lightweight hydration without greasiness.
+</p>
+
+
+<button
+onClick={() =>
+addToCart({
+
+id:803,
+name:"Gel Moisturizer",
+price:599,
+image:"/images/essentials/oily-gel-moisturizer.jpg",
+quantity:1
+
+})
+}
+>
+Add To Routine
+</button>
+
+
+</div>
+
+
+
+
+
+<div className="essential-card">
+
+<img
+src="/images/essentials/oily-spf50-sunscreen.jpg"
+alt="Sunscreen"
+/>
+
+<h3>SPF 50 Sunscreen</h3>
+
+<p>
+Protects oily skin from UV damage.
+</p>
+
+
+<button
+onClick={() =>
+addToCart({
+
+id:804,
+name:"SPF 50 Sunscreen",
+price:799,
+image:"/images/essentials/oily-spf50-sunscreen.jpg",
+quantity:1
+
+})
+}
+>
+Add To Routine
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
 
 
 

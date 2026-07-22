@@ -999,3 +999,39 @@
     margin-top:15px;
 
 }
+/* ===========================
+   DAILY ESSENTIAL BUTTON
+=========================== */
+
+.essential-card button{
+
+    background:#e91e63;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    margin-top:20px;
+
+    transition:0.3s ease;
+
+}
+
+
+.essential-card button:hover{
+
+    background:#c2185b;
+
+    transform:translateY(-4px);
+
+}

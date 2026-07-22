@@ -429,7 +429,18 @@ Removes dirt while protecting
 sensitive skin.
 </p>
 
-<button>Add To Routine</button>
+<button
+onClick={() =>
+addToCart({
+id:501,
+name:"Gentle Cleanser",
+price:499,
+image:"/images/essentials/gentle-cleanser.jpg"
+})
+}
+>
+Add To Routine
+</button>
 
 </div>
 
@@ -453,7 +464,18 @@ Instantly calms redness and
 irritation.
 </p>
 
-<button>Add To Routine</button>
+<button
+onClick={() =>
+addToCart({
+id:502,
+name:"Centella Serum",
+price:699,
+image:"/images/essentials/centella-serum.jpg"
+})
+}
+>
+Add To Routine
+</button>
 
 </div>
 
@@ -477,7 +499,18 @@ Repairs damaged skin barrier
 and locks moisture.
 </p>
 
-<button>Add To Routine</button>
+<button
+onClick={() =>
+addToCart({
+id:503,
+name:"Barrier Cream",
+price:599,
+image:"/images/essentials/barrier-cream.jpg"
+})
+}
+>
+Add To Routine
+</button>
 
 </div>
 
@@ -501,7 +534,18 @@ Protects sensitive skin from
 UV damage.
 </p>
 
-<button>Add To Routine</button>
+<button
+onClick={() =>
+addToCart({
+id:504,
+name:"Mineral Sunscreen",
+price:799,
+image:"/images/essentials/mineral-sunscreen.jpg"
+})
+}
+>
+Add To Routine
+</button>
 
 </div>
 

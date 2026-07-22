@@ -527,81 +527,140 @@ Add To Cart
 
 <section className="daily-section">
 
-    <h2>Daily Essentials</h2>
+<h2>Daily Essentials</h2>
 
-    <div className="essential-grid">
-
-
-        <div className="essential-card">
-
-            <img 
-                src="/images/essentials/cleanser.jpg"
-                alt="Cleanser"
-            />
-
-            <h3>Cleanser</h3>
-
-            <p>
-                Removes impurities while keeping skin hydrated.
-            </p>
-
-        </div>
+<div className="essential-grid">
 
 
+<div className="essential-card">
 
-        <div className="essential-card">
+<img 
+src="/images/essentials/cleanser.jpg"
+alt="Cleanser"
+/>
 
-            <img 
-                src="/images/essentials/hydrating serum.jpg"
-                alt="Hydrating Serum"
-            />
+<h3>Cleanser</h3>
 
-            <h3>Hydrating Serum</h3>
+<p>
+Removes impurities while keeping skin hydrated.
+</p>
 
-            <p>
-                Boosts moisture and restores skin glow.
-            </p>
+<button
+onClick={() =>
+addToCart({
+id:701,
+name:"Hydrating Cleanser",
+price:499,
+image:"/images/essentials/cleanser.jpg",
+quantity:1
+})
+}
+>
+Add To Routine
+</button>
 
-        </div>
+</div>
 
 
 
 
-        <div className="essential-card">
+<div className="essential-card">
 
-            <img 
-                src="/images/essentials/moisturizer.jpg"
-                alt="Moisturizer"
-            />
+<img 
+src="/images/essentials/hydrating serum.jpg"
+alt="Hydrating Serum"
+/>
 
-            <h3>Moisturizer</h3>
+<h3>Hydrating Serum</h3>
 
-            <p>
-                Repairs skin barrier and locks hydration.
-            </p>
+<p>
+Boosts moisture and restores skin glow.
+</p>
 
-        </div>
+<button
+onClick={() =>
+addToCart({
+id:702,
+name:"Hydrating Serum",
+price:699,
+image:"/images/essentials/hydrating serum.jpg",
+quantity:1
+})
+}
+>
+Add To Routine
+</button>
 
-
-
-
-        <div className="essential-card">
-
-            <img 
-                src="/images/essentials/sunscreen.jpg"
-                alt="Sunscreen"
-            />
-
-            <h3>Sunscreen</h3>
-
-            <p>
-                Protects skin from harmful UV rays.
-            </p>
-
-        </div>
+</div>
 
 
-    </div>
+
+
+
+<div className="essential-card">
+
+<img 
+src="/images/essentials/moisturizer.jpg"
+alt="Moisturizer"
+/>
+
+<h3>Moisturizer</h3>
+
+<p>
+Repairs skin barrier and locks hydration.
+</p>
+
+<button
+onClick={() =>
+addToCart({
+id:703,
+name:"Hydrating Moisturizer",
+price:599,
+image:"/images/essentials/moisturizer.jpg",
+quantity:1
+})
+}
+>
+Add To Routine
+</button>
+
+</div>
+
+
+
+
+
+<div className="essential-card">
+
+<img 
+src="/images/essentials/sunscreen.jpg"
+alt="Sunscreen"
+/>
+
+<h3>Sunscreen</h3>
+
+<p>
+Protects skin from harmful UV rays.
+</p>
+
+<button
+onClick={() =>
+addToCart({
+id:704,
+name:"Sunscreen SPF 50",
+price:799,
+image:"/images/essentials/sunscreen.jpg",
+quantity:1
+})
+}
+>
+Add To Routine
+</button>
+
+</div>
+
+
+</div>
 
 </section>
           
