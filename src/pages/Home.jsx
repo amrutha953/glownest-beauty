@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSlider from "../components/HeroSlider";
 import BeautyStudio from "./BeautyStudio";
+import BeautyAcademy from "./BeautyAcademy";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
 
       {/* New section after banner */}
       <BeautyStudio />
+      <BeautyAcademy/>
     </>
   );
 };
