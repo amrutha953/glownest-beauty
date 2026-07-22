@@ -41,6 +41,8 @@ import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
 import DrySkin from "./pages/DrySkin";
 import OilySkin from "./pages/OilySkin";
+import SensitiveSkin from "./pages/SensitiveSkin";
+import CombinationSkin from "./pages/CombinationSkin";
 
 
 function App() {
@@ -160,6 +162,14 @@ function App() {
         <Route
           path="/oily-skin"
           element={<OilySkin />}
+        />
+        <Route
+          path="/sensitive-skin"
+          element={<SensitiveSkin />}
+        />
+        <Route
+          path="/combination-skin"
+          element={<CombinationSkin />}
         />
 
 
