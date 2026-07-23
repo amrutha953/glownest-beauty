@@ -43,6 +43,7 @@ import DrySkin from "./pages/DrySkin";
 import OilySkin from "./pages/OilySkin";
 import SensitiveSkin from "./pages/SensitiveSkin";
 import CombinationSkin from "./pages/CombinationSkin";
+import SkincareBasics from "./pages/SkincareBasics";
 
 
 function App() {
@@ -170,6 +171,10 @@ function App() {
         <Route
           path="/combination-skin"
           element={<CombinationSkin />}
+        />
+        <Route
+          path="/academy/skincare-basics"
+          element={<SkincareBasics />}
         />
 
 

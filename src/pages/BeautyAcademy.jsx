@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaLeaf, FaFlask, FaSpa } from "react-icons/fa";
 import "./BeautyAcademy.css";
 
@@ -7,6 +8,7 @@ function BeautyAcademy() {
   const [students, setStudents] = useState(0);
   const [guides, setGuides] = useState(0);
   const [happy, setHappy] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -171,7 +173,10 @@ function BeautyAcademy() {
 
       <div className="academy-cards">
 
-        <div className="academy-card">
+        <div
+          className="academy-card"
+          onClick={() => navigate("/academy/skincare-basics")}
+       >
 
           <div className="academy-icon">
             <FaLeaf />

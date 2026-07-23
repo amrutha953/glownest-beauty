@@ -49,7 +49,7 @@ letter-spacing:3px;
 
 .academy-header h2{
 
-font-size:48px;
+font-size:64px;
 
 margin:20px 0;
 
@@ -96,7 +96,7 @@ margin-top:70px;
 
 .academy-video{
 
-flex:1;
+flex:0 0 450px;
 
 }
 
@@ -151,9 +151,10 @@ opacity:.8;
 
 width:100%;
 
-height:380px;
+height:560px;
 
-object-fit:cover;
+object-fit:contain;
+background:#fff;
 
 border-radius:35px;
 
@@ -243,7 +244,7 @@ flex:1;
 .academy-content h3{
 
 
-font-size:38px;
+font-size:44px;
 
 
 color:#222;
@@ -261,7 +262,7 @@ font-family:serif;
 font-size:18px;
 
 
-line-height:1.9;
+line-height:1.2;
 
 
 color:#666;
@@ -368,6 +369,7 @@ box-shadow:
 
 
 transition:.4s;
+cursor:pointer;
 
 
 }
@@ -510,7 +512,7 @@ font-size:35px;
 
 .stat h2{
     color:#e91e63;
-    font-size:30px;
+    font-size:42px;
     margin-bottom:5px;
 }
 
