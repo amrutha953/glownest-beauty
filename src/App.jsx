@@ -184,7 +184,7 @@ function App() {
         <Route
           path="/academy/expert-tips"
           element={<ExpertTips />}
-        />
+        s/>
 
 
       </Routes>

@@ -1,0 +1,178 @@
+/* ===============================
+   WHY CHOOSE GLOWNEST
+================================ */
+
+.why-section{
+
+    padding:80px 8%;
+    background:#fff8fb;
+    text-align:center;
+
+}
+
+
+/* Heading */
+
+.why-heading span{
+
+    color:#e91e63;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:2px;
+
+}
+
+
+.why-heading h2{
+
+    margin-top:15px;
+    font-size:38px;
+    color:#222;
+
+}
+
+
+.why-heading p{
+
+    margin-top:15px;
+    color:#666;
+    font-size:17px;
+
+}
+
+
+
+/* Cards container */
+
+.why-container{
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+/* Card */
+
+.why-card{
+
+    background:white;
+
+    padding:35px 25px;
+
+    border-radius:25px;
+
+    border:1px solid #ffd0df;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    transition:0.3s ease;
+
+}
+
+
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+    background:#e91e63;
+
+}
+
+
+/* Icon */
+
+.why-icon{
+
+    width:70px;
+    height:70px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#ffe1ec;
+
+    color:#e91e63;
+
+    font-size:35px;
+
+}
+
+
+
+/* Title */
+
+.why-card h3{
+
+    margin-top:25px;
+
+    font-size:21px;
+
+    color:#e91e63;
+
+}
+
+
+
+/* Description */
+
+.why-card p{
+
+    margin-top:15px;
+
+    line-height:1.6;
+
+    color:#555;
+
+}
+
+
+
+/* Hover text fix */
+
+.why-card:hover h3,
+.why-card:hover p,
+.why-card:hover .why-icon{
+
+    color:white;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+    .why-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .why-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
