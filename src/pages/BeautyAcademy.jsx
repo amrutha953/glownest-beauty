@@ -192,36 +192,42 @@ function BeautyAcademy() {
         </div>
 
 
-        <div className="academy-card">
+        <div
+  className="academy-card"
+  onClick={() => navigate("/academy/ingredient-guide")}
+>
 
-          <div className="academy-icon">
-            <FaFlask />
-          </div>
+  <div className="academy-icon">
+    <FaFlask />
+  </div>
 
-          <h3>Ingredient Guide</h3>
+  <h3>Ingredient Guide</h3>
 
-          <p>
-            Learn how ingredients like Vitamin C,
-            Retinol and Hyaluronic Acid work.
-          </p>
+  <p>
+    Learn how ingredients like Vitamin C,
+    Retinol and Hyaluronic Acid work.
+  </p>
 
-        </div>
+</div>
 
 
-        <div className="academy-card">
+        <div
+  className="academy-card"
+  onClick={() => navigate("/academy/expert-tips")}
+>
 
-          <div className="academy-icon">
-            <FaSpa />
-          </div>
+  <div className="academy-icon">
+    <FaSpa />
+  </div>
 
-          <h3>Expert Tips</h3>
+  <h3>Expert Tips</h3>
 
-          <p>
-            Professional beauty advice for healthy
-            and glowing skin.
-          </p>
+  <p>
+    Professional beauty advice for healthy
+    and glowing skin.
+  </p>
 
-        </div>
+</div>
 
       </div>
 

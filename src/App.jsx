@@ -44,7 +44,8 @@ import OilySkin from "./pages/OilySkin";
 import SensitiveSkin from "./pages/SensitiveSkin";
 import CombinationSkin from "./pages/CombinationSkin";
 import SkincareBasics from "./pages/SkincareBasics";
-
+import IngredientGuide from "./pages/IngredientGuide";
+import ExpertTips from "./pages/ExpertTips";
 
 function App() {
 
@@ -175,6 +176,14 @@ function App() {
         <Route
           path="/academy/skincare-basics"
           element={<SkincareBasics />}
+        />
+        <Route 
+          path="/academy/ingredient-guide" 
+          element={<IngredientGuide />} 
+        />
+        <Route
+          path="/academy/expert-tips"
+          element={<ExpertTips />}
         />
 
 
