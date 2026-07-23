@@ -1,339 +1,520 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Serum.css";
+
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 
-const Serum = () => {
 
-  const { addToCart } = useContext(CartContext);
+const products = [
 
-  const serumProduct = {
-    id: 101,
-    name: "GlowNest Premium Serum",
-    price: 799,
-    image: "/images/serum.jpg",
-    quantity: 1
-  };
+{
+id:101,
+name:"Vitamin C Face Serum",
+price:"₹699",
+image:"/images/vitamin-c-face-serum.jpg",
+},
 
-  const handleAddToCart = () => {
-    addToCart(serumProduct);
-    alert("Serum added to cart 🛒");
-  };
-  return (
-    <div className="serum-page">
+{
+id:102,
+name:"Hyaluronic Acid Serum",
+price:"₹799",
+image:"/images/hyaluronic-serum.jpg",
+},
 
-      {/* Hero Section */}
-      <section className="serum-hero">
-        <div className="serum-content">
-          <h1>GlowNest Serum</h1>
+{
+id:103,
+name:"Niacinamide Glow Serum",
+price:"₹599",
+image:"/images/niacinamide-glow-serum.jpg",
+},
 
-          <p>
-            Unlock your skin's natural glow with our
-            premium face serums made for every skin type.
-          </p>
+{
+id:104,
+name:"Retinol Anti Ageing Serum",
+price:"₹899",
+image:"/images/retinol-serum.jpg",
+},
 
-          <button onClick={handleAddToCart}>
-            Add Serum To Cart
-          </button>
-        </div>
-      </section>
+];
 
 
-      {/* Introduction */}
-      <section className="serum-intro">
 
-        <h2>Powerful Serums For Beautiful Skin</h2>
+const Serum =()=>{
 
-        <p>
-          GlowNest serums are lightweight skincare essentials
-          packed with active ingredients to hydrate, brighten,
-          and improve your skin texture.
-        </p>
 
-      </section>
+const navigate=useNavigate();
 
 
-      {/* Benefits */}
-      <section className="serum-benefits">
+const {addToCart}=useContext(CartContext);
 
-        <h2>Benefits of Using Serum</h2>
+const {addToWishlist}=useContext(WishlistContext);
 
-        <div className="serum-cards">
 
-          <div className="serum-box">
-            <h3>✨ Brightens Skin</h3>
-            <p>
-              Helps reduce dullness and gives a natural glow.
-            </p>
-          </div>
 
+return(
 
-          <div className="serum-box">
-            <h3>💧 Deep Hydration</h3>
-            <p>
-              Keeps skin soft, smooth and moisturized.
-            </p>
-          </div>
+<div className="serum-page">
 
 
-          <div className="serum-box">
-            <h3>🌿 Improves Texture</h3>
-            <p>
-              Supports healthier and smoother looking skin.
-            </p>
-          </div>
 
-        </div>
+{/* Hero Section */}
 
-      </section>
-            {/* Why Choose GlowNest Serum */}
+<section className="serum-hero">
 
-      <section className="why-serum">
 
-        <h2>Why Choose GlowNest Serum?</h2>
+<div className="serum-overlay">
 
-        <div className="why-serum-cards">
 
-          <div className="why-card">
-            <h3>✨ Advanced Formula</h3>
-            <p>
-              Enriched with powerful ingredients that
-              support healthy and glowing skin.
-            </p>
-          </div>
+<h1>
+Serum Collection
+</h1>
 
 
-          <div className="why-card">
-            <h3>🌿 Skin Friendly</h3>
-            <p>
-              Gentle formulas designed for different
-              skin types and daily skincare needs.
-            </p>
-          </div>
+<p>
+Discover powerful face serums designed to hydrate,
+brighten and improve your skin health.
+</p>
 
 
-          <div className="why-card">
-            <h3>💖 Visible Glow</h3>
-            <p>
-              Helps improve skin brightness, texture
-              and natural radiance.
-            </p>
-          </div>
+<button onClick={()=>navigate("/shop")}>
+Shop Serum
+</button>
 
-        </div>
 
-      </section>
+</div>
 
 
+</section>
 
-      {/* Serum Types Guide */}
 
-      <section className="serum-types">
 
-        <h2>Serum Types Guide</h2>
 
 
-        <div className="types-cards">
+{/* Introduction */}
 
 
-          <div className="type-card">
+<section className="serum-intro">
 
-            <h3>💧 Hydrating Serum</h3>
 
-            <p>
-              Best for dry skin. Provides deep moisture
-              and keeps skin soft.
-            </p>
+<h2>
+Powerful Serums For Glowing Skin
+</h2>
 
-          </div>
 
+<p>
 
+GlowNest serums are lightweight skincare essentials
+formulated with active ingredients to give your skin
+hydration, brightness and a healthy glow.
 
-          <div className="type-card">
+</p>
 
-            <h3>✨ Vitamin C Serum</h3>
 
-            <p>
-              Helps brighten dull skin and gives a
-              fresh glowing look.
-            </p>
+</section>
 
-          </div>
 
 
 
-          <div className="type-card">
 
-            <h3>🌙 Retinol Serum</h3>
 
-            <p>
-              Supports smoother skin and improves
-              the appearance of fine lines.
-            </p>
 
-          </div>
+{/* Featured Products */}
 
 
+<section className="featured-products">
 
-          <div className="type-card">
 
-            <h3>🌿 Niacinamide Serum</h3>
+<h2>
+Featured Serums
+</h2>
 
-            <p>
-              Helps balance oil and improves skin
-              texture.
-            </p>
 
-          </div>
 
+<div className="products-grid">
 
-        </div>
 
-      </section>
 
+{
+products.map((product)=>(
 
 
+<div className="product-card" key={product.id}>
 
-      {/* Skincare Routine */}
 
-      <section className="serum-routine">
+<img
+src={product.image}
+alt={product.name}
+/>
 
-        <h2>GlowNest Serum Skincare Routine</h2>
 
 
-        <div className="routine-cards">
+<h3>
+{product.name}
+</h3>
 
 
-          <div className="routine-card">
 
-            <span>1</span>
+<span>
+{product.price}
+</span>
 
-            <h3>Cleanse</h3>
 
-            <p>
-              Wash your face and remove impurities.
-            </p>
 
-          </div>
 
+<div className="product-buttons">
 
 
-          <div className="routine-card">
 
-            <span>2</span>
+<button
+onClick={()=>addToCart({
+...product,
+quantity:1
+})}
+>
 
-            <h3>Apply Serum</h3>
+Add to Cart
 
-            <p>
-              Apply 2-3 drops and gently massage.
-            </p>
+</button>
 
-          </div>
 
+</div>
 
 
-          <div className="routine-card">
 
-            <span>3</span>
+</div>
 
-            <h3>Moisturize</h3>
 
-            <p>
-              Lock hydration for a healthy glow.
-            </p>
+))
+}
 
-          </div>
 
+</div>
 
-        </div>
 
-      </section>
+</section>
 
 
 
 
-      {/* Customer Reviews */}
 
-      <section className="serum-reviews">
 
-        <h2>Customer Reviews</h2>
 
+{/* Benefits */}
 
-        <div className="review-cards">
 
+<section className="serum-benefits">
 
-          <div className="review-card">
 
-            ⭐⭐⭐⭐⭐
+<h2>
+Why Choose Our Serums?
+</h2>
 
-            <p>
-              "My skin feels brighter and smoother
-              after using GlowNest Serum."
-            </p>
 
-            <h4>- Ananya</h4>
 
-          </div>
+<div className="benefits-grid">
 
 
+<div className="benefit-card">
 
-          <div className="review-card">
+<div className="benefit-icon">
+💧
+</div>
 
-            ⭐⭐⭐⭐⭐
+<h3>
+Deep Hydration
+</h3>
 
-            <p>
-              "Lightweight serum with amazing
-              hydration."
-            </p>
+<p>
+Keeps skin moisturized and soft throughout the day.
+</p>
 
-            <h4>- Priya</h4>
+</div>
 
-          </div>
 
 
 
-          <div className="review-card">
 
-            ⭐⭐⭐⭐⭐
+<div className="benefit-card">
 
-            <p>
-              "Perfect addition to my daily routine."
-            </p>
+<div className="benefit-icon">
+✨
+</div>
 
-            <h4>- Sneha</h4>
+<h3>
+Bright Skin
+</h3>
 
-          </div>
+<p>
+Helps reduce dullness and improves natural glow.
+</p>
 
+</div>
 
-        </div>
 
-      </section>
 
 
 
 
-      {/* CTA Section */}
+<div className="benefit-card">
 
-      <section className="serum-cta">
+<div className="benefit-icon">
+🌿
+</div>
 
-        <h2>
-          Ready To Glow With GlowNest?
-        </h2>
+<h3>
+Skin Friendly
+</h3>
 
+<p>
+Gentle formulas suitable for different skin types.
+</p>
 
-        <p>
-          Find the perfect serum for your skincare journey.
-        </p>
+</div>
 
 
-        <button onClick={handleAddToCart}>
-          Add Serum To Cart
-        </button>
 
 
-      </section>
-    </div>
-  );
-};
+
+
+<div className="benefit-card">
+
+<div className="benefit-icon">
+💖
+</div>
+
+<h3>
+Healthy Texture
+</h3>
+
+<p>
+Supports smoother and healthier looking skin.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+{/* Popular Brands */}
+
+
+
+<section className="serum-brands">
+
+
+<h2>
+Popular Serum Brands
+</h2>
+
+
+
+<div className="brands">
+
+
+<div className="brand">
+Minimalist
+</div>
+
+
+<div className="brand">
+The Ordinary
+</div>
+
+
+<div className="brand">
+CeraVe
+</div>
+
+
+<div className="brand">
+Dot & Key
+</div>
+
+
+<div className="brand">
+L'Oreal Paris
+</div>
+
+
+<div className="brand">
+Neutrogena
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+{/* Reviews */}
+
+
+
+<section className="serum-reviews">
+
+
+<h2>
+Customer Reviews
+</h2>
+
+
+
+<div className="review-grid">
+
+
+<div className="review-card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+"My skin feels brighter and smoother after using GlowNest serum."
+</p>
+
+<h4>
+- Priya
+</h4>
+
+</div>
+
+
+
+<div className="review-card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+"Lightweight serum with amazing hydration."
+</p>
+
+<h4>
+- Ananya
+</h4>
+
+</div>
+
+
+
+<div className="review-card">
+
+⭐⭐⭐⭐☆
+
+<p>
+"Perfect serum for daily skincare routine."
+</p>
+
+<h4>
+- Sneha
+</h4>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+{/* FAQ */}
+
+
+
+<section className="serum-faq">
+
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+Which serum is best for beginners?
+</h3>
+
+
+<p>
+Vitamin C and Hyaluronic Acid serums are good choices for beginners.
+</p>
+
+
+</div>
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+Can serum be used daily?
+</h3>
+
+
+<p>
+Yes, most serums can be used daily according to skin needs.
+</p>
+
+
+</div>
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+Should serum be applied before moisturizer?
+</h3>
+
+
+<p>
+Yes, apply serum first and then moisturizer.
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+</div>
+
+)
+
+}
 
 
 export default Serum;

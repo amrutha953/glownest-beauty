@@ -7,25 +7,25 @@ const products = [
     id: 1,
     name: "Matte Lipstick",
     price: "₹499",
-    image: "/images/makeup.jpg",
+    image: "/images/matte-lipstick.jpg",
   },
   {
     id: 2,
     name: "Liquid Foundation",
     price: "₹899",
-    image: "/images/makeup.jpg",
+    image: "/images/liquid-foundation.jpg",
   },
   {
     id: 3,
     name: "Waterproof Mascara",
     price: "₹699",
-    image: "/images/makeup.jpg",
+    image: "/images/waterproof-mascara.jpg",
   },
   {
     id: 4,
     name: "Eyeshadow Palette",
     price: "₹999",
-    image: "/images/makeup.jpg",
+    image: "/images/eyeshadow-palette.jpg",
   },
 ];
 

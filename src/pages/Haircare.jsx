@@ -2,220 +2,549 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Haircare.css";
 
+
 const products = [
-  {
-    id: 1,
-    name: "Nourishing Shampoo",
-    price: "₹499",
-    image: "/images/haircare.jpg",
-  },
-  {
-    id: 2,
-    name: "Hair Conditioner",
-    price: "₹549",
-    image: "/images/haircare.jpg",
-  },
-  {
-    id: 3,
-    name: "Hair Serum",
-    price: "₹699",
-    image: "/images/haircare.jpg",
-  },
-  {
-    id: 4,
-    name: "Hair Mask",
-    price: "₹799",
-    image: "/images/haircare.jpg",
-  },
+
+{
+id:1,
+name:"Nourishing Shampoo",
+price:"₹499",
+image:"/images/nourishing-shampoo.jpg",
+},
+
+{
+id:2,
+name:"Hair Conditioner",
+price:"₹549",
+image:"/images/hair-conditioner.jpg",
+},
+
+{
+id:3,
+name:"Hair Serum",
+price:"₹699",
+image:"/images/hair-serum.jpg",
+},
+
+{
+id:4,
+name:"Repair Hair Mask",
+price:"₹799",
+image:"/images/hair-mask.jpg",
+},
+
 ];
 
-const Haircare = () => {
-  const navigate = useNavigate();
 
-  return (
-    <div className="haircare-page">
 
-      {/* Hero Section */}
-      <section className="hair-hero">
-        <div className="hair-overlay">
-          <h1>Haircare Collection</h1>
+const Haircare =()=>{
 
-          <p>
-            Discover premium haircare products that nourish, strengthen and
-            protect your hair for a healthy, shiny look every day.
-          </p>
 
-          <button onClick={() => navigate("/shop/haircare")}>
-            Shop Haircare
-          </button>
-        </div>
-      </section>
+const navigate=useNavigate();
 
-      {/* Introduction */}
-      <section className="hair-intro">
 
-        <h2>Healthy Hair Begins Here</h2>
+return(
 
-        <p>
-          Explore shampoos, conditioners, hair oils, serums and masks specially
-          selected for all hair types to keep your hair soft, smooth and healthy.
-        </p>
+<div className="haircare-page">
 
-      </section>
 
-      {/* Featured Products */}
-      <section className="featured-products">
 
-        <h2>Featured Haircare Products</h2>
+{/* Hero Section */}
 
-        <div className="products-grid">
 
-          {products.map((product) => (
+<section className="hair-hero">
 
-            <div className="product-card" key={product.id}>
 
-              <img src={product.image} alt={product.name} />
+<div className="hair-overlay">
 
-              <h3>{product.name}</h3>
 
-              <span>{product.price}</span>
+<h1>
+Haircare Collection
+</h1>
 
-              <button onClick={() => alert(`${product.name} added to cart!`)}>
-                Add to Cart
-              </button>
 
-            </div>
+<p>
+Discover premium haircare products that nourish,
+strengthen and protect your hair for a healthy shine.
+</p>
 
-          ))}
 
-        </div>
+<button onClick={()=>navigate("/shop")}>
+Shop Haircare
+</button>
 
-      </section>
-            {/* Why Choose GlowNest */}
 
-      <section className="why-haircare">
+</div>
 
-        <h2>Why Choose GlowNest Haircare?</h2>
 
-        <div className="why-grid">
+</section>
 
-          <div className="why-card">
-            <h3>🌿 Natural Ingredients</h3>
-            <p>
-              Our haircare range is enriched with natural extracts that nourish
-              your hair without harsh chemicals.
-            </p>
-          </div>
 
-          <div className="why-card">
-            <h3>✨ Healthy Shine</h3>
-            <p>
-              Keep your hair silky, smooth and shiny with premium quality
-              shampoos, conditioners and serums.
-            </p>
-          </div>
 
-          <div className="why-card">
-            <h3>💖 Suitable for Everyone</h3>
-            <p>
-              Products carefully selected for dry, oily, curly and damaged hair.
-            </p>
-          </div>
 
-        </div>
 
-      </section>
 
-      {/* Hair Care Routine */}
 
-      <section className="hair-routine">
 
-        <h2>Daily Hair Care Routine</h2>
+{/* Introduction */}
 
-        <div className="routine-grid">
 
-          <div className="routine-card">
-            <span>🧴</span>
-            <h3>Step 1</h3>
-            <p>Cleanse your hair using a nourishing shampoo.</p>
-          </div>
 
-          <div className="routine-card">
-            <span>💧</span>
-            <h3>Step 2</h3>
-            <p>Condition your hair to lock in moisture.</p>
-          </div>
+<section className="hair-intro">
 
-          <div className="routine-card">
-            <span>✨</span>
-            <h3>Step 3</h3>
-            <p>Apply hair serum for smoothness and shine.</p>
-          </div>
 
-          <div className="routine-card">
-            <span>🌸</span>
-            <h3>Step 4</h3>
-            <p>Use a weekly hair mask for deep nourishment.</p>
-          </div>
+<h2>
+Healthy Hair Begins Here
+</h2>
 
-        </div>
 
-      </section>
+<p>
 
-      {/* Customer Reviews */}
+GlowNest brings you shampoos, conditioners,
+serums and masks specially selected to keep your
+hair soft, smooth and beautiful.
 
-      <section className="hair-reviews">
+</p>
 
-        <h2>Customer Reviews</h2>
 
-        <div className="review-grid">
+</section>
 
-          <div className="review-card">
-            ⭐⭐⭐⭐⭐
-            <p>
-              "The shampoo made my hair soft and manageable. Highly recommended!"
-            </p>
-            <h4>- Sneha</h4>
-          </div>
 
-          <div className="review-card">
-            ⭐⭐⭐⭐⭐
-            <p>
-              "The hair serum reduced frizz and gave an amazing shine."
-            </p>
-            <h4>- Anjali</h4>
-          </div>
 
-          <div className="review-card">
-            ⭐⭐⭐⭐⭐
-            <p>
-              "GlowNest has become my favourite destination for haircare."
-            </p>
-            <h4>- Priya</h4>
-          </div>
 
-        </div>
 
-      </section>
 
-      {/* CTA */}
 
-      <section className="hair-cta">
 
-        <h2>Love Your Hair Every Day</h2>
+{/* Featured Products */}
 
-        <p>
-          Discover premium haircare essentials specially curated for healthy,
-          beautiful hair.
-        </p>
 
-        <button onClick={() => navigate("/shop/haircare")}>
-          Explore More
-        </button>
 
-      </section>
-    </div>
-  );
-};
+<section className="featured-products">
+
+
+<h2>
+Featured Haircare Products
+</h2>
+
+
+
+<div className="products-grid">
+
+
+{
+products.map((product)=>(
+
+
+<div className="product-card" key={product.id}>
+
+
+<img
+src={product.image}
+alt={product.name}
+/>
+
+
+<h3>
+{product.name}
+</h3>
+
+
+<span>
+{product.price}
+</span>
+
+
+
+<button
+onClick={()=>alert(`${product.name} added to cart!`)}
+>
+Add to Cart
+</button>
+
+
+
+</div>
+
+
+))
+}
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+{/* Benefits */}
+
+
+
+<section className="hair-benefits">
+
+
+<h2>
+Why Choose Our Haircare?
+</h2>
+
+
+
+<div className="benefits-grid">
+
+
+
+<div className="benefit-card">
+
+
+<div className="benefit-icon">
+🌿
+</div>
+
+
+<h3>
+Natural Ingredients
+</h3>
+
+
+<p>
+Gentle formulas enriched with nourishing extracts.
+</p>
+
+
+</div>
+
+
+
+
+
+<div className="benefit-card">
+
+
+<div className="benefit-icon">
+✨
+</div>
+
+
+<h3>
+Healthy Shine
+</h3>
+
+
+<p>
+Helps improve smoothness and hair texture.
+</p>
+
+
+</div>
+
+
+
+
+
+<div className="benefit-card">
+
+
+<div className="benefit-icon">
+💧
+</div>
+
+
+<h3>
+Deep Nourishment
+</h3>
+
+
+<p>
+Provides moisture and strength for your hair.
+</p>
+
+
+</div>
+
+
+
+
+
+<div className="benefit-card">
+
+
+<div className="benefit-icon">
+💖
+</div>
+
+
+<h3>
+All Hair Types
+</h3>
+
+
+<p>
+Suitable for dry, oily and damaged hair.
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+{/* Popular Brands */}
+
+
+
+<section className="hair-brands">
+
+
+<h2>
+Popular Haircare Brands
+</h2>
+
+
+
+<div className="brands">
+
+
+
+<div className="brand">
+L'Oreal Paris
+</div>
+
+
+<div className="brand">
+Dove
+</div>
+
+
+<div className="brand">
+Tresemme
+</div>
+
+
+<div className="brand">
+Mamaearth
+</div>
+
+
+<div className="brand">
+OGX
+</div>
+
+
+<div className="brand">
+Pantene
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+{/* Customer Reviews */}
+
+
+
+<section className="hair-reviews">
+
+
+<h2>
+Customer Reviews
+</h2>
+
+
+
+<div className="review-grid">
+
+
+
+<div className="review-card">
+
+
+⭐⭐⭐⭐⭐
+
+
+<p>
+"My hair feels softer and healthier after using GlowNest products."
+</p>
+
+
+<h4>
+- Sneha
+</h4>
+
+
+</div>
+
+
+
+
+
+<div className="review-card">
+
+
+⭐⭐⭐⭐⭐
+
+
+<p>
+"The serum reduced frizz and improved shine."
+</p>
+
+
+<h4>
+- Anjali
+</h4>
+
+
+</div>
+
+
+
+
+
+<div className="review-card">
+
+
+⭐⭐⭐⭐☆
+
+
+<p>
+"Great quality products for daily haircare."
+</p>
+
+
+<h4>
+- Priya
+</h4>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+{/* FAQ */}
+
+
+
+<section className="hair-faq">
+
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+How often should I wash my hair?
+</h3>
+
+
+<p>
+It depends on your hair type. Most people can wash 2-3 times weekly.
+</p>
+
+
+</div>
+
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+Can I use hair serum daily?
+</h3>
+
+
+<p>
+Yes, hair serum can be used daily to control frizz and add shine.
+</p>
+
+
+</div>
+
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+Are these products suitable for all hair types?
+</h3>
+
+
+<p>
+Yes, GlowNest offers products for different hair needs.
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+</div>
+
+)
+
+}
+
 
 export default Haircare;

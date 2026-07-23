@@ -1,100 +1,117 @@
+/* ============================
+   GlowNest Perfume Page
+============================ */
+
 .perfume-page {
-
-  font-family: Arial, sans-serif;
-
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
 
-/* Hero */
-
+/* ============================
+   HERO SECTION
+============================ */
 
 .perfume-hero {
 
-  height:500px;
+    height: 520px;
 
-  background:
-  linear-gradient(
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.35)
-  ),
-  url("/images/perfume.jpg");
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ),
+    url("/images/perfume.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+}
 
 
-  background-size:cover;
+.perfume-overlay {
 
-  background-position:center;
+    color:white;
+
+    max-width:750px;
+
+    padding:30px;
+
+}
 
 
-  display:flex;
+.perfume-overlay h1 {
 
-  align-items:center;
+    font-size:55px;
 
-  justify-content:center;
+    margin-bottom:20px;
 
-
-  text-align:center;
-
-  color:white;
+    letter-spacing:1px;
 
 }
 
 
 
-.perfume-content h1 {
+.perfume-overlay p {
 
-  font-size:55px;
+    font-size:20px;
 
-  margin-bottom:20px;
+    line-height:1.6;
 
-}
-
-
-
-.perfume-content p {
-
-  font-size:20px;
-
-  max-width:600px;
+    margin-bottom:30px;
 
 }
 
 
 
-.perfume-content button {
+.perfume-overlay button {
 
-  margin-top:25px;
+    background:#e91e63;
 
-  padding:14px 35px;
+    color:white;
 
+    border:none;
 
-  border:none;
+    padding:14px 35px;
 
-  border-radius:30px;
+    border-radius:30px;
 
+    font-size:17px;
 
-  background:#e91e63;
+    cursor:pointer;
 
-  color:white;
-
-
-  cursor:pointer;
-
-  font-size:16px;
+    transition:.3s;
 
 }
 
 
 
+.perfume-overlay button:hover {
+
+    background:#c2185b;
+
+    transform:scale(1.05);
+
+}
 
 
-/* Intro */
+
+/* ============================
+ INTRO SECTION
+============================ */
 
 
 .perfume-intro {
 
- padding:60px 10%;
+    text-align:center;
 
- text-align:center;
+    padding:60px 10%;
 
 }
 
@@ -102,24 +119,176 @@
 
 .perfume-intro h2 {
 
- color:#e91e63;
+    color:#e91e63;
 
- font-size:35px;
+    font-size:36px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.perfume-intro p {
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.8;
 
 }
 
 
 
 
+/* ============================
+ FEATURED PRODUCTS
+============================ */
 
-/* Benefits */
+
+.featured-products {
+
+    padding:50px 8%;
+
+    background:#fff7fa;
+
+}
+
+
+
+.featured-products h2 {
+
+    text-align:center;
+
+    font-size:35px;
+
+    color:#e91e63;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.products-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.product-card {
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.1);
+
+    transition:.4s;
+
+}
+
+
+
+.product-card:hover {
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(233,30,99,0.25);
+
+}
+
+
+
+.product-card img {
+
+    width:100%;
+
+    height:270px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+
+
+.product-card h3 {
+
+    margin:20px 0 10px;
+
+    font-size:20px;
+
+}
+
+
+
+.product-card span {
+
+    display:block;
+
+    color:#e91e63;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.product-card button {
+
+
+    background:#e91e63;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+}
+
+
+
+.product-card button:hover {
+
+    background:#c2185b;
+
+}
+
+
+
+/* ============================
+ BENEFITS
+============================ */
 
 
 .perfume-benefits {
 
- padding:60px 8%;
-
- text-align:center;
+    padding:60px 8%;
 
 }
 
@@ -127,180 +296,364 @@
 
 .perfume-benefits h2 {
 
- color:#e91e63;
+    text-align:center;
 
- margin-bottom:40px;
+    color:#e91e63;
 
-}
+    font-size:35px;
 
-
-
-.perfume-cards {
-
- display:flex;
-
- justify-content:center;
-
- gap:30px;
-
- flex-wrap:wrap;
+    margin-bottom:40px;
 
 }
 
 
 
-.perfume-box {
+.benefits-grid {
 
- width:280px;
+    display:grid;
 
- padding:30px;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
 
- background:white;
-
- border-radius:15px;
-
-
- box-shadow:
- 0 5px 20px rgba(0,0,0,0.1);
+    gap:25px;
 
 }
 
 
 
-.perfume-box h3 {
+.benefit-card {
 
- color:#e91e63;
+    background:#fff0f5;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    transition:.3s;
 
 }
-/* PERFUME PART 2 */
 
 
-.perfume-types,
-.fragrance-notes,
-.choose-perfume,
+
+.benefit-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.benefit-card h3 {
+
+    color:#e91e63;
+
+}
+
+
+
+.benefit-card p {
+
+    color:#666;
+
+    line-height:1.6;
+
+}
+
+
+
+/* ============================
+ CATEGORIES
+============================ */
+
+
+.perfume-categories {
+
+    padding:60px 8%;
+
+    background:#fff7fa;
+
+}
+
+
+
+.perfume-categories h2 {
+
+    text-align:center;
+
+    color:#e91e63;
+
+    font-size:35px;
+
+}
+
+
+
+.categories-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+
+
+.category-card {
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.category-card h3 {
+
+    color:#e91e63;
+
+}
+
+
+
+
+/* ============================
+ BRANDS
+============================ */
+
+
+.perfume-brands {
+
+    padding:60px 8%;
+
+    text-align:center;
+
+}
+
+
+
+.perfume-brands h2 {
+
+    color:#e91e63;
+
+    font-size:35px;
+
+}
+
+
+
+.brands {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+
+
+.brand {
+
+    padding:18px 35px;
+
+    background:#fff0f5;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#e91e63;
+
+    box-shadow:0 8px 20px rgba(233,30,99,0.15);
+
+    transition:0.3s;
+
+}
+
+
+.brand:hover {
+
+    background:#e91e63;
+
+    color:white;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+/* ============================
+ REVIEWS
+============================ */
+
+
 .perfume-reviews {
 
-  padding:60px 8%;
-  text-align:center;
+    padding:60px 8%;
+
+    background:#fff7fa;
 
 }
 
 
-.perfume-types h2,
-.fragrance-notes h2,
-.choose-perfume h2,
+
 .perfume-reviews h2 {
 
-  color:#e91e63;
-  font-size:32px;
-  margin-bottom:35px;
+    text-align:center;
+
+    color:#e91e63;
 
 }
 
 
 
-.perfume-type-cards,
-.notes-container,
-.choose-steps,
-.review-cards {
+.review-grid {
 
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  flex-wrap:wrap;
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:35px;
 
 }
 
 
 
-.type-card,
-.note-box,
-.choose-steps div,
 .review-card {
 
-  width:280px;
+    background:white;
 
-  padding:25px;
+    padding:30px;
 
-  background:white;
+    border-radius:20px;
 
-  border-radius:15px;
+    text-align:center;
 
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-
-}
-
-
-
-.type-card h3,
-.note-box h3 {
-
-  color:#e91e63;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
 
 }
 
 
 
-.choose-steps span {
+.review-card p {
 
-  display:inline-flex;
-
-  width:50px;
-  height:50px;
-
-  align-items:center;
-  justify-content:center;
-
-  background:#e91e63;
-
-  color:white;
-
-  border-radius:50%;
-
-  font-size:22px;
+    color:#666;
 
 }
 
 
 
-.perfume-cta {
 
-  text-align:center;
-
-  padding:70px 20px;
-
-  background:#ffe4ef;
-
-}
+/* ============================
+ FAQ
+============================ */
 
 
+.perfume-faq {
 
-.perfume-cta h2 {
-
-  color:#e91e63;
-
-  font-size:36px;
+    padding:60px 10%;
 
 }
 
 
 
-.perfume-cta button {
+.perfume-faq h2 {
 
-  margin-top:20px;
+    text-align:center;
 
-  padding:14px 35px;
+    color:#e91e63;
 
-  border:none;
+    margin-bottom:40px;
 
-  border-radius:30px;
+}
 
-  background:#e91e63;
 
-  color:white;
 
-  cursor:pointer;
+.faq-card {
 
-  font-size:16px;
+    background:#fff0f5;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    border-radius:15px;
+
+}
+
+
+
+.faq-card h3 {
+
+    color:#e91e63;
+
+}
+
+
+
+.faq-card p {
+
+    color:#555;
+
+    line-height:1.6;
+
+}
+
+
+
+/* ============================
+ RESPONSIVE
+============================ */
+
+
+@media(max-width:768px){
+
+
+.perfume-hero {
+
+    height:350px;
+
+}
+
+
+.perfume-overlay h1 {
+
+    font-size:36px;
+
+}
+
+
+.perfume-overlay p {
+
+    font-size:16px;
+
+}
+
 
 }

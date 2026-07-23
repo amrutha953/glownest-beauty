@@ -1,366 +1,469 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Perfume.css";
 
+
+const products = [
+
+  {
+    id:1,
+    name:"Luxury Rose Eau De Parfum",
+    price:"₹1299",
+    image:"/images/luxury-rose-perfume.jpg",
+  },
+
+  {
+    id:2,
+    name:"Midnight Oud Perfume",
+    price:"₹1499",
+    image:"/images/midnight-oud-perfume.jpg",
+  },
+
+  {
+    id:3,
+    name:"Floral Bloom Fragrance",
+    price:"₹999",
+    image:"/images/floral-bloom-perfume.jpg",
+  },
+
+  {
+    id:4,
+    name:"Royal Musk Perfume",
+    price:"₹1199",
+    image:"/images/royal-musk-perfume.jpg",
+  },
+
+];
+
+
+
 const Perfume = () => {
-  return (
-    <div className="perfume-page">
 
+const navigate = useNavigate();
 
-      {/* Hero Section */}
 
-      <section className="perfume-hero">
+return (
 
-        <div className="perfume-content">
+<div className="perfume-page">
 
-          <h1>GlowNest Perfumes</h1>
 
-          <p>
-            Discover captivating fragrances that express
-            your personality and create unforgettable moments.
-          </p>
+{/* HERO */}
 
-          <button>
-            Shop Perfumes
-          </button>
+<section className="perfume-hero">
 
-        </div>
+<div className="perfume-overlay">
 
-      </section>
+<h1>
+GlowNest Perfume Collection
+</h1>
 
 
+<p>
+Discover elegant fragrances crafted to match
+your personality and every special moment.
+</p>
 
 
-      {/* Introduction */}
+<button onClick={()=>navigate("/shop")}>
+Shop Perfumes
+</button>
 
-      <section className="perfume-intro">
 
-        <h2>Luxury Fragrances For Every Mood</h2>
+</div>
 
-        <p>
-          From fresh floral notes to rich elegant scents,
-          GlowNest perfumes are designed to make you feel
-          confident, beautiful and unique.
-        </p>
+</section>
 
-      </section>
 
 
 
 
+{/* INTRODUCTION */}
 
-      {/* Perfume Benefits */}
+<section className="perfume-intro">
 
-      <section className="perfume-benefits">
+<h2>
+Find Your Signature Fragrance
+</h2>
 
-        <h2>Why Choose GlowNest Perfume?</h2>
 
+<p>
+Explore floral, fresh, woody and luxurious perfumes
+designed to make you feel confident and beautiful.
+</p>
 
-        <div className="perfume-cards">
 
+</section>
 
-          <div className="perfume-box">
 
-            <h3>🌸 Long Lasting Fragrance</h3>
 
-            <p>
-              Enjoy beautiful scents that stay fresh
-              throughout the day.
-            </p>
 
-          </div>
 
+{/* PRODUCTS */}
 
+<section className="featured-products">
 
-          <div className="perfume-box">
 
-            <h3>✨ Premium Ingredients</h3>
+<h2>
+Featured Perfumes
+</h2>
 
-            <p>
-              Crafted with high-quality fragrance notes
-              for a luxurious experience.
-            </p>
 
-          </div>
+<div className="products-grid">
 
 
+{
+products.map((product)=>(
 
+<div className="product-card" key={product.id}>
 
-          <div className="perfume-box">
 
-            <h3>💖 Perfect For Every Occasion</h3>
+<img 
+src={product.image}
+alt={product.name}
+/>
 
-            <p>
-              Find fragrances for daily wear,
-              parties and special moments.
-            </p>
 
-          </div>
+<h3>
+{product.name}
+</h3>
 
 
-        </div>
+<span>
+{product.price}
+</span>
 
-      </section>
-            {/* Perfume Categories Guide */}
 
-      <section className="perfume-types">
+<button
+onClick={()=>alert(`${product.name} added to cart!`)}
+>
+Add to Cart
+</button>
 
-        <h2>Perfume Categories Guide</h2>
 
-        <div className="perfume-type-cards">
+</div>
 
-          <div className="type-card">
 
-            <h3>🌸 Floral Perfume</h3>
+))
+}
 
-            <p>
-              Soft and elegant floral fragrances with
-              beautiful notes of rose, jasmine and flowers.
-            </p>
 
-          </div>
+</div>
 
 
-          <div className="type-card">
+</section>
 
-            <h3>🍊 Fresh Perfume</h3>
 
-            <p>
-              Refreshing citrus and aquatic scents
-              perfect for everyday use.
-            </p>
 
-          </div>
 
 
-          <div className="type-card">
+{/* BENEFITS */}
 
-            <h3>🌙 Oriental Perfume</h3>
+<section className="perfume-benefits">
 
-            <p>
-              Rich and warm fragrances with luxurious
-              spicy and sweet notes.
-            </p>
 
-          </div>
+<h2>
+Why Choose GlowNest Perfume?
+</h2>
 
 
-          <div className="type-card">
+<div className="benefits-grid">
 
-            <h3>🌿 Woody Perfume</h3>
 
-            <p>
-              Elegant woody aromas that create a
-              sophisticated personality.
-            </p>
+<div className="benefit-card">
 
-          </div>
+<h3>
+Long Lasting
+</h3>
 
-        </div>
+<p>
+Enjoy beautiful fragrances that stay fresh all day.
+</p>
 
-      </section>
+</div>
 
 
 
+<div className="benefit-card">
 
-      {/* Fragrance Notes */}
+<h3>
+Premium Ingredients
+</h3>
 
-      <section className="fragrance-notes">
+<p>
+Made with carefully selected fragrance notes.
+</p>
 
-        <h2>Understanding Fragrance Notes</h2>
+</div>
 
 
-        <div className="notes-container">
 
 
-          <div className="note-box">
+<div className="benefit-card">
 
-            <h3>✨ Top Notes</h3>
+<h3>
+Luxury Experience
+</h3>
 
-            <p>
-              The first impression of perfume with
-              fresh and light scents.
-            </p>
+<p>
+Elegant scents created for special occasions.
+</p>
 
-          </div>
+</div>
 
 
 
-          <div className="note-box">
+<div className="benefit-card">
 
-            <h3>💖 Heart Notes</h3>
+<h3>
+Perfect Gift
+</h3>
 
-            <p>
-              The main character of the fragrance
-              that appears after a few minutes.
-            </p>
+<p>
+Beautiful perfumes for your loved ones.
+</p>
 
-          </div>
+</div>
 
 
+</div>
 
-          <div className="note-box">
 
-            <h3>🌟 Base Notes</h3>
+</section>
 
-            <p>
-              Long-lasting deep scents that remain
-              for hours.
-            </p>
 
-          </div>
 
 
-        </div>
 
-      </section>
 
+{/* CATEGORIES */}
 
 
+<section className="perfume-categories">
 
 
-      {/* How To Choose Perfume */}
+<h2>
+Perfume Categories
+</h2>
 
-      <section className="choose-perfume">
 
-        <h2>How To Choose Your Perfect Perfume?</h2>
+<div className="categories-grid">
 
 
-        <div className="choose-steps">
+<div className="category-card">
+<h3>Floral</h3>
+<p>Rose, jasmine and soft feminine fragrances.</p>
+</div>
 
 
-          <div>
+<div className="category-card">
+<h3>Fresh</h3>
+<p>Light citrus and refreshing everyday scents.</p>
+</div>
 
-            <span>1</span>
 
-            <h3>Know Your Style</h3>
+<div className="category-card">
+<h3>Woody</h3>
+<p>Warm and sophisticated fragrances.</p>
+</div>
 
-            <p>
-              Choose fragrances that match your
-              personality.
-            </p>
 
-          </div>
+<div className="category-card">
+<h3>Oriental</h3>
+<p>Rich luxurious notes for special occasions.</p>
+</div>
 
 
+</div>
 
-          <div>
 
-            <span>2</span>
+</section>
 
-            <h3>Choose Occasion</h3>
 
-            <p>
-              Select daily, party or special
-              occasion perfumes.
-            </p>
 
-          </div>
 
 
+{/* BRANDS */}
 
-          <div>
 
-            <span>3</span>
+<section className="perfume-brands">
 
-            <h3>Test The Scent</h3>
+<h2>
+Popular Fragrance Brands
+</h2>
 
-            <p>
-              Try fragrance notes before selecting.
-            </p>
 
-          </div>
+<div className="brands">
 
 
-        </div>
+<div className="brand">
+Chanel
+</div>
 
-      </section>
 
+<div className="brand">
+Dior
+</div>
 
 
+<div className="brand">
+Gucci
+</div>
 
 
-      {/* Customer Reviews */}
+<div className="brand">
+Versace
+</div>
 
-      <section className="perfume-reviews">
 
-        <h2>Customer Reviews</h2>
+<div className="brand">
+YSL
+</div>
 
 
-        <div className="review-cards">
+<div className="brand">
+Calvin Klein
+</div>
 
 
-          <div className="review-card">
+</div>
 
-            ⭐⭐⭐⭐⭐
 
-            <p>
-              "Amazing fragrance and lasts all day!"
-            </p>
+</section>
 
-            <h4>- Ananya</h4>
 
-          </div>
 
 
 
-          <div className="review-card">
 
-            ⭐⭐⭐⭐⭐
+{/* REVIEWS */}
 
-            <p>
-              "Beautiful premium perfume collection."
-            </p>
 
-            <h4>- Priya</h4>
+<section className="perfume-reviews">
 
-          </div>
 
+<h2>
+Customer Reviews
+</h2>
 
 
-          <div className="review-card">
+<div className="review-grid">
 
-            ⭐⭐⭐⭐⭐
 
-            <p>
-              "My favourite fragrance from GlowNest."
-            </p>
+<div className="review-card">
 
-            <h4>- Sneha</h4>
+⭐⭐⭐⭐⭐
 
-          </div>
+<p>
+"Beautiful fragrance and lasts all day."
+</p>
 
+<h4>- Priya</h4>
 
-        </div>
+</div>
 
-      </section>
 
 
+<div className="review-card">
 
+⭐⭐⭐⭐⭐
 
+<p>
+"Premium quality perfume collection."
+</p>
 
-      {/* CTA */}
+<h4>- Ananya</h4>
 
-      <section className="perfume-cta">
+</div>
 
-        <h2>
-          Find Your Signature Fragrance
-        </h2>
 
 
-        <p>
-          Explore GlowNest perfumes and discover
-          a scent that represents you.
-        </p>
+<div className="review-card">
 
+⭐⭐⭐⭐☆
 
-        <button>
-          Explore Perfumes
-        </button>
+<p>
+"Lovely scents with elegant packaging."
+</p>
 
+<h4>- Sneha</h4>
 
-      </section>
-    </div>
-  );
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+{/* FAQ */}
+
+
+<section className="perfume-faq">
+
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+
+
+<div className="faq-card">
+
+<h3>
+How long does perfume last?
+</h3>
+
+<p>
+Most premium perfumes can last between 6-12 hours depending on skin type.
+</p>
+
+</div>
+
+
+
+
+<div className="faq-card">
+
+<h3>
+Which perfume is best for daily use?
+</h3>
+
+<p>
+Fresh and floral fragrances are perfect for everyday wear.
+</p>
+
+</div>
+
+
+
+
+<div className="faq-card">
+
+<h3>
+Can perfume be gifted?
+</h3>
+
+<p>
+Yes, perfumes make elegant gifts for birthdays and special occasions.
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+</div>
+
+);
+
 };
 
 

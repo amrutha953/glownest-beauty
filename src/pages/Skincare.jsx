@@ -7,25 +7,25 @@ const products = [
     id: 1,
     name: "Vitamin C Face Serum",
     price: "₹699",
-    image: "/images/serum.jpg",
+    image: "/images/vitamin-c-face-serum.jpg",
   },
   {
     id: 2,
     name: "Daily Face Cleanser",
     price: "₹399",
-    image: "/images/skincare.jpg",
+    image: "/images/daily-face-cleanser.jpg",
   },
   {
     id: 3,
     name: "Hydrating Moisturizer",
     price: "₹549",
-    image: "/images/skincare.jpg",
+    image: "/images/hydrating moisturizer.jpg",
   },
   {
     id: 4,
     name: "SPF 50 Sunscreen",
     price: "₹599",
-    image: "/images/skincare.jpg",
+    image: "/images/spf 50 sunscreen.jpg",
   },
 ];
 

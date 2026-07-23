@@ -2,230 +2,510 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Bodycare.css";
 
+
 const products = [
-  {
-    id: 1,
-    name: "Nourishing Body Lotion",
-    price: "₹499",
-    image: "/images/bodycare.jpg",
-  },
-  {
-    id: 2,
-    name: "Refreshing Body Wash",
-    price: "₹399",
-    image: "/images/bodycare.jpg",
-  },
-  {
-    id: 3,
-    name: "Exfoliating Body Scrub",
-    price: "₹599",
-    image: "/images/bodycare.jpg",
-  },
-  {
-    id: 4,
-    name: "Hydrating Body Butter",
-    price: "₹799",
-    image: "/images/bodycare.jpg",
-  },
+
+{
+id:1,
+name:"GlowNest Body Lotion",
+price:"₹499",
+image:"/images/body-lotion.jpg",
+},
+
+{
+id:2,
+name:"Nourishing Body Butter",
+price:"₹599",
+image:"/images/body-butter.jpg",
+},
+
+{
+id:3,
+name:"Refreshing Body Wash",
+price:"₹399",
+image:"/images/body-wash.jpg",
+},
+
+{
+id:4,
+name:"Exfoliating Body Scrub",
+price:"₹549",
+image:"/images/body-scrub.jpg",
+},
+
 ];
 
-const Bodycare = () => {
-  const navigate = useNavigate();
 
-  return (
-    <div className="bodycare-page">
 
-      {/* Hero Section */}
+const Bodycare =()=>{
 
-      <section className="body-hero">
-        <div className="body-overlay">
 
-          <h1>Bodycare Collection</h1>
+const navigate = useNavigate();
 
-          <p>
-            Pamper your skin with luxurious bodycare essentials designed to
-            cleanse, nourish and hydrate for healthy, glowing skin every day.
-          </p>
 
-          <button onClick={() => navigate("/shop/bodycare")}>
-            Shop Bodycare
-          </button>
+return(
 
-        </div>
-      </section>
+<div className="bodycare-page">
 
-      {/* Introduction */}
 
-      <section className="body-intro">
 
-        <h2>Glow From Head To Toe</h2>
+{/* Hero Section */}
 
-        <p>
-          Explore premium body lotions, body washes, scrubs and body butters
-          specially curated to keep your skin soft, smooth and beautifully
-          moisturized.
-        </p>
 
-      </section>
+<section className="body-hero">
 
-      {/* Featured Products */}
 
-      <section className="featured-products">
+<div className="body-overlay">
 
-        <h2>Featured Bodycare Products</h2>
 
-        <div className="products-grid">
+<h1>
+Bodycare Collection
+</h1>
 
-          {products.map((product) => (
 
-            <div className="product-card" key={product.id}>
+<p>
+Discover luxurious bodycare essentials that keep
+your skin soft, smooth and beautifully nourished.
+</p>
 
-              <img src={product.image} alt={product.name} />
 
-              <h3>{product.name}</h3>
 
-              <span>{product.price}</span>
+<button onClick={()=>navigate("/shop")}>
+Shop Bodycare
+</button>
 
-              <button
-                onClick={() => alert(`${product.name} added to cart!`)}
-              >
-                Add to Cart
-              </button>
 
-            </div>
 
-          ))}
+</div>
 
-        </div>
 
-      </section>
-            {/* Why Choose GlowNest */}
+</section>
 
-      <section className="why-bodycare">
 
-        <h2>Why Choose GlowNest Bodycare?</h2>
 
-        <div className="why-grid">
 
-          <div className="why-card">
-            <h3>💧 Deep Hydration</h3>
-            <p>
-              Our bodycare products lock in moisture to keep your skin soft,
-              smooth and hydrated throughout the day.
-            </p>
-          </div>
 
-          <div className="why-card">
-            <h3>🌿 Natural Ingredients</h3>
-            <p>
-              Enriched with nourishing botanical extracts that gently care for
-              every skin type.
-            </p>
-          </div>
 
-          <div className="why-card">
-            <h3>✨ Healthy Glow</h3>
-            <p>
-              Enjoy radiant and healthy-looking skin with products designed for
-              everyday body care.
-            </p>
-          </div>
 
-        </div>
+{/* Introduction */}
 
-      </section>
 
-      {/* Daily Routine */}
+<section className="body-intro">
 
-      <section className="body-routine">
 
-        <h2>Daily Body Care Routine</h2>
+<h2>
+Complete Care For Your Body
+</h2>
 
-        <div className="routine-grid">
 
-          <div className="routine-card">
-            <span>🚿</span>
-            <h3>Step 1</h3>
-            <p>Cleanse your skin with a refreshing body wash.</p>
-          </div>
+<p>
 
-          <div className="routine-card">
-            <span>🧴</span>
-            <h3>Step 2</h3>
-            <p>Exfoliate gently using a nourishing body scrub.</p>
-          </div>
+GlowNest bodycare products are designed with
+hydrating and nourishing ingredients to give your
+skin long-lasting softness and a healthy glow.
 
-          <div className="routine-card">
-            <span>💖</span>
-            <h3>Step 3</h3>
-            <p>Apply body lotion to keep your skin hydrated.</p>
-          </div>
+</p>
 
-          <div className="routine-card">
-            <span>🌸</span>
-            <h3>Step 4</h3>
-            <p>Use body butter at night for deep nourishment.</p>
-          </div>
 
-        </div>
+</section>
 
-      </section>
 
-      {/* Customer Reviews */}
 
-      <section className="body-reviews">
 
-        <h2>Customer Reviews</h2>
 
-        <div className="review-grid">
 
-          <div className="review-card">
-            ⭐⭐⭐⭐⭐
-            <p>
-              "The body lotion is incredibly moisturizing and keeps my skin soft all day."
-            </p>
-            <h4>- Aisha</h4>
-          </div>
 
-          <div className="review-card">
-            ⭐⭐⭐⭐⭐
-            <p>
-              "The body scrub leaves my skin feeling fresh, smooth and glowing."
-            </p>
-            <h4>- Neha</h4>
-          </div>
 
-          <div className="review-card">
-            ⭐⭐⭐⭐⭐
-            <p>
-              "GlowNest bodycare products have become part of my daily routine."
-            </p>
-            <h4>- Meera</h4>
-          </div>
+{/* Featured Products */}
 
-        </div>
 
-      </section>
+<section className="featured-products">
 
-      {/* CTA */}
 
-      <section className="body-cta">
+<h2>
+Featured Bodycare Products
+</h2>
 
-        <h2>Give Your Skin the Care It Deserves</h2>
 
-        <p>
-          Explore premium bodycare essentials specially designed to nourish,
-          protect and refresh your skin every day.
-        </p>
 
-        <button onClick={() => navigate("/shop/bodycare")}>
-          Explore More
-        </button>
+<div className="products-grid">
 
-      </section>
 
-    </div>
-  );
-};
+{
+products.map((product)=>(
+
+
+<div className="product-card" key={product.id}>
+
+
+<img 
+src={product.image}
+alt={product.name}
+/>
+
+
+<h3>
+{product.name}
+</h3>
+
+
+<span>
+{product.price}
+</span>
+
+
+
+<button
+onClick={()=>alert(`${product.name} added to cart!`)}
+>
+Add to Cart
+</button>
+
+
+</div>
+
+
+))
+}
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+{/* Benefits */}
+
+
+<section className="body-benefits">
+
+
+<h2>
+Why Choose Our Bodycare?
+</h2>
+
+
+
+<div className="benefits-grid">
+
+
+
+<div className="benefit-card">
+
+<div className="benefit-icon">
+💧
+</div>
+
+<h3>
+Deep Moisture
+</h3>
+
+<p>
+Keeps your skin hydrated, soft and smooth.
+</p>
+
+</div>
+
+
+
+
+
+<div className="benefit-card">
+
+<div className="benefit-icon">
+🌿
+</div>
+
+<h3>
+Natural Care
+</h3>
+
+<p>
+Made with skin-friendly nourishing ingredients.
+</p>
+
+</div>
+
+
+
+
+
+
+<div className="benefit-card">
+
+<div className="benefit-icon">
+✨
+</div>
+
+<h3>
+Healthy Glow
+</h3>
+
+<p>
+Improves skin texture and natural radiance.
+</p>
+
+</div>
+
+
+
+
+
+
+
+<div className="benefit-card">
+
+<div className="benefit-icon">
+🧴
+</div>
+
+<h3>
+Daily Protection
+</h3>
+
+<p>
+Perfect essentials for everyday body care.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+{/* Popular Brands */}
+
+
+<section className="body-brands">
+
+
+<h2>
+Popular Bodycare Brands
+</h2>
+
+
+
+<div className="brands">
+
+
+<div className="brand">
+Nivea
+</div>
+
+
+<div className="brand">
+Dove
+</div>
+
+
+<div className="brand">
+The Body Shop
+</div>
+
+
+<div className="brand">
+Vaseline
+</div>
+
+
+<div className="brand">
+Cetaphil
+</div>
+
+
+<div className="brand">
+Plum
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+{/* Reviews */}
+
+
+<section className="body-reviews">
+
+
+<h2>
+Customer Reviews
+</h2>
+
+
+
+<div className="review-grid">
+
+
+
+<div className="review-card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+"Body lotion feels amazing and keeps my skin soft."
+</p>
+
+<h4>
+- Priya
+</h4>
+
+</div>
+
+
+
+
+<div className="review-card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+"Great products with beautiful fragrance."
+</p>
+
+<h4>
+- Ananya
+</h4>
+
+</div>
+
+
+
+
+<div className="review-card">
+
+⭐⭐⭐⭐☆
+
+<p>
+"Perfect daily bodycare routine."
+</p>
+
+<h4>
+- Sneha
+</h4>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+{/* FAQ */}
+
+
+
+<section className="body-faq">
+
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+How often should I use body lotion?
+</h3>
+
+
+<p>
+Apply body lotion daily after shower for best results.
+</p>
+
+
+</div>
+
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+Are these products suitable for all skin types?
+</h3>
+
+
+<p>
+Yes, GlowNest bodycare products are designed for different skin needs.
+</p>
+
+
+</div>
+
+
+
+
+
+<div className="faq-card">
+
+
+<h3>
+Can body scrub be used every day?
+</h3>
+
+
+<p>
+Use body scrub 2-3 times a week for gentle exfoliation.
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+</div>
+
+)
+
+}
+
 
 export default Bodycare;
