@@ -4,28 +4,55 @@ import "./Makeup.css";
 
 const products = [
   {
-    id: 1,
+    id: 101,
     name: "Matte Lipstick",
     price: "₹499",
     image: "/images/matte-lipstick.jpg",
+    images: [
+      "/images/matte-lipstick.jpg",
+      "/images/matte-lipstick-1.jpg",
+      "/images/matte-lipstick-2.jpg",
+      "/images/matte-lipstick-3.jpg",
+    ],
   },
+
   {
-    id: 2,
+    id: 102,
     name: "Liquid Foundation",
     price: "₹899",
     image: "/images/liquid-foundation.jpg",
+    images: [
+      "/images/liquid-foundation.jpg",
+      "/images/liquid-foundation-1.jpg",
+      "/images/liquid-foundation-2.jpg",
+      "/images/liquid-foundation-3.jpg",
+    ],
   },
+
   {
-    id: 3,
+    id: 103,
     name: "Waterproof Mascara",
     price: "₹699",
     image: "/images/waterproof-mascara.jpg",
+    images: [
+      "/images/waterproof-mascara.jpg",
+      "/images/waterproof-mascara-1.jpg",
+      "/images/waterproof-mascara-2.jpg",
+      "/images/waterproof-mascara-3.jpg",
+    ],
   },
+
   {
-    id: 4,
+    id: 104,
     name: "Eyeshadow Palette",
     price: "₹999",
     image: "/images/eyeshadow-palette.jpg",
+    images: [
+      "/images/eyeshadow-palette.jpg",
+      "/images/eyeshadow-palette-1.jpg",
+      "/images/eyeshadow-palette-2.jpg",
+      "/images/eyeshadow-palette-3.jpg",
+    ],
   },
 ];
 
@@ -74,7 +101,11 @@ const Makeup = () => {
 
           {products.map((product) => (
 
-            <div className="product-card" key={product.id}>
+            <div
+  className="product-card"
+  key={product.id}
+  onClick={() => navigate(`/product/${product.id}`)}
+>
 
               <img src={product.image} alt={product.name} />
 
@@ -83,12 +114,13 @@ const Makeup = () => {
               <span>{product.price}</span>
 
               <button
-                onClick={() =>
-                  alert(`${product.name} added to cart!`)
-                }
-              >
-                Add to Cart
-              </button>
+  onClick={(e) => {
+    e.stopPropagation();
+    alert(`${product.name} added to cart!`);
+  }}
+>
+  Add to Cart
+</button>
 
             </div>
 

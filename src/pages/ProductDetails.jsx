@@ -85,8 +85,78 @@ const products = [
   "Broad spectrum SPF 50 sunscreen for everyday UV protection."
 },
 
-];
+{
+  id:101,
+  name:"Matte Lipstick",
+  price:499,
 
+  image:"/images/matte-lipstick.jpg",
+
+  images:[
+    "/images/matte-lipstick.jpg",
+    "/images/matte-lipstick-1.jpg",
+    "/images/matte-lipstick-2.jpg",
+    "/images/matte-lipstick-3.jpg"
+  ],
+
+  description:
+  "A long-lasting matte lipstick with rich color payoff and a comfortable matte finish."
+},
+{
+  id:102,
+  name:"Liquid Foundation",
+  price:899,
+
+  image:"/images/liquid-foundation.jpg",
+
+  images:[
+    "/images/liquid-foundation.jpg",
+    "/images/liquid-foundation-1.jpg",
+    "/images/liquid-foundation-2.jpg",
+    "/images/liquid-foundation-3.jpg"
+  ],
+
+  description:
+  "Lightweight liquid foundation that provides full coverage with a smooth natural finish."
+},
+
+{
+  id:103,
+  name:"Waterproof Mascara",
+  price:699,
+
+  image:"/images/waterproof-mascara.jpg",
+
+  images:[
+    "/images/waterproof-mascara.jpg",
+    "/images/waterproof-mascara-1.jpg",
+    "/images/waterproof-mascara-2.jpg",
+    "/images/waterproof-mascara-3.jpg"
+  ],
+
+  description:
+  "Smudge-proof waterproof mascara that adds volume, length, and definition for all-day wear."
+},
+
+{
+  id:104,
+  name:"Eyeshadow Palette",
+  price:999,
+
+  image:"/images/eyeshadow-palette.jpg",
+
+  images:[
+    "/images/eyeshadow-palette.jpg",
+    "/images/eyeshadow-palette-1.jpg",
+    "/images/eyeshadow-palette-2.jpg",
+    "/images/eyeshadow-palette-3.jpg"
+  ],
+
+  description:
+  "Highly pigmented eyeshadow palette with vibrant matte and shimmer shades for every occasion."
+}
+
+];
 
 
 
