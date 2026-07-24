@@ -9,30 +9,50 @@ const products = [
     price: "₹699",
     image: "/images/vitamin-c-face-serum.jpg",
     images: [
-    "/images/vitamin-c-face-serum.jpg",
-    "/images/vitamin-c-face-serum-1.jpg",
-    "/images/vitamin-c-face-serum-2.jpg",
-    "/images/vitamin-c-face-serum-3.jpg",
-  ],
-
+      "/images/vitamin-c-face-serum.jpg",
+      "/images/vitamin-c-face-serum-1.jpg",
+      "/images/vitamin-c-face-serum-2.jpg",
+      "/images/vitamin-c-face-serum-3.jpg",
+    ],
   },
+
   {
     id: 2,
     name: "Daily Face Cleanser",
     price: "₹399",
     image: "/images/daily-face-cleanser.jpg",
+    images: [
+      "/images/daily-face-cleanser.jpg",
+      "/images/daily-face-cleanser-1.jpg",
+      "/images/daily-face-cleanser-2.jpg",
+      "/images/daily-face-cleanser-3.jpg",
+    ],
   },
+
   {
     id: 3,
     name: "Hydrating Moisturizer",
     price: "₹549",
     image: "/images/hydrating moisturizer.jpg",
+    images: [
+      "/images/hydrating moisturizer.jpg",
+      "/images/hydrating moisturizer-1.jpg",
+      "/images/hydrating moisturizer-2.jpg",
+      "/images/hydrating moisturizer-3.jpg",
+    ],
   },
+
   {
     id: 4,
     name: "SPF 50 Sunscreen",
     price: "₹599",
     image: "/images/spf 50 sunscreen.jpg",
+    images: [
+      "/images/spf 50 sunscreen.jpg",
+      "/images/spf 50 sunscreen-1.jpg",
+      "/images/spf 50 sunscreen-2.jpg",
+      "/images/spf 50 sunscreen-3.jpg",
+    ],
   },
 ];
 

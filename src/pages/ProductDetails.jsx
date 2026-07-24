@@ -30,39 +30,60 @@ const products = [
 
 
   {
-    id:2,
-    name:"Daily Face Cleanser",
-    price:399,
+  id:2,
+  name:"Daily Face Cleanser",
+  price:399,
 
-    image:"/images/daily-face-cleanser.jpg",
+  image:"/images/daily-face-cleanser.jpg",
 
-    description:
-    "Gentle cleanser that removes dirt and excess oil without drying the skin."
-  },
+  images:[
+    "/images/daily-face-cleanser.jpg",
+    "/images/daily-face-cleanser-1.jpg",
+    "/images/daily-face-cleanser-2.jpg",
+    "/images/daily-face-cleanser-3.jpg"
+  ],
 
-
-  {
-    id:3,
-    name:"Hydrating Moisturizer",
-    price:549,
-
-    image:"/images/hydrating moisturizer.jpg",
-
-    description:
-    "Lightweight moisturizer for soft, healthy and hydrated skin."
-  },
+  description:
+  "Gentle cleanser that removes dirt and excess oil without drying the skin."
+},
 
 
   {
-    id:4,
-    name:"SPF 50 Sunscreen",
-    price:599,
+  id:3,
+  name:"Hydrating Moisturizer",
+  price:549,
 
-    image:"/images/spf 50 sunscreen.jpg",
+  image:"/images/hydrating moisturizer.jpg",
 
-    description:
-    "Broad spectrum SPF 50 sunscreen for everyday UV protection."
-  }
+  images:[
+    "/images/hydrating moisturizer.jpg",
+    "/images/hydrating moisturizer-1.jpg",
+    "/images/hydrating moisturizer-2.jpg",
+    "/images/hydrating moisturizer-3.jpg"
+  ],
+
+  description:
+  "Lightweight moisturizer for soft, healthy and hydrated skin."
+},
+
+
+  {
+  id:4,
+  name:"SPF 50 Sunscreen",
+  price:599,
+
+  image:"/images/spf 50 sunscreen.jpg",
+
+  images:[
+    "/images/spf 50 sunscreen.jpg",
+    "/images/spf 50 sunscreen-1.jpg",
+    "/images/spf 50 sunscreen-2.jpg",
+    "/images/spf 50 sunscreen-3.jpg"
+  ],
+
+  description:
+  "Broad spectrum SPF 50 sunscreen for everyday UV protection."
+},
 
 ];
 
