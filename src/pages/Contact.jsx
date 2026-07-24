@@ -122,16 +122,32 @@ const Contact = () => {
 
       </section>
 
-      {/* Map Placeholder */}
-      <section className="map-section">
+      {/* Google Map */}
+<section className="map-section">
 
-        <h2>Our Location</h2>
+  <h2>Our Location</h2>
 
-        <div className="map-box">
-          Google Map will be added here
-        </div>
+  <p className="location-text">
+    GlowNest Beauty Pvt. Ltd.<br />
+    MG Road, Bengaluru, Karnataka - 560001
+  </p>
 
-      </section>
+  <div className="map-box">
+
+    <iframe
+      title="GlowNest Beauty Location"
+      src="https://www.google.com/maps?q=MG+Road+Bengaluru&output=embed"
+      width="100%"
+      height="450"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+  </div>
+
+</section>
 
     </div>
   );

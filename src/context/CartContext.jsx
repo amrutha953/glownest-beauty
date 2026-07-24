@@ -4,15 +4,7 @@ export const CartContext = createContext();
 
 export function CartProvider({ children }) {
 
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Vitamin C Serum",
-      price: 699,
-      image: "/images/serum.jpg",
-      quantity: 1,
-    },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
 
   // Add product

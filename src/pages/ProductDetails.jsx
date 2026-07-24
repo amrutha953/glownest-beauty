@@ -1,102 +1,503 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
+
+import { FaHeart } from "react-icons/fa";
+
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
+
+
 const products = [
+
   {
-    id: 201,
-    name: "GlowNest Skincare Kit",
-    price: 599,
-    image: "/images/skincare.jpg",
+    id:1,
+    name:"Vitamin C Face Serum",
+    price:699,
+
+    image:"/images/vitamin-c-face-serum.jpg",
+
+    images:[
+      "/images/vitamin-c-face-serum.jpg",
+      "/images/vitamin-c-face-serum-1.jpg",
+      "/images/vitamin-c-face-serum-2.jpg",
+      "/images/vitamin-c-face-serum-3.jpg"
+    ],
+
     description:
-      "A complete skincare routine including cleanser, moisturizer and sunscreen for glowing, healthy skin.",
+    "Brightening Vitamin C Face Serum enriched with antioxidants to reduce pigmentation, hydrate the skin, and provide a natural radiant glow."
   },
+
+
   {
-    id: 202,
-    name: "GlowNest Makeup Collection",
-    price: 899,
-    image: "/images/makeup.jpg",
+    id:2,
+    name:"Daily Face Cleanser",
+    price:399,
+
+    image:"/images/daily-face-cleanser.jpg",
+
     description:
-      "A premium makeup collection with foundation, lipstick, mascara and more.",
+    "Gentle cleanser that removes dirt and excess oil without drying the skin."
   },
+
+
   {
-    id: 203,
-    name: "GlowNest Haircare Essentials",
-    price: 699,
-    image: "/images/haircare.jpg",
+    id:3,
+    name:"Hydrating Moisturizer",
+    price:549,
+
+    image:"/images/hydrating moisturizer.jpg",
+
     description:
-      "Complete haircare essentials for smooth, healthy and shiny hair.",
+    "Lightweight moisturizer for soft, healthy and hydrated skin."
   },
+
+
   {
-    id: 204,
-    name: "GlowNest Body Care Lotion",
-    price: 499,
-    image: "/images/bodycare.jpg",
+    id:4,
+    name:"SPF 50 Sunscreen",
+    price:599,
+
+    image:"/images/spf 50 sunscreen.jpg",
+
     description:
-      "Hydrating body lotion enriched with natural ingredients for soft skin.",
-  },
-  {
-    id: 205,
-    name: "GlowNest Premium Serum",
-    price: 799,
-    image: "/images/serum.jpg",
-    description:
-      "Vitamin-rich facial serum for brighter, healthier and youthful skin.",
-  },
-  {
-    id: 206,
-    name: "GlowNest Luxury Perfume",
-    price: 999,
-    image: "/images/perfume.jpg",
-    description:
-      "Long-lasting luxury perfume with an elegant floral fragrance.",
-  },
+    "Broad spectrum SPF 50 sunscreen for everyday UV protection."
+  }
+
 ];
 
-export default function ProductDetails() {
-  const { id } = useParams();
-  const { addToCart } = useContext(CartContext);
 
-  const product = products.find(
-    (item) => item.id === Number(id)
+
+
+export default function ProductDetails(){
+
+
+  const {id}=useParams();
+
+  const navigate=useNavigate();
+
+
+  const {addToCart}=useContext(CartContext);
+
+  const {addToWishlist}=useContext(WishlistContext);
+
+
+
+  const product=products.find(
+    item=>item.id===Number(id)
   );
 
-  if (!product) {
-    return <h2>Product not found</h2>;
+
+
+  const [selectedImage,setSelectedImage]=useState(
+    product?.images ? product.images[0] : product?.image
+  );
+
+
+  const [isWishlisted,setIsWishlisted]=useState(false);
+
+
+  const [showToast,setShowToast]=useState(false);
+
+
+
+
+  if(!product){
+
+    return(
+
+      <h2 style={{textAlign:"center"}}>
+
+        Product Not Found
+
+      </h2>
+
+    );
+
   }
-  return (
-    <div className="product-details-page">
-      <div className="product-details-card">
 
-        <div className="product-image">
-          <img
-            src={product.image}
-            alt={product.name}
-          />
-        </div>
 
-        <div className="product-info">
-          <h1>{product.name}</h1>
 
-          <p className="price">₹{product.price}</p>
+  const images=product.images || [product.image];
 
-          <p className="rating">
-            ⭐⭐⭐⭐⭐ (4.8/5)
-          </p>
 
-          <p className="description">
-            {product.description}
-          </p>
 
-          <button
-            className="buy-btn"
-            onClick={() => addToCart(product)}
-         >
-            Add to Cart
-          </button>
-        </div>
 
-      </div>
-    </div>
-  );
+
+  const previousImage=()=>{
+
+
+    const current=images.indexOf(selectedImage);
+
+
+    const previous=
+    (current-1+images.length)%images.length;
+
+
+    setSelectedImage(images[previous]);
+
+  };
+
+
+
+
+
+  const nextImage=()=>{
+
+
+    const current=images.indexOf(selectedImage);
+
+
+    const next=
+    (current+1)%images.length;
+
+
+    setSelectedImage(images[next]);
+
+  };
+
+
+
+
+
+
+  const handleWishlist=()=>{
+
+
+    addToWishlist(product);
+
+
+    setIsWishlisted(!isWishlisted);
+
+
+
+    setShowToast(true);
+
+
+
+    setTimeout(()=>{
+
+      setShowToast(false);
+
+    },2000);
+
+
+  };
+
+
+
+
+
+
+return(
+
+
+<div className="product-details-page">
+
+
+
+<div className="product-details-card">
+
+
+
+
+
+
+{/* IMAGE SECTION */}
+
+
+<div className="image-section">
+
+
+
+<div className="product-image">
+
+
+
+{
+images.length>1 &&
+
+<button
+
+className="arrow left-arrow"
+
+onClick={previousImage}
+
+>
+
+❮
+
+</button>
+
+}
+
+
+
+
+<img
+
+src={selectedImage}
+
+alt={product.name}
+
+/>
+
+
+
+
+
+{
+images.length>1 &&
+
+<button
+
+className="arrow right-arrow"
+
+onClick={nextImage}
+
+>
+
+❯
+
+</button>
+
+}
+
+
+
+</div>
+
+
+
+
+
+{/* THUMBNAILS */}
+
+
+
+<div className="thumbnail-container">
+
+
+{
+
+images.map((img,index)=>(
+
+
+<img
+
+key={index}
+
+src={img}
+
+alt="thumbnail"
+
+
+className={
+
+selectedImage===img
+
+?
+
+"thumbnail active-thumb"
+
+:
+
+"thumbnail"
+
+}
+
+
+onClick={()=>setSelectedImage(img)}
+
+
+/>
+
+
+))
+
+}
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{/* PRODUCT INFORMATION */}
+
+
+
+<div className="product-info">
+
+
+
+<h1>
+
+{product.name}
+
+</h1>
+
+
+
+
+<p className="price">
+
+₹{product.price}
+
+</p>
+
+
+
+
+<p className="rating">
+
+⭐⭐⭐⭐⭐ (4.8/5)
+
+</p>
+
+
+
+
+<p className="description">
+
+{product.description}
+
+</p>
+
+
+
+
+
+<div className="product-buttons">
+
+
+
+<button
+
+className="cart-btn"
+
+onClick={()=>addToCart(product)}
+
+>
+
+Add to Cart
+
+</button>
+
+
+
+
+
+
+<button
+
+className={
+
+`wishlist-action ${
+isWishlisted ? "active": ""
+}`
+
+}
+
+
+onClick={handleWishlist}
+
+>
+
+
+<FaHeart/>
+
+
+{
+
+isWishlisted
+
+?
+
+"Added"
+
+:
+
+"Wishlist"
+
+}
+
+
+</button>
+
+
+
+
+
+
+<button
+
+className="buy-now-btn"
+
+onClick={()=>{
+
+
+addToCart(product);
+
+
+navigate("/cart");
+
+
+}}
+
+>
+
+Buy Now
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+{
+
+showToast &&
+
+<div className="wishlist-toast">
+
+Added to Wishlist ❤️
+
+</div>
+
+}
+
+
+
+</div>
+
+
+
+);
+
+
 }

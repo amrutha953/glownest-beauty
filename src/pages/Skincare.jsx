@@ -8,6 +8,13 @@ const products = [
     name: "Vitamin C Face Serum",
     price: "₹699",
     image: "/images/vitamin-c-face-serum.jpg",
+    images: [
+    "/images/vitamin-c-face-serum.jpg",
+    "/images/vitamin-c-face-serum-1.jpg",
+    "/images/vitamin-c-face-serum-2.jpg",
+    "/images/vitamin-c-face-serum-3.jpg",
+  ],
+
   },
   {
     id: 2,
@@ -74,7 +81,11 @@ const Skincare = () => {
 
           {products.map((product) => (
 
-            <div className="product-card" key={product.id}>
+            <div
+  className="product-card"
+  key={product.id}
+  onClick={() => navigate(`/product/${product.id}`)}
+>
 
               <img src={product.image} alt={product.name} />
 
