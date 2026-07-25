@@ -4,35 +4,57 @@ import "./Haircare.css";
 
 
 const products = [
+  {
+    id: 201,
+    name: "Nourishing Shampoo",
+    price: "₹599",
+    image: "/images/nourishing-shampoo.jpg",
+    images: [
+      "/images/nourishing-shampoo.jpg",
+      "/images/nourishing-shampoo-1.jpg",
+      "/images/nourishing-shampoo-2.jpg",
+      "/images/nourishing-shampoo-3.jpg",
+    ],
+  },
 
-{
-id:1,
-name:"Nourishing Shampoo",
-price:"₹499",
-image:"/images/nourishing-shampoo.jpg",
-},
+  {
+    id: 202,
+    name: "Repair Conditioner",
+    price: "₹649",
+    image: "/images/repair-conditioner.jpg",
+    images: [
+      "/images/repair-conditioner.jpg",
+      "/images/repair-conditioner-1.jpg",
+      "/images/repair-conditioner-2.jpg",
+      "/images/repair-conditioner-3.jpg",
+    ],
+  },
 
-{
-id:2,
-name:"Hair Conditioner",
-price:"₹549",
-image:"/images/hair-conditioner.jpg",
-},
+  {
+    id: 203,
+    name: "Hair Serum",
+    price: "₹799",
+    image: "/images/hair-serum.jpg",
+    images: [
+      "/images/hair-serum.jpg",
+      "/images/hair-serum-1.jpg",
+      "/images/hair-serum-2.jpg",
+      "/images/hair-serum-3.jpg",
+    ],
+  },
 
-{
-id:3,
-name:"Hair Serum",
-price:"₹699",
-image:"/images/hair-serum.jpg",
-},
-
-{
-id:4,
-name:"Repair Hair Mask",
-price:"₹799",
-image:"/images/hair-mask.jpg",
-},
-
+  {
+    id: 204,
+    name: "Hair Mask",
+    price: "₹899",
+    image: "/images/hair-mask.jpg",
+    images: [
+      "/images/hair-mask.jpg",
+      "/images/hair-mask-1.jpg",
+      "/images/hair-mask-2.jpg",
+      "/images/hair-mask-3.jpg",
+    ],
+  },
 ];
 
 
@@ -118,62 +140,40 @@ hair soft, smooth and beautiful.
 
 {/* Featured Products */}
 
-
-
 <section className="featured-products">
 
+  <h2>Featured Haircare Products</h2>
 
-<h2>
-Featured Haircare Products
-</h2>
+  <div className="products-grid">
 
+    {products.map((product) => (
 
+      <div
+        className="product-card"
+        key={product.id}
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
 
-<div className="products-grid">
+        <img src={product.image} alt={product.name} />
 
+        <h3>{product.name}</h3>
 
-{
-products.map((product)=>(
+        <span>{product.price}</span>
 
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            alert(`${product.name} added to cart!`);
+          }}
+        >
+          Add to Cart
+        </button>
 
-<div className="product-card" key={product.id}>
+      </div>
 
+    ))}
 
-<img
-src={product.image}
-alt={product.name}
-/>
-
-
-<h3>
-{product.name}
-</h3>
-
-
-<span>
-{product.price}
-</span>
-
-
-
-<button
-onClick={()=>alert(`${product.name} added to cart!`)}
->
-Add to Cart
-</button>
-
-
-
-</div>
-
-
-))
-}
-
-
-
-</div>
-
+  </div>
 
 </section>
 

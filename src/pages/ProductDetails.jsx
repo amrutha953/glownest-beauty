@@ -154,7 +154,79 @@ const products = [
 
   description:
   "Highly pigmented eyeshadow palette with vibrant matte and shimmer shades for every occasion."
-}
+},
+
+{
+  id: 201,
+  name: "Nourishing Shampoo",
+  price: 599,
+
+  image: "/images/nourishing-shampoo.jpg",
+
+  images: [
+    "/images/nourishing-shampoo.jpg",
+    "/images/nourishing-shampoo-1.jpg",
+    "/images/nourishing-shampoo-2.jpg",
+    "/images/nourishing-shampoo-3.jpg"
+  ],
+
+  description:
+    "A nourishing shampoo that gently cleanses the scalp while strengthening and adding shine to your hair."
+},
+
+{
+  id: 202,
+  name: "Repair Conditioner",
+  price: 649,
+
+  image: "/images/repair-conditioner.jpg",
+
+  images: [
+    "/images/repair-conditioner.jpg",
+    "/images/repair-conditioner-1.jpg",
+    "/images/repair-conditioner-2.jpg",
+    "/images/repair-conditioner-3.jpg"
+  ],
+
+  description:
+    "A rich conditioner that deeply nourishes dry and damaged hair, leaving it smooth and manageable."
+},
+
+{
+  id: 203,
+  name: "Hair Serum",
+  price: 799,
+
+  image: "/images/hair-serum.jpg",
+
+  images: [
+    "/images/hair-serum.jpg",
+    "/images/hair-serum-1.jpg",
+    "/images/hair-serum-2.jpg",
+    "/images/hair-serum-3.jpg"
+  ],
+
+  description:
+    "Lightweight hair serum that controls frizz, adds shine, and protects hair from daily damage."
+},
+
+{
+  id: 204,
+  name: "Hair Mask",
+  price: 899,
+
+  image: "/images/hair-mask.jpg",
+
+  images: [
+    "/images/hair-mask.jpg",
+    "/images/hair-mask-1.jpg",
+    "/images/hair-mask-2.jpg",
+    "/images/hair-mask-3.jpg"
+  ],
+
+  description:
+    "An intensive hair mask that repairs damaged strands and restores softness and moisture."
+},
 
 ];
 
