@@ -7,35 +7,57 @@ import { WishlistContext } from "../context/WishlistContext";
 
 
 const products = [
+  {
+    id: 401,
+    name: "Vitamin C Serum",
+    price: "₹699",
+    image: "/images/vitamin-c-face-serum.jpg",
+    images: [
+      "/images/vitamin-c-face-serum.jpg",
+      "/images/vitamin-c-face-serum-1.jpg",
+      "/images/vitamin-c-face-serum-2.jpg",
+      "/images/vitamin-c-face-serum-3.jpg",
+    ],
+  },
 
-{
-id:101,
-name:"Vitamin C Face Serum",
-price:"₹699",
-image:"/images/vitamin-c-face-serum.jpg",
-},
+  {
+    id: 402,
+    name: "Hyaluronic Acid Serum",
+    price: "₹799",
+    image: "/images/hyaluronic-serum.jpg",
+    images: [
+      "/images/hyaluronic-serum.jpg",
+      "/images/hyaluronic-serum-1.jpg",
+      "/images/hyaluronic-serum-2.jpg",
+      "/images/hyaluronic-serum-3.jpg",
+    ],
+  },
 
-{
-id:102,
-name:"Hyaluronic Acid Serum",
-price:"₹799",
-image:"/images/hyaluronic-serum.jpg",
-},
+  {
+    id: 403,
+    name: "Niacinamide Serum",
+    price: "₹749",
+    image: "/images/niacinamide-glow-serum.jpg",
+    images: [
+      "/images/niacinamide-glow-serum.jpg",
+      "/images/niacinamide-glow-serum-1.jpg",
+      "/images/niacinamide-glow-serum-2.jpg",
+      "/images/niacinamide-glow-serum-3.jpg",
+    ],
+  },
 
-{
-id:103,
-name:"Niacinamide Glow Serum",
-price:"₹599",
-image:"/images/niacinamide-glow-serum.jpg",
-},
-
-{
-id:104,
-name:"Retinol Anti Ageing Serum",
-price:"₹899",
-image:"/images/retinol-serum.jpg",
-},
-
+  {
+    id: 404,
+    name: "Retinol Serum",
+    price: "₹899",
+    image: "/images/retinol-serum.jpg",
+    images: [
+      "/images/retinol-serum.jpg",
+      "/images/retinol-serum-1.jpg",
+      "/images/retinol-serum-2.jpg",
+      "/images/retinol-serum-3.jpg",
+    ],
+  },
 ];
 
 
@@ -121,76 +143,47 @@ hydration, brightness and a healthy glow.
 
 {/* Featured Products */}
 
-
 <section className="featured-products">
 
+  <h2>Featured Serums</h2>
 
-<h2>
-Featured Serums
-</h2>
+  <div className="products-grid">
 
+    {products.map((product) => (
 
+      <div
+        className="product-card"
+        key={product.id}
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
 
-<div className="products-grid">
+        <img
+          src={product.image}
+          alt={product.name}
+        />
 
+        <h3>{product.name}</h3>
 
+        <span>{product.price}</span>
 
-{
-products.map((product)=>(
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
 
+            addToCart({
+              ...product,
+              quantity: 1,
+            });
+          }}
+        >
+          Add to Cart
+        </button>
 
-<div className="product-card" key={product.id}>
+      </div>
 
+    ))}
 
-<img
-src={product.image}
-alt={product.name}
-/>
-
-
-
-<h3>
-{product.name}
-</h3>
-
-
-
-<span>
-{product.price}
-</span>
-
-
-
-
-<div className="product-buttons">
-
-
-
-<button
-onClick={()=>addToCart({
-...product,
-quantity:1
-})}
->
-
-Add to Cart
-
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-))
-}
-
-
-</div>
-
+  </div>
 
 </section>
 

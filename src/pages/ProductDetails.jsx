@@ -300,6 +300,78 @@ const products = [
     "A rich hand cream that deeply moisturizes dry hands, keeping them soft, nourished, and protected throughout the day."
 },
 
+{
+  id: 401,
+  name: "Vitamin C Serum",
+  price: 699,
+
+  image: "/images/vitamin-c-face-serum.jpg",
+
+  images: [
+    "/images/vitamin-c-face-serum.jpg",
+    "/images/vitamin-c-face-serum-1.jpg",
+    "/images/vitamin-c-face-serum-2.jpg",
+    "/images/vitamin-c-face-serum-3.jpg"
+  ],
+
+  description:
+    "A powerful Vitamin C serum that brightens the skin, reduces dark spots, and provides antioxidant protection for a healthy glow."
+},
+
+{
+  id: 402,
+  name: "Hyaluronic Acid Serum",
+  price: 799,
+
+  image: "/images/hyaluronic-serum.jpg",
+
+  images: [
+    "/images/hyaluronic-serum.jpg",
+    "/images/hyaluronic-serum-1.jpg",
+    "/images/hyaluronic-serum-2.jpg",
+    "/images/hyaluronic-serum-3.jpg"
+  ],
+
+  description:
+    "A deeply hydrating serum enriched with Hyaluronic Acid to lock in moisture and leave your skin soft, plump, and refreshed."
+},
+
+{
+  id: 403,
+  name: "Niacinamide Serum",
+  price: 749,
+
+  image: "/images/niacinamide-serum.jpg",
+
+  images: [
+    "/images/niacinamide-glow-serum.jpg",
+    "/images/niacinamide-glow-serum-1.jpg",
+    "/images/niacinamide-glow-serum-2.jpg",
+    "/images/niacinamide-glow-serum-3.jpg"
+  ],
+
+  description:
+    "A lightweight Niacinamide serum that helps reduce pores, control excess oil, and improve overall skin texture."
+},
+
+{
+  id: 404,
+  name: "Retinol Serum",
+  price: 899,
+
+  image: "/images/retinol-serum.jpg",
+
+  images: [
+    "/images/retinol-serum.jpg",
+    "/images/retinol-serum-1.jpg",
+    "/images/retinol-serum-2.jpg",
+    "/images/retinol-serum-3.jpg"
+  ],
+
+  description:
+    "An advanced Retinol serum that supports skin renewal, smooths fine lines, and promotes a youthful-looking complexion."
+},
+
 ];
 
 
