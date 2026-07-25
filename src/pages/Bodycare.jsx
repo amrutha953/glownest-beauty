@@ -4,35 +4,57 @@ import "./Bodycare.css";
 
 
 const products = [
+  {
+    id: 301,
+    name: "Body Lotion",
+    price: "₹499",
+    image: "/images/body-lotion.jpg",
+    images: [
+      "/images/body-lotion.jpg",
+      "/images/body-lotion-1.jpg",
+      "/images/body-lotion-2.jpg",
+      "/images/body-lotion-3.jpg",
+    ],
+  },
 
-{
-id:1,
-name:"GlowNest Body Lotion",
-price:"₹499",
-image:"/images/body-lotion.jpg",
-},
+  {
+    id: 302,
+    name: "Body Wash",
+    price: "₹399",
+    image: "/images/body-wash.jpg",
+    images: [
+      "/images/body-wash.jpg",
+      "/images/body-wash-1.jpg",
+      "/images/body-wash-2.jpg",
+      "/images/body-wash-3.jpg",
+    ],
+  },
 
-{
-id:2,
-name:"Nourishing Body Butter",
-price:"₹599",
-image:"/images/body-butter.jpg",
-},
+  {
+    id: 303,
+    name: "Body Scrub",
+    price: "₹599",
+    image: "/images/body-scrub.jpg",
+    images: [
+      "/images/body-scrub.jpg",
+      "/images/body-scrub-1.jpg",
+      "/images/body-scrub-2.jpg",
+      "/images/body-scrub-3.jpg",
+    ],
+  },
 
-{
-id:3,
-name:"Refreshing Body Wash",
-price:"₹399",
-image:"/images/body-wash.jpg",
-},
-
-{
-id:4,
-name:"Exfoliating Body Scrub",
-price:"₹549",
-image:"/images/body-scrub.jpg",
-},
-
+  {
+    id: 304,
+    name: "Hand Cream",
+    price: "₹349",
+    image: "/images/hand-cream.jpg",
+    images: [
+      "/images/hand-cream.jpg",
+      "/images/hand-cream-1.jpg",
+      "/images/hand-cream-2.jpg",
+      "/images/hand-cream-3.jpg",
+    ],
+  },
 ];
 
 
@@ -121,57 +143,41 @@ skin long-lasting softness and a healthy glow.
 
 <section className="featured-products">
 
+  <h2>Featured Bodycare Products</h2>
 
-<h2>
-Featured Bodycare Products
-</h2>
+  <div className="products-grid">
 
+    {products.map((product) => (
 
+      <div
+        className="product-card"
+        key={product.id}
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
 
-<div className="products-grid">
+        <img
+          src={product.image}
+          alt={product.name}
+        />
 
+        <h3>{product.name}</h3>
 
-{
-products.map((product)=>(
+        <span>{product.price}</span>
 
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            alert(`${product.name} added to cart!`);
+          }}
+        >
+          Add to Cart
+        </button>
 
-<div className="product-card" key={product.id}>
+      </div>
 
+    ))}
 
-<img 
-src={product.image}
-alt={product.name}
-/>
-
-
-<h3>
-{product.name}
-</h3>
-
-
-<span>
-{product.price}
-</span>
-
-
-
-<button
-onClick={()=>alert(`${product.name} added to cart!`)}
->
-Add to Cart
-</button>
-
-
-</div>
-
-
-))
-}
-
-
-
-</div>
-
+  </div>
 
 </section>
 

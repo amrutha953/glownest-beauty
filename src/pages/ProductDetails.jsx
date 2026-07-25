@@ -228,6 +228,78 @@ const products = [
     "An intensive hair mask that repairs damaged strands and restores softness and moisture."
 },
 
+{
+  id: 301,
+  name: "Body Lotion",
+  price: 499,
+
+  image: "/images/body-lotion.jpg",
+
+  images: [
+    "/images/body-lotion.jpg",
+    "/images/body-lotion-1.jpg",
+    "/images/body-lotion-2.jpg",
+    "/images/body-lotion-3.jpg"
+  ],
+
+  description:
+    "A deeply nourishing body lotion that provides long-lasting hydration, leaving your skin soft, smooth, and healthy."
+},
+
+{
+  id: 302,
+  name: "Body Wash",
+  price: 399,
+
+  image: "/images/body-wash.jpg",
+
+  images: [
+    "/images/body-wash.jpg",
+    "/images/body-wash-1.jpg",
+    "/images/body-wash-2.jpg",
+    "/images/body-wash-3.jpg"
+  ],
+
+  description:
+    "A gentle body wash that cleanses, refreshes, and moisturizes the skin while maintaining its natural softness."
+},
+
+{
+  id: 303,
+  name: "Body Scrub",
+  price: 599,
+
+  image: "/images/body-scrub.jpg",
+
+  images: [
+    "/images/body-scrub.jpg",
+    "/images/body-scrub-1.jpg",
+    "/images/body-scrub-2.jpg",
+    "/images/body-scrub-3.jpg"
+  ],
+
+  description:
+    "An exfoliating body scrub that removes dead skin cells, smooths rough areas, and reveals naturally glowing skin."
+},
+
+{
+  id: 304,
+  name: "Hand Cream",
+  price: 349,
+
+  image: "/images/hand-cream.jpg",
+
+  images: [
+    "/images/hand-cream.jpg",
+    "/images/hand-cream-1.jpg",
+    "/images/hand-cream-2.jpg",
+    "/images/hand-cream-3.jpg"
+  ],
+
+  description:
+    "A rich hand cream that deeply moisturizes dry hands, keeping them soft, nourished, and protected throughout the day."
+},
+
 ];
 
 
