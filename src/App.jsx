@@ -46,6 +46,7 @@ import CombinationSkin from "./pages/CombinationSkin";
 import SkincareBasics from "./pages/SkincareBasics";
 import IngredientGuide from "./pages/IngredientGuide";
 import ExpertTips from "./pages/ExpertTips";
+import WriteReview from "./pages/WriteReview";
 
 function App() {
 
@@ -184,6 +185,10 @@ function App() {
         <Route
           path="/academy/expert-tips"
           element={<ExpertTips />}
+        />
+        <Route 
+          path="/write-review" 
+          element={<WriteReview />} 
         />
 
 
