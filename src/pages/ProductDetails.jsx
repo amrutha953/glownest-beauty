@@ -372,6 +372,78 @@ const products = [
     "An advanced Retinol serum that supports skin renewal, smooths fine lines, and promotes a youthful-looking complexion."
 },
 
+{
+  id: 501,
+  name: "Luxury Rose Eau De Parfum",
+  price: 1299,
+
+  image: "/images/luxury-rose-perfume.jpg",
+
+  images: [
+    "/images/luxury-rose-perfume.jpg",
+    "/images/luxury-rose-perfume-1.jpg",
+    "/images/luxury-rose-perfume-2.jpg",
+    "/images/luxury-rose-perfume-3.jpg"
+  ],
+
+  description:
+    "A luxurious rose fragrance with elegant floral notes and a long-lasting scent, perfect for everyday wear and special occasions."
+},
+
+{
+  id: 502,
+  name: "Midnight Oud Perfume",
+  price: 1499,
+
+  image: "/images/midnight-oud-perfume.jpg",
+
+  images: [
+    "/images/midnight-oud-perfume.jpg",
+    "/images/midnight-oud-perfume-1.jpg",
+    "/images/midnight-oud-perfume-2.jpg",
+    "/images/midnight-oud-perfume-3.jpg"
+  ],
+
+  description:
+    "A rich oud fragrance with warm woody notes that delivers an elegant, bold, and long-lasting aroma."
+},
+
+{
+  id: 503,
+  name: "Floral Bloom Perfume",
+  price: 1199,
+
+  image: "/images/floral-bloom-perfume.jpg",
+
+  images: [
+    "/images/floral-bloom-perfume.jpg",
+    "/images/floral-bloom-perfume-1.jpg",
+    "/images/floral-bloom-perfume-2.jpg",
+    "/images/floral-bloom-perfume-3.jpg"
+  ],
+
+  description:
+    "A refreshing floral perfume featuring delicate flower notes that create a soft, feminine, and refreshing fragrance."
+},
+
+{
+  id: 504,
+  name: "Royal Musk Perfume",
+  price: 1599,
+
+  image: "/images/royal-musk-perfume.jpg",
+
+  images: [
+    "/images/royal-musk-perfume.jpg",
+    "/images/royal-musk-perfume-1.jpg",
+    "/images/royal-musk-perfume-2.jpg",
+    "/images/royal-musk-perfume-3.jpg"
+  ],
+
+  description:
+    "A premium musk perfume with smooth oriental notes that provides a sophisticated and luxurious fragrance throughout the day."
+},
+
 ];
 
 

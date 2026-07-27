@@ -4,35 +4,57 @@ import "./Perfume.css";
 
 
 const products = [
-
   {
-    id:1,
-    name:"Luxury Rose Eau De Parfum",
-    price:"₹1299",
-    image:"/images/luxury-rose-perfume.jpg",
+    id: 501,
+    name: "Luxury Rose Eau De Parfum",
+    price: "₹1299",
+    image: "/images/luxury-rose-perfume.jpg",
+    images: [
+      "/images/luxury-rose-perfume.jpg",
+      "/images/luxury-rose-perfume-1.jpg",
+      "/images/luxury-rose-perfume-2.jpg",
+      "/images/luxury-rose-perfume-3.jpg",
+    ],
   },
 
   {
-    id:2,
-    name:"Midnight Oud Perfume",
-    price:"₹1499",
-    image:"/images/midnight-oud-perfume.jpg",
+    id: 502,
+    name: "Midnight Oud Perfume",
+    price: "₹1499",
+    image: "/images/midnight-oud-perfume.jpg",
+    images: [
+      "/images/midnight-oud-perfume.jpg",
+      "/images/midnight-oud-perfume-1.jpg",
+      "/images/midnight-oud-perfume-2.jpg",
+      "/images/midnight-oud-perfume-3.jpg",
+    ],
   },
 
   {
-    id:3,
-    name:"Floral Bloom Fragrance",
-    price:"₹999",
-    image:"/images/floral-bloom-perfume.jpg",
+    id: 503,
+    name: "Floral Bloom Perfume",
+    price: "₹1199",
+    image: "/images/floral-bloom-perfume.jpg",
+    images: [
+      "/images/floral-bloom-perfume.jpg",
+      "/images/floral-bloom-perfume-1.jpg",
+      "/images/floral-bloom-perfume-2.jpg",
+      "/images/floral-bloom-perfume-3.jpg",
+    ],
   },
 
   {
-    id:4,
-    name:"Royal Musk Perfume",
-    price:"₹1199",
-    image:"/images/royal-musk-perfume.jpg",
+    id: 504,
+    name: "Royal Musk Perfume",
+    price: "₹1599",
+    image: "/images/royal-musk-perfume.jpg",
+    images: [
+      "/images/royal-musk-perfume.jpg",
+      "/images/royal-musk-perfume-1.jpg",
+      "/images/royal-musk-perfume-2.jpg",
+      "/images/royal-musk-perfume-3.jpg",
+    ],
   },
-
 ];
 
 
@@ -102,53 +124,42 @@ designed to make you feel confident and beautiful.
 
 <section className="featured-products">
 
+  <h2>Featured Perfumes</h2>
 
-<h2>
-Featured Perfumes
-</h2>
+  <div className="products-grid">
 
+    {products.map((product) => (
 
-<div className="products-grid">
+      <div
+        className="product-card"
+        key={product.id}
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
 
+        <img src={product.image} alt={product.name} />
 
-{
-products.map((product)=>(
+        <h3>{product.name}</h3>
 
-<div className="product-card" key={product.id}>
+        <span>{product.price}</span>
 
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
 
-<img 
-src={product.image}
-alt={product.name}
-/>
+            addToCart({
+              ...product,
+              quantity: 1,
+            });
+          }}
+        >
+          Add to Cart
+        </button>
 
+      </div>
 
-<h3>
-{product.name}
-</h3>
+    ))}
 
-
-<span>
-{product.price}
-</span>
-
-
-<button
-onClick={()=>alert(`${product.name} added to cart!`)}
->
-Add to Cart
-</button>
-
-
-</div>
-
-
-))
-}
-
-
-</div>
-
+  </div>
 
 </section>
 
