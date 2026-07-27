@@ -1,32 +1,66 @@
-.review-page{
+.write-review-page{
 
-    min-height:100vh;
     background:#fff5f8;
-    padding:50px 20px;
+    min-height:100vh;
+    padding-bottom:70px;
 
 }
 
 
-.review-hero{
+
+/* HERO */
+
+
+.review-banner{
 
     text-align:center;
-    margin-bottom:40px;
+    padding:70px 20px;
 
 }
 
 
-.review-hero h1{
+
+.review-banner span{
 
     color:#e91e63;
-    font-size:42px;
+    letter-spacing:3px;
+    font-weight:bold;
 
 }
 
 
-.review-hero p{
 
-    color:#555;
+.review-banner h1{
+
+    font-size:45px;
+    color:#222;
+    margin:20px 0;
+
+}
+
+
+
+.review-banner p{
+
+    max-width:650px;
+    margin:auto;
+    color:#666;
     font-size:18px;
+    line-height:1.7;
+
+}
+
+
+
+
+
+/* FORM */
+
+
+.review-form-section{
+
+    display:flex;
+    justify-content:center;
 
 }
 
@@ -34,29 +68,53 @@
 
 .review-form{
 
-    max-width:600px;
-    margin:auto;
     background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    width:500px;
+    padding:40px;
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.12);
+
+}
+
+
+
+.review-form h2{
+
+    text-align:center;
+    color:#e91e63;
+    margin-bottom:30px;
+
+}
+
+
+
+.review-form label{
+
+    display:block;
+    margin-bottom:8px;
+    color:#444;
+    font-weight:600;
 
 }
 
 
 
 .review-form input,
-.review-form select,
 .review-form textarea{
 
     width:100%;
     padding:15px;
     margin-bottom:20px;
+
     border:1px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
+    border-radius:12px;
+
+    font-size:15px;
 
 }
+
 
 
 .review-form textarea{
@@ -68,22 +126,84 @@
 
 
 
-.review-form button{
 
-    width:100%;
-    padding:15px;
-    background:#e91e63;
-    color:white;
-    border:none;
-    border-radius:30px;
-    font-size:18px;
+
+/* STAR RATING */
+
+
+.rating-box{
+
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+
+}
+
+
+
+.rating-box span{
+
+    font-size:35px;
+    color:#ddd;
     cursor:pointer;
 
 }
 
 
+
+.rating-box .active-star{
+
+    color:#ffb400;
+
+}
+
+
+
+
+/* BUTTON */
+
+
+.review-form button{
+
+    width:100%;
+    padding:15px;
+
+    background:#e91e63;
+    color:white;
+
+    border:none;
+    border-radius:30px;
+
+    font-size:17px;
+    cursor:pointer;
+
+}
+
+
+
 .review-form button:hover{
 
     background:#c2185b;
+
+}
+
+
+
+
+@media(max-width:768px){
+
+.review-form{
+
+    width:90%;
+    padding:25px;
+
+}
+
+
+.review-banner h1{
+
+    font-size:32px;
+
+}
 
 }

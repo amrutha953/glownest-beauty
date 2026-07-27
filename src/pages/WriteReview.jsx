@@ -1,131 +1,224 @@
 import React, { useState } from "react";
 import "../styles/WriteReview.css";
 
+
 function WriteReview() {
 
-  const [review, setReview] = useState({
+
+  const [rating,setRating] = useState(0);
+
+
+  const [review,setReview] = useState({
+
     name:"",
     email:"",
-    rating:"",
     message:""
+
   });
 
 
-  const handleChange = (e)=>{
+
+  const handleChange=(e)=>{
+
     setReview({
+
       ...review,
       [e.target.name]:e.target.value
+
     });
+
   };
+
 
 
   const handleSubmit=(e)=>{
+
     e.preventDefault();
 
-    alert("Thank you for your review ❤️");
+    alert("Thank you for sharing your GlowNest experience ❤️");
+
 
     setReview({
+
       name:"",
       email:"",
-      rating:"",
       message:""
+
     });
+
+    setRating(0);
+
   };
+
 
 
   return (
 
-    <div className="review-page">
+    <div className="write-review-page">
 
 
-      <section className="review-hero">
+      {/* HERO */}
 
-        <h1>Write A Review</h1>
+      <section className="review-banner">
+
+
+        <span>
+          CUSTOMER EXPERIENCE
+        </span>
+
+
+        <h1>
+          Share Your Glow With GlowNest
+        </h1>
+
 
         <p>
-          Share your GlowNest Beauty experience with us.
-          Your feedback helps us improve.
+          Your feedback helps beauty lovers discover
+          trusted skincare, makeup and self-care products.
         </p>
+
 
       </section>
 
 
 
-      <form 
-        className="review-form"
-        onSubmit={handleSubmit}
-      >
-
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={review.name}
-          onChange={handleChange}
-          required
-        />
+      {/* FORM */}
 
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={review.email}
-          onChange={handleChange}
-          required
-        />
+      <section className="review-form-section">
 
 
-        <select
-          name="rating"
-          value={review.rating}
-          onChange={handleChange}
-          required
+        <form 
+          className="review-form"
+          onSubmit={handleSubmit}
         >
 
-          <option value="">
-            Select Rating
-          </option>
 
-          <option value="5">
-            ⭐⭐⭐⭐⭐ Excellent
-          </option>
-
-          <option value="4">
-            ⭐⭐⭐⭐ Very Good
-          </option>
-
-          <option value="3">
-            ⭐⭐⭐ Good
-          </option>
-
-          <option value="2">
-            ⭐⭐ Average
-          </option>
-
-          <option value="1">
-            ⭐ Poor
-          </option>
-
-        </select>
+          <h2>
+            Write Your Review
+          </h2>
 
 
 
-        <textarea
-          name="message"
-          placeholder="Write your review..."
-          value={review.message}
-          onChange={handleChange}
-          required
-        />
+          <label>
+            Your Name
+          </label>
 
 
-        <button type="submit">
-          Submit Review
-        </button>
+          <input
+
+            type="text"
+
+            name="name"
+
+            placeholder="Enter your name"
+
+            value={review.name}
+
+            onChange={handleChange}
+
+            required
+
+          />
 
 
-      </form>
+
+
+          <label>
+            Email Address
+          </label>
+
+
+          <input
+
+            type="email"
+
+            name="email"
+
+            placeholder="Enter your email"
+
+            value={review.email}
+
+            onChange={handleChange}
+
+            required
+
+          />
+
+
+
+
+          <label>
+            Your Rating
+          </label>
+
+
+          <div className="rating-box">
+
+
+            {[1,2,3,4,5].map((star)=>(
+
+              <span
+
+                key={star}
+
+                onClick={()=>setRating(star)}
+
+                className={
+                  star <= rating
+                  ? "active-star"
+                  : ""
+                }
+
+              >
+
+                ★
+
+              </span>
+
+            ))}
+
+
+          </div>
+
+
+
+
+          <label>
+            Your Experience
+          </label>
+
+
+          <textarea
+
+            name="message"
+
+            placeholder="Tell us about your experience..."
+
+            value={review.message}
+
+            onChange={handleChange}
+
+            required
+
+          />
+
+
+
+          <button type="submit">
+
+            Submit Review
+
+          </button>
+
+
+
+        </form>
+
+
+
+      </section>
+
 
 
     </div>
@@ -133,6 +226,7 @@ function WriteReview() {
   );
 
 }
+
 
 
 export default WriteReview;
