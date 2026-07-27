@@ -5,10 +5,15 @@ import "../styles/WriteReview.css";
 function WriteReview() {
 
 
-  const [rating,setRating] = useState(0);
+  const [rating, setRating] = useState(0);
 
 
-  const [review,setReview] = useState({
+  const [reviews, setReviews] = useState(
+    JSON.parse(localStorage.getItem("reviews")) || []
+  );
+
+
+  const [review, setReview] = useState({
 
     name:"",
     email:"",
@@ -18,7 +23,7 @@ function WriteReview() {
 
 
 
-  const handleChange=(e)=>{
+  const handleChange = (e)=>{
 
     setReview({
 
@@ -35,7 +40,29 @@ function WriteReview() {
 
     e.preventDefault();
 
-    alert("Thank you for sharing your GlowNest experience ❤️");
+
+    const newReview = {
+
+      ...review,
+      rating
+
+    };
+
+
+    const updatedReviews = [
+      ...reviews,
+      newReview
+    ];
+
+
+    setReviews(updatedReviews);
+
+
+    localStorage.setItem(
+      "reviews",
+      JSON.stringify(updatedReviews)
+    );
+
 
 
     setReview({
@@ -46,7 +73,11 @@ function WriteReview() {
 
     });
 
+
     setRating(0);
+
+
+    alert("Thank you for your review ❤️");
 
   };
 
@@ -57,10 +88,7 @@ function WriteReview() {
     <div className="write-review-page">
 
 
-      {/* HERO */}
-
       <section className="review-banner">
-
 
         <span>
           CUSTOMER EXPERIENCE
@@ -77,18 +105,16 @@ function WriteReview() {
           trusted skincare, makeup and self-care products.
         </p>
 
-
       </section>
 
 
 
-      {/* FORM */}
 
 
       <section className="review-form-section">
 
 
-        <form 
+        <form
           className="review-form"
           onSubmit={handleSubmit}
         >
@@ -97,7 +123,6 @@ function WriteReview() {
           <h2>
             Write Your Review
           </h2>
-
 
 
           <label>
@@ -120,7 +145,6 @@ function WriteReview() {
             required
 
           />
-
 
 
 
@@ -147,14 +171,13 @@ function WriteReview() {
 
 
 
-
           <label>
             Your Rating
           </label>
 
 
-          <div className="rating-box">
 
+          <div className="rating-box">
 
             {[1,2,3,4,5].map((star)=>(
 
@@ -177,7 +200,6 @@ function WriteReview() {
               </span>
 
             ))}
-
 
           </div>
 
@@ -212,9 +234,87 @@ function WriteReview() {
           </button>
 
 
-
         </form>
 
+
+      </section>
+
+
+
+
+
+      {/* CUSTOMER REVIEWS */}
+
+      <section className="customer-reviews">
+
+
+        <h2>
+          Customer Reviews
+        </h2>
+
+
+        {
+          reviews.length === 0 ?
+
+          (
+
+            <p className="no-review">
+              No reviews yet. Be the first to share your experience!
+            </p>
+
+          )
+
+          :
+
+          (
+
+            <div className="review-list">
+
+
+            {
+              reviews.map((item,index)=>(
+
+
+                <div 
+                  className="customer-card"
+                  key={index}
+                >
+
+
+                  <div className="review-stars">
+
+                    {"★".repeat(item.rating)}
+
+                  </div>
+
+
+                  <h3>
+                    {item.name}
+                  </h3>
+
+
+                  <p>
+                    {item.message}
+                  </p>
+
+
+                  <span>
+                    Verified Customer
+                  </span>
+
+
+                </div>
+
+
+              ))
+            }
+
+
+            </div>
+
+          )
+
+        }
 
 
       </section>
@@ -226,7 +326,6 @@ function WriteReview() {
   );
 
 }
-
 
 
 export default WriteReview;

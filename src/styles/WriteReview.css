@@ -207,3 +207,102 @@
 }
 
 }
+/* CUSTOMER REVIEWS */
+
+
+.customer-reviews{
+
+    padding:60px 8%;
+    text-align:center;
+
+}
+
+
+
+.customer-reviews h2{
+
+    color:#e91e63;
+    font-size:35px;
+    margin-bottom:35px;
+
+}
+
+
+
+.no-review{
+
+    color:#777;
+
+}
+
+
+
+.review-list{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+}
+
+
+
+.customer-card{
+
+    background:white;
+    padding:30px;
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.1);
+
+    text-align:left;
+
+}
+
+
+
+.review-stars{
+
+    color:#ffb400;
+    font-size:22px;
+
+}
+
+
+
+.customer-card h3{
+
+    color:#e91e63;
+
+}
+
+
+
+.customer-card p{
+
+    color:#555;
+    line-height:1.7;
+
+}
+
+
+
+.customer-card span{
+
+    color:#888;
+    font-size:14px;
+
+}
+
+
+
+@media(max-width:900px){
+
+.review-list{
+
+    grid-template-columns:1fr;
+
+}
+
+}
