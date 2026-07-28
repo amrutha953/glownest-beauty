@@ -1684,6 +1684,474 @@ description:
 "Long-lasting blush that provides a beautiful natural cheek tint."
 },
 
+// ================= SHAMPOO PRODUCTS =================
+
+{
+  id: 12001,
+
+  brand: "L'Oréal Paris",
+
+  name: "Total Repair 5 Shampoo",
+
+  price: 499,
+
+  image: "/images/products/loreal-shampoo.jpg",
+
+  images: [
+    "/images/products/loreal-shampoo.jpg",
+  ],
+
+  description:
+    "L'Oréal Paris Total Repair 5 Shampoo helps repair damaged hair, reduces hair fall due to breakage, smoothens rough hair, and leaves it soft, shiny, and healthy.",
+},
+
+{
+  id: 12002,
+
+  brand: "Dove",
+
+  name: "Daily Shine Shampoo",
+
+  price: 399,
+
+  image: "/images/products/dove-shampoo.jpg",
+
+  images: [
+    "/images/products/dove-shampoo.jpg",
+  ],
+
+  description:
+    "Dove Daily Shine Shampoo gently cleanses your hair while nourishing it from root to tip, leaving it soft, smooth, and naturally shiny.",
+},
+
+{
+  id: 12003,
+
+  brand: "Tresemmé",
+
+  name: "Keratin Smooth Shampoo",
+
+  price: 699,
+
+  image: "/images/products/tresemme-shampoo.jpg",
+
+  images: [
+    "/images/products/tresemme-shampoo.jpg",
+  ],
+
+  description:
+    "Tresemmé Keratin Smooth Shampoo is infused with keratin and argan oil to control frizz, improve manageability, and provide silky smooth hair.",
+},
+
+{
+  id: 12004,
+
+  brand: "Mamaearth",
+
+  name: "Onion Shampoo",
+
+  price: 549,
+
+  image: "/images/products/mamaearth-shampoo.jpg",
+
+  images: [
+    "/images/products/mamaearth-shampoo.jpg",
+  ],
+
+  description:
+    "Mamaearth Onion Shampoo is enriched with onion oil and plant keratin to strengthen hair, reduce hair fall, and promote healthy hair growth.",
+},
+
+//================ CONDITIONER PRODUCTS ================
+
+{
+id:12011,
+
+brand:"Dove",
+
+name:"Intense Repair Conditioner",
+
+price:399,
+
+image:"/images/products/dove-conditioner.jpg",
+
+images:[
+"/images/products/dove-conditioner.jpg"
+],
+
+description:
+"Dove Intense Repair Conditioner nourishes damaged hair, reduces breakage, and leaves your hair soft, smooth, and manageable."
+},
+
+{
+id:12012,
+
+brand:"L'Oréal Paris",
+
+name:"Dream Lengths Conditioner",
+
+price:499,
+
+image:"/images/products/loreal-conditioner.jpg",
+
+images:[
+"/images/products/loreal-conditioner.jpg"
+],
+
+description:
+"L'Oréal Paris Dream Lengths Conditioner helps repair damaged hair, reduces split ends, and provides silky smooth long hair."
+},
+
+{
+id:12013,
+
+brand:"Tresemmé",
+
+name:"Keratin Smooth Conditioner",
+
+price:699,
+
+image:"/images/products/tresemme-conditioner.jpg",
+
+images:[
+"/images/products/tresemme-conditioner.jpg"
+],
+
+description:
+"Tresemmé Keratin Smooth Conditioner controls frizz and makes hair smooth, shiny, and easy to style."
+},
+
+{
+id:12014,
+
+brand:"Mamaearth",
+
+name:"Onion Conditioner",
+
+price:549,
+
+image:"/images/products/mamaearth-conditioner.jpg",
+
+images:[
+"/images/products/mamaearth-conditioner.jpg"
+],
+
+description:
+"Mamaearth Onion Conditioner strengthens hair roots, reduces hair fall, and deeply nourishes every strand."
+},
+
+//================ HAIR OIL PRODUCTS ================
+
+{
+id:12021,
+
+brand:"Indulekha",
+
+name:"Bringha Hair Oil",
+
+price:399,
+
+image:"/images/products/indulekha-hair-oil.jpg",
+
+images:[
+"/images/products/indulekha-hair-oil.jpg"
+],
+
+description:
+"Indulekha Bringha Hair Oil helps reduce hair fall, nourishes the scalp, and promotes healthy hair growth."
+},
+
+{
+id:12022,
+
+brand:"Mamaearth",
+
+name:"Onion Hair Oil",
+
+price:499,
+
+image:"/images/products/mamaearth-hair-oil.jpg",
+
+images:[
+"/images/products/mamaearth-hair-oil.jpg"
+],
+
+description:
+"Mamaearth Onion Hair Oil strengthens hair roots, reduces hair fall, and improves hair texture with natural oils."
+},
+
+{
+id:12023,
+
+brand:"Parachute",
+
+name:"Advanced Coconut Hair Oil",
+
+price:299,
+
+image:"/images/products/parachute-hair-oil.jpg",
+
+images:[
+"/images/products/parachute-hair-oil.jpg"
+],
+
+description:
+"Parachute Advanced Coconut Hair Oil deeply nourishes hair, prevents dryness, and keeps hair soft and healthy."
+},
+
+{
+id:12024,
+
+brand:"WOW Skin Science",
+
+name:"Onion Black Seed Hair Oil",
+
+price:699,
+
+image:"/images/products/wow-hair-oil.jpg",
+
+images:[
+"/images/products/wow-hair-oil.jpg"
+],
+
+description:
+"WOW Skin Science Onion Black Seed Hair Oil is enriched with onion and black seed extracts to support stronger and healthier hair."
+},
+
+//================ HAIR SERUM PRODUCTS ================
+
+{
+id:12031,
+
+brand:"L'Oréal Paris",
+
+name:"Extraordinary Oil Hair Serum",
+
+price:599,
+
+image:"/images/products/loreal-hair-serum.jpg",
+
+images:[
+"/images/products/loreal-hair-serum.jpg"
+],
+
+description:
+"L'Oréal Paris Extraordinary Oil Hair Serum nourishes dry hair, reduces frizz, and provides long-lasting shine."
+},
+
+{
+id:12032,
+
+brand:"Livon",
+
+name:"Anti-Frizz Hair Serum",
+
+price:299,
+
+image:"/images/products/livon-hair-serum.jpg",
+
+images:[
+"/images/products/livon-hair-serum.jpg"
+],
+
+description:
+"Livon Anti-Frizz Hair Serum instantly smooths rough hair and controls frizz while adding a silky finish."
+},
+
+{
+id:12033,
+
+brand:"Streax",
+
+name:"Professional Hair Serum",
+
+price:399,
+
+image:"/images/products/streax-hair-serum.jpg",
+
+images:[
+"/images/products/streax-hair-serum.jpg"
+],
+
+description:
+"Streax Professional Hair Serum provides salon-like smoothness, protects against dryness, and enhances shine."
+},
+
+{
+id:12034,
+
+brand:"Mamaearth",
+
+name:"Onion Hair Serum",
+
+price:499,
+
+image:"/images/products/mamaearth-hair-serum.jpg",
+
+images:[
+"/images/products/mamaearth-hair-serum.jpg"
+],
+
+description:
+"Mamaearth Onion Hair Serum helps reduce frizz, nourishes hair, and promotes healthier-looking strands."
+},
+
+//================ HAIR MASK PRODUCTS ================
+
+{
+id:12041,
+
+brand:"L'Oréal Paris",
+
+name:"Total Repair 5 Hair Mask",
+
+price:699,
+
+image:"/images/products/loreal-hair-mask.jpg",
+
+images:[
+"/images/products/loreal-hair-mask.jpg"
+],
+
+description:
+"L'Oréal Paris Total Repair 5 Hair Mask deeply repairs damaged hair, making it smooth, soft, and healthy."
+},
+
+{
+id:12042,
+
+brand:"Mamaearth",
+
+name:"Argan Hair Mask",
+
+price:599,
+
+image:"/images/products/mamaearth-hair-mask.jpg",
+
+images:[
+"/images/products/mamaearth-hair-mask.jpg"
+],
+
+description:
+"Mamaearth Argan Hair Mask deeply nourishes dry and damaged hair while improving softness and shine."
+},
+
+{
+id:12043,
+
+brand:"Tresemmé",
+
+name:"Keratin Smooth Hair Mask",
+
+price:799,
+
+image:"/images/products/tresemme-hair-mask.jpg",
+
+images:[
+"/images/products/tresemme-hair-mask.jpg"
+],
+
+description:
+"Tresemmé Keratin Smooth Hair Mask controls frizz and provides salon-like smoothness with every use."
+},
+
+{
+id:12044,
+
+brand:"Dove",
+
+name:"Intense Repair Hair Mask",
+
+price:649,
+
+image:"/images/products/dove-hair-mask.jpg",
+
+images:[
+"/images/products/dove-hair-mask.jpg"
+],
+
+description:
+"Dove Intense Repair Hair Mask restores damaged hair and leaves it nourished, silky, and manageable."
+},
+
+//================ HAIR SPRAY PRODUCTS ================
+
+{
+id:12051,
+
+brand:"Tresemmé",
+
+name:"Completely Invisible Hair Spray",
+
+price:699,
+
+image:"/images/products/tresemme-hair-spray.jpg",
+
+images:[
+"/images/products/tresemme-hair-spray.jpg"
+],
+
+description:
+"Tresemmé Completely Invisible Hair Spray provides flexible all-day hold without leaving visible residue."
+},
+
+{
+id:12052,
+
+brand:"L'Oréal Paris",
+
+name:"Elnett Satin Hair Spray",
+
+price:899,
+
+image:"/images/products/loreal-hair-spray.jpg",
+
+images:[
+"/images/products/loreal-hair-spray.jpg"
+],
+
+description:
+"L'Oréal Paris Elnett Satin Hair Spray delivers a strong, long-lasting hold while keeping hair soft and natural-looking."
+},
+
+{
+id:12053,
+
+brand:"Schwarzkopf",
+
+name:"Taft Power Hair Spray",
+
+price:799,
+
+image:"/images/products/schwarzkopf-hair-spray.jpg",
+
+images:[
+"/images/products/schwarzkopf-hair-spray.jpg"
+],
+
+description:
+"Schwarzkopf Taft Power Hair Spray offers extra-strong hold, humidity resistance, and long-lasting styling control."
+},
+
+{
+id:12054,
+
+brand:"BBlunt",
+
+name:"Hot Shot Hair Spray",
+
+price:650,
+
+image:"/images/products/bblunt-hair-spray.jpg",
+
+images:[
+"/images/products/bblunt-hair-spray.jpg"
+],
+
+description:
+"BBlunt Hot Shot Hair Spray locks your hairstyle in place while maintaining natural movement and shine."
+},
+
 ];
 
 

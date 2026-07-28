@@ -197,76 +197,95 @@ export default function Navbar() {
                     <h2>{activeCategory}</h2>
 
                     <div className="submenu-grid">
+                      {activeCategory === "Skincare" ? (
+    <>
+      <Link to="/shop/skincare/cleanser" className="submenu-link">
+        Cleanser
+      </Link>
 
-  {activeCategory === "Skincare" ? (
+      <Link to="/shop/skincare/moisturizer" className="submenu-link">
+        Moisturizer
+      </Link>
 
-<>
-  <Link to="/shop/skincare/cleanser" className="submenu-link">
-    Cleanser
-  </Link>
+      <Link to="/shop/skincare/face-wash" className="submenu-link">
+        Face Wash
+      </Link>
 
-  <Link to="/shop/skincare/moisturizer" className="submenu-link">
-    Moisturizer
-  </Link>
+      <Link to="/shop/skincare/sunscreen" className="submenu-link">
+        Sunscreen
+      </Link>
 
-  <Link to="/shop/skincare/face-wash" className="submenu-link">
-    Face Wash
-  </Link>
+      <Link to="/shop/skincare/face-mask" className="submenu-link">
+        Face Mask
+      </Link>
 
-  <Link to="/shop/skincare/sunscreen" className="submenu-link">
-    Sunscreen
-  </Link>
+      <Link to="/shop/skincare/toner" className="submenu-link">
+        Toner
+      </Link>
+    </>
+  ) : activeCategory === "Makeup" ? (
+    <>
+      <Link to="/shop/makeup/foundation" className="submenu-link">
+        Foundation
+      </Link>
 
-  <Link to="/shop/skincare/face-mask" className="submenu-link">
-    Face Mask
-  </Link>
+      <Link to="/shop/makeup/lipstick" className="submenu-link">
+        Lipstick
+      </Link>
 
-  <Link to="/shop/skincare/toner" className="submenu-link">
-    Toner
-  </Link>
-</>
+      <Link to="/shop/makeup/mascara" className="submenu-link">
+        Mascara
+      </Link>
 
-) : activeCategory === "Makeup" ? (
+      <Link to="/shop/makeup/compact" className="submenu-link">
+        Compact
+      </Link>
 
-<>
-  <Link to="/shop/makeup/foundation" className="submenu-link">
-    Foundation
-  </Link>
+      <Link to="/shop/makeup/concealer" className="submenu-link">
+        Concealer
+      </Link>
 
-  <Link to="/shop/makeup/lipstick" className="submenu-link">
-    Lipstick
-  </Link>
+      <Link to="/shop/makeup/blush" className="submenu-link">
+        Blush
+      </Link>
+    </>
+  ) : activeCategory === "Haircare" ? (
+    <>
+      <Link to="/shop/haircare/shampoo" className="submenu-link">
+        Shampoo
+      </Link>
 
-  <Link to="/shop/makeup/mascara" className="submenu-link">
-    Mascara
-  </Link>
+      <Link to="/shop/haircare/conditioner" className="submenu-link">
+        Conditioner
+      </Link>
 
-  <Link to="/shop/makeup/compact" className="submenu-link">
-    Compact
-  </Link>
+      <Link to="/shop/haircare/hair-oil" className="submenu-link">
+        Hair Oil
+      </Link>
 
-  <Link to="/shop/makeup/concealer" className="submenu-link">
-    Concealer
-  </Link>
+      <Link to="/shop/haircare/hair-serum" className="submenu-link">
+        Hair Serum
+      </Link>
 
-  <Link to="/shop/makeup/blush" className="submenu-link">
-    Blush
-  </Link>
-</>
+      <Link to="/shop/haircare/hair-mask" className="submenu-link">
+        Hair Mask
+      </Link>
 
-) : (
-
-  shopData[activeCategory].sub.map((item) => (
-    <Link
-      key={item}
-      to={shopData[activeCategory].path}
-      className="submenu-link"
-    >
-      {item}
-    </Link>
-  ))
-
-)}
+      <Link to="/shop/haircare/hair-spray" className="submenu-link">
+        Hair Spray
+      </Link>
+    </>
+  ) : (
+    shopData[activeCategory].sub.map((item) => (
+      <Link
+        key={item}
+        to={shopData[activeCategory].path}
+        className="submenu-link"
+      >
+        {item}
+      </Link>
+    ))
+  )}
 
 </div>
 

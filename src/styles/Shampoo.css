@@ -1,0 +1,129 @@
+.shampoo-page {
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+/* Hero Section */
+
+.shampoo-hero {
+  height: 350px;
+  background: linear-gradient(rgba(0,0,0,0.35),
+              rgba(0,0,0,0.35)),
+              url("/images/shampoo-banner.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+}
+
+.shampoo-hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.shampoo-hero p {
+  font-size: 18px;
+  width: 70%;
+  line-height: 1.6;
+}
+
+/* Products */
+
+.shampoo-products {
+  padding: 60px 8%;
+}
+
+.shampoo-products h2 {
+  text-align: center;
+  color: #e91e63;
+  margin-bottom: 40px;
+  font-size: 34px;
+}
+
+.shampoo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+}
+
+.shampoo-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.shampoo-card:hover {
+  transform: translateY(-8px);
+}
+
+.shampoo-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+}
+
+.brand {
+  display: block;
+  color: #888;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.shampoo-card h3 {
+  margin: 10px;
+  font-size: 22px;
+}
+
+.rating {
+  color: #ffb400;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.shampoo-card h4 {
+  color: #e91e63;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.shampoo-card button {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.shampoo-card button:hover {
+  background: #c2185b;
+}
+
+/* Responsive */
+
+@media (max-width:768px) {
+
+  .shampoo-hero h1 {
+    font-size: 34px;
+  }
+
+  .shampoo-hero p {
+    width: 90%;
+    font-size: 16px;
+  }
+
+}

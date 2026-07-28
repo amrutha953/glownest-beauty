@@ -1,0 +1,103 @@
+.conditioner-page{
+  font-family:Arial,sans-serif;
+}
+
+.conditioner-hero{
+  height:350px;
+  background:
+  linear-gradient(rgba(0,0,0,.35),
+  rgba(0,0,0,.35)),
+  url("/images/conditioner-banner.jpg");
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  color:#fff;
+  text-align:center;
+}
+
+.conditioner-hero h1{
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+.conditioner-hero p{
+  width:70%;
+  font-size:18px;
+}
+
+.conditioner-products{
+  padding:60px 8%;
+}
+
+.conditioner-products h2{
+  text-align:center;
+  color:#e91e63;
+  margin-bottom:40px;
+  font-size:34px;
+}
+
+.conditioner-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.conditioner-card{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 6px 15px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+  padding-bottom:20px;
+}
+
+.conditioner-card:hover{
+  transform:translateY(-8px);
+}
+
+.conditioner-card img{
+  width:100%;
+  height:280px;
+  object-fit:contain;
+}
+
+.brand{
+  display:block;
+  color:#888;
+  margin-top:15px;
+  font-weight:600;
+}
+
+.conditioner-card h3{
+  margin:10px;
+}
+
+.rating{
+  color:#f7b500;
+  margin:10px 0;
+}
+
+.conditioner-card h4{
+  color:#e91e63;
+  margin-bottom:15px;
+}
+
+.conditioner-card button{
+  background:#e91e63;
+  color:#fff;
+  border:none;
+  padding:12px 30px;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+.conditioner-card button:hover{
+  background:#c2185b;
+}

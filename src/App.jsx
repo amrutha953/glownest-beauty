@@ -59,6 +59,12 @@ import Mascara from "./pages/Mascara";
 import Compact from "./pages/Compact";
 import Concealer from "./pages/Concealer";
 import Blush from "./pages/Blush";
+import Shampoo from "./pages/Shampoo";
+import Conditioner from "./pages/Conditioner";
+import HairOil from "./pages/HairOil";
+import HairSerum from "./pages/HairSerum";
+import HairMask from "./pages/HairMask";
+import HairSpray from "./pages/HairSpray";
 
 function App() {
 
@@ -254,6 +260,34 @@ function App() {
           path="/shop/makeup/blush"
           element={<Blush />}
         />
+        <Route
+          path="/shop/haircare/shampoo"
+          element={<Shampoo />}
+        />
+        <Route
+  path="/shop/haircare/conditioner"
+  element={<Conditioner />}
+/>
+
+<Route
+  path="/shop/haircare/hair-oil"
+  element={<HairOil />}
+/>
+
+<Route
+  path="/shop/haircare/hair-serum"
+  element={<HairSerum />}
+/>
+
+<Route
+  path="/shop/haircare/hair-mask"
+  element={<HairMask />}
+/>
+
+<Route
+  path="/shop/haircare/hair-spray"
+  element={<HairSpray />}
+/>
 
 
       </Routes>
