@@ -1,0 +1,110 @@
+.toner-page{
+padding-top:80px;
+background:#fff5f8;
+min-height:100vh;
+}
+
+.toner-hero{
+height:380px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+background:
+linear-gradient(rgba(233,30,99,.45),rgba(233,30,99,.45)),
+url("/images/toner-banner.jpg");
+background-size:cover;
+background-position:center;
+}
+
+.toner-hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.toner-hero p{
+font-size:18px;
+width:70%;
+line-height:1.8;
+}
+
+.toner-products{
+padding:60px 8%;
+}
+
+.toner-products h2{
+text-align:center;
+font-size:35px;
+margin-bottom:40px;
+color:#e91e63;
+}
+
+.toner-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.toner-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.1);
+transition:.3s;
+text-align:center;
+padding-bottom:20px;
+}
+
+.toner-card:hover{
+transform:translateY(-8px);
+}
+
+.toner-card img{
+width:100%;
+height:320px;
+object-fit:contain;
+background:white;
+padding:15px;
+}
+
+.brand{
+display:inline-block;
+margin-top:15px;
+color:#e91e63;
+font-weight:bold;
+font-size:14px;
+}
+
+.toner-card h3{
+margin:10px;
+font-size:20px;
+}
+
+.rating{
+color:#f7b500;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.toner-card h4{
+font-size:22px;
+color:#222;
+margin-bottom:15px;
+}
+
+.toner-card button{
+background:#e91e63;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+transition:.3s;
+}
+
+.toner-card button:hover{
+background:#c2185b;
+}

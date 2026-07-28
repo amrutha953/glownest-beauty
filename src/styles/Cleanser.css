@@ -1,0 +1,123 @@
+.cleanser-page{
+    background:#fff8fb;
+    min-height:100vh;
+}
+
+/* HERO */
+
+.cleanser-hero{
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("/images/cleanser-banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    height:350px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+
+/* PRODUCTS */
+
+.cleanser-products{
+    padding:70px 8%;
+}
+
+.cleanser-products h2{
+    text-align:center;
+    color:#e91e63;
+    margin-bottom:40px;
+    font-size:36px;
+}
+
+.cleanser-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.cleanser-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.3s;
+    padding-bottom:25px;
+}
+
+.cleanser-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+
+.cleanser-card img{
+    width:100%;
+    height:260px;
+    object-fit:contain;
+}
+
+.brand{
+    display:inline-block;
+    margin-top:18px;
+    color:#888;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.cleanser-card h3{
+    margin:12px 20px;
+    color:#333;
+    font-size:20px;
+}
+
+.rating{
+    color:#ffb400;
+    font-size:20px;
+    margin:12px 0;
+}
+
+.cleanser-card h4{
+    color:#e91e63;
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.cleanser-card button{
+    background:#e91e63;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.cleanser-card button:hover{
+    background:#c2185b;
+}
+
+@media(max-width:768px){
+
+.cleanser-hero h1{
+    font-size:34px;
+}
+
+.cleanser-products{
+    padding:50px 20px;
+}
+
+}

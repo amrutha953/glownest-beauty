@@ -444,6 +444,558 @@ const products = [
     "A premium musk perfume with smooth oriental notes that provides a sophisticated and luxurious fragrance throughout the day."
 },
 
+{
+  id: 601,
+  brand: "Cetaphil",
+  name: "Gentle Skin Cleanser",
+  price: 399,
+
+  image: "/images/products/cetaphil-cleanser.jpg",
+
+  images: [
+    "/images/products/cetaphil-cleanser.jpg"
+  ],
+
+  description:
+    "A dermatologist-recommended cleanser that gently removes dirt, oil, and makeup without drying the skin."
+},
+
+{
+  id: 602,
+  brand: "CeraVe",
+  name: "Hydrating Facial Cleanser",
+  price: 799,
+
+  image: "/images/products/cerave-cleanser.jpg",
+
+  images: [
+    "/images/products/cerave-cleanser.jpg"
+  ],
+
+  description:
+    "Hydrating cleanser enriched with ceramides and hyaluronic acid to restore the skin barrier."
+},
+
+{
+  id: 603,
+  brand: "Simple",
+  name: "Refreshing Face Wash",
+  price: 349,
+
+  image: "/images/products/simple-cleanser.jpg",
+
+  images: [
+    "/images/products/simple-cleanser.jpg"
+  ],
+
+  description:
+    "A soap-free face wash that gently cleanses while keeping your skin soft, fresh, and hydrated."
+},
+
+{
+  id: 604,
+  brand: "Minimalist",
+  name: "Oat Gentle Cleanser",
+  price: 499,
+
+  image: "/images/products/minimalist-cleanser.jpg",
+
+  images: [
+    "/images/products/minimalist-cleanser.jpg"
+  ],
+
+  description:
+    "A gentle oat cleanser specially formulated for sensitive skin."
+},
+
+{
+  id: 605,
+  brand: "Dot & Key",
+  name: "Barrier Repair Cleanser",
+  price: 445,
+
+  image: "/images/products/dotkey-cleanser.jpg",
+
+  images: [
+    "/images/products/dotkey-cleanser.jpg"
+  ],
+
+  description:
+    "A nourishing cleanser that repairs the skin barrier while removing impurities."
+},
+
+{
+  id: 606,
+  brand: "Plum",
+  name: "Green Tea Cleanser",
+  price: 375,
+
+  image: "/images/products/plum-cleanser.jpg",
+
+  images: [
+    "/images/products/plum-cleanser.jpg"
+  ],
+
+  description:
+    "A refreshing Green Tea cleanser that controls excess oil and helps prevent acne."
+},
+
+{
+  id: 701,
+  name: "CeraVe Moisturizing Cream",
+  price: 899,
+
+  image: "/images/products/cerave-moisturizer.jpg",
+
+  images: [
+    "/images/products/cerave-moisturizer.jpg",
+  
+  ],
+
+  description:
+    "A dermatologist-developed moisturizer enriched with ceramides and hyaluronic acid to restore the skin barrier and provide long-lasting hydration."
+},
+
+{
+  id: 702,
+  name: "Cetaphil Moisturizing Lotion",
+  price: 699,
+
+  image: "/images/products/cetaphil-moisturizer.jpg",
+
+  images: [
+    "/images/products/cetaphil-moisturizer.jpg",
+,
+  ],
+
+  description:
+    "A lightweight daily moisturizer that keeps skin soft, hydrated, and healthy without feeling greasy."
+},
+
+{
+  id: 703,
+  name: "Minimalist Ceramide Moisturizer",
+  price: 599,
+
+  image: "/images/products/minimalist-moisturizer.jpg",
+
+  images: [
+    "/images/products/minimalist-moisturizer.jpg",
+    
+  ],
+
+  description:
+    "A ceramide-rich moisturizer that repairs the skin barrier while providing deep nourishment and hydration."
+},
+
+{
+  id: 704,
+  name: "Dot & Key Hydrating Moisturizer",
+  price: 549,
+
+  image: "/images/products/dotkey-moisturizer.jpg",
+
+  images: [
+    "/images/products/dotkey-moisturizer.jpg",
+    
+    
+  ],
+
+  description:
+    "A refreshing gel moisturizer infused with hydrating ingredients for soft, glowing, and healthy-looking skin."
+},
+
+{
+  id: 705,
+  name: "Plum Green Tea Moisturizer",
+  price: 499,
+
+  image: "/images/products/plum-moisturizer.jpg",
+
+  images: [
+    "/images/products/plum-moisturizer.jpg",
+    
+  ],
+
+  description:
+    "Green tea moisturizer specially designed for oily and combination skin to provide hydration while controlling excess oil."
+},
+
+{
+  id: 706,
+  name: "Simple Hydrating Light Moisturizer",
+  price: 449,
+
+  image: "/images/products/simple-moisturizer.jpg",
+
+  images: [
+    "/images/products/simple-moisturizer.jpg",
+    
+  ],
+
+  description:
+    "A gentle, lightweight moisturizer with skin-loving ingredients that hydrates sensitive skin without irritation."
+},
+
+{
+  id: 801,
+  name: "Cetaphil Gentle Foaming Face Wash",
+  price: 499,
+  image: "/images/products/cetaphil-facewash.jpg",
+  images: [
+    "/images/products/cetaphil-facewash.jpg"
+  ],
+  description:
+    "A gentle foaming face wash that effectively removes dirt, oil, and impurities while maintaining the skin's natural moisture barrier."
+},
+
+{
+  id: 802,
+  name: "Simple Refreshing Face Wash",
+  price: 399,
+  image: "/images/products/simple-facewash.jpg",
+  images: [
+    "/images/products/simple-facewash.jpg"
+  ],
+  description:
+    "Soap-free face wash enriched with skin-loving ingredients to leave your skin clean, fresh, and hydrated."
+},
+
+{
+  id: 803,
+  name: "Minimalist Aquaporin Face Wash",
+  price: 549,
+  image: "/images/products/minimalist-facewash.jpg",
+  images: [
+    "/images/products/minimalist-facewash.jpg"
+  ],
+  description:
+    "Hydrating face wash that gently cleanses the skin while improving moisture retention."
+},
+
+{
+  id: 804,
+  name: "Dot & Key Cica Face Wash",
+  price: 445,
+  image: "/images/products/dotkey-facewash.jpg",
+  images: [
+    "/images/products/dotkey-facewash.jpg"
+  ],
+  description:
+    "A soothing face wash infused with Cica to calm sensitive skin and gently remove impurities."
+},
+
+{
+  id: 805,
+  name: "Plum Green Tea Face Wash",
+  price: 375,
+  image: "/images/products/plum-facewash.jpg",
+  images: [
+    "/images/products/plum-facewash.jpg"
+  ],
+  description:
+    "Green Tea face wash specially formulated for oily and acne-prone skin to reduce excess oil and refresh the skin."
+},
+
+{
+  id: 806,
+  name: "CeraVe Foaming Facial Cleanser",
+  price: 899,
+  image: "/images/products/cerave-facewash.jpg",
+  images: [
+    "/images/products/cerave-facewash.jpg"
+  ],
+  description:
+    "Foaming facial cleanser enriched with ceramides and niacinamide for deep cleansing without disrupting the skin barrier."
+},
+
+{
+id:901,
+name:"La Roche-Posay Anthelios SPF 50+",
+price:1499,
+
+image:"/images/products/laroche-sunscreen.jpg",
+
+images:[
+"/images/products/laroche-sunscreen.jpg"
+],
+
+description:
+"An ultra-lightweight sunscreen with SPF 50+ that provides broad-spectrum UVA and UVB protection without leaving a white cast."
+},
+
+{
+id:902,
+name:"Minimalist SPF 50 Sunscreen",
+price:499,
+
+image:"/images/products/minimalist-sunscreen.jpg",
+
+images:[
+"/images/products/minimalist-sunscreen.jpg"
+],
+
+description:
+"A lightweight SPF 50 sunscreen enriched with multi-vitamins to protect the skin from harmful UV rays while keeping it hydrated."
+},
+
+{
+id:903,
+name:"Dot & Key Watermelon Cooling Sunscreen",
+price:595,
+
+image:"/images/products/dotkey-sunscreen.jpg",
+
+images:[
+"/images/products/dotkey-sunscreen.jpg"
+],
+
+description:
+"A refreshing watermelon sunscreen that cools the skin while providing SPF 50 PA+++ sun protection."
+},
+
+{
+id:904,
+name:"Aqualogica Glow+ Dewy Sunscreen",
+price:499,
+
+image:"/images/products/aqualogica-sunscreen.jpg",
+
+images:[
+"/images/products/aqualogica-sunscreen.jpg"
+],
+
+description:
+"A dewy finish sunscreen enriched with papaya and vitamin C for glowing, protected skin."
+},
+
+{
+id:905,
+name:"Dr. Sheth's Ceramide & Vitamin C Sunscreen",
+price:549,
+
+image:"/images/products/drsheth-sunscreen.jpg",
+
+images:[
+"/images/products/drsheth-sunscreen.jpg"
+],
+
+description:
+"A dermatologist-developed sunscreen with ceramides and vitamin C that strengthens the skin barrier while protecting against UV damage."
+},
+
+{
+id:906,
+name:"Neutrogena Ultra Sheer Dry Touch SPF 50+",
+price:699,
+
+image:"/images/products/neutrogena-sunscreen.jpg",
+
+images:[
+"/images/products/neutrogena-sunscreen.jpg"
+],
+
+description:
+"A fast-absorbing dry-touch sunscreen offering SPF 50+ protection with a lightweight, non-greasy finish."
+},
+
+{
+id:1001,
+name:"Mamaearth Ubtan Face Mask",
+price:499,
+
+image:"/images/products/mamaearth-face-mask.jpg",
+
+images:[
+"/images/products/mamaearth-face-mask.jpg"
+],
+
+description:
+"An Ubtan face mask enriched with turmeric and saffron that deeply cleanses, brightens, and improves skin texture."
+},
+
+{
+id:1002,
+name:"Dot & Key Hydrating Clay Mask",
+price:695,
+
+image:"/images/products/dotkey-face-mask.jpg",
+
+images:[
+"/images/products/dotkey-face-mask.jpg"
+],
+
+description:
+"A hydrating clay mask that removes impurities while maintaining the skin's natural moisture balance."
+},
+
+{
+id:1003,
+name:"Plum Green Tea Clear Face Mask",
+price:575,
+
+image:"/images/products/plum-face-mask.jpg",
+
+images:[
+"/images/products/plum-face-mask.jpg"
+],
+
+description:
+"A green tea face mask specially formulated for oily and acne-prone skin to absorb excess oil and reduce breakouts."
+},
+
+{
+id:1004,
+name:"The Face Shop Real Nature Sheet Mask",
+price:199,
+
+image:"/images/products/faceshop-sheet-mask.jpg",
+
+images:[
+"/images/products/faceshop-sheet-mask.jpg"
+],
+
+description:
+"A nourishing sheet mask infused with natural extracts to hydrate, refresh, and brighten the skin."
+},
+
+{
+id:1005,
+name:"Innisfree Volcanic Pore Clay Mask",
+price:899,
+
+image:"/images/products/innisfree-face-mask.jpg",
+
+images:[
+"/images/products/innisfree-face-mask.jpg"
+],
+
+description:
+"A volcanic clay mask that deeply cleanses pores, removes excess sebum, and leaves skin smooth and refreshed."
+},
+
+{
+id:1006,
+name:"Minimalist PHA Face Mask",
+price:599,
+
+image:"/images/products/minimalist-face-mask.jpg",
+
+images:[
+"/images/products/minimalist-face-mask.jpg"
+],
+
+description:
+"A gentle exfoliating face mask with PHA that smooths skin texture, removes dead skin cells, and enhances radiance."
+},
+
+{
+  id: 1001,
+  name: "Minimalist PHA 3% Toner",
+  price: 499,
+
+  image: "/images/products/minimalist-toner.jpg",
+
+  images: [
+    "/images/products/minimalist-toner.jpg",
+    "/images/products/minimalist-toner-1.jpg",
+    "/images/products/minimalist-toner-2.jpg",
+    "/images/products/minimalist-toner-3.jpg"
+  ],
+
+  description:
+    "A gentle exfoliating toner with 3% PHA that removes dead skin cells, smooths skin texture, and provides deep hydration."
+},
+
+{
+  id: 1002,
+  name: "Plum Green Tea Alcohol-Free Toner",
+  price: 399,
+
+  image: "/images/products/plum-toner.jpg",
+
+  images: [
+    "/images/products/plum-toner.jpg",
+    "/images/products/plum-toner-1.jpg",
+    "/images/products/plum-toner-2.jpg",
+    "/images/products/plum-toner-3.jpg"
+  ],
+
+  description:
+    "Alcohol-free Green Tea toner that controls oil, tightens pores, and refreshes acne-prone skin."
+},
+
+{
+  id: 1003,
+  name: "Dot & Key Cica Calming Toner",
+  price: 545,
+
+  image: "/images/products/dotkey-toner.jpg",
+
+  images: [
+    "/images/products/dotkey-toner.jpg",
+    "/images/products/dotkey-toner-1.jpg",
+    "/images/products/dotkey-toner-2.jpg",
+    "/images/products/dotkey-toner-3.jpg"
+  ],
+
+  description:
+    "A soothing toner enriched with Cica to calm irritated skin, reduce redness, and strengthen the skin barrier."
+},
+
+{
+  id: 1004,
+  name: "Simple Kind To Skin Soothing Toner",
+  price: 425,
+
+  image: "/images/products/simple-toner.jpg",
+
+  images: [
+    "/images/products/simple-toner.jpg",
+    "/images/products/simple-toner-1.jpg",
+    "/images/products/simple-toner-2.jpg",
+    "/images/products/simple-toner-3.jpg"
+  ],
+
+  description:
+    "A gentle toner specially designed for sensitive skin that hydrates, refreshes, and balances the skin."
+},
+
+{
+  id: 1005,
+  name: "L'Oréal Paris Revitalift Crystal Toner",
+  price: 699,
+
+  image: "/images/products/loreal-toner.jpg",
+
+  images: [
+    "/images/products/loreal-toner.jpg",
+    "/images/products/loreal-toner-1.jpg",
+    "/images/products/loreal-toner-2.jpg",
+    "/images/products/loreal-toner-3.jpg"
+  ],
+
+  description:
+    "A brightening crystal toner that gently exfoliates, improves skin texture, and gives radiant glowing skin."
+},
+
+{
+  id: 1006,
+  name: "COSRX AHA/BHA Clarifying Toner",
+  price: 999,
+
+  image: "/images/products/cosrx-toner.jpg",
+
+  images: [
+    "/images/products/cosrx-toner.jpg",
+    "/images/products/cosrx-toner-1.jpg",
+    "/images/products/cosrx-toner-2.jpg",
+    "/images/products/cosrx-toner-3.jpg"
+  ],
+
+  description:
+    "A Korean skincare toner containing AHA and BHA that gently exfoliates, unclogs pores, and leaves skin clear and smooth."
+},
 ];
 
 

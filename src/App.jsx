@@ -47,6 +47,12 @@ import SkincareBasics from "./pages/SkincareBasics";
 import IngredientGuide from "./pages/IngredientGuide";
 import ExpertTips from "./pages/ExpertTips";
 import WriteReview from "./pages/WriteReview";
+import Cleanser from "./pages/Cleanser";
+import Moisturizer from "./pages/Moisturizer";
+import FaceWash from "./pages/FaceWash";
+import Sunscreen from "./pages/Sunscreen";
+import FaceMask from "./pages/FaceMask";
+import Toner from "./pages/Toner";
 
 function App() {
 
@@ -189,6 +195,30 @@ function App() {
         <Route 
           path="/write-review" 
           element={<WriteReview />} 
+        />
+        <Route
+          path="/shop/skincare/cleanser"
+          element={<Cleanser />}
+        />
+        <Route
+          path="/shop/skincare/moisturizer"
+          element={<Moisturizer />}
+        />
+        <Route
+          path="/shop/skincare/face-wash"
+          element={<FaceWash />}
+        />
+        <Route
+          path="/shop/skincare/sunscreen"
+          element={<Sunscreen />}
+        />
+        <Route
+          path="/shop/skincare/face-mask"
+          element={<FaceMask />}
+        />
+        <Route
+          path="/shop/skincare/toner"
+          element={<Toner />}
         />
 
 

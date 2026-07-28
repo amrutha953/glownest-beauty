@@ -197,16 +197,51 @@ export default function Navbar() {
                     <h2>{activeCategory}</h2>
 
                     <div className="submenu-grid">
-                      {shopData[activeCategory].sub.map((item) => (
-                        <Link
-                          key={item}
-                          to={shopData[activeCategory].path}
-                          className="submenu-link"
-                        >
-                          {item}
-                        </Link>
-                      ))}
-                    </div>
+
+  {activeCategory === "Skincare" ? (
+
+    <>
+      <Link to="/shop/skincare/cleanser" className="submenu-link">
+        Cleanser
+      </Link>
+
+      <Link to="/shop/skincare/moisturizer" className="submenu-link">
+        Moisturizer
+      </Link>
+
+      <Link to="/shop/skincare/face-wash" className="submenu-link">
+        Face Wash
+      </Link>
+
+      <Link to="/shop/skincare/sunscreen" className="submenu-link">
+        Sunscreen
+      </Link>
+
+      <Link to="/shop/skincare/face-mask" className="submenu-link">
+        Face Mask
+      </Link>
+
+      <Link to="/shop/skincare/toner" className="submenu-link">
+        Toner
+      </Link>
+
+    </>
+
+  ) : (
+
+    shopData[activeCategory].sub.map((item) => (
+      <Link
+        key={item}
+        to={shopData[activeCategory].path}
+        className="submenu-link"
+      >
+        {item}
+      </Link>
+    ))
+
+  )}
+
+</div>
 
                     <Link
                       className="shop-all-btn"
