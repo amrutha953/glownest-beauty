@@ -200,46 +200,73 @@ export default function Navbar() {
 
   {activeCategory === "Skincare" ? (
 
-    <>
-      <Link to="/shop/skincare/cleanser" className="submenu-link">
-        Cleanser
-      </Link>
+<>
+  <Link to="/shop/skincare/cleanser" className="submenu-link">
+    Cleanser
+  </Link>
 
-      <Link to="/shop/skincare/moisturizer" className="submenu-link">
-        Moisturizer
-      </Link>
+  <Link to="/shop/skincare/moisturizer" className="submenu-link">
+    Moisturizer
+  </Link>
 
-      <Link to="/shop/skincare/face-wash" className="submenu-link">
-        Face Wash
-      </Link>
+  <Link to="/shop/skincare/face-wash" className="submenu-link">
+    Face Wash
+  </Link>
 
-      <Link to="/shop/skincare/sunscreen" className="submenu-link">
-        Sunscreen
-      </Link>
+  <Link to="/shop/skincare/sunscreen" className="submenu-link">
+    Sunscreen
+  </Link>
 
-      <Link to="/shop/skincare/face-mask" className="submenu-link">
-        Face Mask
-      </Link>
+  <Link to="/shop/skincare/face-mask" className="submenu-link">
+    Face Mask
+  </Link>
 
-      <Link to="/shop/skincare/toner" className="submenu-link">
-        Toner
-      </Link>
+  <Link to="/shop/skincare/toner" className="submenu-link">
+    Toner
+  </Link>
+</>
 
-    </>
+) : activeCategory === "Makeup" ? (
 
-  ) : (
+<>
+  <Link to="/shop/makeup/foundation" className="submenu-link">
+    Foundation
+  </Link>
 
-    shopData[activeCategory].sub.map((item) => (
-      <Link
-        key={item}
-        to={shopData[activeCategory].path}
-        className="submenu-link"
-      >
-        {item}
-      </Link>
-    ))
+  <Link to="/shop/makeup/lipstick" className="submenu-link">
+    Lipstick
+  </Link>
 
-  )}
+  <Link to="/shop/makeup/mascara" className="submenu-link">
+    Mascara
+  </Link>
+
+  <Link to="/shop/makeup/compact" className="submenu-link">
+    Compact
+  </Link>
+
+  <Link to="/shop/makeup/concealer" className="submenu-link">
+    Concealer
+  </Link>
+
+  <Link to="/shop/makeup/blush" className="submenu-link">
+    Blush
+  </Link>
+</>
+
+) : (
+
+  shopData[activeCategory].sub.map((item) => (
+    <Link
+      key={item}
+      to={shopData[activeCategory].path}
+      className="submenu-link"
+    >
+      {item}
+    </Link>
+  ))
+
+)}
 
 </div>
 

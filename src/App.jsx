@@ -53,6 +53,12 @@ import FaceWash from "./pages/FaceWash";
 import Sunscreen from "./pages/Sunscreen";
 import FaceMask from "./pages/FaceMask";
 import Toner from "./pages/Toner";
+import Foundation from "./pages/Foundation";
+import Lipstick from "./pages/Lipstick";
+import Mascara from "./pages/Mascara";
+import Compact from "./pages/Compact";
+import Concealer from "./pages/Concealer";
+import Blush from "./pages/Blush";
 
 function App() {
 
@@ -219,6 +225,34 @@ function App() {
         <Route
           path="/shop/skincare/toner"
           element={<Toner />}
+        />
+        <Route
+          path="/shop/makeup/foundation"
+          element={<Foundation />}
+        />
+        <Route
+          path="/shop/makeup/lipstick"
+          element={<Lipstick />}
+        />
+
+        <Route
+          path="/shop/makeup/mascara"
+          element={<Mascara />}
+        />
+
+        <Route
+          path="/shop/makeup/compact"
+          element={<Compact />}
+        />
+
+        <Route
+          path="/shop/makeup/concealer"
+          element={<Concealer />}
+        />
+
+        <Route
+          path="/shop/makeup/blush"
+          element={<Blush />}
         />
 
 

@@ -1,0 +1,255 @@
+.blush-page{
+
+    font-family:Arial,sans-serif;
+
+    background:#fff;
+
+}
+
+
+
+/* Hero */
+
+.blush-hero{
+
+
+    height:320px;
+
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+
+    url("/images/blush-banner.jpg");
+
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+
+    color:white;
+
+    text-align:center;
+
+
+}
+
+
+
+.blush-hero h1{
+
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.blush-hero p{
+
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
+/* Products */
+
+
+.blush-products{
+
+
+    padding:50px 8%;
+
+
+}
+
+
+
+
+.blush-products h2{
+
+
+    text-align:center;
+
+
+    color:#e91e63;
+
+
+    font-size:32px;
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+.blush-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+.blush-card{
+
+
+    background:white;
+
+
+    padding:20px;
+
+
+    border-radius:15px;
+
+
+    text-align:center;
+
+
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.1);
+
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+.blush-card:hover{
+
+
+    transform:translateY(-10px);
+
+
+}
+
+
+
+
+.blush-card img{
+
+
+    width:100%;
+
+
+    height:250px;
+
+
+    object-fit:contain;
+
+
+}
+
+
+
+
+.blush-card h3{
+
+
+    font-size:18px;
+
+
+    margin-top:15px;
+
+
+}
+
+
+
+
+.price{
+
+
+    color:#e91e63;
+
+
+    font-size:20px;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+.blush-card button{
+
+
+    background:#e91e63;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    padding:12px 25px;
+
+
+    border-radius:25px;
+
+
+    cursor:pointer;
+
+
+    margin-top:10px;
+
+
+}
+
+
+
+.blush-card button:hover{
+
+
+    background:#c2185b;
+
+
+}

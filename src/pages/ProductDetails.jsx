@@ -898,9 +898,7 @@ description:
 
   images: [
     "/images/products/minimalist-toner.jpg",
-    "/images/products/minimalist-toner-1.jpg",
-    "/images/products/minimalist-toner-2.jpg",
-    "/images/products/minimalist-toner-3.jpg"
+    
   ],
 
   description:
@@ -916,9 +914,7 @@ description:
 
   images: [
     "/images/products/plum-toner.jpg",
-    "/images/products/plum-toner-1.jpg",
-    "/images/products/plum-toner-2.jpg",
-    "/images/products/plum-toner-3.jpg"
+    
   ],
 
   description:
@@ -934,9 +930,7 @@ description:
 
   images: [
     "/images/products/dotkey-toner.jpg",
-    "/images/products/dotkey-toner-1.jpg",
-    "/images/products/dotkey-toner-2.jpg",
-    "/images/products/dotkey-toner-3.jpg"
+    
   ],
 
   description:
@@ -952,9 +946,7 @@ description:
 
   images: [
     "/images/products/simple-toner.jpg",
-    "/images/products/simple-toner-1.jpg",
-    "/images/products/simple-toner-2.jpg",
-    "/images/products/simple-toner-3.jpg"
+    
   ],
 
   description:
@@ -970,9 +962,7 @@ description:
 
   images: [
     "/images/products/loreal-toner.jpg",
-    "/images/products/loreal-toner-1.jpg",
-    "/images/products/loreal-toner-2.jpg",
-    "/images/products/loreal-toner-3.jpg"
+    
   ],
 
   description:
@@ -988,14 +978,712 @@ description:
 
   images: [
     "/images/products/cosrx-toner.jpg",
-    "/images/products/cosrx-toner-1.jpg",
-    "/images/products/cosrx-toner-2.jpg",
-    "/images/products/cosrx-toner-3.jpg"
+    
   ],
 
   description:
     "A Korean skincare toner containing AHA and BHA that gently exfoliates, unclogs pores, and leaves skin clear and smooth."
 },
+
+// ================= MAKEUP PRODUCTS =================
+
+
+// ================= LIPSTICK PRODUCTS =================
+
+
+{
+id:11001,
+
+brand:"M.A.C",
+
+name:"Matte Lipstick",
+
+price:1999,
+
+image:"/images/products/mac-lipstick.jpg",
+
+images:[
+"/images/products/mac-lipstick.jpg"
+],
+
+description:
+"Premium matte lipstick with intense color payoff, smooth application and long-lasting comfortable finish."
+
+},
+
+
+
+{
+id:11002,
+
+brand:"Maybelline",
+
+name:"Super Stay Matte Ink",
+
+price:699,
+
+image:"/images/products/maybelline-lipstick.jpg",
+
+images:[
+"/images/products/maybelline-lipstick.jpg"
+],
+
+description:
+"A highly pigmented liquid matte lipstick with long-lasting transfer resistant color."
+
+},
+
+
+
+{
+id:11003,
+
+brand:"Lakme",
+
+name:"9to5 Primer + Matte Lipstick",
+
+price:499,
+
+image:"/images/products/lakme-lipstick.jpg",
+
+images:[
+"/images/products/lakme-lipstick.jpg"
+],
+
+description:
+"A lightweight matte lipstick enriched with primer technology for smooth and comfortable wear."
+
+},
+
+
+
+{
+id:11004,
+
+brand:"Nykaa",
+
+name:"So Matte Lipstick",
+
+price:399,
+
+image:"/images/products/nykaa-lipstick.jpg",
+
+images:[
+"/images/products/nykaa-lipstick.jpg"
+],
+
+description:
+"Soft matte lipstick with rich pigmentation and a smooth velvet finish."
+
+},
+
+
+
+{
+id:11005,
+
+brand:"Swiss Beauty",
+
+name:"Non Transfer Lipstick",
+
+price:349,
+
+image:"/images/products/swiss-lipstick.jpg",
+
+images:[
+"/images/products/swiss-lipstick.jpg"
+],
+
+description:
+"Affordable non-transfer lipstick with intense color and comfortable matte texture."
+
+},
+
+
+
+{
+id:11006,
+
+brand:"L'Oréal",
+
+name:"Color Riche Lipstick",
+
+price:899,
+
+image:"/images/products/loreal-lipstick.jpg",
+
+images:[
+"/images/products/loreal-lipstick.jpg"
+],
+
+description:
+"Luxurious lipstick enriched with moisturizing ingredients for rich color and smooth lips."
+
+},
+
+
+
+// ================= FOUNDATION PRODUCTS =================
+
+
+{
+id:11011,
+
+brand:"Maybelline",
+
+name:"Fit Me Foundation",
+
+price:699,
+
+image:"/images/products/fitme-foundation.jpg",
+
+images:[
+"/images/products/fitme-foundation.jpg"
+],
+
+description:
+"Maybelline Fit Me Foundation provides natural matte coverage, blends easily, and gives a smooth flawless finish for everyday makeup."
+
+},
+
+
+
+{
+id:11012,
+
+brand:"L'Oréal",
+
+name:"Infallible Foundation",
+
+price:899,
+
+image:"/images/products/loreal-foundation.jpg",
+
+images:[
+"/images/products/loreal-foundation.jpg"
+],
+
+description:
+"L'Oréal Infallible Foundation offers long-lasting full coverage with a lightweight texture and natural finish."
+
+},
+
+
+
+{
+id:11013,
+
+brand:"Lakme",
+
+name:"9to5 Foundation",
+
+price:599,
+
+image:"/images/products/lakme-foundation.jpg",
+
+images:[
+"/images/products/lakme-foundation.jpg"
+],
+
+description:
+"Lakme 9to5 Foundation gives smooth medium coverage with a comfortable matte finish suitable for daily wear."
+
+},
+
+
+
+{
+id:11014,
+
+brand:"Swiss Beauty",
+
+name:"HD Foundation",
+
+price:499,
+
+image:"/images/products/swiss-foundation.jpg",
+
+images:[
+"/images/products/swiss-foundation.jpg"
+],
+
+description:
+"Swiss Beauty HD Foundation provides lightweight coverage with a smooth HD finish for a flawless makeup look."
+
+},
+
+
+
+{
+id:11015,
+
+brand:"M.A.C",
+
+name:"Studio Fix Fluid",
+
+price:2999,
+
+image:"/images/products/mac-foundation.jpg",
+
+images:[
+"/images/products/mac-foundation.jpg"
+],
+
+description:
+"M.A.C Studio Fix Fluid Foundation delivers professional coverage, controls shine, and creates a smooth matte finish."
+
+},
+
+
+
+{
+id:11016,
+
+brand:"Kay Beauty",
+
+name:"Hydrating Foundation",
+
+price:1200,
+
+image:"/images/products/kay-foundation.jpg",
+
+images:[
+"/images/products/kay-foundation.jpg"
+],
+
+description:
+"Kay Beauty Hydrating Foundation provides buildable coverage with a natural radiant finish while keeping skin hydrated."
+},
+
+
+
+// ================= MASCARA PRODUCTS =================
+
+
+{
+id:11031,
+
+brand:"Maybelline",
+
+name:"Sky High Mascara",
+
+price:799,
+
+image:"/images/products/maybelline-mascara.jpg",
+
+images:[
+"/images/products/maybelline-mascara.jpg"
+],
+
+description:
+"Maybelline Sky High Mascara gives extreme length, volume, and lifted lashes with a lightweight waterproof formula."
+
+},
+
+
+{
+id:11032,
+
+brand:"L'Oréal",
+
+name:"Lash Paradise Mascara",
+
+price:899,
+
+image:"/images/products/loreal-mascara.jpg",
+
+images:[
+"/images/products/loreal-mascara.jpg"
+],
+
+description:
+"L'Oréal Lash Paradise Mascara creates dramatic volume and intense black lashes with smooth application."
+
+},
+
+
+{
+id:11033,
+
+brand:"Lakme",
+
+name:"Eyeconic Curl Mascara",
+
+price:499,
+
+image:"/images/products/lakme-mascara.jpg",
+
+images:[
+"/images/products/lakme-mascara.jpg"
+],
+
+description:
+"Lakme Eyeconic Curl Mascara enhances lashes with a curling effect and long-lasting definition."
+
+},
+
+
+{
+id:11034,
+
+brand:"Swiss Beauty",
+
+name:"Volume Mascara",
+
+price:399,
+
+image:"/images/products/swiss-mascara.jpg",
+
+images:[
+"/images/products/swiss-mascara.jpg"
+],
+
+description:
+"Swiss Beauty Volume Mascara adds thickness and definition to lashes for an everyday makeup look."
+
+},
+
+
+{
+id:11035,
+
+brand:"M.A.C",
+
+name:"Magic Extension Mascara",
+
+price:2299,
+
+image:"/images/products/mac-mascara.jpg",
+
+images:[
+"/images/products/mac-mascara.jpg"
+],
+
+description:
+"M.A.C Magic Extension Mascara delivers bold, extended lashes with a professional makeup finish."
+
+},
+
+
+{
+id:11036,
+
+brand:"Faces Canada",
+
+name:"Magneteyes Mascara",
+
+price:599,
+
+image:"/images/products/faces-mascara.jpg",
+
+images:[
+"/images/products/faces-mascara.jpg"
+],
+
+description:
+"Faces Canada Magneteyes Mascara provides rich volume, length, and smudge-resistant wear."
+},
+
+
+
+// ================= COMPACT PRODUCTS =================
+
+
+{
+id:11041,
+
+brand:"Maybelline",
+
+name:"Fit Me Compact Powder",
+
+price:299,
+
+image:"/images/products/maybelline-compact.jpg",
+
+images:[
+"/images/products/maybelline-compact.jpg"
+],
+
+description:
+"Maybelline Fit Me Compact Powder controls shine and gives a smooth matte finish for everyday makeup."
+},
+
+
+
+{
+id:11042,
+
+brand:"Lakme",
+
+name:"Radiance Compact Powder",
+
+price:250,
+
+image:"/images/products/lakme-compact.jpg",
+
+images:[
+"/images/products/lakme-compact.jpg"
+],
+
+description:
+"Lakme Radiance Compact Powder gives a natural bright look with lightweight coverage."
+},
+
+
+
+{
+id:11043,
+
+brand:"Swiss Beauty",
+
+name:"HD Compact Powder",
+
+price:399,
+
+image:"/images/products/hd-compact.jpg",
+
+images:[
+"/images/products/hd-compact.jpg"
+],
+
+description:
+"Swiss Beauty HD Compact Powder provides a flawless finish with oil control."
+},
+
+
+
+{
+id:11044,
+
+brand:"M.A.C",
+
+name:"Studio Fix Compact",
+
+price:3200,
+
+image:"/images/products/mac-compact.jpg",
+
+images:[
+"/images/products/mac-compact.jpg"
+],
+
+description:
+"M.A.C Studio Fix Compact provides professional coverage with a smooth matte finish."
+},
+
+
+
+{
+id:11045,
+
+brand:"Faces Canada",
+
+name:"Weightless Matte Compact",
+
+price:599,
+
+image:"/images/products/faces-compact.jpg",
+
+images:[
+"/images/products/faces-compact.jpg"
+],
+
+description:
+"Lightweight matte compact powder that keeps makeup fresh throughout the day."
+},
+
+
+
+{
+id:11046,
+
+brand:"Nykaa",
+
+name:"All Day Matte Compact",
+
+price:499,
+
+image:"/images/products/nykaa-compact.jpg",
+
+images:[
+"/images/products/nykaa-compact.jpg"
+],
+
+description:
+"Nykaa compact powder gives a smooth matte look and controls excess oil."
+},
+
+
+
+// ================= CONCEALER PRODUCTS =================
+
+
+{
+id:11051,
+
+brand:"Maybelline",
+
+name:"Instant Age Rewind Concealer",
+
+price:699,
+
+image:"/images/products/maybelline-concealer.jpg",
+
+images:[
+"/images/products/maybelline-concealer.jpg"
+],
+
+description:
+"Maybelline Instant Age Rewind Concealer provides high coverage to hide dark circles, blemishes, and imperfections while giving a smooth natural finish."
+
+},
+
+
+{
+id:11052,
+
+brand:"L'Oréal",
+
+name:"Infallible Concealer",
+
+price:899,
+
+image:"/images/products/loreal-concealer.jpg",
+
+images:[
+"/images/products/loreal-concealer.jpg"
+],
+
+description:
+"L'Oréal Infallible Concealer offers full coverage with a lightweight texture, long-lasting wear, and a flawless matte finish."
+
+},
+
+
+{
+id:11053,
+
+brand:"Swiss Beauty",
+
+name:"Full Coverage Concealer",
+
+price:499,
+
+image:"/images/products/swiss-concealer.jpg",
+
+images:[
+"/images/products/swiss-concealer.jpg"
+],
+
+description:
+"Swiss Beauty Full Coverage Concealer blends easily to cover dark circles, spots, and uneven skin tone for a smooth makeup look."
+
+},
+
+
+{
+id:11054,
+
+brand:"Lakme",
+
+name:"Absolute Concealer",
+
+price:599,
+
+image:"/images/products/lakme-concealer.jpg",
+
+images:[
+"/images/products/lakme-concealer.jpg"
+],
+
+description:
+"Lakme Absolute Concealer provides lightweight coverage with a natural finish and helps create a flawless base for makeup."
+
+},
+
+
+
+// ================= BLUSH PRODUCTS =================
+
+{
+id:11061,
+
+brand:"Rare Beauty",
+
+name:"Soft Pinch Liquid Blush",
+
+price:1999,
+
+image:"/images/products/pink-blush.jpg",
+
+images:[
+"/images/products/pink-blush.jpg"
+],
+
+description:
+"Highly pigmented liquid blush that blends beautifully to give a natural rosy glow."
+},
+
+
+{
+id:11062,
+
+brand:"Lakme",
+
+name:"Absolute Blush",
+
+price:650,
+
+image:"/images/products/peach-blush.jpg",
+
+images:[
+"/images/products/peach-blush.jpg"
+],
+
+description:
+"Soft powder blush that gives a fresh and natural flush of colour."
+},
+
+
+{
+id:11063,
+
+brand:"Maybelline",
+
+name:"Fit Me Blush",
+
+price:599,
+
+image:"/images/products/matte-blush.jpg",
+
+images:[
+"/images/products/matte-blush.jpg"
+],
+
+description:
+"Lightweight blush with buildable colour for a smooth matte finish."
+},
+
+
+{
+id:11064,
+
+brand:"Nykaa",
+
+name:"Matte To Last Blush",
+
+price:799,
+
+image:"/images/products/liquid-blush.jpg",
+
+images:[
+"/images/products/liquid-blush.jpg"
+],
+
+description:
+"Long-lasting blush that provides a beautiful natural cheek tint."
+},
+
 ];
 
 
