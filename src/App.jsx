@@ -71,6 +71,12 @@ import BodyButter from "./pages/BodyButter";
 import BodyScrub from "./pages/BodyScrub";
 import HandCream from "./pages/HandCream";
 import Soap from "./pages/Soap";
+import VitaminC from "./pages/VitaminC";
+import Niacinamide from "./pages/Niacinamide";
+import Retinol from "./pages/Retinol";
+import HyaluronicAcid from "./pages/HyaluronicAcid";
+import Brightening from "./pages/Brightening";
+import AntiAging from "./pages/AntiAging";
 
 function App() {
 
@@ -317,6 +323,30 @@ function App() {
 <Route 
   path="/shop/bodycare/soap" 
   element={<Soap />} 
+/>
+<Route 
+  path="/shop/serum/vitamin-c" 
+  element={<VitaminC />} 
+/>
+<Route
+  path="/shop/serum/niacinamide"
+  element={<Niacinamide />}
+/>
+<Route
+  path="/shop/serum/retinol"
+  element={<Retinol />}
+/>
+<Route
+  path="/shop/serum/hyaluronic-acid"
+  element={<HyaluronicAcid />}
+/>
+<Route
+  path="/shop/serum/brightening"
+  element={<Brightening />}
+/>
+<Route
+  path="/shop/serum/anti-aging"
+  element={<AntiAging />}
 />
 
 

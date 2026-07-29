@@ -2494,6 +2494,355 @@ description:
   description:"Dettol Original Soap provides trusted germ protection while keeping your skin fresh and clean.",
 },
 
+// Vitamin C Serum Products
+
+{
+  id: 14001,
+  brand: "Minimalist",
+  name: "10% Vitamin C Face Serum",
+  price: "₹699",
+  image: "/images/products/minimalist-vitamin-c.jpg",
+  images: [
+    "/images/products/minimalist-vitamin-c.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Minimalist 10% Vitamin C Face Serum helps brighten dull skin, improve glow and protect skin from environmental damage.",
+},
+
+{
+  id: 14002,
+  brand: "Plum",
+  name: "Vitamin C Face Serum",
+  price: "₹649",
+  image: "/images/products/plum-vitamin-c.jpg",
+  images: [
+    "/images/products/plum-vitamin-c.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Plum Vitamin C Face Serum helps improve skin brightness and gives a healthy natural glow.",
+},
+
+{
+  id: 14003,
+  brand: "Dot & Key",
+  name: "Cica + Vitamin C Serum",
+  price: "₹749",
+  image: "/images/products/dotkey-vitamin-c.jpg",
+  images: [
+    "/images/products/dotkey-vitamin-c.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Dot & Key Cica + Vitamin C Serum calms skin, reduces dullness and enhances radiance.",
+},
+
+{
+  id: 14004,
+  brand: "Mamaearth",
+  name: "Skin Illuminate Vitamin C Serum",
+  price: "₹599",
+  image: "/images/products/mamaearth-vitamin-c.jpg",
+  images: [
+    "/images/products/mamaearth-vitamin-c.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Mamaearth Vitamin C Serum helps brighten skin and provides a fresh illuminated look.",
+},
+
+// Niacinamide Serum Products
+
+{
+  id: 14011,
+  brand: "Minimalist",
+  name: "10% Niacinamide Face Serum",
+  price: "₹599",
+  image: "/images/products/minimalist-niacinamide.jpg",
+  images: [
+    "/images/products/minimalist-niacinamide.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Minimalist 10% Niacinamide Serum helps control oil, reduce pores and improve skin texture.",
+},
+
+
+{
+  id: 14012,
+  brand: "The Ordinary",
+  name: "Niacinamide 10% + Zinc 1% Serum",
+  price: "₹699",
+  image: "/images/products/ordinary-niacinamide.jpg",
+  images: [
+    "/images/products/ordinary-niacinamide.jpg",
+  ],
+  category: "Serum",
+  description:
+    "The Ordinary Niacinamide Serum helps reduce excess oil and supports clearer looking skin.",
+},
+
+
+{
+  id: 14013,
+  brand: "Plum",
+  name: "Plum Niacinamide Serum",
+  price: "₹575",
+  image: "/images/products/plum-niacinamide.jpg",
+  images: [
+    "/images/products/plum-niacinamide.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Plum Niacinamide Serum strengthens skin barrier and gives a smooth healthy glow.",
+},
+
+
+{
+  id: 14014,
+  brand: "Dot & Key",
+  name: "Barrier Repair Niacinamide Serum",
+  price: "₹645",
+  image: "/images/products/dotkey-niacinamide.jpg",
+  images: [
+    "/images/products/dotkey-niacinamide.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Dot & Key Niacinamide Serum helps repair skin barrier and maintain hydration.",
+},
+
+// Retinol Serum Products
+
+{
+  id: 14021,
+  brand: "Minimalist",
+  name: "0.3% Retinol Face Serum",
+  price: "₹599",
+  image: "/images/products/minimalist-retinol.jpg",
+  images: [
+    "/images/products/minimalist-retinol.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Minimalist 0.3% Retinol Serum helps improve skin texture, reduce fine lines and support youthful looking skin.",
+},
+
+
+{
+  id: 14022,
+  brand: "The Ordinary",
+  name: "Retinol 1% in Squalane Serum",
+  price: "₹899",
+  image: "/images/products/ordinary-retinol.jpg",
+  images: [
+    "/images/products/ordinary-retinol.jpg",
+  ],
+  category: "Serum",
+  description:
+    "The Ordinary Retinol Serum helps target signs of aging and improves skin appearance.",
+},
+
+
+{
+  id: 14023,
+  brand: "Dot & Key",
+  name: "Night Reset Retinol Serum",
+  price: "₹795",
+  image: "/images/products/dotkey-retinol.jpg",
+  images: [
+    "/images/products/dotkey-retinol.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Dot & Key Retinol Serum works overnight to improve skin texture and restore glow.",
+},
+
+
+{
+  id: 14024,
+  brand: "Mamaearth",
+  name: "Retinol Face Serum",
+  price: "₹649",
+  image: "/images/products/mamaearth-retinol.jpg",
+  images: [
+    "/images/products/mamaearth-retinol.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Mamaearth Retinol Serum helps improve skin firmness and gives a smoother appearance.",
+},
+
+// Hyaluronic Acid Serum Products
+
+{
+  id: 14031,
+  brand: "Minimalist",
+  name: "2% Hyaluronic Acid Face Serum",
+  price: "₹599",
+  image: "/images/products/minimalist-hyaluronic.jpg",
+  images: [
+    "/images/products/minimalist-hyaluronic.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Minimalist 2% Hyaluronic Acid Serum provides deep hydration and helps maintain soft, plump skin.",
+},
+
+
+{
+  id: 14032,
+  brand: "The Ordinary",
+  name: "Hyaluronic Acid 2% + B5 Serum",
+  price: "₹899",
+  image: "/images/products/ordinary-hyaluronic.jpg",
+  images: [
+    "/images/products/ordinary-hyaluronic.jpg",
+  ],
+  category: "Serum",
+  description:
+    "The Ordinary Hyaluronic Acid Serum helps hydrate skin and improve moisture retention.",
+},
+
+
+{
+  id: 14033,
+  brand: "Dot & Key",
+  name: "Hydrating Hyaluronic Acid Serum",
+  price: "₹695",
+  image: "/images/products/dotkey-hyaluronic.jpg",
+  images: [
+    "/images/products/dotkey-hyaluronic.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Dot & Key Hyaluronic Acid Serum delivers lightweight hydration and gives a healthy glow.",
+},
+
+
+{
+  id: 14034,
+  brand: "Plum",
+  name: "Plum Hyaluronic Acid Serum",
+  price: "₹575",
+  image: "/images/products/plum-hyaluronic.jpg",
+  images: [
+    "/images/products/plum-hyaluronic.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Plum Hyaluronic Acid Serum keeps skin hydrated, smooth and refreshed.",
+},
+
+// Brightening Serum Products
+
+{
+  id: 14041,
+  brand: "Minimalist",
+  name: "Alpha Arbutin Brightening Serum",
+  price: "₹599",
+  image: "/images/products/minimalist-brightening.jpg",
+  images: [
+    "/images/products/minimalist-brightening.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Minimalist Alpha Arbutin Brightening Serum helps reduce dullness and improves skin radiance.",
+},
+
+
+{
+  id: 14042,
+  brand: "Plum",
+  name: "15% Vitamin C Brightening Serum",
+  price: "₹649",
+  image: "/images/products/plum-brightening.jpg",
+  images: [
+    "/images/products/plum-brightening.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Plum Brightening Serum helps improve skin glow and gives a fresh radiant appearance.",
+},
+
+
+{
+  id: 14043,
+  brand: "Dot & Key",
+  name: "Glow Revealing Brightening Serum",
+  price: "₹695",
+  image: "/images/products/dotkey-brightening.jpg",
+  images: [
+    "/images/products/dotkey-brightening.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Dot & Key Brightening Serum helps reveal glowing skin and improves uneven skin tone.",
+},
+
+
+{
+  id: 14044,
+  brand: "Mamaearth",
+  name: "Natural Radiance Brightening Serum",
+  price: "₹599",
+  image: "/images/products/mamaearth-brightening.jpg",
+  images: [
+    "/images/products/mamaearth-brightening.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Mamaearth Brightening Serum helps nourish skin and provides a natural radiant glow.",
+},
+
+// Anti Aging Serum Products
+
+{
+  id: 14051,
+  brand: "Minimalist",
+  name: "Multi Peptide Anti Aging Serum",
+  price: "₹799",
+  image: "/images/products/minimalist-antiaging.jpg",
+  images: [
+    "/images/products/minimalist-antiaging.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Minimalist Multi Peptide Anti Aging Serum helps improve skin firmness, reduce fine lines and support youthful looking skin.",
+},
+
+
+{
+  id: 14052,
+  brand: "The Ordinary",
+  name: "Buffet Anti Aging Serum",
+  price: "₹999",
+  image: "/images/products/ordinary-antiaging.jpg",
+  images: [
+    "/images/products/ordinary-antiaging.jpg",
+  ],
+  category: "Serum",
+  description:
+    "The Ordinary Buffet Serum helps target signs of aging and improves skin texture for a smoother appearance.",
+},
+
+
+{
+  id: 14053,
+  brand: "Dot & Key",
+  name: "Retinol + Peptide Anti Aging Serum",
+  price: "₹895",
+  image: "/images/products/dotkey-antiaging.jpg",
+  images: [
+    "/images/products/dotkey-antiaging.jpg",
+  ],
+  category: "Serum",
+  description:
+    "Dot & Key Retinol + Peptide Serum helps improve firmness and gives skin a youthful glow.",
+},
+
+
 ];
 
 

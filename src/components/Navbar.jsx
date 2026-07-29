@@ -301,7 +301,37 @@ export default function Navbar() {
       Soap
     </Link>
   </>
-  ) : (
+  ) : activeCategory === "Bodycare" ? (
+  <>
+    ...
+  </>
+) : activeCategory === "Serum" ? (
+  <>
+    <Link to="/shop/serum/vitamin-c" className="submenu-link">
+      Vitamin C
+    </Link>
+
+    <Link to="/shop/serum/niacinamide" className="submenu-link">
+      Niacinamide
+    </Link>
+
+    <Link to="/shop/serum/retinol" className="submenu-link">
+      Retinol
+    </Link>
+
+    <Link to="/shop/serum/hyaluronic-acid" className="submenu-link">
+      Hyaluronic Acid
+    </Link>
+
+    <Link to="/shop/serum/brightening" className="submenu-link">
+      Brightening
+    </Link>
+
+    <Link to="/shop/serum/anti-aging" className="submenu-link">
+      Anti Aging
+    </Link>
+  </>
+) : (
     shopData[activeCategory].sub.map((item) => (
       <Link
         key={item}
