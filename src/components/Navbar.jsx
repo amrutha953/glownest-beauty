@@ -331,6 +331,32 @@ export default function Navbar() {
       Anti Aging
     </Link>
   </>
+  ) : activeCategory === "Perfume" ? (
+  <>
+    <Link to="/shop/perfume/women" className="submenu-link">
+      Women
+    </Link>
+
+    <Link to="/shop/perfume/men" className="submenu-link">
+      Men
+    </Link>
+
+    <Link to="/shop/perfume/luxury" className="submenu-link">
+      Luxury
+    </Link>
+
+    <Link to="/shop/perfume/floral" className="submenu-link">
+      Floral
+    </Link>
+
+    <Link to="/shop/perfume/woody" className="submenu-link">
+      Woody
+    </Link>
+
+    <Link to="/shop/perfume/fresh" className="submenu-link">
+      Fresh
+    </Link>
+  </>
 ) : (
     shopData[activeCategory].sub.map((item) => (
       <Link

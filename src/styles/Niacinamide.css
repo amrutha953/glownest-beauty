@@ -6,32 +6,31 @@
 
 /* Hero */
 
+/* HERO */
+
 .niacinamide-hero {
 
-  height: 350px;
-
-  background:
+    background:
     linear-gradient(
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.35)
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
     ),
     url("/images/niacinamide-banner.jpg");
 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    height: 450px;
+    width: 100%;
 
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-
-  text-align: center;
-  color: white;
-
+    color:white;
+    text-align:center;
 }
 
 

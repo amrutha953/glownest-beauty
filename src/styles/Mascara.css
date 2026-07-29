@@ -4,27 +4,31 @@
     min-height:100vh;
 }
 
-/* Hero */
+/* HERO */
 
-.mascara-hero{
-    height:320px;
+.mascara-hero {
 
     background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
     url("/images/mascara-banner.jpg");
 
-    background-size:cover;
-    background-position:center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 450px;
+    width: 100%;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
 
-    text-align:center;
     color:white;
-
-    padding:20px;
+    text-align:center;
 }
 
 .mascara-hero h1{

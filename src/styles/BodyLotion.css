@@ -2,29 +2,31 @@
   font-family: Arial, sans-serif;
   background: #fff;
 }
-
-/* Hero */
+/* HERO */
 
 .bodylotion-hero {
-  height: 350px;
-  background:
+
+    background:
     linear-gradient(
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.35)
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
     ),
     url("/images/bodylotion-banner.jpg");
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    height: 450px;
+    width: 100%;
 
-  text-align: center;
-  color: white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
 }
 
 .bodylotion-hero h1 {

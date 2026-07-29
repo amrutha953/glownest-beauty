@@ -1,0 +1,210 @@
+.woody-page{
+
+font-family:Arial,sans-serif;
+background:#fff;
+
+}
+
+
+/* HERO */
+
+.woody-hero {
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("/images/woody-perfume-banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 450px;
+    width: 100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+
+
+
+.woody-hero h1{
+
+font-size:48px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.woody-hero p{
+
+font-size:18px;
+
+width:70%;
+
+}
+
+
+
+/* Products */
+
+.woody-products{
+
+padding:60px 8%;
+
+}
+
+
+
+.woody-products h2{
+
+text-align:center;
+
+font-size:34px;
+
+color:#e91e63;
+
+margin-bottom:40px;
+
+}
+
+
+
+.woody-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.woody-card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+text-align:center;
+
+box-shadow:
+0 6px 15px rgba(0,0,0,0.1);
+
+padding-bottom:20px;
+
+transition:.3s;
+
+}
+
+
+
+.woody-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.woody-card img{
+
+width:100%;
+
+height:280px;
+
+object-fit:contain;
+
+}
+
+
+
+.brand{
+
+display:block;
+
+color:#888;
+
+font-size:15px;
+
+font-weight:600;
+
+margin-top:15px;
+
+}
+
+
+
+.woody-card h3{
+
+font-size:22px;
+
+color:#333;
+
+margin:10px;
+
+}
+
+
+
+.rating{
+
+color:#ffb400;
+
+font-size:18px;
+
+margin:10px 0;
+
+}
+
+
+
+.woody-card h4{
+
+font-size:24px;
+
+color:#e91e63;
+
+}
+
+
+
+.woody-card button{
+
+background:#e91e63;
+
+color:white;
+
+border:none;
+
+padding:12px 30px;
+
+border-radius:30px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+
+
+.woody-card button:hover{
+
+background:#c2185b;
+
+}

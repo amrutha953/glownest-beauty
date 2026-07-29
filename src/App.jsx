@@ -77,7 +77,12 @@ import Retinol from "./pages/Retinol";
 import HyaluronicAcid from "./pages/HyaluronicAcid";
 import Brightening from "./pages/Brightening";
 import AntiAging from "./pages/AntiAging";
-
+import Women from "./pages/Women";
+import Men from "./pages/Men";
+import Luxury from "./pages/Luxury";
+import Floral from "./pages/Floral";
+import Woody from "./pages/Woody";
+import Fresh from "./pages/Fresh";
 function App() {
 
   return (
@@ -348,7 +353,30 @@ function App() {
   path="/shop/serum/anti-aging"
   element={<AntiAging />}
 />
-
+<Route
+  path="/shop/perfume/women"
+  element={<Women />}
+/>
+<Route
+ path="/shop/perfume/men"
+ element={<Men />}
+/>
+<Route
+path="/shop/perfume/luxury"
+element={<Luxury />}
+/>
+<Route
+path="/shop/perfume/floral"
+element={<Floral />}
+/>
+<Route
+path="/shop/perfume/woody"
+element={<Woody />}
+/>
+<Route
+path="/shop/perfume/fresh"
+element={<Fresh />}
+/>
 
       </Routes>
 

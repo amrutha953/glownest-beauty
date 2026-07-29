@@ -1,0 +1,210 @@
+.men-page{
+
+font-family:Arial,sans-serif;
+background:#fff;
+
+}
+
+
+/* HERO */
+
+.men-hero {
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("/images/men-banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 450px;
+    width: 100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+
+
+
+.men-hero h1{
+
+font-size:48px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.men-hero p{
+
+width:70%;
+
+font-size:18px;
+
+}
+
+
+
+/* Products */
+
+
+.men-products{
+
+padding:60px 8%;
+
+}
+
+
+
+.men-products h2{
+
+text-align:center;
+
+color:#e91e63;
+
+font-size:34px;
+
+margin-bottom:40px;
+
+}
+
+
+
+.men-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.men-card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+text-align:center;
+
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+
+transition:.3s;
+
+padding-bottom:20px;
+
+}
+
+
+
+.men-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.men-card img{
+
+width:100%;
+
+height:280px;
+
+object-fit:contain;
+
+}
+
+
+
+.brand{
+
+display:block;
+
+color:#888;
+
+font-size:15px;
+
+font-weight:600;
+
+margin-top:15px;
+
+}
+
+
+
+.men-card h3{
+
+margin:10px;
+
+font-size:22px;
+
+color:#333;
+
+}
+
+
+
+.rating{
+
+color:#ffb400;
+
+font-size:18px;
+
+margin:10px 0;
+
+}
+
+
+
+.men-card h4{
+
+color:#e91e63;
+
+font-size:24px;
+
+}
+
+
+
+.men-card button{
+
+background:#e91e63;
+
+color:white;
+
+border:none;
+
+padding:12px 30px;
+
+border-radius:30px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+
+
+.men-card button:hover{
+
+background:#c2185b;
+
+}

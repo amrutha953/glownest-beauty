@@ -3,26 +3,31 @@
   background:#fff;
 }
 
-.hairspray-hero{
+/* HERO */
 
-  height:350px;
+.hairspray-hero {
 
-  background:
-  linear-gradient(
-  rgba(0,0,0,.35),
-  rgba(0,0,0,.35)),
-  url("/images/hair-spray-banner.jpg");
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("/images/hair-spray-banner.jpg");
 
-  background-size:cover;
-  background-position:center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+    height: 450px;
+    width: 100%;
 
-  color:#fff;
-  text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
 }
 
 .hairspray-hero h1{

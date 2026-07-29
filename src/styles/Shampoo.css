@@ -5,22 +5,31 @@
 
 /* Hero Section */
 
+/* HERO */
+
 .shampoo-hero {
-  height: 350px;
-  background: linear-gradient(rgba(0,0,0,0.35),
-              rgba(0,0,0,0.35)),
-              url("/images/shampoo-banner.jpg");
 
-  background-size: cover;
-  background-position: center;
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("/images/shampoo-banner.jpg");
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-  color: white;
-  text-align: center;
+    height: 450px;
+    width: 100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
 }
 
 .shampoo-hero h1 {

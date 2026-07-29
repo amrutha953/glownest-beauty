@@ -2842,7 +2842,558 @@ description:
     "Dot & Key Retinol + Peptide Serum helps improve firmness and gives skin a youthful glow.",
 },
 
+// ================= PERFUME - WOMEN =================
 
+
+{
+  id: 15001,
+  category: "Perfume",
+  brand: "Bella Vita",
+  name: "Women's Floral Eau De Parfum",
+  price: "₹699",
+
+  images: [
+    "/images/products/women-floral.jpg",
+    
+  ],
+
+  description:
+    "A fresh floral perfume crafted for women with elegant and long-lasting fragrance notes.",
+
+  highlights: [
+    "Floral fragrance",
+    "Long lasting scent",
+    "Perfect for everyday use",
+    "Premium perfume bottle"
+  ]
+},
+
+
+{
+  id: 15002,
+  category: "Perfume",
+  brand: "Yves Rocher",
+  name: "Elegant Rose Women's Perfume",
+  price: "₹899",
+
+  images: [
+    "/images/products/women-rose.jpg",
+    
+  ],
+
+  description:
+    "A beautiful rose-based fragrance that gives a soft, romantic and refreshing feel.",
+
+  highlights: [
+    "Rose fragrance",
+    "Elegant feminine aroma",
+    "Suitable for occasions",
+    "Long lasting perfume"
+  ]
+},
+
+
+{
+  id: 15003,
+  category: "Perfume",
+  brand: "Plum",
+  name: "Vanilla Vibes Women's Perfume",
+  price: "₹799",
+
+  images: [
+    "/images/products/women-vanilla.jpg",
+    
+  ],
+
+  description:
+    "A sweet vanilla fragrance with warm and comforting notes for a beautiful everyday scent.",
+
+  highlights: [
+    "Vanilla notes",
+    "Sweet fragrance",
+    "Daily wear perfume",
+    "Travel friendly"
+  ]
+},
+
+
+{
+  id: 15004,
+  category: "Perfume",
+  brand: "The Body Shop",
+  name: "White Musk Women's Fragrance",
+  price: "₹999",
+
+  images: [
+    "/images/products/women-musk.jpg",
+    
+  ],
+
+  description:
+    "A luxurious white musk fragrance with a soft and sophisticated aroma.",
+
+  highlights: [
+    "Luxury fragrance",
+    "Musk notes",
+    "Premium quality",
+    "Long lasting scent"
+  ]
+},
+
+{
+id:15005,
+category:"Perfume",
+brand:"Wild Stone",
+name:"Edge Men's Eau De Parfum",
+price:"₹599",
+
+images:[
+"/images/products/wildstone-men-perfume.jpg"
+],
+
+description:
+"A refreshing masculine fragrance with long lasting notes.",
+
+highlights:[
+"Long lasting fragrance",
+"Premium men's perfume",
+"Perfect for daily use"
+]
+
+},
+
+
+{
+id:15006,
+category:"Perfume",
+brand:"Denver",
+name:"Hamilton Men's Perfume",
+price:"₹499",
+
+images:[
+"/images/products/denver-men-perfume.jpg"
+],
+
+description:
+"A classy fragrance for confident men.",
+
+highlights:[
+"Fresh aroma",
+"Elegant fragrance",
+"Daily wear perfume"
+]
+
+},
+
+
+{
+id:15007,
+category:"Perfume",
+brand:"Park Avenue",
+name:"Voyage Men's Fragrance",
+price:"₹699",
+
+images:[
+"/images/products/parkavenue-men-perfume.jpg"
+],
+
+description:
+"A sophisticated fragrance with a refreshing feel.",
+
+highlights:[
+"Premium scent",
+"Long lasting",
+"Suitable for occasions"
+]
+
+},
+
+
+{
+id:15008,
+category:"Perfume",
+brand:"Fogg",
+name:"Fogg Impressio Men's Perfume",
+price:"₹399",
+
+images:[
+"/images/products/fogg-men-perfume.jpg"
+],
+
+description:
+"A stylish fragrance made for everyday confidence.",
+
+highlights:[
+"Fresh fragrance",
+"Affordable perfume",
+"Long lasting scent"
+]
+
+},
+
+{
+id:15009,
+category:"Perfume",
+brand:"Bella Vita",
+name:"Luxury Oud Eau De Parfum",
+price:"₹1299",
+
+images:[
+"/images/products/luxury-oud-perfume.jpg"
+],
+
+description:
+"A premium oud fragrance with rich and elegant notes.",
+
+highlights:[
+"Luxury oud fragrance",
+"Long lasting scent",
+"Perfect for special occasions"
+]
+
+},
+
+
+{
+id:15010,
+category:"Perfume",
+brand:"Ajmal",
+name:"Amber Wood Luxury Perfume",
+price:"₹2499",
+
+images:[
+"/images/products/ajmal-luxury-perfume.jpg"
+],
+
+description:
+"A sophisticated woody fragrance designed for elegance.",
+
+highlights:[
+"Premium perfume",
+"Rich woody notes",
+"Long lasting aroma"
+]
+
+},
+
+
+{
+id:15011,
+category:"Perfume",
+brand:"Yardley",
+name:"London Premium Fragrance",
+price:"₹899",
+
+images:[
+"/images/products/yardley-luxury-perfume.jpg"
+],
+
+description:
+"A classic premium fragrance with a refreshing feel.",
+
+highlights:[
+"Elegant fragrance",
+"Fresh aroma",
+"Daily luxury wear"
+]
+
+},
+
+
+{
+id:15012,
+category:"Perfume",
+brand:"The Man Company",
+name:"Luxury Signature Perfume",
+price:"₹1499",
+
+images:[
+"/images/products/man-company-luxury-perfume.jpg"
+],
+
+description:
+"A signature luxury scent created for modern men.",
+
+highlights:[
+"Premium fragrance",
+"Long lasting perfume",
+"Suitable for occasions"
+]
+
+},
+
+{
+id:15013,
+category:"Perfume",
+brand:"Engage",
+name:"Bloom Floral Eau De Parfum",
+price:"₹499",
+
+images:[
+"/images/products/engage-floral-perfume.jpg"
+],
+
+description:
+"A refreshing floral perfume with beautiful flower-inspired notes.",
+
+highlights:[
+"Fresh floral fragrance",
+"Long lasting scent",
+"Perfect for everyday use"
+]
+
+},
+
+
+{
+id:15014,
+category:"Perfume",
+brand:"Yardley",
+name:"English Rose Floral Perfume",
+price:"₹599",
+
+images:[
+"/images/products/yardley-floral-perfume.jpg"
+],
+
+description:
+"A romantic rose fragrance with a soft elegant aroma.",
+
+highlights:[
+"Rose fragrance",
+"Elegant scent",
+"Daily wear perfume"
+]
+
+},
+
+
+{
+id:15015,
+category:"Perfume",
+brand:"Plum",
+name:"BodyLovin' Hawaiian Rumba Perfume",
+price:"₹699",
+
+images:[
+"/images/products/plum-floral-perfume.jpg"
+],
+
+description:
+"A tropical floral fragrance with fresh fruity notes.",
+
+highlights:[
+"Refreshing fragrance",
+"Floral fruity notes",
+"Lightweight perfume"
+]
+
+},
+
+
+{
+id:15016,
+category:"Perfume",
+brand:"The Body Shop",
+name:"Floral Musk Fragrance",
+price:"₹1299",
+
+images:[
+"/images/products/bodyshop-floral-perfume.jpg"
+],
+
+description:
+"A premium floral musk fragrance for a graceful feel.",
+
+highlights:[
+"Premium fragrance",
+"Soft floral notes",
+"Long lasting aroma"
+]
+
+},
+
+{
+id:15017,
+category:"Perfume",
+brand:"Ustraa",
+name:"Base Camp Woody Perfume",
+price:"₹699",
+
+images:[
+"/images/products/ustraa-woody-perfume.jpg"
+],
+
+description:
+"A warm woody fragrance with a bold masculine character.",
+
+highlights:[
+"Deep woody notes",
+"Long lasting fragrance",
+"Perfect for evening wear"
+]
+
+},
+
+
+{
+id:15018,
+category:"Perfume",
+brand:"Skinn",
+name:"Raw Instinct Woody Fragrance",
+price:"₹1199",
+
+images:[
+"/images/products/skinn-woody-perfume.jpg"
+],
+
+description:
+"A sophisticated woody perfume with premium fragrance notes.",
+
+highlights:[
+"Premium fragrance",
+"Elegant woody aroma",
+"Suitable for occasions"
+]
+
+},
+
+
+{
+id:15019,
+category:"Perfume",
+brand:"Ajmal",
+name:"Silver Shade Woody Perfume",
+price:"₹1599",
+
+images:[
+"/images/products/ajmal-woody-perfume.jpg"
+],
+
+description:
+"A rich woody fragrance crafted for confident personalities.",
+
+highlights:[
+"Luxury scent",
+"Long lasting perfume",
+"Fresh woody notes"
+]
+
+},
+
+
+{
+id:15020,
+category:"Perfume",
+brand:"Denver",
+name:"Hamilton Woody Edition Perfume",
+price:"₹599",
+
+images:[
+"/images/products/denver-woody-edition.jpg"
+],
+
+description:
+"A stylish woody fragrance for everyday confidence.",
+
+highlights:[
+"Affordable perfume",
+"Fresh woody aroma",
+"Daily use fragrance"
+]
+
+},
+
+{
+id:15021,
+category:"Perfume",
+brand:"Fogg",
+name:"Fresh Aqua Men's Perfume",
+price:"₹399",
+
+images:[
+"/images/products/fogg-fresh-perfume.jpg"
+],
+
+description:
+"A refreshing aqua fragrance that keeps you fresh throughout the day.",
+
+highlights:[
+"Fresh aquatic notes",
+"Long lasting fragrance",
+"Perfect for daily use"
+]
+
+},
+
+
+{
+id:15022,
+category:"Perfume",
+brand:"Engage",
+name:"Fresh Citrus Eau De Parfum",
+price:"₹499",
+
+images:[
+"/images/products/engage-fresh-perfume.jpg"
+],
+
+description:
+"A bright citrus fragrance with a refreshing feel.",
+
+highlights:[
+"Citrus freshness",
+"Light fragrance",
+"Everyday perfume"
+]
+
+},
+
+
+{
+id:15023,
+category:"Perfume",
+brand:"Nivea",
+name:"Fresh Active Perfume",
+price:"₹599",
+
+images:[
+"/images/products/nivea-fresh-perfume.jpg"
+],
+
+description:
+"A clean and refreshing fragrance for an active lifestyle.",
+
+highlights:[
+"Fresh aroma",
+"Daily wear fragrance",
+"Comfortable scent"
+]
+
+},
+
+
+{
+id:15024,
+category:"Perfume",
+brand:"Wild Stone",
+name:"Fresh Ocean Fragrance",
+price:"₹699",
+
+images:[
+"/images/products/wildstone-fresh-perfume.jpg"
+],
+
+description:
+"A cool ocean-inspired fragrance with refreshing notes.",
+
+highlights:[
+"Ocean freshness",
+"Long lasting scent",
+"Premium fragrance"
+]
+
+},
 ];
 
 

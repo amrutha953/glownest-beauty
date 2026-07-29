@@ -15,7 +15,7 @@ color:white;
 background:
 linear-gradient(rgba(233,30,99,.45),rgba(233,30,99,.45)),
 url("/images/toner-banner.jpg");
-background-size:cover;
+background-size:contain;
 background-position:center;
 }
 

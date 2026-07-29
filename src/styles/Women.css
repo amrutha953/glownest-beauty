@@ -1,0 +1,285 @@
+.women-page {
+
+  font-family: Arial, sans-serif;
+  background:#fff;
+
+}
+
+
+/* HERO */
+
+.women-hero {
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("/images/women-perfume-banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 450px;
+    width: 100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+
+
+
+.women-hero h1 {
+
+
+  font-size:48px;
+
+  margin-bottom:15px;
+
+
+}
+
+
+
+.women-hero p {
+
+
+  width:70%;
+
+  font-size:18px;
+
+  line-height:1.6;
+
+
+}
+
+
+
+/* Products */
+
+
+.women-products {
+
+
+  padding:60px 8%;
+
+
+}
+
+
+
+.women-products h2 {
+
+
+  text-align:center;
+
+  color:#e91e63;
+
+  font-size:34px;
+
+  margin-bottom:40px;
+
+
+}
+
+
+
+.women-grid {
+
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+  gap:30px;
+
+
+}
+
+
+
+
+.women-card {
+
+
+  background:#fff;
+
+  border-radius:15px;
+
+  overflow:hidden;
+
+  text-align:center;
+
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+
+  transition:0.3s;
+
+  padding-bottom:20px;
+
+
+}
+
+
+
+.women-card:hover {
+
+
+  transform:translateY(-8px);
+
+
+}
+
+
+
+
+.women-card img {
+
+
+  width:100%;
+
+  height:280px;
+
+  object-fit:contain;
+
+
+}
+
+
+
+
+.brand {
+
+
+  display:block;
+
+  color:#888;
+
+  font-size:15px;
+
+  font-weight:600;
+
+  margin-top:15px;
+
+
+}
+
+
+
+
+.women-card h3 {
+
+
+  margin:10px;
+
+  font-size:22px;
+
+  color:#333;
+
+
+}
+
+
+
+
+.rating {
+
+
+  color:#ffb400;
+
+  font-size:18px;
+
+  margin:10px 0;
+
+
+}
+
+
+
+
+.women-card h4 {
+
+
+  color:#e91e63;
+
+  font-size:24px;
+
+  margin-bottom:15px;
+
+
+}
+
+
+
+
+.women-card button {
+
+
+  background:#e91e63;
+
+  color:white;
+
+  border:none;
+
+  padding:12px 30px;
+
+  border-radius:30px;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+
+}
+
+
+
+
+.women-card button:hover {
+
+
+  background:#c2185b;
+
+
+}
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:768px){
+
+
+.women-hero h1{
+
+font-size:34px;
+
+}
+
+
+.women-hero p{
+
+width:90%;
+
+font-size:16px;
+
+}
+
+
+.women-products h2{
+
+font-size:28px;
+
+}
+
+
+}
