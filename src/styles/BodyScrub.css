@@ -1,0 +1,140 @@
+.bodyscrub-page {
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+/* Hero */
+
+.bodyscrub-hero {
+  height: 350px;
+  background:
+    linear-gradient(
+      rgba(0,0,0,.35),
+      rgba(0,0,0,.35)
+    ),
+    url("/images/bodyscrub-banner.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+}
+
+.bodyscrub-hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.bodyscrub-hero p {
+  width: 70%;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Products */
+
+.bodyscrub-products {
+  padding: 60px 8%;
+}
+
+.bodyscrub-products h2 {
+  text-align: center;
+  color: #e91e63;
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+
+.bodyscrub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+}
+
+/* Card */
+
+.bodyscrub-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,.1);
+  transition: .3s;
+  padding-bottom: 20px;
+}
+
+.bodyscrub-card:hover {
+  transform: translateY(-8px);
+}
+
+.bodyscrub-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+}
+
+.brand {
+  display: block;
+  color: #888;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.bodyscrub-card h3 {
+  margin: 10px;
+  font-size: 22px;
+  color: #333;
+}
+
+.rating {
+  color: #ffb400;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.bodyscrub-card h4 {
+  color: #e91e63;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.bodyscrub-card button {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.bodyscrub-card button:hover {
+  background: #c2185b;
+}
+
+@media (max-width:768px){
+
+.bodyscrub-hero h1{
+  font-size:34px;
+}
+
+.bodyscrub-hero p{
+  width:90%;
+  font-size:16px;
+}
+
+.bodyscrub-products h2{
+  font-size:28px;
+}
+
+}

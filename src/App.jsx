@@ -65,6 +65,12 @@ import HairOil from "./pages/HairOil";
 import HairSerum from "./pages/HairSerum";
 import HairMask from "./pages/HairMask";
 import HairSpray from "./pages/HairSpray";
+import BodyWash from "./pages/BodyWash";
+import BodyLotion from "./pages/BodyLotion";
+import BodyButter from "./pages/BodyButter";
+import BodyScrub from "./pages/BodyScrub";
+import HandCream from "./pages/HandCream";
+import Soap from "./pages/Soap";
 
 function App() {
 
@@ -287,6 +293,30 @@ function App() {
 <Route
   path="/shop/haircare/hair-spray"
   element={<HairSpray />}
+/>
+<Route
+  path="/shop/bodycare/body-wash"
+  element={<BodyWash />}
+/>
+<Route
+  path="/shop/bodycare/body-lotion"
+  element={<BodyLotion />}
+/>
+<Route
+  path="/shop/bodycare/body-butter"
+  element={<BodyButter />}
+/>
+<Route
+  path="/shop/bodycare/body-scrub"
+  element={<BodyScrub />}
+/>
+<Route
+  path="/shop/bodycare/hand-cream"
+  element={<HandCream />}
+/>
+<Route 
+  path="/shop/bodycare/soap" 
+  element={<Soap />} 
 />
 
 

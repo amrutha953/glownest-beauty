@@ -2152,6 +2152,348 @@ description:
 "BBlunt Hot Shot Hair Spray locks your hairstyle in place while maintaining natural movement and shine."
 },
 
+// ================= BODY WASH PRODUCTS =================
+
+{
+  id: 13001,
+  brand: "Dove",
+  name: "Deeply Nourishing Body Wash",
+  category: "Body Wash",
+  price: 399,
+  description:
+    "Dove Deeply Nourishing Body Wash gently cleanses while nourishing your skin with MicroMoisture technology for soft, smooth and healthy-looking skin.",
+  image: "/images/products/dove-body-wash.jpg",
+  images: [
+    "/images/products/dove-body-wash.jpg",
+    
+  ],
+},
+
+{
+  id: 13002,
+  brand: "Nivea",
+  name: "Creme Soft Body Wash",
+  category: "Body Wash",
+  price: 349,
+  description:
+    "Nivea Creme Soft Body Wash with Almond Oil provides deep nourishment, gentle cleansing and long-lasting freshness for everyday use.",
+  image: "/images/products/nivea-body-wash.jpg",
+  images: [
+    "/images/products/nivea-body-wash.jpg",
+    
+  ],
+},
+
+{
+  id: 13003,
+  brand: "Palmolive",
+  name: "Aroma Morning Tonic Body Wash",
+  category: "Body Wash",
+  price: 299,
+  description:
+    "Palmolive Aroma Morning Tonic Body Wash is enriched with natural botanical extracts that leave your skin refreshed and energized.",
+  image: "/images/products/palmolive-body-wash.jpg",
+  images: [
+    "/images/products/palmolive-body-wash.jpg",
+    
+  ],
+},
+
+{
+  id: 13004,
+  brand: "Fiama",
+  name: "Blackcurrant Body Wash",
+  category: "Body Wash",
+  price: 275,
+  description:
+    "Fiama Blackcurrant Body Wash creates a rich creamy lather that deeply cleanses while keeping your skin moisturized and fresh.",
+  image: "/images/products/fiama-body-wash.jpg",
+  images: [
+    "/images/products/fiama-body-wash.jpg",
+    
+  ],
+},
+
+{
+  id: 13101,
+  brand: "Nivea",
+  name: "Cocoa Nourish Body Lotion",
+  category: "Bodycare",
+  price: 399,
+  description:
+    "Nivea Cocoa Nourish Body Lotion is enriched with cocoa butter and Vitamin E to provide 48-hour deep moisture, leaving your skin soft, smooth, and healthy.",
+  image: "/images/products/nivea-body-lotion.jpg",
+  images: [
+    "/images/products/nivea-body-lotion.jpg",
+    
+  ],
+},
+
+{
+  id: 13102,
+  brand: "Vaseline",
+  name: "Intensive Care Deep Moisture Lotion",
+  category: "Bodycare",
+  price: 349,
+  description:
+    "Vaseline Intensive Care Deep Moisture Lotion deeply hydrates dry skin and helps restore its natural moisture barrier for long-lasting softness.",
+  image: "/images/products/vaseline-body-lotion.jpg",
+  images: [
+    "/images/products/vaseline-body-lotion.jpg",
+    
+  ],
+},
+
+{
+  id: 13103,
+  brand: "Dove",
+  name: "Deeply Nourishing Body Lotion",
+  category: "Bodycare",
+  price: 425,
+  description:
+    "Dove Deeply Nourishing Body Lotion provides deep nourishment with its lightweight formula, keeping skin moisturized and silky smooth all day.",
+  image: "/images/products/dove-body-lotion.jpg",
+  images: [
+    "/images/products/dove-body-lotion.jpg",
+    
+  ],
+},
+
+{
+  id: 13104,
+  brand: "Cetaphil",
+  name: "Moisturizing Body Lotion",
+  category: "Bodycare",
+  price: 799,
+  description:
+    "Cetaphil Moisturizing Body Lotion is dermatologist recommended and specially formulated for dry and sensitive skin, providing long-lasting hydration without irritation.",
+  image: "/images/products/cetaphil-body-lotion.jpg",
+  images: [
+    "/images/products/cetaphil-body-lotion.jpg",
+    
+  ],
+},
+
+{
+  id: 13201,
+  brand: "The Body Shop",
+  name: "Shea Body Butter",
+  category: "Bodycare",
+  price: 999,
+  description:
+    "Rich shea butter formula that deeply nourishes dry skin and provides up to 96 hours of moisture.",
+  image: "/images/products/shea-body-butter.jpg",
+  images: [
+    "/images/products/shea-body-butter.jpg",
+    
+  ],
+},
+
+{
+  id: 13202,
+  brand: "Plum",
+  name: "Vanilla Body Butter",
+  category: "Bodycare",
+  price: 649,
+  description:
+    "Creamy vanilla body butter enriched with shea butter to soften and smooth dry skin.",
+  image: "/images/products/plum-body-butter.jpg",
+  images: [
+    "/images/products/plum-body-butter.jpg",
+    
+  ],
+},
+
+{
+  id: 13203,
+  brand: "MCaffeine",
+  name: "Coffee Body Butter",
+  category: "Bodycare",
+  price: 599,
+  description:
+    "Coffee-infused body butter that hydrates deeply while improving skin texture and softness.",
+  image: "/images/products/mcaffeine-body-butter.jpg",
+  images: [
+    "/images/products/mcaffeine-body-butter.jpg",
+    
+  ],
+},
+
+{
+  id: 13204,
+  brand: "WOW Skin Science",
+  name: "Cocoa Body Butter",
+  category: "Bodycare",
+  price: 549,
+  description:
+    "Cocoa butter enriched formula that locks in moisture and leaves skin soft, smooth, and nourished.",
+  image: "/images/products/wow-body-butter.jpg",
+  images: [
+    "/images/products/wow-body-butter.jpg",
+    
+  ],
+},
+
+{
+  id:13301,
+  brand:"MCaffeine",
+  name:"Coffee Body Scrub",
+  category:"Bodycare",
+  price:449,
+  description:"Coffee body scrub gently exfoliates dead skin, removes tan, and leaves your skin soft and glowing.",
+  image:"/images/products/mcaffeine-body-scrub.jpg",
+  images:[
+    "/images/products/mcaffeine-body-scrub.jpg",
+    
+  ],
+},
+
+{
+  id:13302,
+  brand:"Plum",
+  name:"BodyLovin Sugar Scrub",
+  category:"Bodycare",
+  price:599,
+  description:"Plum sugar scrub exfoliates rough skin and provides long-lasting hydration with natural oils.",
+  image:"/images/products/plum-body-scrub.jpg",
+  images:[
+    "/images/products/plum-body-scrub.jpg",
+    
+  ],
+},
+
+{
+  id:13303,
+  brand:"Dove",
+  name:"Exfoliating Body Polish",
+  category:"Bodycare",
+  price:499,
+  description:"Dove body polish gently buffs away dull skin while deeply moisturizing for a silky finish.",
+  image:"/images/products/dove-body-scrub.jpg",
+  images:[
+    "/images/products/dove-body-scrub.jpg",
+    
+  ],
+},
+
+{
+  id:13304,
+  brand:"The Body Shop",
+  name:"British Rose Body Scrub",
+  category:"Bodycare",
+  price:999,
+  description:"A luxurious rose-infused body scrub that smooths, refreshes, and brightens your skin.",
+  image:"/images/products/bodyshop-body-scrub.jpg",
+  images:[
+    "/images/products/bodyshop-body-scrub.jpg",
+    
+  ],
+},
+
+{
+  id: 13401,
+  brand: "Neutrogena",
+  name: "Norwegian Formula Hand Cream",
+  category: "Bodycare",
+  price: 299,
+  description: "A concentrated hand cream that provides instant relief and long-lasting hydration for dry hands.",
+  image: "/images/products/neutrogena-hand-cream.jpg",
+  images: [
+    "/images/products/neutrogena-hand-cream.jpg",
+    
+  ],
+},
+
+{
+  id: 13402,
+  brand: "The Body Shop",
+  name: "Shea Hand Cream",
+  category: "Bodycare",
+  price: 595,
+  description: "Enriched with shea butter to deeply nourish and soften rough, dry hands.",
+  image: "/images/products/bodyshop-hand-cream.jpg",
+  images: [
+    "/images/products/bodyshop-hand-cream.jpg",
+    
+  ],
+},
+
+{
+  id: 13403,
+  brand: "Nivea",
+  name: "Soft Hand Cream",
+  category: "Bodycare",
+  price: 249,
+  description: "A lightweight hand cream that moisturizes and keeps hands soft without feeling greasy.",
+  image: "/images/products/nivea-hand-cream.jpg",
+  images: [
+    "/images/products/nivea-hand-cream.jpg",
+    
+  ],
+},
+
+{
+  id: 13404,
+  brand: "Vaseline",
+  name: "Healthy Hands Cream",
+  category: "Bodycare",
+  price: 199,
+  description: "Daily moisturizing hand cream that helps repair dry skin and protects against moisture loss.",
+  image: "/images/products/vaseline-hand-cream.jpg",
+  images: [
+    "/images/products/vaseline-hand-cream.jpg",
+    
+  ],
+},
+
+{
+  id:13601,
+  brand:"Dove",
+  name:"Beauty Bathing Bar",
+  price:"₹299",
+  images:[
+    "/images/products/dove-soap.jpg",
+    
+  ],
+  description:"Dove Beauty Bathing Bar gently cleanses while moisturizing your skin for a soft and smooth feel.",
+},
+
+{
+  id:13602,
+  brand:"Pears",
+  name:"Pure & Gentle Soap",
+  price:"₹199",
+  images:[
+    "/images/products/pears-soap.jpg",
+    
+  ],
+  description:"Pears Pure & Gentle Soap is enriched with glycerin to keep your skin hydrated and healthy.",
+},
+
+{
+  id:13603,
+  brand:"Medimix",
+  name:"Ayurvedic Classic Soap",
+  price:"₹149",
+  images:[
+    "/images/products/medimix-soap.jpg",
+    
+  ],
+  description:"Medimix Ayurvedic Soap is made with natural herbs that help protect and nourish your skin.",
+},
+
+{
+  id:13604,
+  brand:"Dettol",
+  name:"Original Bath Soap",
+  price:"₹179",
+  images:[
+    "/images/products/dettol-soap.jpg",
+    
+  ],
+  description:"Dettol Original Soap provides trusted germ protection while keeping your skin fresh and clean.",
+},
+
 ];
 
 

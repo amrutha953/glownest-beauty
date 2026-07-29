@@ -275,6 +275,32 @@ export default function Navbar() {
         Hair Spray
       </Link>
     </>
+    ) : activeCategory === "Bodycare" ? (
+  <>
+    <Link to="/shop/bodycare/body-wash" className="submenu-link">
+      Body Wash
+    </Link>
+
+    <Link to="/shop/bodycare/body-lotion" className="submenu-link">
+      Body Lotion
+    </Link>
+
+    <Link to="/shop/bodycare/body-butter" className="submenu-link">
+      Body Butter
+    </Link>
+
+    <Link to="/shop/bodycare/body-scrub" className="submenu-link">
+      Body Scrub
+    </Link>
+
+    <Link to="/shop/bodycare/hand-cream" className="submenu-link">
+      Hand Cream
+    </Link>
+
+    <Link to="/shop/bodycare/soap" className="submenu-link">
+      Soap
+    </Link>
+  </>
   ) : (
     shopData[activeCategory].sub.map((item) => (
       <Link
