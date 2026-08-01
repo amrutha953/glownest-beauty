@@ -162,7 +162,7 @@ export default function Navbar() {
             onMouseEnter={() => setShopOpen(true)}
             onMouseLeave={() => setShopOpen(false)}
           >
-            <Link to="/shop">Shop</Link>
+            <Link to="/">Shop</Link>
 
             {shopOpen && (
               <div className="mega-menu">

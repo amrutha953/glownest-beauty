@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Offers from "./pages/Offers";
-import Shop from "./pages/Shop";
 import Skincare from "./pages/Skincare";
 import Makeup from "./pages/Makeup";
 import Haircare from "./pages/Haircare";
@@ -107,7 +106,7 @@ function App() {
 
         <Route path="/offers" element={<Offers />} />
 
-        <Route path="/shop" element={<Shop />} />
+       
 
 
         {/* SHOP CATEGORIES */}
