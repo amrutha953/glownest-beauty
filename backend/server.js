@@ -450,6 +450,75 @@ app.get("/customers/profile", authMiddleware, (req, res) => {
         });
     });
 });
+// ===============================
+// UPDATE CUSTOMER PROFILE
+// Protected Route
+// ===============================
+app.put("/customers/profile", authMiddleware, (req, res) => {
+    const customerId = req.user.id;
+
+    const {
+        name,
+        phone,
+        address,
+        city,
+        state,
+        pincode
+    } = req.body;
+
+    // Check required fields
+    if (!name) {
+        return res.status(400).json({
+            message: "Name is required"
+        });
+    }
+
+    const sql = `
+        UPDATE customers
+        SET
+            name = ?,
+            phone = ?,
+            address = ?,
+            city = ?,
+            state = ?,
+            pincode = ?
+        WHERE id = ?
+    `;
+
+    db.query(
+        sql,
+        [
+            name,
+            phone,
+            address,
+            city,
+            state,
+            pincode,
+            customerId
+        ],
+        (err, result) => {
+
+            if (err) {
+                console.error("Update profile error:", err);
+
+                return res.status(500).json({
+                    message: "Failed to update profile",
+                    error: err.message
+                });
+            }
+
+            if (result.affectedRows === 0) {
+                return res.status(404).json({
+                    message: "Customer not found"
+                });
+            }
+
+            res.json({
+                message: "Profile updated successfully"
+            });
+        }
+    );
+});
 
 
 // ===============================

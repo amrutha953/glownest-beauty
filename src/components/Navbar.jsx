@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FiSearch,
+  FiUser,
   FiHeart,
   FiShoppingCart,
 } from "react-icons/fi";
@@ -117,12 +118,14 @@ export default function Navbar() {
   const navigate = useNavigate();
   const { cartItems } = useContext(CartContext);
   const { wishlistItems } = useContext(WishlistContext);
+  const isLoggedIn = !!localStorage.getItem("token");
   const [shopOpen, setShopOpen] = useState(false);
   const [activeCategory, setActiveCategory] =
     useState("Skincare");
 
   const [activeDropdown, setActiveDropdown] =
     useState(null);
+  const [accountOpen, setAccountOpen] = useState(false);
       return (
     <>
       {/* TOP BAR */}
@@ -445,39 +448,80 @@ export default function Navbar() {
 
         </ul>
 
+    
         {/* Icons */}
-        <div className="nav-icons">
+<div className="nav-icons">
 
-          <FiSearch
-            className="icon"
-            onClick={() => navigate("/search")}
-            style={{ cursor: "pointer" }}
-          />
+  {/* Search */}
+  <FiSearch
+    className="icon"
+    onClick={() => navigate("/search")}
+    style={{ cursor: "pointer" }}
+  />
 
-          <div
-            className="wishlist-wrapper"
-            onClick={() => navigate("/wishlist")}
-            style={{ cursor: "pointer" }}
-         > 
-            <FiHeart className="icon" />
+  {/* Account */}
+<div
+  className="account-wrapper"
+  onClick={() => setAccountOpen(!accountOpen)}
+  style={{ cursor: "pointer", position: "relative" }}
+>
+  <FiUser className="icon" />
 
-            <span className="wishlist-badge">
-              {wishlistItems.length}
-            </span>
-          </div>
+  {accountOpen && (
+    <div className="account-dropdown">
 
-          <div
-            className="cart-wrapper"
-            onClick={() => navigate("/cart")}
-            style={{ cursor: "pointer" }}
-          >
-            <FiShoppingCart className="cart-icon" />
-            <span className="cart-badge">
-              {cartItems.length}
-            </span>
-          </div>
+      <Link
+        to="/login"
+        onClick={() => setAccountOpen(false)}
+      >
+        Login
+      </Link>
 
-      </div>
+      <Link
+        to="/register"
+        onClick={() => setAccountOpen(false)}
+      >
+        Create Account
+      </Link>
+
+      <Link
+        to="/profile"
+        onClick={() => setAccountOpen(false)}
+      >
+        My Profile
+      </Link>
+
+    </div>
+  )}
+</div>
+
+  {/* Wishlist */}
+  <div
+    className="wishlist-wrapper"
+    onClick={() => navigate("/wishlist")}
+    style={{ cursor: "pointer" }}
+  >
+    <FiHeart className="icon" />
+
+    <span className="wishlist-badge">
+      {wishlistItems.length}
+    </span>
+  </div>
+
+  {/* Cart */}
+  <div
+    className="cart-wrapper"
+    onClick={() => navigate("/cart")}
+    style={{ cursor: "pointer" }}
+  >
+    <FiShoppingCart className="cart-icon" />
+
+    <span className="cart-badge">
+      {cartItems.length}
+    </span>
+  </div>
+
+</div>
     </nav>
    </> 
   );

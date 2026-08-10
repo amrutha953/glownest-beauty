@@ -5,6 +5,9 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Offers from "./pages/Offers";
@@ -183,6 +186,10 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
 
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
 
 
         {/* PRODUCT */}
