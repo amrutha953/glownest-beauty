@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const orderRoutes = require("./routes/orderRoutes");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authMiddleware = require("./middleware/authMiddleware");
@@ -9,11 +10,13 @@ const db = require("./config/db");
 
 const app = express();
 
+
 // ===============================
 // Middleware
 // ===============================
 app.use(cors());
 app.use(express.json());
+app.use("/orders", orderRoutes);
 
 
 // ===============================

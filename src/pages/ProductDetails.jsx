@@ -8,7 +8,7 @@ import { CartContext } from "../context/CartContext";
 import { WishlistContext } from "../context/WishlistContext";
 
 
-const products = [
+export const products = [
 
   {
     id:1,
@@ -890,7 +890,7 @@ description:
 },
 
 {
-  id: 1001,
+  id: 11001,
   name: "Minimalist PHA 3% Toner",
   price: 499,
 
@@ -906,7 +906,7 @@ description:
 },
 
 {
-  id: 1002,
+  id: 11002,
   name: "Plum Green Tea Alcohol-Free Toner",
   price: 399,
 
@@ -922,7 +922,7 @@ description:
 },
 
 {
-  id: 1003,
+  id: 11003,
   name: "Dot & Key Cica Calming Toner",
   price: 545,
 
@@ -938,7 +938,7 @@ description:
 },
 
 {
-  id: 1004,
+  id: 11004,
   name: "Simple Kind To Skin Soothing Toner",
   price: 425,
 
@@ -954,7 +954,7 @@ description:
 },
 
 {
-  id: 1005,
+  id: 11005,
   name: "L'Oréal Paris Revitalift Crystal Toner",
   price: 699,
 
@@ -970,7 +970,7 @@ description:
 },
 
 {
-  id: 1006,
+  id: 11006,
   name: "COSRX AHA/BHA Clarifying Toner",
   price: 999,
 
@@ -992,7 +992,7 @@ description:
 
 
 {
-id:11001,
+id:12001,
 
 brand:"M.A.C",
 
@@ -1014,7 +1014,7 @@ description:
 
 
 {
-id:11002,
+id:12002,
 
 brand:"Maybelline",
 
@@ -1036,7 +1036,7 @@ description:
 
 
 {
-id:11003,
+id:12003,
 
 brand:"Lakme",
 
@@ -1058,7 +1058,7 @@ description:
 
 
 {
-id:11004,
+id:12004,
 
 brand:"Nykaa",
 
@@ -1080,7 +1080,7 @@ description:
 
 
 {
-id:11005,
+id:12005,
 
 brand:"Swiss Beauty",
 
@@ -1102,7 +1102,7 @@ description:
 
 
 {
-id:11006,
+id:12006,
 
 brand:"L'Oréal",
 
@@ -2450,7 +2450,7 @@ description:
   id:13601,
   brand:"Dove",
   name:"Beauty Bathing Bar",
-  price:"₹299",
+  price:299,
   images:[
     "/images/products/dove-soap.jpg",
     
@@ -2462,7 +2462,7 @@ description:
   id:13602,
   brand:"Pears",
   name:"Pure & Gentle Soap",
-  price:"₹199",
+  price:199,
   images:[
     "/images/products/pears-soap.jpg",
     
@@ -2474,7 +2474,7 @@ description:
   id:13603,
   brand:"Medimix",
   name:"Ayurvedic Classic Soap",
-  price:"₹149",
+  price:149,
   images:[
     "/images/products/medimix-soap.jpg",
     
@@ -2486,7 +2486,7 @@ description:
   id:13604,
   brand:"Dettol",
   name:"Original Bath Soap",
-  price:"₹179",
+  price:179,
   images:[
     "/images/products/dettol-soap.jpg",
     
@@ -2500,7 +2500,7 @@ description:
   id: 14001,
   brand: "Minimalist",
   name: "10% Vitamin C Face Serum",
-  price: "₹699",
+  price: 699,
   image: "/images/products/minimalist-vitamin-c.jpg",
   images: [
     "/images/products/minimalist-vitamin-c.jpg",
@@ -2514,7 +2514,7 @@ description:
   id: 14002,
   brand: "Plum",
   name: "Vitamin C Face Serum",
-  price: "₹649",
+  price: 649,
   image: "/images/products/plum-vitamin-c.jpg",
   images: [
     "/images/products/plum-vitamin-c.jpg",
@@ -2528,7 +2528,7 @@ description:
   id: 14003,
   brand: "Dot & Key",
   name: "Cica + Vitamin C Serum",
-  price: "₹749",
+  price: 749,
   image: "/images/products/dotkey-vitamin-c.jpg",
   images: [
     "/images/products/dotkey-vitamin-c.jpg",
@@ -2542,7 +2542,7 @@ description:
   id: 14004,
   brand: "Mamaearth",
   name: "Skin Illuminate Vitamin C Serum",
-  price: "₹599",
+  price: 599,
   image: "/images/products/mamaearth-vitamin-c.jpg",
   images: [
     "/images/products/mamaearth-vitamin-c.jpg",
@@ -2558,7 +2558,7 @@ description:
   id: 14011,
   brand: "Minimalist",
   name: "10% Niacinamide Face Serum",
-  price: "₹599",
+  price: 599,
   image: "/images/products/minimalist-niacinamide.jpg",
   images: [
     "/images/products/minimalist-niacinamide.jpg",
@@ -2573,7 +2573,7 @@ description:
   id: 14012,
   brand: "The Ordinary",
   name: "Niacinamide 10% + Zinc 1% Serum",
-  price: "₹699",
+  price: 699,
   image: "/images/products/ordinary-niacinamide.jpg",
   images: [
     "/images/products/ordinary-niacinamide.jpg",
@@ -2588,7 +2588,7 @@ description:
   id: 14013,
   brand: "Plum",
   name: "Plum Niacinamide Serum",
-  price: "₹575",
+  price: 575,
   image: "/images/products/plum-niacinamide.jpg",
   images: [
     "/images/products/plum-niacinamide.jpg",
@@ -2603,7 +2603,7 @@ description:
   id: 14014,
   brand: "Dot & Key",
   name: "Barrier Repair Niacinamide Serum",
-  price: "₹645",
+  price: 645,
   image: "/images/products/dotkey-niacinamide.jpg",
   images: [
     "/images/products/dotkey-niacinamide.jpg",
@@ -2619,7 +2619,7 @@ description:
   id: 14021,
   brand: "Minimalist",
   name: "0.3% Retinol Face Serum",
-  price: "₹599",
+  price: 599,
   image: "/images/products/minimalist-retinol.jpg",
   images: [
     "/images/products/minimalist-retinol.jpg",
@@ -2634,7 +2634,7 @@ description:
   id: 14022,
   brand: "The Ordinary",
   name: "Retinol 1% in Squalane Serum",
-  price: "₹899",
+  price: 899,
   image: "/images/products/ordinary-retinol.jpg",
   images: [
     "/images/products/ordinary-retinol.jpg",
@@ -2649,7 +2649,7 @@ description:
   id: 14023,
   brand: "Dot & Key",
   name: "Night Reset Retinol Serum",
-  price: "₹795",
+  price: 795,
   image: "/images/products/dotkey-retinol.jpg",
   images: [
     "/images/products/dotkey-retinol.jpg",
@@ -2664,7 +2664,7 @@ description:
   id: 14024,
   brand: "Mamaearth",
   name: "Retinol Face Serum",
-  price: "₹649",
+  price: 649,
   image: "/images/products/mamaearth-retinol.jpg",
   images: [
     "/images/products/mamaearth-retinol.jpg",
@@ -2680,7 +2680,7 @@ description:
   id: 14031,
   brand: "Minimalist",
   name: "2% Hyaluronic Acid Face Serum",
-  price: "₹599",
+  price: 599,
   image: "/images/products/minimalist-hyaluronic.jpg",
   images: [
     "/images/products/minimalist-hyaluronic.jpg",
@@ -2695,7 +2695,7 @@ description:
   id: 14032,
   brand: "The Ordinary",
   name: "Hyaluronic Acid 2% + B5 Serum",
-  price: "₹899",
+  price: 899,
   image: "/images/products/ordinary-hyaluronic.jpg",
   images: [
     "/images/products/ordinary-hyaluronic.jpg",
@@ -2710,7 +2710,7 @@ description:
   id: 14033,
   brand: "Dot & Key",
   name: "Hydrating Hyaluronic Acid Serum",
-  price: "₹695",
+  price: 695,
   image: "/images/products/dotkey-hyaluronic.jpg",
   images: [
     "/images/products/dotkey-hyaluronic.jpg",
@@ -2725,7 +2725,7 @@ description:
   id: 14034,
   brand: "Plum",
   name: "Plum Hyaluronic Acid Serum",
-  price: "₹575",
+  price: 575,
   image: "/images/products/plum-hyaluronic.jpg",
   images: [
     "/images/products/plum-hyaluronic.jpg",
@@ -2741,7 +2741,7 @@ description:
   id: 14041,
   brand: "Minimalist",
   name: "Alpha Arbutin Brightening Serum",
-  price: "₹599",
+  price: 599,
   image: "/images/products/minimalist-brightening.jpg",
   images: [
     "/images/products/minimalist-brightening.jpg",
@@ -2756,7 +2756,7 @@ description:
   id: 14042,
   brand: "Plum",
   name: "15% Vitamin C Brightening Serum",
-  price: "₹649",
+  price: 649,
   image: "/images/products/plum-brightening.jpg",
   images: [
     "/images/products/plum-brightening.jpg",
@@ -2771,7 +2771,7 @@ description:
   id: 14043,
   brand: "Dot & Key",
   name: "Glow Revealing Brightening Serum",
-  price: "₹695",
+  price: 695,
   image: "/images/products/dotkey-brightening.jpg",
   images: [
     "/images/products/dotkey-brightening.jpg",
@@ -2786,7 +2786,7 @@ description:
   id: 14044,
   brand: "Mamaearth",
   name: "Natural Radiance Brightening Serum",
-  price: "₹599",
+  price: 599,
   image: "/images/products/mamaearth-brightening.jpg",
   images: [
     "/images/products/mamaearth-brightening.jpg",
@@ -2802,7 +2802,7 @@ description:
   id: 14051,
   brand: "Minimalist",
   name: "Multi Peptide Anti Aging Serum",
-  price: "₹799",
+  price: 799,
   image: "/images/products/minimalist-antiaging.jpg",
   images: [
     "/images/products/minimalist-antiaging.jpg",
@@ -2817,7 +2817,7 @@ description:
   id: 14052,
   brand: "The Ordinary",
   name: "Buffet Anti Aging Serum",
-  price: "₹999",
+  price: 999,
   image: "/images/products/ordinary-antiaging.jpg",
   images: [
     "/images/products/ordinary-antiaging.jpg",
@@ -2832,7 +2832,7 @@ description:
   id: 14053,
   brand: "Dot & Key",
   name: "Retinol + Peptide Anti Aging Serum",
-  price: "₹895",
+  price: 895,
   image: "/images/products/dotkey-antiaging.jpg",
   images: [
     "/images/products/dotkey-antiaging.jpg",
@@ -2850,7 +2850,7 @@ description:
   category: "Perfume",
   brand: "Bella Vita",
   name: "Women's Floral Eau De Parfum",
-  price: "₹699",
+  price: 699,
 
   images: [
     "/images/products/women-floral.jpg",
@@ -2874,7 +2874,7 @@ description:
   category: "Perfume",
   brand: "Yves Rocher",
   name: "Elegant Rose Women's Perfume",
-  price: "₹899",
+  price: 899,
 
   images: [
     "/images/products/women-rose.jpg",
@@ -2898,7 +2898,7 @@ description:
   category: "Perfume",
   brand: "Plum",
   name: "Vanilla Vibes Women's Perfume",
-  price: "₹799",
+  price: 799,
 
   images: [
     "/images/products/women-vanilla.jpg",
@@ -2922,7 +2922,7 @@ description:
   category: "Perfume",
   brand: "The Body Shop",
   name: "White Musk Women's Fragrance",
-  price: "₹999",
+  price: 999,
 
   images: [
     "/images/products/women-musk.jpg",
@@ -2945,7 +2945,7 @@ id:15005,
 category:"Perfume",
 brand:"Wild Stone",
 name:"Edge Men's Eau De Parfum",
-price:"₹599",
+price:599,
 
 images:[
 "/images/products/wildstone-men-perfume.jpg"
@@ -2968,7 +2968,7 @@ id:15006,
 category:"Perfume",
 brand:"Denver",
 name:"Hamilton Men's Perfume",
-price:"₹499",
+price:499,
 
 images:[
 "/images/products/denver-men-perfume.jpg"
@@ -2991,7 +2991,7 @@ id:15007,
 category:"Perfume",
 brand:"Park Avenue",
 name:"Voyage Men's Fragrance",
-price:"₹699",
+price:699,
 
 images:[
 "/images/products/parkavenue-men-perfume.jpg"
@@ -3014,7 +3014,7 @@ id:15008,
 category:"Perfume",
 brand:"Fogg",
 name:"Fogg Impressio Men's Perfume",
-price:"₹399",
+price:399,
 
 images:[
 "/images/products/fogg-men-perfume.jpg"
@@ -3036,7 +3036,7 @@ id:15009,
 category:"Perfume",
 brand:"Bella Vita",
 name:"Luxury Oud Eau De Parfum",
-price:"₹1299",
+price:1299,
 
 images:[
 "/images/products/luxury-oud-perfume.jpg"
@@ -3059,7 +3059,7 @@ id:15010,
 category:"Perfume",
 brand:"Ajmal",
 name:"Amber Wood Luxury Perfume",
-price:"₹2499",
+price:2499,
 
 images:[
 "/images/products/ajmal-luxury-perfume.jpg"
@@ -3082,7 +3082,7 @@ id:15011,
 category:"Perfume",
 brand:"Yardley",
 name:"London Premium Fragrance",
-price:"₹899",
+price:899,
 
 images:[
 "/images/products/yardley-luxury-perfume.jpg"
@@ -3105,7 +3105,7 @@ id:15012,
 category:"Perfume",
 brand:"The Man Company",
 name:"Luxury Signature Perfume",
-price:"₹1499",
+price:1499,
 
 images:[
 "/images/products/man-company-luxury-perfume.jpg"
@@ -3127,7 +3127,7 @@ id:15013,
 category:"Perfume",
 brand:"Engage",
 name:"Bloom Floral Eau De Parfum",
-price:"₹499",
+price:499,
 
 images:[
 "/images/products/engage-floral-perfume.jpg"
@@ -3150,7 +3150,7 @@ id:15014,
 category:"Perfume",
 brand:"Yardley",
 name:"English Rose Floral Perfume",
-price:"₹599",
+price:599,
 
 images:[
 "/images/products/yardley-floral-perfume.jpg"
@@ -3173,7 +3173,7 @@ id:15015,
 category:"Perfume",
 brand:"Plum",
 name:"BodyLovin' Hawaiian Rumba Perfume",
-price:"₹699",
+price:699,
 
 images:[
 "/images/products/plum-floral-perfume.jpg"
@@ -3196,7 +3196,7 @@ id:15016,
 category:"Perfume",
 brand:"The Body Shop",
 name:"Floral Musk Fragrance",
-price:"₹1299",
+price:1299,
 
 images:[
 "/images/products/bodyshop-floral-perfume.jpg"
@@ -3218,7 +3218,7 @@ id:15017,
 category:"Perfume",
 brand:"Ustraa",
 name:"Base Camp Woody Perfume",
-price:"₹699",
+price:699,
 
 images:[
 "/images/products/ustraa-woody-perfume.jpg"
@@ -3241,7 +3241,7 @@ id:15018,
 category:"Perfume",
 brand:"Skinn",
 name:"Raw Instinct Woody Fragrance",
-price:"₹1199",
+price:1199,
 
 images:[
 "/images/products/skinn-woody-perfume.jpg"
@@ -3264,7 +3264,7 @@ id:15019,
 category:"Perfume",
 brand:"Ajmal",
 name:"Silver Shade Woody Perfume",
-price:"₹1599",
+price:1599,
 
 images:[
 "/images/products/ajmal-woody-perfume.jpg"
@@ -3287,7 +3287,7 @@ id:15020,
 category:"Perfume",
 brand:"Denver",
 name:"Hamilton Woody Edition Perfume",
-price:"₹599",
+price:599,
 
 images:[
 "/images/products/denver-woody-edition.jpg"
@@ -3309,7 +3309,7 @@ id:15021,
 category:"Perfume",
 brand:"Fogg",
 name:"Fresh Aqua Men's Perfume",
-price:"₹399",
+price:399,
 
 images:[
 "/images/products/fogg-fresh-perfume.jpg"
@@ -3332,7 +3332,7 @@ id:15022,
 category:"Perfume",
 brand:"Engage",
 name:"Fresh Citrus Eau De Parfum",
-price:"₹499",
+price:499,
 
 images:[
 "/images/products/engage-fresh-perfume.jpg"
@@ -3355,7 +3355,7 @@ id:15023,
 category:"Perfume",
 brand:"Nivea",
 name:"Fresh Active Perfume",
-price:"₹599",
+price:599,
 
 images:[
 "/images/products/nivea-fresh-perfume.jpg"
@@ -3378,7 +3378,7 @@ id:15024,
 category:"Perfume",
 brand:"Wild Stone",
 name:"Fresh Ocean Fragrance",
-price:"₹699",
+price:699,
 
 images:[
 "/images/products/wildstone-fresh-perfume.jpg"
@@ -3681,7 +3681,7 @@ onClick={()=>setSelectedImage(img)}
 
 <p className="price">
 
-₹{product.price}
+{product.price}
 
 </p>
 
