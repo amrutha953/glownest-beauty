@@ -149,13 +149,13 @@ const getOrders = (req, res) => {
 };
 
 // ===============================
-// GET SINGLE ORDER
+// GET SINGLE ORDER WITH ITEMS
 // ===============================
 const getOrderById = (req, res) => {
     const customerId = req.user.id;
     const orderId = req.params.id;
 
-    const sql = `
+    const orderSql = `
         SELECT
             id,
             customer_id,
@@ -168,9 +168,10 @@ const getOrderById = (req, res) => {
     `;
 
     db.query(
-        sql,
+        orderSql,
         [orderId, customerId],
-        (err, results) => {
+        (err, orderResults) => {
+
             if (err) {
                 console.error("Get order error:", err);
 
@@ -180,16 +181,53 @@ const getOrderById = (req, res) => {
                 });
             }
 
-            if (results.length === 0) {
+            if (orderResults.length === 0) {
                 return res.status(404).json({
                     message: "Order not found"
                 });
             }
 
-            res.json({
-                message: "Order retrieved successfully",
-                order: results[0]
-            });
+            const itemSql = `
+                SELECT
+                    oi.id,
+                    oi.order_id,
+                    oi.product_id,
+                    oi.quantity,
+                    oi.price,
+                    p.name,
+                    p.brand,
+                    p.category,
+                    p.image
+                FROM order_items oi
+                JOIN products p
+                    ON oi.product_id = p.id
+                WHERE oi.order_id = ?
+            `;
+
+            db.query(
+                itemSql,
+                [orderId],
+                (err, itemResults) => {
+
+                    if (err) {
+                        console.error(
+                            "Get order items error:",
+                            err
+                        );
+
+                        return res.status(500).json({
+                            message: "Failed to get order items",
+                            error: err.message
+                        });
+                    }
+
+                    res.json({
+                        message: "Order retrieved successfully",
+                        order: orderResults[0],
+                        items: itemResults
+                    });
+                }
+            );
         }
     );
 };
