@@ -5,6 +5,7 @@ const db = require("../config/db");
 // ===============================
 const createOrder = (req, res) => {
     console.log("🔥 CREATE ORDER FUNCTION CALLED");
+
     const customerId = req.user.id;
     const { total_amount, items } = req.body;
 
@@ -34,7 +35,6 @@ const createOrder = (req, res) => {
         orderSql,
         [customerId, total_amount],
         (err, result) => {
-
             if (err) {
                 console.error("Create order error:", err);
 
@@ -53,9 +53,9 @@ const createOrder = (req, res) => {
             `;
 
             let completed = 0;
+            let failed = false;
 
             items.forEach((item) => {
-
                 const productId = Number(item.product_id);
                 const quantity = Number(item.quantity);
                 const price = Number(item.price);
@@ -76,38 +76,44 @@ const createOrder = (req, res) => {
                         price
                     ],
                     (err) => {
-
                         if (err) {
                             console.error(
                                 "Order item insert error:",
                                 err
                             );
 
-                            return res.status(500).json({
-                                message: "Order created but failed to add order items",
-                                error: err.message
-                            });
+                            if (!failed) {
+                                failed = true;
+
+                                return res.status(500).json({
+                                    message:
+                                        "Order created but failed to add order items",
+                                    error: err.message
+                                });
+                            }
+
+                            return;
                         }
 
                         completed++;
 
-                        if (completed === items.length) {
-
+                        if (
+                            completed === items.length &&
+                            !failed
+                        ) {
                             res.status(201).json({
-                                message: "Order created successfully",
+                                message:
+                                    "Order created successfully",
                                 orderId: orderId
                             });
-
                         }
-
                     }
                 );
-
             });
-
         }
     );
 };
+
 
 // ===============================
 // GET CUSTOMER ORDERS
@@ -148,6 +154,7 @@ const getOrders = (req, res) => {
     );
 };
 
+
 // ===============================
 // GET SINGLE ORDER WITH ITEMS
 // ===============================
@@ -171,7 +178,6 @@ const getOrderById = (req, res) => {
         orderSql,
         [orderId, customerId],
         (err, orderResults) => {
-
             if (err) {
                 console.error("Get order error:", err);
 
@@ -199,7 +205,7 @@ const getOrderById = (req, res) => {
                     p.category,
                     p.image
                 FROM order_items oi
-                JOIN products p
+                LEFT JOIN products p
                     ON oi.product_id = p.id
                 WHERE oi.order_id = ?
             `;
@@ -207,22 +213,33 @@ const getOrderById = (req, res) => {
             db.query(
                 itemSql,
                 [orderId],
-                (err, itemResults) => {
-
-                    if (err) {
+                (itemErr, itemResults) => {
+                    if (itemErr) {
                         console.error(
                             "Get order items error:",
-                            err
+                            itemErr
                         );
 
                         return res.status(500).json({
-                            message: "Failed to get order items",
-                            error: err.message
+                            message:
+                                "Failed to get order items",
+                            error: itemErr.message
                         });
                     }
 
+                    console.log(
+                        "ORDER:",
+                        orderResults[0]
+                    );
+
+                    console.log(
+                        "ORDER ITEMS:",
+                        itemResults
+                    );
+
                     res.json({
-                        message: "Order retrieved successfully",
+                        message:
+                            "Order retrieved successfully",
                         order: orderResults[0],
                         items: itemResults
                     });
@@ -232,6 +249,10 @@ const getOrderById = (req, res) => {
     );
 };
 
+
+// ===============================
+// EXPORT
+// ===============================
 module.exports = {
     createOrder,
     getOrders,

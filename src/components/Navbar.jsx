@@ -5,6 +5,7 @@ import {
   FiUser,
   FiHeart,
   FiShoppingCart,
+  FiPackage,
 } from "react-icons/fi";
 import "./Navbar.css";
 import { WishlistContext } from "../context/WishlistContext";
@@ -494,6 +495,16 @@ export default function Navbar() {
     </div>
   )}
 </div>
+  {/* My Orders */}
+  <div
+    className="orders-wrapper"
+    onClick={() => navigate("/orders")}
+    style={{ cursor: "pointer" }}
+    title="My Orders"
+  >
+    <FiPackage className="icon" />
+  </div>
+
 
   {/* Wishlist */}
   <div

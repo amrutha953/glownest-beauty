@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import MyOrders from "./pages/MyOrders";
+import OrderDetails from "./pages/OrderDetails";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Offers from "./pages/Offers";
@@ -190,6 +192,8 @@ function App() {
 
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/orders" element={<MyOrders />} />
+<Route path="/orders/:id" element={<OrderDetails />} />
 
 
         {/* PRODUCT */}
