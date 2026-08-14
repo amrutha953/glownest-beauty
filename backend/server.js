@@ -13,6 +13,7 @@ const googleClient = new OAuth2Client(
 const db = require("./config/db");
 const transporter = require("./config/mailer");
 const authMiddleware = require("./middleware/authMiddleware");
+const adminMiddleware = require("./middleware/adminMiddleware");
 const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
@@ -800,8 +801,481 @@ app.get(
 
     }
 );
+// ======================================================
+// CREATE ADMIN
+// TEMPORARY SETUP ROUTE
+// ======================================================
 
+app.post("/admins/create", async (req, res) => {
 
+    try {
+
+        const { name, email, password } = req.body;
+
+        if (!name || !email || !password) {
+            return res.status(400).json({
+                message: "Name, email and password are required"
+            });
+        }
+
+        const checkSql = `
+            SELECT id
+            FROM admins
+            WHERE email = ?
+        `;
+
+        db.query(checkSql, [email], async (err, results) => {
+
+            if (err) {
+                console.error("Admin check error:", err);
+
+                return res.status(500).json({
+                    message: "Database error",
+                    error: err.message
+                });
+            }
+
+            if (results.length > 0) {
+                return res.status(409).json({
+                    message: "Admin email already exists"
+                });
+            }
+
+            const hashedPassword = await bcrypt.hash(
+                password,
+                10
+            );
+
+            const insertSql = `
+                INSERT INTO admins
+                (
+                    name,
+                    email,
+                    password
+                )
+                VALUES (?, ?, ?)
+            `;
+
+            db.query(
+                insertSql,
+                [
+                    name,
+                    email,
+                    hashedPassword
+                ],
+                (insertErr, result) => {
+
+                    if (insertErr) {
+                        console.error(
+                            "Admin creation error:",
+                            insertErr
+                        );
+
+                        return res.status(500).json({
+                            message: "Failed to create admin",
+                            error: insertErr.message
+                        });
+                    }
+
+                    return res.status(201).json({
+                        message: "Admin created successfully",
+                        adminId: result.insertId
+                    });
+
+                }
+            );
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Create admin error:",
+            error
+        );
+
+        return res.status(500).json({
+            message: "Server error"
+        });
+
+    }
+
+});
+// ======================================================
+// ADMIN LOGIN
+// ======================================================
+
+app.post("/admins/login", (req, res) => {
+
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({
+            message: "Email and password are required"
+        });
+    }
+
+    const sql = `
+        SELECT *
+        FROM admins
+        WHERE email = ?
+    `;
+
+    db.query(sql, [email], (err, results) => {
+
+        if (err) {
+            console.error("Admin login database error:", err);
+
+            return res.status(500).json({
+                message: "Database error",
+                error: err.message
+            });
+        }
+
+        if (results.length === 0) {
+            return res.status(401).json({
+                message: "Invalid admin email or password"
+            });
+        }
+
+        const admin = results[0];
+
+        bcrypt.compare(
+            password,
+            admin.password,
+            (compareErr, isMatch) => {
+
+                if (compareErr) {
+                    console.error(
+                        "Admin password comparison error:",
+                        compareErr
+                    );
+
+                    return res.status(500).json({
+                        message: "Password comparison failed"
+                    });
+                }
+
+                if (!isMatch) {
+                    return res.status(401).json({
+                        message: "Invalid admin email or password"
+                    });
+                }
+
+                const token = jwt.sign(
+                    {
+                        id: admin.id,
+                        email: admin.email,
+                        role: "admin"
+                    },
+                    process.env.JWT_SECRET,
+                    {
+                        expiresIn: "1h"
+                    }
+                );
+
+                return res.json({
+                    message: "Admin login successful",
+                    token: token,
+                    admin: {
+                        id: admin.id,
+                        name: admin.name,
+                        email: admin.email,
+                        role: "admin"
+                    }
+                });
+
+            }
+        );
+
+    });
+
+});
+
+// ======================================================
+// ADMIN - GET ALL PRODUCTS
+// ======================================================
+
+app.get(
+    "/admin/products",
+    adminMiddleware,
+    (req, res) => {
+
+        const sql = `
+            SELECT *
+            FROM products
+            ORDER BY id DESC
+        `;
+
+        db.query(sql, (err, results) => {
+
+            if (err) {
+
+                console.error(
+                    "Admin get products error:",
+                    err
+                );
+
+                return res.status(500).json({
+                    message: "Failed to get products",
+                    error: err.message
+                });
+
+            }
+
+            return res.json({
+                message: "Admin products retrieved successfully",
+                products: results
+            });
+
+        });
+
+    }
+);
+// ======================================================
+// ADMIN - ADD PRODUCT
+// ======================================================
+
+app.post(
+    "/admin/products",
+    adminMiddleware,
+    (req, res) => {
+
+        const {
+            name,
+            brand,
+            category,
+            price,
+            image,
+            description,
+            stock
+        } = req.body;
+
+        // --------------------------------------------------
+        // CHECK REQUIRED FIELDS
+        // --------------------------------------------------
+
+        if (
+            !name ||
+            !brand ||
+            !category ||
+            price === undefined ||
+            stock === undefined
+        ) {
+
+            return res.status(400).json({
+                message:
+                    "Name, brand, category, price and stock are required"
+            });
+
+        }
+
+        // --------------------------------------------------
+        // INSERT PRODUCT
+        // --------------------------------------------------
+
+        const sql = `
+            INSERT INTO products
+            (
+                name,
+                brand,
+                category,
+                price,
+                image,
+                description,
+                stock
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        `;
+
+        db.query(
+            sql,
+            [
+                name,
+                brand,
+                category,
+                price,
+                image || null,
+                description || null,
+                stock
+            ],
+            (err, result) => {
+
+                if (err) {
+
+                    console.error(
+                        "Admin add product error:",
+                        err
+                    );
+
+                    return res.status(500).json({
+                        message:
+                            "Failed to add product",
+                        error:
+                            err.message
+                    });
+
+                }
+
+                return res.status(201).json({
+
+                    message:
+                        "Product added successfully",
+
+                    productId:
+                        result.insertId
+
+                });
+
+            }
+        );
+
+    }
+);
+// ======================================================
+// ADMIN - UPDATE PRODUCT
+// ======================================================
+
+app.put(
+    "/admin/products/:id",
+    adminMiddleware,
+    (req, res) => {
+
+        const { id } = req.params;
+
+        const {
+            name,
+            brand,
+            category,
+            price,
+            image,
+            description,
+            stock
+        } = req.body;
+
+        if (
+            !name ||
+            !brand ||
+            !category ||
+            price === undefined ||
+            stock === undefined
+        ) {
+
+            return res.status(400).json({
+                message:
+                    "Name, brand, category, price and stock are required"
+            });
+
+        }
+
+        const sql = `
+            UPDATE products
+            SET
+                name = ?,
+                brand = ?,
+                category = ?,
+                price = ?,
+                image = ?,
+                description = ?,
+                stock = ?
+            WHERE id = ?
+        `;
+
+        db.query(
+            sql,
+            [
+                name,
+                brand,
+                category,
+                price,
+                image || null,
+                description || null,
+                stock,
+                id
+            ],
+            (err, result) => {
+
+                if (err) {
+
+                    console.error(
+                        "Admin update product error:",
+                        err
+                    );
+
+                    return res.status(500).json({
+                        message: "Failed to update product",
+                        error: err.message
+                    });
+                }
+
+                if (result.affectedRows === 0) {
+
+                    return res.status(404).json({
+                        message: "Product not found"
+                    });
+                }
+
+                return res.json({
+                    message: "Product updated successfully"
+                });
+
+            }
+        );
+
+    }
+);
+// ======================================================
+// ADMIN - DELETE PRODUCT
+// ======================================================
+
+app.delete(
+    "/admin/products/:id",
+    adminMiddleware,
+    (req, res) => {
+
+        const { id } = req.params;
+
+        const sql = `
+            DELETE FROM products
+            WHERE id = ?
+        `;
+
+        db.query(
+            sql,
+            [id],
+            (err, result) => {
+
+                if (err) {
+
+                    console.error(
+                        "Admin delete product error:",
+                        err
+                    );
+
+                    return res.status(500).json({
+                        message: "Failed to delete product",
+                        error: err.message
+                    });
+
+                }
+
+                if (result.affectedRows === 0) {
+
+                    return res.status(404).json({
+                        message: "Product not found"
+                    });
+
+                }
+
+                return res.json({
+                    message: "Product deleted successfully"
+                });
+
+            }
+        );
+
+    }
+);
 // ======================================================
 // CUSTOMER LOGIN
 // ======================================================
