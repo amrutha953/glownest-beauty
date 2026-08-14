@@ -1,38 +1,52 @@
 const express = require("express");
 const cors = require("cors");
-const orderRoutes = require("./routes/orderRoutes");
+const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const authMiddleware = require("./middleware/authMiddleware");
+
 require("dotenv").config();
 
 const db = require("./config/db");
+const transporter = require("./config/mailer");
+const authMiddleware = require("./middleware/authMiddleware");
+const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
 
 
-// ===============================
-// Middleware
-// ===============================
+// ======================================================
+// MIDDLEWARE
+// ======================================================
+
 app.use(cors());
 app.use(express.json());
+
+
+// ======================================================
+// ORDER ROUTES
+// ======================================================
+
 app.use("/orders", orderRoutes);
 
 
-// ===============================
+// ======================================================
 // HOME ROUTE
-// ===============================
+// ======================================================
+
 app.get("/", (req, res) => {
     res.send("GlowNest Backend is Running 🚀");
 });
 
 
-// ===============================
+// ======================================================
 // GET ALL PRODUCTS
-// ===============================
+// ======================================================
+
 app.get("/products", (req, res) => {
 
-    db.query("SELECT * FROM products", (err, results) => {
+    const sql = "SELECT * FROM products";
+
+    db.query(sql, (err, results) => {
 
         if (err) {
             console.error("Get products error:", err);
@@ -48,9 +62,10 @@ app.get("/products", (req, res) => {
 });
 
 
-// ===============================
+// ======================================================
 // ADD NEW PRODUCT
-// ===============================
+// ======================================================
+
 app.post("/products", (req, res) => {
 
     const {
@@ -65,7 +80,15 @@ app.post("/products", (req, res) => {
 
     const sql = `
         INSERT INTO products
-        (name, brand, category, price, image, description, stock)
+        (
+            name,
+            brand,
+            category,
+            price,
+            image,
+            description,
+            stock
+        )
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
 
@@ -100,9 +123,10 @@ app.post("/products", (req, res) => {
 });
 
 
-// ===============================
+// ======================================================
 // UPDATE PRODUCT
-// ===============================
+// ======================================================
+
 app.put("/products/:id", (req, res) => {
 
     const { id } = req.params;
@@ -167,42 +191,51 @@ app.put("/products/:id", (req, res) => {
 });
 
 
-// ===============================
+// ======================================================
 // DELETE PRODUCT
-// ===============================
+// ======================================================
+
 app.delete("/products/:id", (req, res) => {
 
     const { id } = req.params;
 
-    const sql = "DELETE FROM products WHERE id = ?";
+    const sql = `
+        DELETE FROM products
+        WHERE id = ?
+    `;
 
-    db.query(sql, [id], (err, result) => {
+    db.query(
+        sql,
+        [id],
+        (err, result) => {
 
-        if (err) {
-            console.error("Delete product error:", err);
+            if (err) {
+                console.error("Delete product error:", err);
 
-            return res.status(500).json({
-                message: "Failed to delete product",
-                error: err.message
+                return res.status(500).json({
+                    message: "Failed to delete product",
+                    error: err.message
+                });
+            }
+
+            if (result.affectedRows === 0) {
+                return res.status(404).json({
+                    message: "Product not found"
+                });
+            }
+
+            res.json({
+                message: "Product deleted successfully"
             });
         }
-
-        if (result.affectedRows === 0) {
-            return res.status(404).json({
-                message: "Product not found"
-            });
-        }
-
-        res.json({
-            message: "Product deleted successfully"
-        });
-    });
+    );
 });
 
 
-// ===============================
+// ======================================================
 // CUSTOMER REGISTRATION
-// ===============================
+// ======================================================
+
 app.post("/customers/register", (req, res) => {
 
     const {
@@ -217,318 +250,931 @@ app.post("/customers/register", (req, res) => {
     } = req.body;
 
 
-    // Check required fields
+    // --------------------------------------------------
+    // CHECK REQUIRED FIELDS
+    // --------------------------------------------------
+
     if (!name || !email || !password) {
+
         return res.status(400).json({
             message: "Name, email and password are required"
         });
+
     }
 
 
-    // Check whether email already exists
+    // --------------------------------------------------
+    // CHECK IF EMAIL ALREADY EXISTS
+    // --------------------------------------------------
+
     const checkEmailSql = `
         SELECT id
         FROM customers
         WHERE email = ?
     `;
 
-    db.query(checkEmailSql, [email], (err, results) => {
-
-        if (err) {
-            console.error("Email check error:", err);
-
-            return res.status(500).json({
-                message: "Database error",
-                error: err.message
-            });
-        }
-
-
-        // Email already exists
-        if (results.length > 0) {
-
-            return res.status(409).json({
-                message: "Email already registered"
-            });
-        }
-
-
-        // Hash password
-        bcrypt.hash(password, 10, (err, hashedPassword) => {
+    db.query(
+        checkEmailSql,
+        [email],
+        (err, results) => {
 
             if (err) {
-                console.error("Password hashing error:", err);
+
+                console.error(
+                    "Email check error:",
+                    err
+                );
 
                 return res.status(500).json({
-                    message: "Password hashing failed",
+                    message: "Database error",
                     error: err.message
                 });
+
             }
 
 
-            // Insert customer
-            const sql = `
-                INSERT INTO customers
-                (
-                    name,
-                    email,
-                    phone,
-                    password,
-                    address,
-                    city,
-                    state,
-                    pincode
-                )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            `;
+            // --------------------------------------------------
+            // EMAIL ALREADY EXISTS
+            // --------------------------------------------------
 
-            db.query(
-                sql,
-                [
-                    name,
-                    email,
-                    phone,
-                    hashedPassword,
-                    address,
-                    city,
-                    state,
-                    pincode
-                ],
-                (err, result) => {
+            if (results.length > 0) {
+
+                return res.status(409).json({
+                    message: "Email already registered"
+                });
+
+            }
+
+
+            // --------------------------------------------------
+            // HASH PASSWORD
+            // --------------------------------------------------
+
+            bcrypt.hash(
+                password,
+                10,
+                (err, hashedPassword) => {
 
                     if (err) {
+
                         console.error(
-                            "Customer registration error:",
+                            "Password hashing error:",
                             err
                         );
 
                         return res.status(500).json({
-                            message: "Failed to register customer",
+                            message: "Password hashing failed",
                             error: err.message
                         });
+
                     }
 
 
-                    res.status(201).json({
-                        message: "Customer registered successfully",
-                        customerId: result.insertId
-                    });
+                    // --------------------------------------------------
+                    // GENERATE VERIFICATION TOKEN
+                    // --------------------------------------------------
+
+                    const verificationToken =
+                        crypto
+                            .randomBytes(32)
+                            .toString("hex");
+
+
+                    // --------------------------------------------------
+                    // TOKEN EXPIRES AFTER 24 HOURS
+                    // --------------------------------------------------
+
+                    const verificationExpires =
+                        new Date(
+                            Date.now() +
+                            24 * 60 * 60 * 1000
+                        );
+
+
+                    // --------------------------------------------------
+                    // INSERT CUSTOMER
+                    // --------------------------------------------------
+
+                    const insertSql = `
+                        INSERT INTO customers
+                        (
+                            name,
+                            email,
+                            phone,
+                            password,
+                            address,
+                            city,
+                            state,
+                            pincode,
+                            email_verified,
+                            verification_token,
+                            verification_expires
+                        )
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)
+                    `;
+
+
+                    db.query(
+                        insertSql,
+                        [
+                            name,
+                            email,
+                            phone || null,
+                            hashedPassword,
+                            address || null,
+                            city || null,
+                            state || null,
+                            pincode || null,
+                            verificationToken,
+                            verificationExpires
+                        ],
+                        async (err, result) => {
+
+                            if (err) {
+
+                                console.error(
+                                    "Customer registration error:",
+                                    err
+                                );
+
+                                return res.status(500).json({
+                                    message:
+                                        "Failed to register customer",
+                                    error: err.message
+                                });
+
+                            }
+
+
+                            const customerId =
+                                result.insertId;
+
+
+                            // --------------------------------------------------
+                            // CREATE VERIFICATION LINK
+                            // --------------------------------------------------
+
+                            const verificationLink =
+                                `http://localhost:5000/customers/verify-email/${verificationToken}`;
+
+
+                            // --------------------------------------------------
+                            // SEND VERIFICATION EMAIL
+                            // --------------------------------------------------
+
+                            try {
+
+                                await transporter.sendMail({
+
+                                    from:
+                                        `"GlowNest Beauty" <${process.env.EMAIL_USER}>`,
+
+                                    to: email,
+
+                                    subject:
+                                        "Verify your GlowNest Beauty account 💗",
+
+                                    html: `
+                                        <div style="
+                                            font-family: Arial, sans-serif;
+                                            max-width: 600px;
+                                            margin: auto;
+                                            padding: 30px;
+                                            border: 1px solid #eee;
+                                            border-radius: 10px;
+                                            background-color: #ffffff;
+                                        ">
+
+                                            <h2 style="
+                                                color: #e91e63;
+                                                text-align: center;
+                                            ">
+                                                Welcome to GlowNest Beauty 💗
+                                            </h2>
+
+                                            <p>
+                                                Hi
+                                                <strong>${name}</strong>,
+                                            </p>
+
+                                            <p>
+                                                Thank you for registering
+                                                with GlowNest Beauty.
+                                            </p>
+
+                                            <p>
+                                                Please verify your email
+                                                address by clicking the
+                                                button below.
+                                            </p>
+
+                                            <div style="
+                                                text-align: center;
+                                                margin: 30px 0;
+                                            ">
+
+                                                <a
+                                                    href="${verificationLink}"
+                                                    style="
+                                                        background-color: #e91e63;
+                                                        color: white;
+                                                        padding: 12px 25px;
+                                                        text-decoration: none;
+                                                        border-radius: 6px;
+                                                        display: inline-block;
+                                                        font-weight: bold;
+                                                    "
+                                                >
+                                                    Verify My Email
+                                                </a>
+
+                                            </div>
+
+                                            <p>
+                                                This verification link
+                                                will expire in
+                                                <strong>24 hours</strong>.
+                                            </p>
+
+                                            <p>
+                                                If you did not create
+                                                this account, you can
+                                                safely ignore this email.
+                                            </p>
+
+                                            <p>
+                                                Regards,<br>
+                                                <strong>
+                                                    GlowNest Beauty Team
+                                                </strong>
+                                            </p>
+
+                                        </div>
+                                    `
+                                });
+
+
+                                console.log(
+                                    `✅ Verification email sent to ${email}`
+                                );
+
+
+                                return res.status(201).json({
+
+                                    message:
+                                        "Registration successful. Please check your email to verify your account.",
+
+                                    customerId:
+                                        customerId
+
+                                });
+
+                            } catch (emailError) {
+
+                                console.error(
+                                    "Verification email error:",
+                                    emailError
+                                );
+
+
+                                return res.status(500).json({
+
+                                    message:
+                                        "Account created, but verification email could not be sent.",
+
+                                    error:
+                                        emailError.message
+
+                                });
+
+                            }
+
+                        }
+                    );
 
                 }
             );
-        });
-    });
+
+        }
+    );
+
 });
-// ===============================
+
+
+// ======================================================
+// VERIFY CUSTOMER EMAIL
+// ======================================================
+
+app.get(
+    "/customers/verify-email/:token",
+    (req, res) => {
+
+        const { token } = req.params;
+
+
+        // --------------------------------------------------
+        // CHECK TOKEN
+        // --------------------------------------------------
+
+        if (!token) {
+
+            return res.status(400).send(
+                "Verification token is required."
+            );
+
+        }
+
+
+        // --------------------------------------------------
+        // FIND CUSTOMER
+        // --------------------------------------------------
+
+        const sql = `
+            SELECT
+                id,
+                name,
+                email,
+                email_verified,
+                verification_expires
+            FROM customers
+            WHERE verification_token = ?
+        `;
+
+
+        db.query(
+            sql,
+            [token],
+            (err, results) => {
+
+                if (err) {
+
+                    console.error(
+                        "Email verification database error:",
+                        err
+                    );
+
+                    return res.status(500).send(
+                        "Database error while verifying email."
+                    );
+
+                }
+
+
+                // --------------------------------------------------
+                // TOKEN NOT FOUND
+                // --------------------------------------------------
+
+                if (results.length === 0) {
+
+                    return res.status(400).send(`
+                        <div style="
+                            font-family: Arial;
+                            text-align: center;
+                            margin-top: 80px;
+                        ">
+
+                            <h2 style="color: #e91e63;">
+                                Invalid or expired verification link
+                            </h2>
+
+                            <p>
+                                Please register again or request
+                                a new verification email.
+                            </p>
+
+                        </div>
+                    `);
+
+                }
+
+
+                const customer = results[0];
+
+
+                // --------------------------------------------------
+                // ALREADY VERIFIED
+                // --------------------------------------------------
+
+                if (customer.email_verified === 1) {
+
+                    return res.send(`
+                        <div style="
+                            font-family: Arial;
+                            text-align: center;
+                            margin-top: 80px;
+                        ">
+
+                            <h2 style="color: #e91e63;">
+                                Your email is already verified 💗
+                            </h2>
+
+                            <p>
+                                You can now log in to
+                                GlowNest Beauty.
+                            </p>
+
+                        </div>
+                    `);
+
+                }
+
+
+                // --------------------------------------------------
+                // CHECK TOKEN EXPIRATION
+                // --------------------------------------------------
+
+                if (
+                    !customer.verification_expires ||
+                    new Date(customer.verification_expires) <
+                    new Date()
+                ) {
+
+                    return res.status(400).send(`
+                        <div style="
+                            font-family: Arial;
+                            text-align: center;
+                            margin-top: 80px;
+                        ">
+
+                            <h2 style="color: #e91e63;">
+                                Verification link expired
+                            </h2>
+
+                            <p>
+                                Please register again or request
+                                a new verification email.
+                            </p>
+
+                        </div>
+                    `);
+
+                }
+
+
+                // --------------------------------------------------
+                // VERIFY CUSTOMER
+                // --------------------------------------------------
+
+                const updateSql = `
+                    UPDATE customers
+                    SET
+                        email_verified = 1,
+                        verification_token = NULL,
+                        verification_expires = NULL
+                    WHERE id = ?
+                `;
+
+
+                db.query(
+                    updateSql,
+                    [customer.id],
+                    (updateErr) => {
+
+                        if (updateErr) {
+
+                            console.error(
+                                "Email verification update error:",
+                                updateErr
+                            );
+
+                            return res.status(500).send(
+                                "Failed to verify email."
+                            );
+
+                        }
+
+
+                        console.log(
+                            `✅ Email verified: ${customer.email}`
+                        );
+
+
+                        // --------------------------------------------------
+                        // SUCCESS PAGE
+                        // --------------------------------------------------
+
+                        res.send(`
+                            <div style="
+                                font-family: Arial, sans-serif;
+                                max-width: 600px;
+                                margin: 80px auto;
+                                text-align: center;
+                                padding: 30px;
+                            ">
+
+                                <h1 style="
+                                    color: #e91e63;
+                                ">
+                                    Email Verified Successfully! 🎉
+                                </h1>
+
+                                <p>
+                                    Welcome to GlowNest Beauty,
+                                    <strong>
+                                        ${customer.name}
+                                    </strong>!
+                                </p>
+
+                                <p>
+                                    Your email address has been
+                                    successfully verified.
+                                </p>
+
+                                <p>
+                                    You can now return to
+                                    GlowNest Beauty and log in.
+                                </p>
+
+                            </div>
+                        `);
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+
+// ======================================================
 // CUSTOMER LOGIN
-// ===============================
+// ======================================================
+
 app.post("/customers/login", (req, res) => {
 
-    const { email, password } = req.body;
+    const {
+        email,
+        password
+    } = req.body;
 
-    // Check required fields
+
+    // --------------------------------------------------
+    // CHECK REQUIRED FIELDS
+    // --------------------------------------------------
+
     if (!email || !password) {
+
         return res.status(400).json({
             message: "Email and password are required"
         });
+
     }
 
-    // Find customer by email
+
+    // --------------------------------------------------
+    // FIND CUSTOMER
+    // --------------------------------------------------
+
     const sql = `
         SELECT *
         FROM customers
         WHERE email = ?
     `;
 
-    db.query(sql, [email], (err, results) => {
-
-        if (err) {
-            console.error("Login database error:", err);
-
-            return res.status(500).json({
-                message: "Database error",
-                error: err.message
-            });
-        }
-
-        // Customer not found
-        if (results.length === 0) {
-            return res.status(401).json({
-                message: "Invalid email or password"
-            });
-        }
-
-        const customer = results[0];
-
-        // Compare entered password with hashed password
-        bcrypt.compare(
-            password,
-            customer.password,
-            (err, isMatch) => {
-
-                if (err) {
-                    console.error("Password comparison error:", err);
-
-                    return res.status(500).json({
-                        message: "Password comparison failed"
-                    });
-                }
-
-                // Wrong password
-                if (!isMatch) {
-                    return res.status(401).json({
-                        message: "Invalid email or password"
-                    });
-                }
-
-                // Create JWT token
-                const token = jwt.sign(
-                    {
-                        id: customer.id,
-                        email: customer.email
-                    },
-                    process.env.JWT_SECRET,
-                    {
-                        expiresIn: "1h"
-                    }
-                );
-
-                // Successful login
-                res.json({
-                    message: "Login successful",
-                    token: token,
-                    customer: {
-                        id: customer.id,
-                        name: customer.name,
-                        email: customer.email,
-                        phone: customer.phone
-                    }
-                });
-            }
-        );
-    });
-});
-// ===============================
-// CUSTOMER PROFILE
-// Protected Route
-// ===============================
-app.get("/customers/profile", authMiddleware, (req, res) => {
-
-    const customerId = req.user.id;
-
-    const sql = `
-        SELECT
-            id,
-            name,
-            email,
-            phone,
-            address,
-            city,
-            state,
-            pincode,
-            created_at
-        FROM customers
-        WHERE id = ?
-    `;
-
-    db.query(sql, [customerId], (err, results) => {
-
-        if (err) {
-            console.error("Profile error:", err);
-
-            return res.status(500).json({
-                message: "Failed to get customer profile"
-            });
-        }
-
-        if (results.length === 0) {
-            return res.status(404).json({
-                message: "Customer not found"
-            });
-        }
-
-        res.json({
-            message: "Profile retrieved successfully",
-            customer: results[0]
-        });
-    });
-});
-// ===============================
-// UPDATE CUSTOMER PROFILE
-// Protected Route
-// ===============================
-app.put("/customers/profile", authMiddleware, (req, res) => {
-    const customerId = req.user.id;
-
-    const {
-        name,
-        phone,
-        address,
-        city,
-        state,
-        pincode
-    } = req.body;
-
-    // Check required fields
-    if (!name) {
-        return res.status(400).json({
-            message: "Name is required"
-        });
-    }
-
-    const sql = `
-        UPDATE customers
-        SET
-            name = ?,
-            phone = ?,
-            address = ?,
-            city = ?,
-            state = ?,
-            pincode = ?
-        WHERE id = ?
-    `;
 
     db.query(
         sql,
-        [
+        [email],
+        (err, results) => {
+
+            if (err) {
+
+                console.error(
+                    "Login database error:",
+                    err
+                );
+
+                return res.status(500).json({
+                    message: "Database error",
+                    error: err.message
+                });
+
+            }
+
+
+            // --------------------------------------------------
+            // CUSTOMER NOT FOUND
+            // --------------------------------------------------
+
+            if (results.length === 0) {
+
+                return res.status(401).json({
+                    message: "Invalid email or password"
+                });
+
+            }
+
+
+            const customer = results[0];
+
+
+            // --------------------------------------------------
+            // CHECK EMAIL VERIFICATION
+            // --------------------------------------------------
+
+            if (customer.email_verified !== 1) {
+
+                return res.status(403).json({
+                    message:
+                        "Please verify your email before logging in."
+                });
+
+            }
+
+
+            // --------------------------------------------------
+            // COMPARE PASSWORD
+            // --------------------------------------------------
+
+            bcrypt.compare(
+                password,
+                customer.password,
+                (err, isMatch) => {
+
+                    if (err) {
+
+                        console.error(
+                            "Password comparison error:",
+                            err
+                        );
+
+                        return res.status(500).json({
+                            message:
+                                "Password comparison failed"
+                        });
+
+                    }
+
+
+                    // --------------------------------------------------
+                    // WRONG PASSWORD
+                    // --------------------------------------------------
+
+                    if (!isMatch) {
+
+                        return res.status(401).json({
+                            message:
+                                "Invalid email or password"
+                        });
+
+                    }
+
+
+                    // --------------------------------------------------
+                    // CREATE JWT
+                    // --------------------------------------------------
+
+                    const token = jwt.sign(
+
+                        {
+                            id: customer.id,
+                            email: customer.email
+                        },
+
+                        process.env.JWT_SECRET,
+
+                        {
+                            expiresIn: "1h"
+                        }
+
+                    );
+
+
+                    // --------------------------------------------------
+                    // SUCCESSFUL LOGIN
+                    // --------------------------------------------------
+
+                    res.json({
+
+                        message:
+                            "Login successful",
+
+                        token: token,
+
+                        customer: {
+
+                            id: customer.id,
+
+                            name: customer.name,
+
+                            email: customer.email,
+
+                            phone: customer.phone
+
+                        }
+
+                    });
+
+                }
+            );
+
+        }
+    );
+
+});
+
+
+// ======================================================
+// CUSTOMER PROFILE
+// PROTECTED ROUTE
+// ======================================================
+
+app.get(
+    "/customers/profile",
+    authMiddleware,
+    (req, res) => {
+
+        const customerId = req.user.id;
+
+
+        const sql = `
+            SELECT
+                id,
+                name,
+                email,
+                phone,
+                address,
+                city,
+                state,
+                pincode,
+                created_at,
+                email_verified
+            FROM customers
+            WHERE id = ?
+        `;
+
+
+        db.query(
+            sql,
+            [customerId],
+            (err, results) => {
+
+                if (err) {
+
+                    console.error(
+                        "Profile error:",
+                        err
+                    );
+
+                    return res.status(500).json({
+                        message:
+                            "Failed to get customer profile",
+                        error: err.message
+                    });
+
+                }
+
+
+                if (results.length === 0) {
+
+                    return res.status(404).json({
+                        message:
+                            "Customer not found"
+                    });
+
+                }
+
+
+                res.json({
+
+                    message:
+                        "Profile retrieved successfully",
+
+                    customer:
+                        results[0]
+
+                });
+
+            }
+        );
+
+    }
+);
+
+
+// ======================================================
+// UPDATE CUSTOMER PROFILE
+// PROTECTED ROUTE
+// ======================================================
+
+app.put(
+    "/customers/profile",
+    authMiddleware,
+    (req, res) => {
+
+        const customerId = req.user.id;
+
+
+        const {
             name,
             phone,
             address,
             city,
             state,
-            pincode,
-            customerId
-        ],
-        (err, result) => {
+            pincode
+        } = req.body;
 
-            if (err) {
-                console.error("Update profile error:", err);
 
-                return res.status(500).json({
-                    message: "Failed to update profile",
-                    error: err.message
-                });
-            }
+        // --------------------------------------------------
+        // CHECK REQUIRED FIELD
+        // --------------------------------------------------
 
-            if (result.affectedRows === 0) {
-                return res.status(404).json({
-                    message: "Customer not found"
-                });
-            }
+        if (!name) {
 
-            res.json({
-                message: "Profile updated successfully"
+            return res.status(400).json({
+                message: "Name is required"
             });
+
         }
-    );
-});
 
 
-// ===============================
+        const sql = `
+            UPDATE customers
+            SET
+                name = ?,
+                phone = ?,
+                address = ?,
+                city = ?,
+                state = ?,
+                pincode = ?
+            WHERE id = ?
+        `;
+
+
+        db.query(
+            sql,
+            [
+                name,
+                phone || null,
+                address || null,
+                city || null,
+                state || null,
+                pincode || null,
+                customerId
+            ],
+            (err, result) => {
+
+                if (err) {
+
+                    console.error(
+                        "Update profile error:",
+                        err
+                    );
+
+                    return res.status(500).json({
+
+                        message:
+                            "Failed to update profile",
+
+                        error:
+                            err.message
+
+                    });
+
+                }
+
+
+                if (result.affectedRows === 0) {
+
+                    return res.status(404).json({
+                        message:
+                            "Customer not found"
+                    });
+
+                }
+
+
+                res.json({
+
+                    message:
+                        "Profile updated successfully"
+
+                });
+
+            }
+        );
+
+    }
+);
+
+
+// ======================================================
 // START SERVER
-// ===============================
-const PORT = process.env.PORT || 5000;
+// ======================================================
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+const PORT =
+    process.env.PORT || 5000;
+
+
+app.listen(
+    PORT,
+    () => {
+
+        console.log(
+            `Server is running on port ${PORT}`
+        );
+
+    }
+);

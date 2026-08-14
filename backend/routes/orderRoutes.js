@@ -6,16 +6,49 @@ const authMiddleware = require("../middleware/authMiddleware");
 const {
     createOrder,
     getOrders,
-    getOrderById
+    getOrderById,
+    updateOrderStatus
 } = require("../controllers/orderController");
 
-// Create a new order
-router.post("/", authMiddleware, createOrder);
 
-// Get all orders of logged-in customer
-router.get("/", authMiddleware, getOrders);
+// =====================================================
+// CREATE A NEW ORDER
+// =====================================================
+router.post(
+    "/",
+    authMiddleware,
+    createOrder
+);
 
-// Get one order
-router.get("/:id", authMiddleware, getOrderById);
+
+// =====================================================
+// GET ALL ORDERS OF LOGGED-IN CUSTOMER
+// =====================================================
+router.get(
+    "/",
+    authMiddleware,
+    getOrders
+);
+
+
+// =====================================================
+// GET ONE ORDER
+// =====================================================
+router.get(
+    "/:id",
+    authMiddleware,
+    getOrderById
+);
+
+
+// =====================================================
+// UPDATE ORDER STATUS
+// =====================================================
+router.put(
+    "/:id/status",
+    authMiddleware,
+    updateOrderStatus
+);
+
 
 module.exports = router;

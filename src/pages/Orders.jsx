@@ -1,8 +1,8 @@
 const db = require("../config/db");
 
-// =====================================================
+// ===============================
 // CREATE ORDER
-// =====================================================
+// ===============================
 const createOrder = (req, res) => {
     console.log("🔥 CREATE ORDER FUNCTION CALLED");
 
@@ -13,47 +13,23 @@ const createOrder = (req, res) => {
     console.log("Total amount:", total_amount);
     console.log("Items received:", items);
 
-    // -------------------------------
-    // VALIDATION
-    // -------------------------------
-    if (!total_amount || Number(total_amount) <= 0) {
+    // Validate total amount
+    if (!total_amount) {
         return res.status(400).json({
-            message: "Valid total amount is required"
+            message: "Total amount is required"
         });
     }
 
+    // Validate order items
     if (!items || !Array.isArray(items) || items.length === 0) {
         return res.status(400).json({
             message: "Order items are required"
         });
     }
 
-    // Validate every item before creating order
-    for (const item of items) {
-        const productId = Number(item.product_id);
-        const quantity = Number(item.quantity);
-        const price = Number(item.price);
-
-        if (
-            !Number.isInteger(productId) ||
-            productId <= 0 ||
-            !Number.isInteger(quantity) ||
-            quantity <= 0 ||
-            !Number.isFinite(price) ||
-            price <= 0
-        ) {
-            console.error("❌ Invalid order item:", item);
-
-            return res.status(400).json({
-                message: "Invalid order item",
-                item: item
-            });
-        }
-    }
-
-    // =====================================================
-    // CREATE ORDER
-    // =====================================================
+    // ===============================
+    // INSERT ORDER
+    // ===============================
     const orderSql = `
         INSERT INTO orders
         (customer_id, total_amount)
@@ -62,10 +38,11 @@ const createOrder = (req, res) => {
 
     db.query(
         orderSql,
-        [customerId, Number(total_amount)],
+        [customerId, total_amount],
         (err, result) => {
+
             if (err) {
-                console.error("❌ Create order error:", err);
+                console.error("Create order error:", err);
 
                 return res.status(500).json({
                     message: "Failed to create order",
@@ -75,11 +52,11 @@ const createOrder = (req, res) => {
 
             const orderId = result.insertId;
 
-            console.log("✅ ORDER CREATED:", orderId);
+            console.log("✅ Order created:", orderId);
 
-            // =====================================================
+            // ===============================
             // INSERT ORDER ITEMS
-            // =====================================================
+            // ===============================
             const itemSql = `
                 INSERT INTO order_items
                 (order_id, product_id, quantity, price)
@@ -87,22 +64,40 @@ const createOrder = (req, res) => {
             `;
 
             let completed = 0;
-            let failed = false;
+            let responseSent = false;
 
             items.forEach((item) => {
+
                 const productId = Number(item.product_id);
                 const quantity = Number(item.quantity);
                 const price = Number(item.price);
 
                 console.log(
-                    "🛒 Adding order item:",
-                    {
-                        orderId,
-                        productId,
-                        quantity,
-                        price
-                    }
+                    "Adding item:",
+                    productId,
+                    quantity,
+                    price
                 );
+
+                // Validate item data
+                if (
+                    !Number.isInteger(productId) ||
+                    productId <= 0 ||
+                    !Number.isInteger(quantity) ||
+                    quantity <= 0 ||
+                    Number.isNaN(price)
+                ) {
+                    if (!responseSent) {
+                        responseSent = true;
+
+                        return res.status(400).json({
+                            message: "Invalid order item data",
+                            item
+                        });
+                    }
+
+                    return;
+                }
 
                 db.query(
                     itemSql,
@@ -113,14 +108,15 @@ const createOrder = (req, res) => {
                         price
                     ],
                     (itemErr) => {
+
                         if (itemErr) {
                             console.error(
-                                "❌ Order item insert error:",
+                                "Order item insert error:",
                                 itemErr
                             );
 
-                            if (!failed) {
-                                failed = true;
+                            if (!responseSent) {
+                                responseSent = true;
 
                                 return res.status(500).json({
                                     message:
@@ -135,16 +131,17 @@ const createOrder = (req, res) => {
                         completed++;
 
                         console.log(
-                            `✅ Order item inserted ${completed}/${items.length}`
+                            `✅ Order item added (${completed}/${items.length})`
                         );
 
-                        // All items inserted
                         if (
                             completed === items.length &&
-                            !failed
+                            !responseSent
                         ) {
+                            responseSent = true;
+
                             console.log(
-                                "🎉 ALL ORDER ITEMS INSERTED"
+                                "✅ All order items added successfully"
                             );
 
                             return res.status(201).json({
@@ -161,16 +158,12 @@ const createOrder = (req, res) => {
 };
 
 
-// =====================================================
+// ===============================
 // GET CUSTOMER ORDERS
-// =====================================================
+// ===============================
 const getOrders = (req, res) => {
-    const customerId = req.user.id;
 
-    console.log(
-        "📦 Getting orders for customer:",
-        customerId
-    );
+    const customerId = req.user.id;
 
     const sql = `
         SELECT
@@ -188,9 +181,10 @@ const getOrders = (req, res) => {
         sql,
         [customerId],
         (err, results) => {
+
             if (err) {
                 console.error(
-                    "❌ Get orders error:",
+                    "Get orders error:",
                     err
                 );
 
@@ -201,11 +195,11 @@ const getOrders = (req, res) => {
             }
 
             console.log(
-                "✅ Orders retrieved:",
+                "✅ Customer orders:",
                 results
             );
 
-            return res.json({
+            res.json({
                 message:
                     "Orders retrieved successfully",
                 orders: results
@@ -215,23 +209,17 @@ const getOrders = (req, res) => {
 };
 
 
-// =====================================================
+// ===============================
 // GET SINGLE ORDER WITH ITEMS
-// =====================================================
+// ===============================
 const getOrderById = (req, res) => {
+
     const customerId = req.user.id;
     const orderId = req.params.id;
 
-    console.log(
-        "🔎 Getting order:",
-        orderId,
-        "for customer:",
-        customerId
-    );
-
-    // =================================================
+    // ===============================
     // GET ORDER
-    // =================================================
+    // ===============================
     const orderSql = `
         SELECT
             id,
@@ -248,9 +236,10 @@ const getOrderById = (req, res) => {
         orderSql,
         [orderId, customerId],
         (err, orderResults) => {
+
             if (err) {
                 console.error(
-                    "❌ Get order error:",
+                    "Get order error:",
                     err
                 );
 
@@ -260,16 +249,16 @@ const getOrderById = (req, res) => {
                 });
             }
 
-            // Order does not belong to customer
+            // Order doesn't exist
             if (orderResults.length === 0) {
                 return res.status(404).json({
                     message: "Order not found"
                 });
             }
 
-            // =================================================
-            // GET ORDER ITEMS
-            // =================================================
+            // ===============================
+            // GET ORDER ITEMS + PRODUCT DATA
+            // ===============================
             const itemSql = `
                 SELECT
                     oi.id,
@@ -291,9 +280,10 @@ const getOrderById = (req, res) => {
                 itemSql,
                 [orderId],
                 (itemErr, itemResults) => {
+
                     if (itemErr) {
                         console.error(
-                            "❌ Get order items error:",
+                            "Get order items error:",
                             itemErr
                         );
 
@@ -305,22 +295,27 @@ const getOrderById = (req, res) => {
                     }
 
                     console.log(
-                        "✅ ORDER:",
+                        "🔥 ORDER:",
                         orderResults[0]
                     );
 
                     console.log(
-                        "✅ ORDER ITEMS:",
+                        "🔥 ORDER ITEMS:",
                         itemResults
                     );
 
+                    // ===============================
+                    // RETURN ORDER + ITEMS
+                    // ===============================
                     return res.json({
                         message:
                             "Order retrieved successfully",
 
-                        order: orderResults[0],
+                        order:
+                            orderResults[0],
 
-                        items: itemResults
+                        items:
+                            itemResults
                     });
                 }
             );
@@ -329,111 +324,11 @@ const getOrderById = (req, res) => {
 };
 
 
-// =====================================================
-// UPDATE ORDER STATUS
-// =====================================================
-const updateOrderStatus = (req, res) => {
-    const customerId = req.user.id;
-    const orderId = req.params.id;
-    const { status } = req.body;
-
-    console.log(
-        "🔄 Updating order status:",
-        {
-            customerId,
-            orderId,
-            status
-        }
-    );
-
-    // =================================================
-    // ALLOWED STATUSES
-    // =================================================
-    const allowedStatuses = [
-        "Pending",
-        "Confirmed",
-        "Shipped",
-        "Delivered"
-    ];
-
-    // =================================================
-    // VALIDATE STATUS
-    // =================================================
-    if (
-        !status ||
-        !allowedStatuses.includes(status)
-    ) {
-        return res.status(400).json({
-            message: "Invalid order status",
-            allowedStatuses
-        });
-    }
-
-    // =================================================
-    // UPDATE ORDER
-    // =================================================
-    const sql = `
-        UPDATE orders
-        SET status = ?
-        WHERE id = ?
-        AND customer_id = ?
-    `;
-
-    db.query(
-        sql,
-        [
-            status,
-            orderId,
-            customerId
-        ],
-        (err, result) => {
-            if (err) {
-                console.error(
-                    "❌ Update order status error:",
-                    err
-                );
-
-                return res.status(500).json({
-                    message:
-                        "Failed to update order status",
-                    error: err.message
-                });
-            }
-
-            // =================================================
-            // ORDER NOT FOUND
-            // =================================================
-            if (result.affectedRows === 0) {
-                return res.status(404).json({
-                    message: "Order not found"
-                });
-            }
-
-            console.log(
-                "✅ Order status updated:",
-                orderId,
-                status
-            );
-
-            return res.json({
-                message:
-                    "Order status updated successfully",
-
-                orderId: Number(orderId),
-
-                status: status
-            });
-        }
-    );
-};
-
-
-// =====================================================
-// EXPORT ALL CONTROLLERS
-// =====================================================
+// ===============================
+// EXPORT CONTROLLERS
+// ===============================
 module.exports = {
     createOrder,
     getOrders,
-    getOrderById,
-    updateOrderStatus
+    getOrderById
 };
