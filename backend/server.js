@@ -1053,7 +1053,437 @@ app.get(
     }
 );
 
+// ======================================================
+// FORGOT PASSWORD
+// ======================================================
 
+app.post("/customers/forgot-password", (req, res) => {
+
+    const { email } = req.body;
+
+    // --------------------------------------------------
+    // CHECK EMAIL
+    // --------------------------------------------------
+
+    if (!email) {
+
+        return res.status(400).json({
+            message: "Email is required"
+        });
+
+    }
+
+    // --------------------------------------------------
+    // FIND CUSTOMER
+    // --------------------------------------------------
+
+    const sql = `
+        SELECT
+            id,
+            name,
+            email
+        FROM customers
+        WHERE email = ?
+    `;
+
+    db.query(
+        sql,
+        [email],
+        (err, results) => {
+
+            if (err) {
+
+                console.error(
+                    "Forgot password database error:",
+                    err
+                );
+
+                return res.status(500).json({
+                    message: "Database error"
+                });
+
+            }
+
+            // --------------------------------------------------
+            // EMAIL NOT FOUND
+            // --------------------------------------------------
+
+            if (results.length === 0) {
+
+                return res.json({
+                    message:
+                        "If the email exists, a password reset link has been sent."
+                });
+
+            }
+
+            const customer = results[0];
+
+            // --------------------------------------------------
+            // GENERATE RESET TOKEN
+            // --------------------------------------------------
+
+            const resetToken =
+                crypto
+                    .randomBytes(32)
+                    .toString("hex");
+
+            // --------------------------------------------------
+            // TOKEN EXPIRES AFTER 15 MINUTES
+            // --------------------------------------------------
+
+            const resetExpires =
+                new Date(
+                    Date.now() +
+                    15 * 60 * 1000
+                );
+
+            // --------------------------------------------------
+            // SAVE RESET TOKEN
+            // --------------------------------------------------
+
+            const updateSql = `
+                UPDATE customers
+                SET
+                    reset_token = ?,
+                    reset_expires = ?
+                WHERE id = ?
+            `;
+
+            db.query(
+                updateSql,
+                [
+                    resetToken,
+                    resetExpires,
+                    customer.id
+                ],
+                async (updateErr) => {
+
+                    if (updateErr) {
+
+                        console.error(
+                            "Reset token update error:",
+                            updateErr
+                        );
+
+                        return res.status(500).json({
+                            message:
+                                "Failed to create reset token"
+                        });
+
+                    }
+
+                    // --------------------------------------------------
+                    // CREATE RESET LINK
+                    // --------------------------------------------------
+
+                    const resetLink =
+                        `http://localhost:5173/reset-password/${resetToken}`;
+
+                    // --------------------------------------------------
+                    // SEND RESET EMAIL
+                    // --------------------------------------------------
+
+                    try {
+
+                        await transporter.sendMail({
+
+                            from:
+                                `"GlowNest Beauty" <${process.env.EMAIL_USER}>`,
+
+                            to:
+                                customer.email,
+
+                            subject:
+                                "Reset your GlowNest Beauty password",
+
+                            html: `
+                                <div style="
+                                    font-family: Arial, sans-serif;
+                                    max-width: 600px;
+                                    margin: auto;
+                                    padding: 30px;
+                                    border: 1px solid #eee;
+                                    border-radius: 10px;
+                                    background-color: #ffffff;
+                                ">
+
+                                    <h2 style="
+                                        color: #e91e63;
+                                        text-align: center;
+                                    ">
+                                        GlowNest Beauty 💗
+                                    </h2>
+
+                                    <p>
+                                        Hi
+                                        <strong>${customer.name}</strong>,
+                                    </p>
+
+                                    <p>
+                                        We received a request to reset
+                                        your GlowNest Beauty password.
+                                    </p>
+
+                                    <p>
+                                        Click the button below to create
+                                        a new password.
+                                    </p>
+
+                                    <div style="
+                                        text-align: center;
+                                        margin: 30px 0;
+                                    ">
+
+                                        <a
+                                            href="${resetLink}"
+                                            style="
+                                                background-color: #e91e63;
+                                                color: white;
+                                                padding: 12px 25px;
+                                                text-decoration: none;
+                                                border-radius: 6px;
+                                                display: inline-block;
+                                                font-weight: bold;
+                                            "
+                                        >
+                                            Reset Password
+                                        </a>
+
+                                    </div>
+
+                                    <p>
+                                        This link will expire in
+                                        <strong>15 minutes</strong>.
+                                    </p>
+
+                                    <p>
+                                        If you did not request a password
+                                        reset, you can safely ignore this email.
+                                    </p>
+
+                                    <p>
+                                        Regards,<br>
+                                        <strong>
+                                            GlowNest Beauty Team
+                                        </strong>
+                                    </p>
+
+                                </div>
+                            `
+                        });
+
+                        console.log(
+                            `✅ Password reset email sent to ${customer.email}`
+                        );
+
+                        return res.json({
+                            message:
+                                "If the email exists, a password reset link has been sent."
+                        });
+
+                    } catch (emailError) {
+
+                        console.error(
+                            "Password reset email error:",
+                            emailError
+                        );
+
+                        return res.status(500).json({
+                            message:
+                                "Failed to send password reset email",
+                            error:
+                                emailError.message
+                        });
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+});
+// ======================================================
+// RESET PASSWORD
+// ======================================================
+
+app.post("/customers/reset-password/:token", (req, res) => {
+
+    const { token } = req.params;
+    const { password } = req.body;
+
+    // --------------------------------------------------
+    // CHECK REQUIRED FIELDS
+    // --------------------------------------------------
+
+    if (!token || !password) {
+        return res.status(400).json({
+            message: "Token and password are required"
+        });
+    }
+
+    // --------------------------------------------------
+    // CHECK PASSWORD LENGTH
+    // --------------------------------------------------
+
+    if (password.length < 6) {
+        return res.status(400).json({
+            message: "Password must be at least 6 characters"
+        });
+    }
+
+    // --------------------------------------------------
+    // FIND CUSTOMER USING RESET TOKEN
+    // --------------------------------------------------
+
+    const sql = `
+        SELECT
+            id,
+            email,
+            reset_token,
+            reset_expires
+        FROM customers
+        WHERE reset_token = ?
+    `;
+
+    db.query(
+        sql,
+        [token],
+        (err, results) => {
+
+            if (err) {
+
+                console.error(
+                    "Reset password database error:",
+                    err
+                );
+
+                return res.status(500).json({
+                    message: "Database error",
+                    error: err.message
+                });
+
+            }
+
+            // --------------------------------------------------
+            // TOKEN NOT FOUND
+            // --------------------------------------------------
+
+            if (results.length === 0) {
+
+                return res.status(400).json({
+                    message: "Invalid or expired reset token"
+                });
+
+            }
+
+            const customer = results[0];
+
+            // --------------------------------------------------
+            // CHECK TOKEN EXPIRATION
+            // --------------------------------------------------
+
+            if (
+                !customer.reset_expires ||
+                new Date(customer.reset_expires) < new Date()
+            ) {
+
+                return res.status(400).json({
+                    message: "Reset token has expired"
+                });
+
+            }
+
+            // --------------------------------------------------
+            // HASH NEW PASSWORD
+            // --------------------------------------------------
+
+            bcrypt.hash(
+                password,
+                10,
+                (hashErr, hashedPassword) => {
+
+                    if (hashErr) {
+
+                        console.error(
+                            "Password hashing error:",
+                            hashErr
+                        );
+
+                        return res.status(500).json({
+                            message: "Password hashing failed"
+                        });
+
+                    }
+
+                    // --------------------------------------------------
+                    // UPDATE PASSWORD
+                    // CLEAR RESET TOKEN
+                    // --------------------------------------------------
+
+                    const updateSql = `
+                        UPDATE customers
+                        SET
+                            password = ?,
+                            reset_token = NULL,
+                            reset_expires = NULL
+                        WHERE id = ?
+                    `;
+
+                    db.query(
+                        updateSql,
+                        [
+                            hashedPassword,
+                            customer.id
+                        ],
+                        (updateErr, result) => {
+
+                            if (updateErr) {
+
+                                console.error(
+                                    "Password reset update error:",
+                                    updateErr
+                                );
+
+                                return res.status(500).json({
+                                    message:
+                                        "Failed to reset password",
+                                    error:
+                                        updateErr.message
+                                });
+
+                            }
+
+                            if (result.affectedRows === 0) {
+
+                                return res.status(404).json({
+                                    message:
+                                        "Customer not found"
+                                });
+
+                            }
+
+                            console.log(
+                                `✅ Password successfully reset for ${customer.email}`
+                            );
+
+                            return res.json({
+                                message:
+                                    "Password reset successfully"
+                            });
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+    );
+
+});
 // ======================================================
 // UPDATE CUSTOMER PROFILE
 // PROTECTED ROUTE

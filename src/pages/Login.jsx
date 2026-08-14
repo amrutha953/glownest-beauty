@@ -99,14 +99,20 @@ function Login() {
 
         <div className="login-footer">
 
-          <p>
-            New to GlowNest?{" "}
-            <Link to="/register">
-              Create Account
-            </Link>
-          </p>
+  <p>
+    <Link to="/forgot-password" className="forgot-password">
+      Forgot Password?
+    </Link>
+  </p>
 
-        </div>
+  <p>
+    New to GlowNest?{" "}
+    <Link to="/register">
+      Create Account
+    </Link>
+  </p>
+
+</div>
 
       </div>
 

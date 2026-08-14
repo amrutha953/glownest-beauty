@@ -10,6 +10,8 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import MyOrders from "./pages/MyOrders";
 import OrderDetails from "./pages/OrderDetails";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Offers from "./pages/Offers";
@@ -102,6 +104,11 @@ function App() {
           path="/" 
           element={<Home />} 
         />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route
+    path="/reset-password/:token"
+    element={<ResetPassword />}
+/>
 
 
         {/* MAIN PAGES */}
