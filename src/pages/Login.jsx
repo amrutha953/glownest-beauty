@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
 import "./Login.css";
 
 function Login() {
@@ -94,6 +95,19 @@ function Login() {
           <button type="submit" className="login-button">
             LOGIN
           </button>
+          <div style={{ marginTop: "20px", textAlign: "center" }}>
+  <p>OR</p>
+
+  <GoogleLogin
+    onSuccess={(credentialResponse) => {
+      console.log("Google Login Success:", credentialResponse);
+    }}
+    onError={() => {
+      console.log("Google Login Failed");
+      alert("Google Login failed");
+    }}
+  />
+</div>
 
         </form>
 

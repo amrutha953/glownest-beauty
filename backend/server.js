@@ -3,8 +3,12 @@ const cors = require("cors");
 const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { OAuth2Client } = require("google-auth-library");
 
 require("dotenv").config();
+const googleClient = new OAuth2Client(
+    process.env.GOOGLE_CLIENT_ID
+);
 
 const db = require("./config/db");
 const transporter = require("./config/mailer");
@@ -972,6 +976,220 @@ app.post("/customers/login", (req, res) => {
 
         }
     );
+
+});
+// ======================================================
+// GOOGLE LOGIN
+// ======================================================
+
+app.post("/customers/google-login", async (req, res) => {
+
+    try {
+
+        const { credential } = req.body;
+
+        // --------------------------------------------------
+        // CHECK GOOGLE CREDENTIAL
+        // --------------------------------------------------
+
+        if (!credential) {
+
+            return res.status(400).json({
+                message: "Google credential is required"
+            });
+
+        }
+
+        // --------------------------------------------------
+        // VERIFY GOOGLE TOKEN
+        // --------------------------------------------------
+
+        const ticket = await googleClient.verifyIdToken({
+            idToken: credential,
+            audience: process.env.GOOGLE_CLIENT_ID
+        });
+
+        const payload = ticket.getPayload();
+
+        const email = payload.email;
+        const name = payload.name;
+
+        console.log("✅ Google user:", {
+            email,
+            name
+        });
+
+        // --------------------------------------------------
+        // FIND CUSTOMER
+        // --------------------------------------------------
+
+        const findCustomerSql = `
+            SELECT *
+            FROM customers
+            WHERE email = ?
+        `;
+
+        db.query(
+            findCustomerSql,
+            [email],
+            async (err, results) => {
+
+                if (err) {
+
+                    console.error(
+                        "Google login database error:",
+                        err
+                    );
+
+                    return res.status(500).json({
+                        message: "Database error",
+                        error: err.message
+                    });
+
+                }
+
+                // --------------------------------------------------
+                // CUSTOMER EXISTS
+                // --------------------------------------------------
+
+                if (results.length > 0) {
+
+                    const customer = results[0];
+
+                    const token = jwt.sign(
+                        {
+                            id: customer.id,
+                            email: customer.email
+                        },
+                        process.env.JWT_SECRET,
+                        {
+                            expiresIn: "1h"
+                        }
+                    );
+
+                    console.log(
+                        `✅ Google login successful: ${customer.email}`
+                    );
+
+                    return res.json({
+
+                        message: "Google login successful",
+
+                        token: token,
+
+                        customer: {
+                            id: customer.id,
+                            name: customer.name,
+                            email: customer.email,
+                            phone: customer.phone
+                        }
+
+                    });
+
+                }
+
+                // --------------------------------------------------
+                // CUSTOMER DOES NOT EXIST
+                // --------------------------------------------------
+
+                const randomPassword =
+                    crypto.randomBytes(32).toString("hex");
+
+                const hashedPassword =
+                    await bcrypt.hash(
+                        randomPassword,
+                        10
+                    );
+
+                const insertSql = `
+                    INSERT INTO customers
+                    (
+                        name,
+                        email,
+                        password,
+                        email_verified
+                    )
+                    VALUES (?, ?, ?, 1)
+                `;
+
+                db.query(
+                    insertSql,
+                    [
+                        name || "Google User",
+                        email,
+                        hashedPassword
+                    ],
+                    (insertErr, result) => {
+
+                        if (insertErr) {
+
+                            console.error(
+                                "Google customer creation error:",
+                                insertErr
+                            );
+
+                            return res.status(500).json({
+                                message:
+                                    "Failed to create Google customer",
+                                error:
+                                    insertErr.message
+                            });
+
+                        }
+
+                        const customerId =
+                            result.insertId;
+
+                        const token = jwt.sign(
+                            {
+                                id: customerId,
+                                email: email
+                            },
+                            process.env.JWT_SECRET,
+                            {
+                                expiresIn: "1h"
+                            }
+                        );
+
+                        console.log(
+                            `✅ New Google customer created: ${email}`
+                        );
+
+                        return res.status(201).json({
+
+                            message:
+                                "Google account created successfully",
+
+                            token: token,
+
+                            customer: {
+                                id: customerId,
+                                name: name || "Google User",
+                                email: email,
+                                phone: null
+                            }
+
+                        });
+
+                    }
+                );
+
+            }
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Google authentication error:",
+            error
+        );
+
+        return res.status(401).json({
+            message: "Invalid Google credential",
+            error: error.message
+        });
+
+    }
 
 });
 
