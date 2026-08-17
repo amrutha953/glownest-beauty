@@ -1350,6 +1350,144 @@ app.delete(
 );
 
 // ======================================================
+// ADMIN DASHBOARD - STATISTICS
+// ======================================================
+
+app.get(
+    "/admin/dashboard/stats",
+    adminMiddleware,
+    (req, res) => {
+
+        console.log("📊 ADMIN DASHBOARD STATS");
+
+        const productsSql = `
+            SELECT COUNT(*) AS total
+            FROM products
+        `;
+
+        const ordersSql = `
+            SELECT
+                COUNT(*) AS total,
+                COALESCE(SUM(total_amount), 0) AS revenue
+            FROM orders
+        `;
+
+        const customersSql = `
+            SELECT COUNT(*) AS total
+            FROM customers
+        `;
+
+        db.query(
+            productsSql,
+            (productsErr, productsResult) => {
+
+                if (productsErr) {
+
+                    console.error(
+                        "❌ Dashboard products error:",
+                        productsErr
+                    );
+
+                    return res.status(500).json({
+                        message:
+                            "Failed to get product statistics",
+                        error:
+                            productsErr.message
+                    });
+                }
+
+                db.query(
+                    ordersSql,
+                    (ordersErr, ordersResult) => {
+
+                        if (ordersErr) {
+
+                            console.error(
+                                "❌ Dashboard orders error:",
+                                ordersErr
+                            );
+
+                            return res.status(500).json({
+                                message:
+                                    "Failed to get order statistics",
+                                error:
+                                    ordersErr.message
+                            });
+                        }
+
+                        db.query(
+                            customersSql,
+                            (
+                                customersErr,
+                                customersResult
+                            ) => {
+
+                                if (customersErr) {
+
+                                    console.error(
+                                        "❌ Dashboard customers error:",
+                                        customersErr
+                                    );
+
+                                    return res.status(500).json({
+                                        message:
+                                            "Failed to get customer statistics",
+                                        error:
+                                            customersErr.message
+                                    });
+                                }
+
+                                const stats = {
+
+                                    products:
+                                        Number(
+                                            productsResult[0].total
+                                        ),
+
+                                    orders:
+                                        Number(
+                                            ordersResult[0].total
+                                        ),
+
+                                    customers:
+                                        Number(
+                                            customersResult[0].total
+                                        ),
+
+                                    revenue:
+                                        Number(
+                                            ordersResult[0].revenue
+                                        )
+
+                                };
+
+                                console.log(
+                                    "✅ Dashboard stats:",
+                                    stats
+                                );
+
+                                return res.json({
+
+                                    message:
+                                        "Dashboard statistics retrieved successfully",
+
+                                    stats
+
+                                });
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+// ======================================================
 // CUSTOMER LOGIN
 // ======================================================
 

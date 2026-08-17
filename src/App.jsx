@@ -25,6 +25,7 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminProducts from "./pages/AdminProducts";
 import AdminOrders from "./pages/AdminOrders";
+import AdminOrderDetails from "./pages/AdminOrderDetails";
 import AdminCustomers from "./pages/AdminCustomers";
 
 // =====================================================
@@ -198,6 +199,11 @@ function App() {
             <Route
                 path="/admin/orders"
                 element={<AdminOrders />}
+            />
+
+            <Route
+                path="/admin/orders/:id"
+                element={<AdminOrderDetails />}
             />
 
             <Route
