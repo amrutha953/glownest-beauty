@@ -8,6 +8,7 @@
   color: #222;
 }
 
+
 /* =====================================================
    BREADCRUMB
 ===================================================== */
@@ -16,9 +17,11 @@
   padding: 22px 8% 0;
   font-size: 14px;
   color: #777;
+
   display: flex;
   align-items: center;
   gap: 8px;
+
   max-width: 1400px;
   margin: auto;
 }
@@ -42,89 +45,135 @@
   font-weight: 600;
 }
 
+
 /* =====================================================
-   HERO
+   SKINCARE HERO
+   LEFT = TEXT
+   RIGHT = IMAGE
 ===================================================== */
 
 .basics-hero {
   max-width: 1400px;
   margin: 0 auto;
+
   min-height: 560px;
 
   display: flex;
+  flex-direction: row;
+
   align-items: center;
   justify-content: space-between;
 
-  gap: 70px;
-  padding: 70px 8%;
+  gap: 60px;
 
-  background: linear-gradient(135deg, #fff8fb, #ffffff);
+  padding: 60px 8%;
+
+  background: linear-gradient(
+    135deg,
+    #fff8fb,
+    #ffffff
+  );
 }
 
-.hero-text {
+
+/* =====================================================
+   HERO TEXT - LEFT SIDE
+===================================================== */
+
+.basics-hero .hero-text {
   flex: 1;
-  max-width: 600px;
+
+  width: 50%;
+  max-width: 560px;
+
+  text-align: left;
 }
 
-.hero-text span {
+.basics-hero .hero-text span {
   display: block;
-  font-size: 52px;
+
+  font-size: 34px;
   font-weight: 800;
+
   color: #e91e63;
+
   letter-spacing: 1px;
+
   margin-bottom: 12px;
+
   text-transform: uppercase;
-  line-height: 1.1;
+
+  line-height: 1.15;
 }
 
-.hero-text h1 {
+.basics-hero .hero-text h1 {
   font-size: 44px;
+
   color: #222;
+
   margin: 10px 0 20px;
+
   font-family: Georgia, serif;
+
   font-weight: 700;
+
   line-height: 1.2;
 }
 
-.hero-text p {
+.basics-hero .hero-text p {
   color: #666;
+
   font-size: 18px;
+
   line-height: 1.8;
-  max-width: 570px;
+
+  max-width: 540px;
+
+  margin: 0;
 }
 
+
 /* =====================================================
-   HERO IMAGE - FIXED
+   HERO IMAGE - RIGHT SIDE
 ===================================================== */
 
-.hero-image {
-  flex: 1;
-  max-width: 600px;
+.basics-hero .hero-image {
+  flex: 0 0 45%;
+
+  width: 45%;
+  max-width: 520px;
+
   display: flex;
-  justify-content: center;
+
+  justify-content: flex-end;
   align-items: center;
 }
 
-.hero-image img {
+.basics-hero .hero-image img {
   width: 100%;
-  height: auto;
-  max-height: 500px;
 
-  object-fit: contain;
+  max-width: 520px;
+
+  height: 400px;
+
+  object-fit: cover;
+
   object-position: center;
 
   display: block;
 
-  border-radius: 30px;
+  border-radius: 28px;
 
-  box-shadow: 0 25px 60px rgba(233, 30, 99, 0.16);
+  box-shadow:
+    0 25px 60px rgba(233, 30, 99, 0.16);
 
   transition: 0.4s ease;
 }
 
-.hero-image img:hover {
+.basics-hero .hero-image img:hover {
   transform: scale(1.02);
 }
+
 
 /* =====================================================
    COMMON SECTION
@@ -137,7 +186,9 @@
 .tips-section,
 .products-section {
   max-width: 1400px;
+
   margin: auto;
+
   padding: 75px 8%;
 }
 
@@ -148,21 +199,32 @@
 .tips-section h2,
 .products-section h2 {
   text-align: center;
+
   font-size: 38px;
+
   color: #222;
+
   margin: 0 0 20px;
+
   font-family: Georgia, serif;
+
   line-height: 1.25;
 }
 
 .intro-section p {
   max-width: 850px;
+
   margin: auto;
+
   text-align: center;
+
   color: #666;
+
   line-height: 1.9;
+
   font-size: 17px;
 }
+
 
 /* =====================================================
    ESSENTIAL STEPS
@@ -174,23 +236,35 @@
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
   gap: 24px;
+
   margin-top: 45px;
 }
 
 .step-card {
   background: #fff;
+
   padding: 30px 25px;
+
   border-radius: 22px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.07);
+
   border: 1px solid #f8d8e5;
+
   transition: 0.3s ease;
 }
 
 .step-card:hover {
   transform: translateY(-7px);
-  box-shadow: 0 18px 38px rgba(233, 30, 99, 0.15);
+
+  box-shadow:
+    0 18px 38px rgba(233, 30, 99, 0.15);
 }
 
 .step-number {
@@ -198,12 +272,14 @@
   height: 46px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
 
   background: #e91e63;
+
   color: #fff;
 
   font-weight: bold;
@@ -213,15 +289,20 @@
 
 .step-card h3 {
   font-size: 21px;
+
   color: #222;
+
   margin: 0 0 12px;
 }
 
 .step-card p {
   color: #666;
+
   line-height: 1.65;
+
   margin: 0;
 }
+
 
 /* =====================================================
    WHY IT MATTERS
@@ -229,14 +310,19 @@
 
 .step-info {
   margin-top: 20px;
+
   padding: 15px;
+
   background: #fff5f9;
+
   border-radius: 12px;
 }
 
 .step-info h4 {
   color: #e91e63;
+
   margin: 0 0 8px;
+
   font-size: 15px;
 }
 
@@ -244,24 +330,33 @@
   font-size: 14px;
 }
 
+
 /* =====================================================
    PRODUCT BOX
 ===================================================== */
 
 .step-product {
   margin-top: 18px;
+
   padding: 15px;
+
   background: #fafafa;
+
   border-radius: 12px;
+
   font-size: 14px;
+
   color: #555;
 }
 
 .step-product strong {
   display: block;
+
   margin-top: 8px;
+
   color: #222;
 }
+
 
 /* =====================================================
    MORNING & NIGHT ROUTINE
@@ -269,23 +364,29 @@
 
 .routine-section {
   background: #fff;
+
   max-width: none;
+
   padding-left: 8%;
   padding-right: 8%;
 }
 
 .routine-grid {
   max-width: 1250px;
+
   margin: 45px auto 0;
 
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
 
   gap: 25px;
 }
 
 .routine-card {
   background: #fff;
+
   padding: 35px 25px;
 
   min-height: 150px;
@@ -294,7 +395,8 @@
 
   text-align: center;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.07);
 
   border: 1px solid #f8d7e5;
 
@@ -303,7 +405,9 @@
 
 .routine-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+
+  box-shadow:
+    0 20px 40px rgba(233, 30, 99, 0.15);
 }
 
 .routine-card span {
@@ -317,20 +421,25 @@
   border-radius: 50%;
 
   background: #ffe3ee;
+
   color: #e91e63;
 
   justify-content: center;
   align-items: center;
 
   font-size: 20px;
+
   font-weight: bold;
 }
 
 .routine-card h3 {
   color: #333;
+
   font-size: 20px;
+
   margin: 0;
 }
+
 
 /* =====================================================
    COMMON SKINCARE MISTAKES
@@ -338,7 +447,9 @@
 
 .mistakes-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 25px;
 
@@ -356,12 +467,15 @@
 
   border: 1px solid #f8d7e5;
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.06);
 
   font-size: 17px;
+
   color: #444;
 
   display: flex;
+
   align-items: center;
 
   gap: 15px;
@@ -371,12 +485,15 @@
 
 .mistake-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(233, 30, 99, 0.13);
+
+  box-shadow:
+    0 18px 35px rgba(233, 30, 99, 0.13);
 }
 
 .mistake-card::first-letter {
   color: #e91e63;
 }
+
 
 /* =====================================================
    EXPERT TIPS
@@ -385,7 +502,8 @@
 .tips-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
   gap: 25px;
 
@@ -403,16 +521,19 @@
 
   border: 1px solid #f8d7e5;
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.07);
 
   color: #444;
 
   font-size: 16px;
+
   line-height: 1.7;
 
   text-align: center;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -421,13 +542,17 @@
 
 .tip:hover {
   transform: translateY(-7px);
-  box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+
+  box-shadow:
+    0 20px 40px rgba(233, 30, 99, 0.15);
 }
 
 .tip::first-letter {
   color: #e91e63;
+
   font-size: 22px;
 }
+
 
 /* =====================================================
    RECOMMENDED PRODUCTS
@@ -444,7 +569,8 @@
 .products-grid {
   display: grid;
 
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
 
   gap: 28px;
 }
@@ -460,7 +586,8 @@
 
   text-align: center;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.07);
 
   border: 1px solid #f8d7e5;
 
@@ -470,11 +597,13 @@
 .product-card:hover {
   transform: translateY(-8px);
 
-  box-shadow: 0 22px 45px rgba(233, 30, 99, 0.16);
+  box-shadow:
+    0 22px 45px rgba(233, 30, 99, 0.16);
 }
 
 .product-card img {
   width: 100%;
+
   height: 250px;
 
   object-fit: cover;
@@ -492,6 +621,7 @@
 
 .product-link {
   text-decoration: none;
+
   color: #333;
 
   transition: 0.3s;
@@ -558,7 +688,8 @@
 
   cursor: pointer;
 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
 
   transition: 0.3s ease;
 
@@ -573,6 +704,7 @@
   color: #fff;
 }
 
+
 /* =====================================================
    CTA
 ===================================================== */
@@ -586,11 +718,13 @@
 
   text-align: center;
 
-  background: linear-gradient(135deg, #ffe3ee, #fff);
+  background:
+    linear-gradient(135deg, #ffe3ee, #fff);
 
   border-radius: 35px;
 
-  box-shadow: 0 18px 45px rgba(233, 30, 99, 0.1);
+  box-shadow:
+    0 18px 45px rgba(233, 30, 99, 0.1);
 }
 
 .cta-section h2 {
@@ -636,8 +770,10 @@
 
   transform: translateY(-4px);
 
-  box-shadow: 0 12px 25px rgba(233, 30, 99, 0.25);
+  box-shadow:
+    0 12px 25px rgba(233, 30, 99, 0.25);
 }
+
 
 /* =====================================================
    LARGE TABLETS
@@ -647,26 +783,40 @@
 
   .basics-hero {
     gap: 40px;
+
+    padding-left: 6%;
+    padding-right: 6%;
   }
 
-  .hero-text span {
-    font-size: 45px;
+  .basics-hero .hero-text span {
+    font-size: 30px;
   }
 
-  .hero-text h1 {
+  .basics-hero .hero-text h1 {
     font-size: 38px;
+  }
+
+  .basics-hero .hero-image {
+    flex-basis: 48%;
+    width: 48%;
+  }
+
+  .basics-hero .hero-image img {
+    height: 360px;
   }
 
   .steps-grid,
   .routine-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .products-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+      repeat(3, 1fr);
   }
-
 }
+
 
 /* =====================================================
    TABLETS
@@ -680,44 +830,51 @@
     text-align: center;
 
     padding-top: 55px;
+
+    gap: 40px;
   }
 
-  .hero-text {
+  .basics-hero .hero-text {
+    width: 100%;
+
     max-width: 700px;
+
+    text-align: center;
   }
 
-  .hero-text p {
+  .basics-hero .hero-text p {
     margin: auto;
   }
 
-  .hero-image {
+  .basics-hero .hero-image {
     width: 100%;
-    max-width: 650px;
+
+    max-width: 600px;
+
+    flex: none;
+
+    justify-content: center;
   }
 
-  /*
-     IMPORTANT:
-     No fixed height here.
-     This keeps the complete image visible.
-  */
-
-  .hero-image img {
+  .basics-hero .hero-image img {
     width: 100%;
-    height: auto;
-    max-height: none;
 
-    object-fit: contain;
+    height: 360px;
+
+    object-fit: cover;
   }
 
   .tips-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
-
 }
+
 
 /* =====================================================
    MOBILE
@@ -727,42 +884,42 @@
 
   .breadcrumb {
     padding: 18px 5% 0;
+
     font-size: 13px;
   }
 
   .basics-hero {
     padding: 45px 5%;
-    gap: 35px;
+
+    gap: 30px;
   }
 
-  .hero-text span {
-    font-size: 32px;
+  .basics-hero .hero-text span {
+    font-size: 27px;
   }
 
-  .hero-text h1 {
+  .basics-hero .hero-text h1 {
     font-size: 29px;
   }
 
-  .hero-text p {
+  .basics-hero .hero-text p {
     font-size: 16px;
+
     line-height: 1.7;
   }
 
-  /*
-     Full image on mobile
-  */
-
-  .hero-image {
+  .basics-hero .hero-image {
     width: 100%;
+
+    max-width: 100%;
   }
 
-  .hero-image img {
+  .basics-hero .hero-image img {
     width: 100%;
-    height: auto;
 
-    max-height: none;
+    height: 280px;
 
-    object-fit: contain;
+    object-fit: cover;
 
     border-radius: 22px;
   }
@@ -791,6 +948,7 @@
   .tips-grid,
   .products-grid {
     grid-template-columns: 1fr;
+
     gap: 20px;
   }
 
@@ -807,7 +965,9 @@
 
   .cta-section {
     margin: 30px 5% 55px;
+
     padding: 55px 6%;
+
     border-radius: 25px;
   }
 
@@ -818,5 +978,4 @@
   .cta-section p {
     font-size: 16px;
   }
-
 }
