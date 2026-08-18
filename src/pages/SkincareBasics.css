@@ -50,11 +50,14 @@
   max-width: 1400px;
   margin: 0 auto;
   min-height: 560px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 70px;
   padding: 70px 8%;
+
   background: linear-gradient(135deg, #fff8fb, #ffffff);
 }
 
@@ -90,18 +93,32 @@
   max-width: 570px;
 }
 
+/* =====================================================
+   HERO IMAGE - FIXED
+===================================================== */
+
 .hero-image {
   flex: 1;
   max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image img {
   width: 100%;
-  height: 430px;
-  object-fit: cover;
+  height: auto;
+  max-height: 500px;
+
+  object-fit: contain;
+  object-position: center;
+
   display: block;
+
   border-radius: 30px;
+
   box-shadow: 0 25px 60px rgba(233, 30, 99, 0.16);
+
   transition: 0.4s ease;
 }
 
@@ -179,13 +196,18 @@
 .step-number {
   width: 46px;
   height: 46px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
+
   background: #e91e63;
   color: #fff;
+
   font-weight: bold;
+
   margin-bottom: 20px;
 }
 
@@ -201,7 +223,9 @@
   margin: 0;
 }
 
-/* WHY IT MATTERS */
+/* =====================================================
+   WHY IT MATTERS
+===================================================== */
 
 .step-info {
   margin-top: 20px;
@@ -220,7 +244,9 @@
   font-size: 14px;
 }
 
-/* PRODUCT BOX */
+/* =====================================================
+   PRODUCT BOX
+===================================================== */
 
 .step-product {
   margin-top: 18px;
@@ -251,19 +277,27 @@
 .routine-grid {
   max-width: 1250px;
   margin: 45px auto 0;
+
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+
   gap: 25px;
 }
 
 .routine-card {
   background: #fff;
   padding: 35px 25px;
+
   min-height: 150px;
+
   border-radius: 22px;
+
   text-align: center;
+
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+
   border: 1px solid #f8d7e5;
+
   transition: 0.35s ease;
 }
 
@@ -275,13 +309,19 @@
 .routine-card span {
   width: 55px;
   height: 55px;
+
   display: flex;
+
   margin: 0 auto 18px;
+
   border-radius: 50%;
+
   background: #ffe3ee;
   color: #e91e63;
+
   justify-content: center;
   align-items: center;
+
   font-size: 20px;
   font-weight: bold;
 }
@@ -299,22 +339,33 @@
 .mistakes-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+
   gap: 25px;
+
   margin-top: 45px;
 }
 
 .mistake-card {
   background: #fff;
+
   padding: 28px;
+
   min-height: 90px;
+
   border-radius: 20px;
+
   border: 1px solid #f8d7e5;
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
   font-size: 17px;
   color: #444;
+
   display: flex;
   align-items: center;
+
   gap: 15px;
+
   transition: 0.35s ease;
 }
 
@@ -333,25 +384,38 @@
 
 .tips-grid {
   display: grid;
+
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
   gap: 25px;
+
   margin-top: 45px;
 }
 
 .tip {
   background: #fff;
+
   padding: 30px 25px;
+
   min-height: 130px;
+
   border-radius: 22px;
+
   border: 1px solid #f8d7e5;
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+
   color: #444;
+
   font-size: 16px;
   line-height: 1.7;
+
   text-align: center;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   transition: 0.35s ease;
 }
 
@@ -379,42 +443,57 @@
 
 .products-grid {
   display: grid;
+
   grid-template-columns: repeat(4, minmax(0, 1fr));
+
   gap: 28px;
 }
 
 .product-card {
   position: relative;
+
   background: #fff;
+
   border-radius: 22px;
+
   overflow: hidden;
+
   text-align: center;
+
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+
   border: 1px solid #f8d7e5;
+
   transition: 0.35s ease;
 }
 
 .product-card:hover {
   transform: translateY(-8px);
+
   box-shadow: 0 22px 45px rgba(233, 30, 99, 0.16);
 }
 
 .product-card img {
   width: 100%;
   height: 250px;
+
   object-fit: cover;
+
   display: block;
 }
 
 .product-card h3 {
   margin: 20px 15px 10px;
+
   font-size: 20px;
+
   line-height: 1.35;
 }
 
 .product-link {
   text-decoration: none;
   color: #333;
+
   transition: 0.3s;
 }
 
@@ -424,48 +503,73 @@
 
 .product-card p {
   color: #e91e63;
+
   font-size: 20px;
+
   font-weight: bold;
+
   margin: 10px 0 18px;
 }
 
 .cart-btn {
   background: #e91e63;
+
   color: #fff;
+
   border: none;
+
   padding: 12px 28px;
+
   border-radius: 30px;
+
   margin-bottom: 22px;
+
   cursor: pointer;
+
   font-size: 15px;
+
   transition: 0.3s ease;
 }
 
 .cart-btn:hover {
   background: #c2185b;
+
   transform: translateY(-3px);
 }
 
 .wishlist-btn {
   position: absolute;
+
   top: 14px;
   right: 14px;
+
   width: 42px;
   height: 42px;
+
   border: none;
+
   border-radius: 50%;
+
   background: #fff;
+
   color: #e91e63;
+
   font-size: 21px;
+
   cursor: pointer;
+
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
   transition: 0.3s ease;
+
   z-index: 2;
 }
 
 .wishlist-btn:hover {
   transform: scale(1.08);
+
   background: #e91e63;
+
   color: #fff;
 }
 
@@ -475,42 +579,63 @@
 
 .cta-section {
   max-width: 1200px;
+
   margin: 50px auto 80px;
+
   padding: 75px 8%;
+
   text-align: center;
+
   background: linear-gradient(135deg, #ffe3ee, #fff);
+
   border-radius: 35px;
+
   box-shadow: 0 18px 45px rgba(233, 30, 99, 0.1);
 }
 
 .cta-section h2 {
   font-size: 40px;
+
   color: #222;
+
   margin: 0 0 18px;
 }
 
 .cta-section p {
   max-width: 700px;
+
   margin: 0 auto 30px;
+
   color: #666;
+
   font-size: 17px;
+
   line-height: 1.8;
 }
 
 .cta-section button {
   background: #e91e63;
+
   color: #fff;
+
   border: none;
+
   padding: 15px 40px;
+
   border-radius: 40px;
+
   font-size: 16px;
+
   cursor: pointer;
+
   transition: 0.35s ease;
 }
 
 .cta-section button:hover {
   background: #c2185b;
+
   transform: translateY(-4px);
+
   box-shadow: 0 12px 25px rgba(233, 30, 99, 0.25);
 }
 
@@ -540,6 +665,7 @@
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
 }
 
 /* =====================================================
@@ -550,7 +676,9 @@
 
   .basics-hero {
     flex-direction: column;
+
     text-align: center;
+
     padding-top: 55px;
   }
 
@@ -567,8 +695,18 @@
     max-width: 650px;
   }
 
+  /*
+     IMPORTANT:
+     No fixed height here.
+     This keeps the complete image visible.
+  */
+
   .hero-image img {
-    height: 350px;
+    width: 100%;
+    height: auto;
+    max-height: none;
+
+    object-fit: contain;
   }
 
   .tips-grid {
@@ -578,6 +716,7 @@
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 /* =====================================================
@@ -609,8 +748,22 @@
     line-height: 1.7;
   }
 
+  /*
+     Full image on mobile
+  */
+
+  .hero-image {
+    width: 100%;
+  }
+
   .hero-image img {
-    height: 280px;
+    width: 100%;
+    height: auto;
+
+    max-height: none;
+
+    object-fit: contain;
+
     border-radius: 22px;
   }
 
@@ -665,4 +818,5 @@
   .cta-section p {
     font-size: 16px;
   }
+
 }
