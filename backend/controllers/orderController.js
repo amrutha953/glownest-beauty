@@ -839,5 +839,9 @@ module.exports = {
     createOrder,
     getOrders,
     getOrderById,
-    updateOrderStatus
+    updateOrderStatus,
+
+    getAllOrdersForAdmin,
+    getOrderByIdForAdmin,
+    updateOrderStatusForAdmin
 };

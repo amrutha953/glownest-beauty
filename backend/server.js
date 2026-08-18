@@ -26,6 +26,7 @@ const authMiddleware = require("./middleware/authMiddleware");
 const adminMiddleware = require("./middleware/adminMiddleware");
 
 const orderRoutes = require("./routes/orderRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 const adminOrderRoutes = require("./routes/adminOrderRoutes");
 const whatsappRoutes = require("./routes/whatsappRoutes");
 const instagramRoutes =require("./routes/instagramRoutes");
@@ -68,6 +69,10 @@ app.get("/", (req, res) => {
 app.use(
     "/orders",
     orderRoutes
+);
+app.use(
+    "/cart",
+    cartRoutes
 );
 
 app.use(
