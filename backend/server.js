@@ -27,7 +27,7 @@ const adminMiddleware = require("./middleware/adminMiddleware");
 
 const orderRoutes = require("./routes/orderRoutes");
 const adminOrderRoutes = require("./routes/adminOrderRoutes");
-
+const whatsappRoutes = require("./routes/whatsappRoutes");
 const app = express();
 
 // ======================================================
@@ -36,7 +36,10 @@ const app = express();
 
 app.use(
     cors({
-        origin: "http://localhost:5173",
+        origin: [
+            "http://localhost:5173",
+            "http://localhost:5175",
+        ],
         credentials: true
     })
 );
@@ -65,6 +68,8 @@ app.use(
     "/orders",
     orderRoutes
 );
+
+app.use("/whatsapp", whatsappRoutes);
 
 // ======================================================
 // ADMIN ORDERS

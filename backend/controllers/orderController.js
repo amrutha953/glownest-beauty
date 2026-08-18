@@ -1,4 +1,41 @@
 const db = require("../config/db");
+const {
+    sendOrderConfirmation,
+} = require("../services/whatsappService");
+
+// =====================================================
+// GET CUSTOMER PHONE
+// =====================================================
+
+const getCustomerPhone = (customerId, callback) => {
+    const sql = `
+        SELECT phone
+        FROM customers
+        WHERE id = ?
+    `;
+
+    db.query(
+        sql,
+        [customerId],
+        (err, results) => {
+            if (err) {
+                return callback(err, null);
+            }
+
+            if (results.length === 0) {
+                return callback(
+                    new Error("Customer not found"),
+                    null
+                );
+            }
+
+            callback(
+                null,
+                results[0].phone
+            );
+        }
+    );
+};
 
 // =====================================================
 // CREATE ORDER
@@ -140,19 +177,62 @@ const createOrder = (req, res) => {
 
                         // All items inserted
                         if (
-                            completed === items.length &&
-                            !failed
-                        ) {
-                            console.log(
-                                "🎉 ALL ORDER ITEMS INSERTED"
-                            );
+    completed === items.length &&
+    !failed
+) {
+    console.log(
+        "🎉 ALL ORDER ITEMS INSERTED"
+    );
 
-                            return res.status(201).json({
-                                message:
-                                    "Order created successfully",
-                                orderId: orderId
-                            });
-                        }
+    getCustomerPhone(
+        customerId,
+        async (phoneError, phoneNumber) => {
+
+            if (phoneError) {
+                console.error(
+                    "⚠️ Could not get customer phone:",
+                    phoneError.message
+                );
+
+                return res.status(201).json({
+                    message:
+                        "Order created successfully",
+
+                    orderId: orderId,
+
+                    whatsapp: {
+                        success: false,
+                        message:
+                            "Customer phone number unavailable"
+                    }
+                });
+            }
+
+            const whatsappResult =
+                await sendOrderConfirmation({
+                    phoneNumber,
+                    orderId,
+                    totalAmount:
+                        Number(total_amount)
+                });
+
+            console.log(
+                "📱 WhatsApp confirmation result:",
+                whatsappResult
+            );
+
+            return res.status(201).json({
+                message:
+                    "Order created successfully",
+
+                orderId: orderId,
+
+                whatsapp:
+                    whatsappResult
+            });
+        }
+    );
+}
                     }
                 );
             });

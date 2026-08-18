@@ -3,6 +3,9 @@ const router = express.Router();
 
 const db = require("../config/db");
 const adminMiddleware = require("../middleware/adminMiddleware");
+const {
+    sendOrderStatusUpdate,
+} = require("../services/whatsappService");
 
 
 // =====================================================
@@ -184,7 +187,7 @@ router.get(
 
 
 // =====================================================
-// ADMIN - UPDATE ORDER STATUS
+// ADMIN - UPDATE ORDER STATUS + WHATSAPP
 // =====================================================
 
 router.put(
@@ -203,6 +206,9 @@ router.put(
             }
         );
 
+        // =================================================
+        // ALLOWED STATUSES
+        // =================================================
 
         const allowedStatuses = [
             "Pending",
@@ -212,6 +218,9 @@ router.put(
             "Cancelled"
         ];
 
+        // =================================================
+        // VALIDATE STATUS
+        // =================================================
 
         if (
             !status ||
@@ -225,13 +234,15 @@ router.put(
 
         }
 
+        // =================================================
+        // UPDATE ORDER
+        // =================================================
 
         const sql = `
             UPDATE orders
             SET status = ?
             WHERE id = ?
         `;
-
 
         db.query(
             sql,
@@ -257,15 +268,18 @@ router.put(
 
                 }
 
+                // =================================================
+                // ORDER NOT FOUND
+                // =================================================
 
                 if (result.affectedRows === 0) {
 
                     return res.status(404).json({
-                        message: "Order not found"
+                        message:
+                            "Order not found"
                     });
 
                 }
-
 
                 console.log(
                     "✅ Admin order status updated:",
@@ -273,25 +287,135 @@ router.put(
                     status
                 );
 
+                // =================================================
+                // GET CUSTOMER PHONE
+                // =================================================
 
-                return res.json({
+                const customerSql = `
+                    SELECT
+                        o.total_amount,
+                        c.phone
+                    FROM orders o
+                    LEFT JOIN customers c
+                        ON o.customer_id = c.id
+                    WHERE o.id = ?
+                `;
 
-                    message:
-                        "Order status updated successfully",
+                db.query(
+                    customerSql,
+                    [orderId],
+                    async (
+                        customerErr,
+                        customerResults
+                    ) => {
 
-                    orderId:
-                        Number(orderId),
+                        if (customerErr) {
 
-                    status:
-                        status
+                            console.error(
+                                "⚠️ Customer phone lookup error:",
+                                customerErr
+                            );
 
-                });
+                            return res.json({
+                                message:
+                                    "Order status updated successfully",
+
+                                orderId:
+                                    Number(orderId),
+
+                                status:
+
+                                    status,
+
+                                whatsapp: {
+                                    success: false,
+                                    message:
+                                        "Could not get customer phone"
+                                }
+                            });
+
+                        }
+
+                        // =================================================
+                        // CUSTOMER PHONE NOT FOUND
+                        // =================================================
+
+                        if (
+                            customerResults.length === 0 ||
+                            !customerResults[0].phone
+                        ) {
+
+                            console.log(
+                                "⚠️ Customer phone not available"
+                            );
+
+                            return res.json({
+                                message:
+                                    "Order status updated successfully",
+
+                                orderId:
+                                    Number(orderId),
+
+                                status:
+                                    status,
+
+                                whatsapp: {
+                                    success: false,
+                                    message:
+                                        "Customer phone number unavailable"
+                                }
+                            });
+
+                        }
+
+                        // =================================================
+                        // SEND WHATSAPP STATUS UPDATE
+                        // =================================================
+
+                        const whatsappResult =
+                            await sendOrderStatusUpdate({
+                                phoneNumber:
+                                    customerResults[0].phone,
+
+                                orderId:
+                                    Number(orderId),
+
+                                status:
+                                    status
+                            });
+
+                        console.log(
+                            "📱 WhatsApp status notification:",
+                            whatsappResult
+                        );
+
+                        // =================================================
+                        // FINAL RESPONSE
+                        // =================================================
+
+                        return res.json({
+
+                            message:
+                                "Order status updated successfully",
+
+                            orderId:
+                                Number(orderId),
+
+                            status:
+                                status,
+
+                            whatsapp:
+                                whatsappResult
+
+                        });
+
+                    }
+                );
 
             }
         );
 
     }
 );
-
 
 module.exports = router;
