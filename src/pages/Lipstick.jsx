@@ -5,7 +5,7 @@ import "../styles/Lipstick.css";
 const lipsticks = [
 
 {
-id:11001,
+id:12001,
 brand:"M.A.C",
 name:"Matte Lipstick",
 price:"₹1999",
@@ -13,7 +13,7 @@ image:"/images/products/mac-lipstick.jpg",
 },
 
 {
-id:11002,
+id:12002,
 brand:"Maybelline",
 name:"Super Stay Matte Ink",
 price:"₹699",
@@ -21,7 +21,7 @@ image:"/images/products/maybelline-lipstick.jpg",
 },
 
 {
-id:11003,
+id:12003,
 brand:"Lakme",
 name:"9to5 Primer + Matte",
 price:"₹499",
@@ -29,7 +29,7 @@ image:"/images/products/lakme-lipstick.jpg",
 },
 
 {
-id:11004,
+id:12004,
 brand:"Nykaa",
 name:"So Matte Lipstick",
 price:"₹399",
@@ -37,7 +37,7 @@ image:"/images/products/nykaa-lipstick.jpg",
 },
 
 {
-id:11005,
+id:12005,
 brand:"Swiss Beauty",
 name:"Non Transfer Lipstick",
 price:"₹349",
@@ -45,7 +45,7 @@ image:"/images/products/swiss-lipstick.jpg",
 },
 
 {
-id:11006,
+id:12006,
 brand:"L'Oréal",
 name:"Color Riche Lipstick",
 price:"₹899",

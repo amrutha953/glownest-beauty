@@ -9,7 +9,7 @@ id:11031,
 brand:"Maybelline",
 name:"Sky High Mascara",
 price:"₹799",
-image:"/images/products/maybelline-mascara.jpg",
+image:"/images/products/maybelline-sky-high.jpg",
 },
 
 {
@@ -17,7 +17,7 @@ id:11032,
 brand:"L'Oréal",
 name:"Lash Paradise Mascara",
 price:"₹899",
-image:"/images/products/loreal-mascara.jpg",
+image:"/images/products/loreal-lash-paradise.jpg",
 },
 
 {
@@ -25,7 +25,7 @@ id:11033,
 brand:"Lakme",
 name:"Eyeconic Curl Mascara",
 price:"₹499",
-image:"/images/products/lakme-mascara.jpg",
+image:"/images/products/lakme-eyeconic-mascara.jpg",
 },
 
 {
@@ -33,7 +33,7 @@ id:11034,
 brand:"Swiss Beauty",
 name:"Volume Mascara",
 price:"₹399",
-image:"/images/products/swiss-mascara.jpg",
+image:"/images/products/swiss-beauty-mascara.jpg",
 },
 
 {
@@ -41,7 +41,7 @@ id:11035,
 brand:"M.A.C",
 name:"Magic Extension Mascara",
 price:"₹2299",
-image:"/images/products/mac-mascara.jpg",
+image:"/images/products/mac-magic-extension.jpg",
 },
 
 {
@@ -49,7 +49,7 @@ id:11036,
 brand:"Faces Canada",
 name:"Magneteyes Mascara",
 price:"₹599",
-image:"/images/products/faces-mascara.jpg",
+image:"/images/products/faces-magneteyes.jpg",
 },
 
 ];

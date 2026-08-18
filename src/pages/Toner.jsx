@@ -5,7 +5,7 @@ import "../styles/Toner.css";
 const toners = [
 
 {
-id:1001,
+id:11001,
 brand:"Minimalist",
 name:"PHA 3% Toner",
 price:"₹499",
@@ -13,7 +13,7 @@ image:"/images/products/minimalist-toner.jpg",
 },
 
 {
-id:1002,
+id:11002,
 brand:"Plum",
 name:"Green Tea Alcohol-Free Toner",
 price:"₹399",
@@ -21,7 +21,7 @@ image:"/images/products/plum-toner.jpg",
 },
 
 {
-id:1003,
+id:11003,
 brand:"Dot & Key",
 name:"Cica Calming Toner",
 price:"₹545",
@@ -29,7 +29,7 @@ image:"/images/products/dotkey-toner.jpg",
 },
 
 {
-id:1004,
+id:11004,
 brand:"Simple",
 name:"Kind To Skin Soothing Toner",
 price:"₹425",
@@ -37,7 +37,7 @@ image:"/images/products/simple-toner.jpg",
 },
 
 {
-id:1005,
+id:11005,
 brand:"L'Oréal Paris",
 name:"Revitalift Crystal Toner",
 price:"₹699",
@@ -45,7 +45,7 @@ image:"/images/products/loreal-toner.jpg",
 },
 
 {
-id:1006,
+id:11006,
 brand:"COSRX",
 name:"AHA/BHA Clarifying Toner",
 price:"₹999",

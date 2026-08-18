@@ -1135,10 +1135,10 @@ name:"Fit Me Foundation",
 
 price:699,
 
-image:"/images/products/fitme-foundation.jpg",
+image:"/images/products/maybelline-fit-me-foundation.jpg",
 
 images:[
-"/images/products/fitme-foundation.jpg"
+"/images/products/maybelline-fit-me-foundation.jpg"
 ],
 
 description:
@@ -1157,10 +1157,10 @@ name:"Infallible Foundation",
 
 price:899,
 
-image:"/images/products/loreal-foundation.jpg",
+image:"/images/products/loreal-infallible-foundation.jpg",
 
 images:[
-"/images/products/loreal-foundation.jpg"
+"/images/products/loreal-infallible-foundation.jpg"
 ],
 
 description:
@@ -1179,10 +1179,10 @@ name:"9to5 Foundation",
 
 price:599,
 
-image:"/images/products/lakme-foundation.jpg",
+image:"/images/products/lakme-9to5-foundation.jpg",
 
 images:[
-"/images/products/lakme-foundation.jpg"
+"/images/products/lakme-9to5-foundation.jpg"
 ],
 
 description:
@@ -1201,10 +1201,10 @@ name:"HD Foundation",
 
 price:499,
 
-image:"/images/products/swiss-foundation.jpg",
+image:"/images/products/swiss-beauty-hd-foundation.jpg",
 
 images:[
-"/images/products/swiss-foundation.jpg"
+"/images/products/swiss-beauty-hd-foundation.jpg"
 ],
 
 description:
@@ -1223,10 +1223,10 @@ name:"Studio Fix Fluid",
 
 price:2999,
 
-image:"/images/products/mac-foundation.jpg",
+image:"/images/products/mac-studio-fix.jpg",
 
 images:[
-"/images/products/mac-foundation.jpg"
+"/images/products/mac-studio-fix.jpg"
 ],
 
 description:
@@ -1245,10 +1245,10 @@ name:"Hydrating Foundation",
 
 price:1200,
 
-image:"/images/products/kay-foundation.jpg",
+image:"/images/products/kay-beauty-foundation.jpg",
 
 images:[
-"/images/products/kay-foundation.jpg"
+"/images/products/kay-beauty-foundation.jpg"
 ],
 
 description:
@@ -1269,10 +1269,10 @@ name:"Sky High Mascara",
 
 price:799,
 
-image:"/images/products/maybelline-mascara.jpg",
+image:"/images/products/maybelline-sky-high.jpg",
 
 images:[
-"/images/products/maybelline-mascara.jpg"
+"/images/products/maybelline-sky-high.jpg"
 ],
 
 description:
@@ -1290,10 +1290,10 @@ name:"Lash Paradise Mascara",
 
 price:899,
 
-image:"/images/products/loreal-mascara.jpg",
+image:"/images/products/loreal-lash-paradise.jpg",
 
 images:[
-"/images/products/loreal-mascara.jpg"
+"/images/products/loreal-lash-paradise.jpg"
 ],
 
 description:
@@ -1311,10 +1311,10 @@ name:"Eyeconic Curl Mascara",
 
 price:499,
 
-image:"/images/products/lakme-mascara.jpg",
+image:"/images/products/lakme-eyeconic-mascara.jpg",
 
 images:[
-"/images/products/lakme-mascara.jpg"
+"/images/products/lakme-eyeconic-mascara.jpg"
 ],
 
 description:
@@ -1332,10 +1332,10 @@ name:"Volume Mascara",
 
 price:399,
 
-image:"/images/products/swiss-mascara.jpg",
+image:"/images/products/swiss-beauty-mascara.jpg",
 
 images:[
-"/images/products/swiss-mascara.jpg"
+"/images/products/swiss-beauty-mascara.jpg"
 ],
 
 description:
@@ -1353,10 +1353,10 @@ name:"Magic Extension Mascara",
 
 price:2299,
 
-image:"/images/products/mac-mascara.jpg",
+image:"/images/products/mac-magic-extension.jpg",
 
 images:[
-"/images/products/mac-mascara.jpg"
+"/images/products/mac-magic-extension.jpg"
 ],
 
 description:
@@ -1374,10 +1374,10 @@ name:"Magneteyes Mascara",
 
 price:599,
 
-image:"/images/products/faces-mascara.jpg",
+image:"/images/products/faces-magneteyes.jpg",
 
 images:[
-"/images/products/faces-mascara.jpg"
+"/images/products/faces-magneteyes.jpg"
 ],
 
 description:
@@ -1687,7 +1687,7 @@ description:
 // ================= SHAMPOO PRODUCTS =================
 
 {
-  id: 12001,
+  id: 121001,
 
   brand: "L'Oréal Paris",
 
@@ -1706,7 +1706,7 @@ description:
 },
 
 {
-  id: 12002,
+  id: 121002,
 
   brand: "Dove",
 
@@ -1725,7 +1725,7 @@ description:
 },
 
 {
-  id: 12003,
+  id: 121003,
 
   brand: "Tresemmé",
 
@@ -1744,7 +1744,7 @@ description:
 },
 
 {
-  id: 12004,
+  id: 121004,
 
   brand: "Mamaearth",
 

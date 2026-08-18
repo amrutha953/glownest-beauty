@@ -4,7 +4,7 @@ import "../styles/Shampoo.css";
 
 const products = [
   {
-    id: 12001,
+    id: 121001,
     brand: "L'Oréal Paris",
     name: "Total Repair 5 Shampoo",
     price: "₹499",
@@ -12,7 +12,7 @@ const products = [
   },
 
   {
-    id: 12002,
+    id: 121002,
     brand: "Dove",
     name: "Daily Shine Shampoo",
     price: "₹399",
@@ -20,7 +20,7 @@ const products = [
   },
 
   {
-    id: 12003,
+    id: 121003,
     brand: "Tresemmé",
     name: "Keratin Smooth Shampoo",
     price: "₹699",
@@ -28,7 +28,7 @@ const products = [
   },
 
   {
-    id: 12004,
+    id: 121004,
     brand: "Mamaearth",
     name: "Onion Shampoo",
     price: "₹549",

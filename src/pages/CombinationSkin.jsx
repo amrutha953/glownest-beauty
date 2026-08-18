@@ -527,7 +527,7 @@ Balanced, hydrated and healthy glowing skin.
 <div className="essential-card">
 
 <img
-src="/images/essentials/gentle-cleanser .jpg"
+src="/images/essentials/gentle-cleanser.jpg"
 alt="Cleanser"
 />
 
@@ -545,7 +545,7 @@ addToCart({
 id:601,
 name:"Gentle Cleanser",
 price:499,
-image:"/images/essentials/gentle-cleanser .jpg"
+image:"/images/essentials/gentle-cleanser.jpg"
 })
 }
 >
