@@ -28,6 +28,7 @@ const adminMiddleware = require("./middleware/adminMiddleware");
 const orderRoutes = require("./routes/orderRoutes");
 const adminOrderRoutes = require("./routes/adminOrderRoutes");
 const whatsappRoutes = require("./routes/whatsappRoutes");
+const instagramRoutes =require("./routes/instagramRoutes");
 const app = express();
 
 // ======================================================
@@ -69,7 +70,15 @@ app.use(
     orderRoutes
 );
 
-app.use("/whatsapp", whatsappRoutes);
+app.use(
+    "/whatsapp", 
+    whatsappRoutes
+);
+
+app.use(
+    "/instagram",
+    instagramRoutes
+);
 
 // ======================================================
 // ADMIN ORDERS

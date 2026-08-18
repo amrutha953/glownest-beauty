@@ -2,6 +2,9 @@ const db = require("../config/db");
 const {
     sendOrderConfirmation,
 } = require("../services/whatsappService");
+const {
+    sendInstagramOrderConfirmation,
+} = require("../services/instagramService");
 
 // =====================================================
 // GET CUSTOMER PHONE
@@ -198,15 +201,26 @@ const createOrder = (req, res) => {
                     message:
                         "Order created successfully",
 
-                    orderId: orderId,
+                    orderId:
+                        orderId,
 
                     whatsapp: {
                         success: false,
                         message:
                             "Customer phone number unavailable"
+                    },
+
+                    instagram: {
+                        success: false,
+                        message:
+                            "Instagram notification not sent"
                     }
                 });
             }
+
+            // =================================================
+            // WHATSAPP MOCK NOTIFICATION
+            // =================================================
 
             const whatsappResult =
                 await sendOrderConfirmation({
@@ -221,14 +235,44 @@ const createOrder = (req, res) => {
                 whatsappResult
             );
 
+
+            // =================================================
+            // INSTAGRAM MOCK NOTIFICATION
+            // =================================================
+
+            const instagramResult =
+                await sendInstagramOrderConfirmation({
+                    username:
+                        `glownest_customer_${customerId}`,
+
+                    orderId,
+
+                    totalAmount:
+                        Number(total_amount)
+                });
+
+            console.log(
+                "📸 Instagram confirmation result:",
+                instagramResult
+            );
+
+
+            // =================================================
+            // FINAL RESPONSE
+            // =================================================
+
             return res.status(201).json({
                 message:
                     "Order created successfully",
 
-                orderId: orderId,
+                orderId:
+                    orderId,
 
                 whatsapp:
-                    whatsappResult
+                    whatsappResult,
+
+                instagram:
+                    instagramResult
             });
         }
     );

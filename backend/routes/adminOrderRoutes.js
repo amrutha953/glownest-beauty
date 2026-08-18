@@ -6,6 +6,9 @@ const adminMiddleware = require("../middleware/adminMiddleware");
 const {
     sendOrderStatusUpdate,
 } = require("../services/whatsappService");
+const {
+    sendInstagramOrderStatusUpdate,
+} = require("../services/instagramService");
 
 
 // =====================================================
@@ -292,14 +295,15 @@ router.put(
                 // =================================================
 
                 const customerSql = `
-                    SELECT
-                        o.total_amount,
-                        c.phone
-                    FROM orders o
-                    LEFT JOIN customers c
-                        ON o.customer_id = c.id
-                    WHERE o.id = ?
-                `;
+    SELECT
+        o.customer_id,
+        o.total_amount,
+        c.phone
+    FROM orders o
+    LEFT JOIN customers c
+        ON o.customer_id = c.id
+    WHERE o.id = ?
+`;
 
                 db.query(
                     customerSql,
@@ -369,45 +373,71 @@ router.put(
                         }
 
                         // =================================================
-                        // SEND WHATSAPP STATUS UPDATE
-                        // =================================================
+// SEND WHATSAPP STATUS UPDATE
+// =================================================
 
-                        const whatsappResult =
-                            await sendOrderStatusUpdate({
-                                phoneNumber:
-                                    customerResults[0].phone,
+const whatsappResult =
+    await sendOrderStatusUpdate({
+        phoneNumber:
+            customerResults[0].phone,
 
-                                orderId:
-                                    Number(orderId),
+        orderId:
+            Number(orderId),
 
-                                status:
-                                    status
-                            });
+        status:
+            status
+    });
 
-                        console.log(
-                            "📱 WhatsApp status notification:",
-                            whatsappResult
-                        );
+console.log(
+    "📱 WhatsApp status notification:",
+    whatsappResult
+);
 
-                        // =================================================
-                        // FINAL RESPONSE
-                        // =================================================
 
-                        return res.json({
+// =================================================
+// SEND INSTAGRAM STATUS UPDATE
+// =================================================
 
-                            message:
-                                "Order status updated successfully",
+const instagramResult =
+    await sendInstagramOrderStatusUpdate({
+        username:
+            `glownest_customer_${customerResults[0].customer_id}`,
 
-                            orderId:
-                                Number(orderId),
+        orderId:
+            Number(orderId),
 
-                            status:
-                                status,
+        status:
+            status
+    });
 
-                            whatsapp:
-                                whatsappResult
+console.log(
+    "📸 Instagram status notification:",
+    instagramResult
+);
 
-                        });
+
+// =================================================
+// FINAL RESPONSE
+// =================================================
+
+return res.json({
+
+    message:
+        "Order status updated successfully",
+
+    orderId:
+        Number(orderId),
+
+    status:
+        status,
+
+    whatsapp:
+        whatsappResult,
+
+    instagram:
+        instagramResult
+
+});
 
                     }
                 );
