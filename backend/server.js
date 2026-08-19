@@ -639,6 +639,208 @@ app.post(
 );
 
 // ======================================================
+// RESEND VERIFICATION EMAIL
+// ======================================================
+
+app.post(
+    "/customers/resend-verification",
+    (req, res) => {
+
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({
+                message: "Email is required"
+            });
+        }
+
+        const sql = `
+            SELECT
+                id,
+                name,
+                email,
+                email_verified
+            FROM customers
+            WHERE email = ?
+        `;
+
+        db.query(
+            sql,
+            [email],
+            (err, results) => {
+
+                if (err) {
+                    console.error(
+                        "❌ Resend verification database error:",
+                        err
+                    );
+
+                    return res.status(500).json({
+                        message: "Database error"
+                    });
+                }
+
+                if (results.length === 0) {
+                    return res.status(404).json({
+                        message: "Email not registered"
+                    });
+                }
+
+                const customer = results[0];
+
+                if (Number(customer.email_verified) === 1) {
+                    return res.status(400).json({
+                        message: "Email is already verified"
+                    });
+                }
+
+                const verificationToken =
+                    crypto.randomBytes(32).toString("hex");
+
+                const verificationExpires =
+                    new Date(
+                        Date.now() + 24 * 60 * 60 * 1000
+                    );
+
+                const updateSql = `
+                    UPDATE customers
+                    SET
+                        verification_token = ?,
+                        verification_expires = ?
+                    WHERE id = ?
+                `;
+
+                db.query(
+                    updateSql,
+                    [
+                        verificationToken,
+                        verificationExpires,
+                        customer.id
+                    ],
+                    async (updateErr) => {
+
+                        if (updateErr) {
+                            console.error(
+                                "❌ Verification token update error:",
+                                updateErr
+                            );
+
+                            return res.status(500).json({
+                                message:
+                                    "Failed to create verification token"
+                            });
+                        }
+
+                        const verificationLink =
+                            `${process.env.BACKEND_URL}/customers/verify-email/${verificationToken}`;
+
+                        try {
+
+                            await transporter.sendMail({
+
+                                from:
+                                    `"GlowNest Beauty" <${process.env.EMAIL_USER}>`,
+
+                                to:
+                                    customer.email,
+
+                                subject:
+                                    "Verify your GlowNest Beauty account 💗",
+
+                                html: `
+                                    <div style="
+                                        font-family: Arial, sans-serif;
+                                        max-width: 600px;
+                                        margin: auto;
+                                        padding: 30px;
+                                        border: 1px solid #eee;
+                                        border-radius: 10px;
+                                    ">
+
+                                        <h2 style="
+                                            color: #e91e63;
+                                            text-align: center;
+                                        ">
+                                            GlowNest Beauty 💗
+                                        </h2>
+
+                                        <p>
+                                            Hi
+                                            <strong>${customer.name}</strong>,
+                                        </p>
+
+                                        <p>
+                                            Please click the button below
+                                            to verify your email address.
+                                        </p>
+
+                                        <div style="
+                                            text-align: center;
+                                            margin: 30px 0;
+                                        ">
+
+                                            <a
+                                                href="${verificationLink}"
+                                                style="
+                                                    background:#e91e63;
+                                                    color:white;
+                                                    padding:12px 25px;
+                                                    text-decoration:none;
+                                                    border-radius:6px;
+                                                    font-weight:bold;
+                                                "
+                                            >
+                                                Verify My Email
+                                            </a>
+
+                                        </div>
+
+                                        <p>
+                                            This link expires in 24 hours.
+                                        </p>
+
+                                        <p>
+                                            Regards,<br>
+                                            <strong>
+                                                GlowNest Beauty Team
+                                            </strong>
+                                        </p>
+
+                                    </div>
+                                `
+                            });
+
+                            console.log(
+                                `✅ Verification email resent to ${customer.email}`
+                            );
+
+                            return res.json({
+                                message:
+                                    "Verification email sent successfully"
+                            });
+
+                        } catch (emailError) {
+
+                            console.error(
+                                "❌ Resend verification email error:",
+                                emailError
+                            );
+
+                            return res.status(500).json({
+                                message:
+                                    "Failed to send verification email",
+                                error:
+                                    emailError.message
+                            });
+                        }
+                    }
+                );
+            }
+        );
+    }
+);
+
+// ======================================================
 // VERIFY CUSTOMER EMAIL
 // ======================================================
 
