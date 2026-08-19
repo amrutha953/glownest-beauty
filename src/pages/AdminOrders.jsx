@@ -26,7 +26,7 @@ const AdminOrders = () => {
             }
 
             const response = await fetch(
-                "http://localhost:5000/admin/orders",
+                "https://glownest-beauty-production.up.railway.app/admin/orders",
                 {
                     method: "GET",
                     headers: {
@@ -88,7 +88,7 @@ const AdminOrders = () => {
             setUpdatingOrderId(orderId);
 
             const response = await fetch(
-                `http://localhost:5000/admin/orders/${orderId}/status`,
+                `https://glownest-beauty-production.up.railway.app/admin/orders/${orderId}/status`,
                 {
                     method: "PUT",
                     headers: {

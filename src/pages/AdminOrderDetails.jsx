@@ -26,7 +26,7 @@ const AdminOrderDetails = () => {
             }
 
             const response = await fetch(
-                `http://localhost:5000/admin/orders/${id}`,
+                `https://glownest-beauty-production.up.railway.app/admin/orders/${id}`,
                 {
                     method: "GET",
                     headers: {

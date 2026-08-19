@@ -14,7 +14,7 @@ function Login() {
 
   try {
     const response = await fetch(
-      "http://localhost:5000/customers/login",
+      "https://glownest-beauty-production.up.railway.app/customers/login",
       {
         method: "POST",
         headers: {

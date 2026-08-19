@@ -44,7 +44,7 @@ function Profile() {
                 }
 
                 const response = await fetch(
-                    "http://localhost:5000/customers/profile",
+                    "https://glownest-beauty-production.up.railway.app/customers/profile",
                     {
                         method: "GET",
                         headers: {
@@ -154,7 +154,7 @@ function Profile() {
             }
 
             const response = await fetch(
-                "http://localhost:5000/customers/profile",
+                "https://glownest-beauty-production.up.railway.app/customers/profile",
                 {
                     method: "PUT",
                     headers: {

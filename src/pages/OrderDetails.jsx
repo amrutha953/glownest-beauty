@@ -40,7 +40,7 @@ export default function OrderDetails() {
     useEffect(() => {
         const token = localStorage.getItem("token");
 
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://glownest-beauty-production.up.railway.app/orders/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

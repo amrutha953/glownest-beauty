@@ -22,7 +22,7 @@ function ForgotPassword() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/customers/forgot-password",
+        "https://glownest-beauty-production.up.railway.app/customers/forgot-password",
         {
           method: "POST",
           headers: {

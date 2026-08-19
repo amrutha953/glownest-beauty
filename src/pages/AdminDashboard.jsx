@@ -36,7 +36,7 @@ const AdminDashboard = () => {
                 }
 
                 const response = await fetch(
-                    "http://localhost:5000/admin/dashboard/stats",
+                    "https://glownest-beauty-production.up.railway.app/admin/dashboard/stats",
                     {
                         method: "GET",
                         headers: {

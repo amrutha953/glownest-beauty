@@ -26,7 +26,7 @@ const AdminCustomers = () => {
             }
 
             const response = await fetch(
-                "http://localhost:5000/admin/customers",
+                "https://glownest-beauty-production.up.railway.app/admin/customers",
                 {
                     method: "GET",
 
@@ -117,7 +117,7 @@ const AdminCustomers = () => {
                 localStorage.getItem("adminToken");
 
             const response = await fetch(
-                `http://localhost:5000/admin/customers/${id}`,
+                `https://glownest-beauty-production.up.railway.app/admin/customers/${id}`,
                 {
                     method: "DELETE",
 

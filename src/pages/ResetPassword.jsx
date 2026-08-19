@@ -36,7 +36,7 @@ const ResetPassword = () => {
             setLoading(true);
 
             const response = await fetch(
-                `http://localhost:5000/customers/reset-password/${token}`,
+                `https://glownest-beauty-production.up.railway.app/customers/reset-password/${token}`,
                 {
                     method: "POST",
                     headers: {

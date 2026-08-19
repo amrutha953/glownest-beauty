@@ -38,10 +38,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: [
-            "http://localhost:5173",
-            "http://localhost:5175",
-        ],
+        origin: true,
         credentials: true
     })
 );
@@ -519,7 +516,7 @@ app.post(
                                     result.insertId;
 
                                 const verificationLink =
-                                    `http://localhost:5000/customers/verify-email/${verificationToken}`;
+                                    `${process.env.BACKEND_URL}/customers/verify-email/${verificationToken}`;
 
                                 try {
 
@@ -2144,7 +2141,7 @@ app.post(
                         }
 
                         const resetLink =
-                            `http://localhost:5173/reset-password/${resetToken}`;
+                            `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
 
                         try {
 
@@ -2667,11 +2664,10 @@ const PORT =
 
 app.listen(
     PORT,
+    "0.0.0.0",
     () => {
-
         console.log(
             `🚀 Server is running on port ${PORT}`
         );
-
     }
 );

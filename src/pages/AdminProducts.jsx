@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://glownest-beauty-production.up.railway.app";
 
 function AdminProducts() {
     const navigate = useNavigate();

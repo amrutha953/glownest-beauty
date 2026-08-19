@@ -7,7 +7,7 @@ export default function MyOrders() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:5000/orders", {
+        fetch("https://glownest-beauty-production.up.railway.app/orders", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },

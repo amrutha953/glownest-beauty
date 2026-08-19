@@ -18,7 +18,7 @@ function Register() {
 
   try {
     const response = await fetch(
-      "http://localhost:5000/customers/register",
+      "https://glownest-beauty-production.up.railway.app/customers/register",
       {
         method: "POST",
         headers: {
