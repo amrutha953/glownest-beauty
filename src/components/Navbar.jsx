@@ -6,6 +6,10 @@ import {
   FiHeart,
   FiShoppingCart,
   FiPackage,
+  FiMenu,
+  FiX,
+  FiChevronDown,
+  FiChevronRight,
 } from "react-icons/fi";
 
 import "./Navbar.css";
@@ -494,6 +498,29 @@ export default function Navbar() {
   const [accountOpen, setAccountOpen] =
     useState(false);
 
+  const [mobileMenuOpen, setMobileMenuOpen] =
+    useState(false);
+
+  const [mobileExpandedSection, setMobileExpandedSection] =
+    useState(null);
+
+  const [mobileExpandedCategory, setMobileExpandedCategory] =
+    useState(null);
+
+  const toggleMobileSection = (sec) => {
+    setMobileExpandedSection((prev) => (prev === sec ? null : sec));
+  };
+
+  const toggleMobileCategory = (cat) => {
+    setMobileExpandedCategory((prev) => (prev === cat ? null : cat));
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setMobileExpandedSection(null);
+    setMobileExpandedCategory(null);
+  };
+
 
   // ===================================================
   // LOGOUT
@@ -576,7 +603,15 @@ export default function Navbar() {
 
         <div className="nav-left">
 
-          <Link to="/">
+          <button
+            className="mobile-menu-toggle"
+            aria-label="Toggle navigation menu"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <FiX /> : <FiMenu />}
+          </button>
+
+          <Link to="/" onClick={closeMobileMenu}>
 
             <img
               src="/images/logo.png"
@@ -1066,6 +1101,239 @@ export default function Navbar() {
         </div>
 
       </nav>
+
+      {/* =================================================
+          MOBILE NAVIGATION DRAWER & BACKDROP
+      ================================================= */}
+      <div
+        className={`mobile-backdrop ${mobileMenuOpen ? "active" : ""}`}
+        onClick={closeMobileMenu}
+      />
+
+      <aside
+        className={`mobile-nav-drawer ${mobileMenuOpen ? "open" : ""}`}
+        aria-label="Mobile Navigation"
+      >
+        <div className="mobile-drawer-header">
+          <Link to="/" onClick={closeMobileMenu}>
+            <img
+              src="/images/logo.png"
+              alt="GlowNest Beauty"
+              className="mobile-drawer-logo"
+            />
+          </Link>
+          <button
+            className="mobile-drawer-close"
+            onClick={closeMobileMenu}
+            aria-label="Close menu"
+          >
+            <FiX />
+          </button>
+        </div>
+
+        {/* Quick Search */}
+        <div className="mobile-search-box">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const q = e.target.search.value.trim();
+              closeMobileMenu();
+              if (q) {
+                navigate(`/search?q=${encodeURIComponent(q)}`);
+              } else {
+                navigate("/search");
+              }
+            }}
+          >
+            <FiSearch className="mobile-search-icon" />
+            <input
+              type="text"
+              name="search"
+              placeholder="Search skincare, makeup..."
+            />
+          </form>
+        </div>
+
+        {/* Drawer content */}
+        <div className="mobile-drawer-content">
+          <div className="mobile-nav-group">
+            {/* SHOP */}
+            <div className="mobile-nav-item">
+              <div
+                className="mobile-nav-header-row"
+                onClick={() => toggleMobileSection("shop")}
+              >
+                <span>🛍️ Shop by Category</span>
+                <span className="mobile-arrow">
+                  {mobileExpandedSection === "shop" ? (
+                    <FiChevronDown />
+                  ) : (
+                    <FiChevronRight />
+                  )}
+                </span>
+              </div>
+              {mobileExpandedSection === "shop" && (
+                <div className="mobile-sub-accordion">
+                  {Object.keys(shopData).map((cat) => (
+                    <div key={cat} className="mobile-category-block">
+                      <div
+                        className="mobile-category-row"
+                        onClick={() => toggleMobileCategory(cat)}
+                      >
+                        <span className="mobile-cat-name">{cat}</span>
+                        <span className="mobile-sub-arrow">
+                          {mobileExpandedCategory === cat ? (
+                            <FiChevronDown />
+                          ) : (
+                            <FiChevronRight />
+                          )}
+                        </span>
+                      </div>
+                      {mobileExpandedCategory === cat && (
+                        <div
+                          className="mobile-links-grid"
+                          onClick={closeMobileMenu}
+                        >
+                          <CategoryLinks category={cat} />
+                          <Link
+                            to={shopData[cat].path}
+                            className="mobile-shop-all-btn"
+                          >
+                            View All {cat} →
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* OFFERS */}
+            <div className="mobile-nav-item">
+              <div
+                className="mobile-nav-header-row"
+                onClick={() => toggleMobileSection("offers")}
+              >
+                <span>🏷️ Offers & Deals</span>
+                <span className="mobile-arrow">
+                  {mobileExpandedSection === "offers" ? (
+                    <FiChevronDown />
+                  ) : (
+                    <FiChevronRight />
+                  )}
+                </span>
+              </div>
+              {mobileExpandedSection === "offers" && (
+                <div className="mobile-sub-links" onClick={closeMobileMenu}>
+                  {offersMenu.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className="mobile-sub-link"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* ABOUT */}
+            <div className="mobile-nav-item">
+              <div
+                className="mobile-nav-header-row"
+                onClick={() => toggleMobileSection("about")}
+              >
+                <span>✨ About Us</span>
+                <span className="mobile-arrow">
+                  {mobileExpandedSection === "about" ? (
+                    <FiChevronDown />
+                  ) : (
+                    <FiChevronRight />
+                  )}
+                </span>
+              </div>
+              {mobileExpandedSection === "about" && (
+                <div className="mobile-sub-links" onClick={closeMobileMenu}>
+                  <Link to="/about" className="mobile-sub-link">
+                    About GlowNest
+                  </Link>
+                  {aboutMenu.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className="mobile-sub-link"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* CONTACT */}
+            <div className="mobile-nav-item">
+              <div
+                className="mobile-nav-header-row"
+                onClick={() => toggleMobileSection("contact")}
+              >
+                <span>💬 Help & Support</span>
+                <span className="mobile-arrow">
+                  {mobileExpandedSection === "contact" ? (
+                    <FiChevronDown />
+                  ) : (
+                    <FiChevronRight />
+                  )}
+                </span>
+              </div>
+              {mobileExpandedSection === "contact" && (
+                <div className="mobile-sub-links" onClick={closeMobileMenu}>
+                  {contactMenu.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className="mobile-sub-link"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Quick shortcuts at bottom of mobile drawer */}
+          <div className="mobile-drawer-footer" onClick={closeMobileMenu}>
+            <Link to="/profile" className="mobile-footer-item">
+              <FiUser /> <span>My Profile</span>
+            </Link>
+            <Link to="/orders" className="mobile-footer-item">
+              <FiPackage /> <span>My Orders</span>
+            </Link>
+            <Link to="/wishlist" className="mobile-footer-item">
+              <FiHeart /> <span>Wishlist ({wishlistItems.length})</span>
+            </Link>
+            <Link to="/cart" className="mobile-footer-item">
+              <FiShoppingCart /> <span>Cart ({cartItems.length})</span>
+            </Link>
+            <div className="mobile-auth-row">
+              {localStorage.getItem("token") ? (
+                <button
+                  onClick={handleLogout}
+                  className="mobile-logout-btn"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link to="/login" className="mobile-login-btn">
+                  Login / Sign Up
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+      </aside>
 
     </>
   );

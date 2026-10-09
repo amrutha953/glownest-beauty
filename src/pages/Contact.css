@@ -258,16 +258,58 @@ border:none;
 
 @media(max-width:900px){
 
-.contact-container{
-grid-template-columns:1fr;
+  .contact-container{
+    grid-template-columns:1fr;
+    margin:40px auto;
+    padding:0 20px;
+  }
+
+  .contact-hero{
+    height:300px;
+  }
+
+  .contact-overlay h1{
+    font-size:32px;
+  }
+
+  .contact-form-section,
+  .business-hours,
+  .contact-faq{
+    margin:40px auto;
+    padding:0 20px;
+  }
+
+  .map-section{
+    padding:40px 20px;
+  }
+
+  .map-box{
+    height:320px;
+  }
+
+  .contact-form button{
+    width:100%;
+  }
+
 }
 
-.contact-overlay h1{
-font-size:34px;
-}
+@media(max-width:480px){
+  .contact-hero{
+    height:250px;
+  }
 
-.contact-form button{
-width:100%;
-}
+  .contact-overlay h1{
+    font-size:26px;
+  }
 
-}
+  .contact-card,
+  .hours-card,
+  .faq-item{
+    padding:20px 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea{
+    padding:13px 15px;
+  }
+}

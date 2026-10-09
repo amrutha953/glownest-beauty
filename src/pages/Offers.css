@@ -78,3 +78,26 @@
 .offer-card button:hover{
     background:#c2185b;
 }
+
+@media (max-width: 600px) {
+  .offers-page {
+    padding: 24px 14px;
+  }
+
+  .offers-hero h1 {
+    font-size: 28px;
+  }
+
+  .offers-hero p {
+    font-size: 15px;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .offer-card {
+    padding: 20px 16px;
+  }
+}

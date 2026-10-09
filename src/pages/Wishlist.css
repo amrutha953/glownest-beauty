@@ -49,3 +49,38 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .wishlist-page {
+    padding: 24px 14px;
+  }
+
+  .wishlist-page h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .wishlist-products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .wishlist-card {
+    padding: 10px;
+  }
+
+  .wishlist-card img {
+    height: 150px;
+  }
+
+  .wishlist-card h3 {
+    font-size: 14px;
+    margin: 8px 0 4px;
+  }
+
+  .wishlist-card button {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}

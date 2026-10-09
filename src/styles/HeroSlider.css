@@ -364,17 +364,6 @@
 
   .prev,
   .next {
-    width: 36px;
-    height: 36px;
-
-    font-size: 18px;
-  }
-
-  .prev {
-    left: 8px;
-  }
-
-  .next {
-    right: 8px;
+    display: none;
   }
 }

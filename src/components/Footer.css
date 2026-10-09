@@ -279,42 +279,91 @@
   .footer {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 50px 30px;
+    padding: 45px 20px;
+    gap: 30px;
   }
-
 
   .footer-brand {
     align-items: center;
   }
 
-
   .social-icons {
     justify-content: center;
   }
 
-
-  .footer-features {
-    grid-template-columns: 1fr;
-    padding: 30px 20px;
-    gap: 15px;
+  .footer-column {
+    align-items: center;
   }
 
+  .download-app {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .app-text {
+    margin: 0 auto 20px;
+  }
+
+  .store-badges {
+    align-items: center;
+  }
+
+  .app-icons {
+    justify-content: center;
+  }
+
+  .footer-features {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 25px 16px;
+    gap: 12px;
+  }
+
+  .feature-card {
+    padding: 16px 12px;
+  }
+
+  .feature-card h4 {
+    font-size: 15px;
+  }
+
+  .feature-card p {
+    font-size: 13px;
+  }
+
+  .newsletter {
+    padding: 45px 16px;
+  }
+
+  .newsletter h2 {
+    font-size: 26px;
+  }
+
+  .newsletter p {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
 
   .newsletter-box {
     flex-direction: column;
+    gap: 12px;
   }
-
 
   .newsletter-box input {
     width: 100%;
+    max-width: 100%;
+    padding: 13px 18px;
   }
 
+  .newsletter-box button {
+    width: 100%;
+    max-width: 260px;
+    padding: 13px 25px;
+  }
 
   .footer-links {
     flex-direction: column;
     gap: 12px;
   }
-
 
   .payment-icons {
     justify-content: center;
@@ -322,6 +371,27 @@
   }
 
 }
+
+@media (max-width: 480px) {
+  .footer-features {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .footer-logo {
+    width: 150px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+  }
+
+  .footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+}
+
 /* ==========================================
    DOWNLOAD APP IMPROVEMENT
 ========================================== */

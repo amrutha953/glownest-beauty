@@ -62,11 +62,29 @@
 @media(max-width:768px){
 
 .faq-overlay h1{
-    font-size:34px;
+    font-size:32px;
 }
 
 .faq-container{
-    padding:50px 20px;
+    padding:40px 18px;
 }
 
 }
+
+@media(max-width:480px){
+.faq-hero{
+    height:220px;
+}
+
+.faq-overlay h1{
+    font-size:26px;
+}
+
+.faq-container{
+    padding:30px 14px;
+}
+
+.faq-card{
+    padding:18px 14px;
+}
+}

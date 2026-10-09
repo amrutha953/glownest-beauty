@@ -1186,11 +1186,76 @@
 
 
 .product-card .wishlist-btn:hover{
-
     background:#f5f5f5;
-
     color:#e91e63;
-
     transform:scale(1.1);
-
 }
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1024px) {
+  .dry-skin-page {
+    padding: 45px 5%;
+  }
+
+  .dry-hero,
+  .about-dry-skin {
+    gap: 35px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dry-hero,
+  .about-dry-skin {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    margin: 40px 0;
+  }
+
+  .dry-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+
+  .dry-hero-image img,
+  .about-image img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .dry-skin-page {
+    padding: 30px 14px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .info-card {
+    padding: 20px 16px;
+  }
+
+  .dry-hero-content h1 {
+    font-size: 26px;
+  }
+
+  .dry-hero-content button {
+    padding: 12px 28px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 260px;
+  }
+}

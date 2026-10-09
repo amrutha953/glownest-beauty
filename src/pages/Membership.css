@@ -163,9 +163,39 @@
 
 .membership-card:hover,
 .plan-card:hover {
-
  transform:translateY(-8px);
-
  transition:0.3s;
-
 }
+
+@media (max-width: 768px) {
+  .membership-hero {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .membership-content h1 {
+    font-size: 30px;
+  }
+
+  .membership-content p {
+    font-size: 15px;
+  }
+
+  .membership-intro,
+  .membership-benefits,
+  .membership-plans {
+    padding: 40px 16px;
+  }
+
+  .membership-cards,
+  .plan-cards {
+    gap: 16px;
+  }
+
+  .membership-card,
+  .plan-card {
+    width: 100%;
+    max-width: 340px;
+    padding: 22px 18px;
+  }
+}

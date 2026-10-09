@@ -145,7 +145,7 @@ export default function OrderDetails() {
     return (
         <div
             style={{
-                padding: "30px",
+                padding: "25px 16px",
                 maxWidth: "1000px",
                 margin: "0 auto",
             }}
@@ -353,9 +353,10 @@ export default function OrderDetails() {
                         style={{
                             display: "flex",
                             alignItems: "center",
-                            gap: "20px",
+                            flexWrap: "wrap",
+                            gap: "18px",
                             border: "1px solid #ddd",
-                            padding: "20px",
+                            padding: "16px",
                             marginBottom: "15px",
                             borderRadius: "10px",
                             background: "#fff",

@@ -1090,11 +1090,76 @@
 
 
 .product-card .wishlist-btn:hover{
-
     background:#f5f5f5;
-
     color:#e91e63;
-
     transform:scale(1.1);
-
 }
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1024px) {
+  .sensitive-skin-page {
+    padding: 45px 5%;
+  }
+
+  .sensitive-hero,
+  .about-sensitive-skin {
+    gap: 35px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sensitive-hero,
+  .about-sensitive-skin {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    margin: 40px 0;
+  }
+
+  .sensitive-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+
+  .sensitive-hero-image img,
+  .about-image img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .sensitive-skin-page {
+    padding: 30px 14px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .info-card {
+    padding: 20px 16px;
+  }
+
+  .sensitive-hero-content h1 {
+    font-size: 26px;
+  }
+
+  .sensitive-hero-content button {
+    padding: 12px 28px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 260px;
+  }
+}

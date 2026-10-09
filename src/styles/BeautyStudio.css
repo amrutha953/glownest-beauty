@@ -324,3 +324,78 @@
 .beauty-card{
     cursor:pointer;
 }
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 1024px) {
+  .beauty-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .studio-banner {
+    padding: 35px;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .beauty-studio-section {
+    padding: 50px 5%;
+  }
+
+  .studio-heading span {
+    font-size: 30px;
+  }
+
+  .studio-heading h2 {
+    font-size: 24px;
+  }
+
+  .studio-heading p {
+    font-size: 15px;
+  }
+
+  .studio-banner {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .banner-text {
+    max-width: 100%;
+  }
+
+  .beauty-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .choose-title {
+    font-size: 24px;
+    margin: 40px 0 25px;
+  }
+}
+
+@media (max-width: 540px) {
+  .beauty-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .beauty-card {
+    padding: 24px 18px;
+  }
+
+  .studio-heading span {
+    font-size: 24px;
+  }
+
+  .studio-heading h2 {
+    font-size: 20px;
+  }
+}

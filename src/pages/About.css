@@ -405,7 +405,99 @@
     }
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
+    .about-hero{
+        flex-direction:column;
+        padding:50px 5%;
+        gap:35px;
+        text-align:center;
+    }
+
+    .about-content h1{
+        font-size:36px;
+    }
+
+    .mission-vision{
+        grid-template-columns:1fr;
+        padding:20px 5% 50px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+        padding:50px 5%;
+        gap:30px;
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .founder{
+        flex-direction:column;
+        padding:50px 5%;
+        gap:35px;
+        text-align:center;
+    }
+}
+
+@media(max-width:600px){
+    .about-hero{
+        padding:40px 16px;
+    }
+
+    .about-content h1{
+        font-size:28px;
+    }
+
+    .about-content p,
+    .story p{
+        font-size:15px;
+    }
+
+    .story{
+        padding:40px 16px;
+    }
+
+    .story h2,
+    .why h2{
+        font-size:26px;
+    }
+
+    .why{
+        padding:40px 16px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .box{
+        padding:24px 18px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+        padding:35px 16px;
+        gap:20px;
+    }
+
+    .stat h2{
+        font-size:32px;
+    }
+
+    .stat span{
+        font-size:15px;
+    }
+
+    .founder{
+        padding:40px 16px;
+    }
+
+    .founder-image img{
+        max-width:240px;
+        height:auto;
+    }
 
     .testimonial-slider{
         flex-direction:column;
@@ -413,30 +505,10 @@
 
     .testimonial-card{
         width:100%;
+        padding:24px 18px;
     }
 
     .testimonial-arrow{
         display:none;
     }
-}
-/* ==========================
-   TESTIMONIAL FADE
-========================== */
-
-.fade{
-    animation:fadeIn 0.8s ease;
-}
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
+}

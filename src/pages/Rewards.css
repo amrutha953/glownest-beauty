@@ -156,9 +156,39 @@
 
 .points-card:hover,
 .benefit-card:hover {
-
  transform:translateY(-8px);
-
  transition:0.3s;
-
 }
+
+@media (max-width: 768px) {
+  .rewards-hero {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .rewards-content h1 {
+    font-size: 30px;
+  }
+
+  .rewards-content p {
+    font-size: 15px;
+  }
+
+  .rewards-intro,
+  .points-section,
+  .reward-benefits {
+    padding: 40px 16px;
+  }
+
+  .points-cards,
+  .benefit-cards {
+    gap: 16px;
+  }
+
+  .points-card,
+  .benefit-card {
+    width: 100%;
+    max-width: 340px;
+    padding: 22px 18px;
+  }
+}

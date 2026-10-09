@@ -284,23 +284,27 @@
 
 @media(max-width:768px){
 
+    .combination-skin-page{
+        padding:35px 16px;
+    }
+
     .info-grid,
     .product-grid{
         grid-template-columns:1fr;
     }
 
     .combination-hero-content h1{
-        font-size:40px;
+        font-size:30px;
     }
 
     .combination-content h2{
-        font-size:32px;
+        font-size:26px;
     }
 
     .info-section h2,
     .routine-section h2,
     .products-section h2{
-        font-size:30px;
+        font-size:24px;
     }
 
-}
+}

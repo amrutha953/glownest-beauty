@@ -219,27 +219,53 @@
 
 @media (max-width: 768px) {
 
-  .track-overlay h1 {
-    font-size: 32px;
+  .track-container,
+  .tracking-result,
+  .track-faq {
+    padding: 40px 18px;
   }
 
+  .track-overlay h1 {
+    font-size: 30px;
+  }
+
+  .track-container h2 {
+    font-size: 24px;
+  }
 
   .timeline {
     flex-direction: column;
     gap: 25px;
+    align-items: center;
   }
-
 
   .timeline::before {
     display: none;
   }
 
-
   .step {
-    width: 180px;
+    width: 100%;
+    max-width: 260px;
   }
 
 }
+
+@media (max-width: 480px) {
+  .track-container,
+  .tracking-result,
+  .track-faq {
+    padding: 30px 14px;
+  }
+
+  .track-form input {
+    padding: 12px 14px;
+  }
+
+  .result-card {
+    padding: 20px 14px;
+  }
+}
+
 /* ================= TRACKING RESULT ================= */
 
 .tracking-result {

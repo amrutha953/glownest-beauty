@@ -169,10 +169,26 @@
 
 @media(max-width:600px){
 
-    .why-container{
-
-        grid-template-columns:1fr;
-
+    .why-section{
+        padding: 45px 16px;
     }
 
-}
+    .why-heading h2{
+        font-size: 26px;
+    }
+
+    .why-heading p{
+        font-size: 15px;
+    }
+
+    .why-container{
+        grid-template-columns:1fr;
+        gap: 16px;
+        margin-top: 30px;
+    }
+
+    .why-card{
+        padding: 24px 18px;
+    }
+
+}

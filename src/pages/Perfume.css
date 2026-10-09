@@ -631,29 +631,85 @@
  RESPONSIVE
 ============================ */
 
-
 @media(max-width:768px){
 
-
 .perfume-hero {
-
-    height:350px;
-
+    height:300px;
 }
-
 
 .perfume-overlay h1 {
-
-    font-size:36px;
-
+    font-size:32px;
 }
-
 
 .perfume-overlay p {
+    font-size:15px;
+}
 
-    font-size:16px;
+.perfume-intro,
+.featured-products,
+.perfume-notes,
+.perfume-reviews,
+.perfume-faq {
+    padding:45px 5%;
+}
+
+.perfume-intro h2,
+.featured-products h2,
+.perfume-notes h2,
+.perfume-faq h2 {
+    font-size:28px;
+    margin-bottom:30px;
+}
 
 }
 
+@media(max-width:480px){
+
+.perfume-hero {
+    height:240px;
+}
+
+.perfume-overlay h1 {
+    font-size:26px;
+}
+
+.perfume-intro,
+.featured-products,
+.perfume-notes,
+.perfume-reviews,
+.perfume-faq {
+    padding:35px 14px;
+}
+
+.products-grid {
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.notes-grid,
+.review-grid {
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.product-card img {
+    height:160px;
+}
+
+.product-card h3 {
+    font-size:14px;
+    margin:10px 8px;
+}
+
+.product-card span {
+    font-size:16px;
+}
+
+.product-card button {
+    margin-top:10px;
+    padding:9px 15px;
+    font-size:13px;
+    width:calc(100% - 20px);
+}
 
 }

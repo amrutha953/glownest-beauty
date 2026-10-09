@@ -543,22 +543,52 @@ grid-template-columns:repeat(2,1fr);
 
 @media(max-width:600px){
 
-
-.products-grid,
-.benefits-grid,
-.review-grid{
-
-grid-template-columns:1fr;
-
+.body-hero{
+    height:250px;
 }
-
-
 
 .body-overlay h1{
-
-font-size:35px;
-
+    font-size:28px;
 }
 
-
+.body-intro,
+.featured-products,
+.body-benefits,
+.body-brands,
+.body-reviews,
+.body-faq{
+    padding:35px 14px;
 }
+
+.products-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.benefits-grid,
+.review-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.product-card img{
+    height:160px;
+}
+
+.product-card h3{
+    font-size:14px;
+    margin:10px 8px;
+}
+
+.product-card span{
+    font-size:16px;
+}
+
+.product-card button{
+    margin-top:10px;
+    padding:9px 15px;
+    font-size:13px;
+    width:calc(100% - 20px);
+}
+
+}

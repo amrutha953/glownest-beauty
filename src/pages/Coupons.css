@@ -154,9 +154,39 @@
 
 .coupon-card:hover,
 .benefit-card:hover {
-
  transform:translateY(-8px);
-
  transition:0.3s;
-
 }
+
+@media (max-width: 768px) {
+  .coupons-hero {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .coupons-content h1 {
+    font-size: 30px;
+  }
+
+  .coupons-content p {
+    font-size: 15px;
+  }
+
+  .coupons-intro,
+  .coupon-section,
+  .coupon-benefits {
+    padding: 40px 16px;
+  }
+
+  .coupon-cards,
+  .benefit-cards {
+    gap: 16px;
+  }
+
+  .coupon-card,
+  .benefit-card {
+    width: 100%;
+    max-width: 340px;
+    padding: 22px 18px;
+  }
+}
